@@ -1,0 +1,4 @@
+{
+    "name": "accommodation-scene",
+    "main": "accommodationController.js"
+}

@@ -1,0 +1,52 @@
+{
+  "name": "map-products",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "moment": "^2.20.1",
+    "npm-platform-dependencies": "^0.1.0",
+    "react": "^16.4.1",
+    "react-native": "0.53.3",
+    "react-native-checkbox": "^2.0.0",
+    "react-native-elements": "^0.19.0",
+    "react-native-i18n": "^2.0.12",
+    "react-native-linear-gradient": "^2.4.0",
+    "react-native-maps": "^0.15.3",
+    "react-native-material-textfield": "^0.12.0",
+    "react-native-modal": "^5.1.0",
+    "react-native-modalbox": "^1.4.2",
+    "react-native-svg": "^6.3.1",
+    "react-native-svg-uri": "^1.2.3",
+    "react-native-swiper": "^1.5.13",
+    "react-native-vector-icons": "^4.5.0",
+    "react-navigation": "^1.2.0",
+    "react-redux": "^5.0.7",
+    "react-timer-mixin": "^0.13.3",
+    "redux": "^3.7.2",
+    "redux-reset": "^0.3.0",
+    "redux-thunk": "^2.2.0",
+    "validate.js": "^0.12.0"
+  },
+  "devDependencies": {
+    "babel-jest": "22.4.1",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "22.4.2",
+    "react-test-renderer": "16.2.0",
+    "redux-devtools": "^3.4.1"
+  },
+  "jest": {
+    "preset": "react-native",
+    "setupFiles": [
+      "./jest/setup.js"
+    ]
+  },
+  "rnpm": {
+    "assets": [
+      "./src/fonts/"
+    ]
+  }
+}

@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-
   splashContainer: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: '#5856d6'
   },
 
   image: {

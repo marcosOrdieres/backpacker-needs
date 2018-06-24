@@ -10,7 +10,7 @@ class SplashController extends BaseScene {
 
   componentDidMount () {
     TimerMixin.setTimeout(() => {
-      this.props.navigation.navigate('Menu');
+      this.props.navigation.navigate('Login');
     }, 3000);
   }
 

@@ -4,19 +4,20 @@ import { Button } from 'react-native-elements';
 import Color from '../common/colors';
 
 const styles = StyleSheet.create({
-  buttonContainer: {
-    width: '100%'
+  viewButtonStyle: {
+    paddingTop: 10,
+    paddingBottom: 10
   },
-
   buttonStyle: {
-    borderRadius: 3,
-    height: 56,
-    width: '100%'
-  },
-
-  buttonTextStyle: {
     fontSize: 20,
-    fontFamily: 'Hind-Medium'
+    fontFamily: 'Hind-Medium',
+    marginLeft: 30,
+    marginRight: 30,
+    borderRadius: 50,
+    borderWidth: 2
+  },
+  buttonTextStyle: {
+    textAlign: 'center'
   }
 });
 
@@ -27,15 +28,15 @@ export default class ButtonComponent extends Component {
 
   render () {
     return (
-      <View style={[styles.buttonContainer, this.props.style]}>
+      <View style={[this.props.viewButtonStyle, styles.viewButtonStyle]}>
         <Button
           containerViewStyle={{marginLeft: 0, marginRight: 0}}
           onPress={this.props.onPress}
-          buttonStyle={[styles.buttonStyle, this.props.buttonStyle]}
-          backgroundColor={this.props.color != null ? this.props.color : Color.shineGreen}
-          large
+          activeOpacity={0.5}
+          buttonStyle={[{borderColor: this.props.buttonBorderColor ? this.props.buttonBorderColor : 'transparent'}, this.props.buttonStyle, styles.buttonStyle]}
+          backgroundColor={this.props.color != null ? this.props.color : 'white'}
           title={this.props.title}
-          textStyle={[styles.buttonTextStyle, this.props.textStyle]} />
+          textStyle={[{textAlign: 'center', color: this.props.textColor ? this.props.textColor : 'black'}, this.props.textStyle]} />
       </View>
     );
   }

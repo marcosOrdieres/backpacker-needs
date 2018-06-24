@@ -23,15 +23,14 @@ import FoodScreen from '../scenes/food';
 import PoisScreen from '../scenes/pois';
 import SplashScreen from '../scenes/splash';
 import HomeScreen from '../scenes/home';
+import loginScreen from '../scenes/login';
+
+import VaccinationsScreen from '../scenes/home';
+import VisaScreen from '../scenes/home';
+import MiscelaneaScreen from '../scenes/home';
 
 const Splash = routes.Splash;
 const Home = routes.Home;
-
-import DestinationSvg from '../assets/svg/flights.svg';
-import GeneralSvg from '../assets/svg/earthGlobe.svg';
-import AccommodationSvg from '../assets/svg/house.svg';
-import FoodSvg from '../assets/svg/food.svg';
-import PoisSvg from '../assets/svg/pois.svg';
 
 const styles = StyleSheet.create({
   container: {
@@ -54,6 +53,65 @@ const styles = StyleSheet.create({
   }
 });
 
+export const General = TabNavigator({
+  Vaccinations: {
+    screen: VaccinationsScreen,
+    navigationOptions: {
+      title: 'Vaccinations',
+      tabBarOnPress: (scene, jumpToIndex) => {
+        if (typeof scene.previousScene.routes !== 'undefined') {
+          if (scene.previousScene.routes[0].key === 'Tariff') {
+            return;
+          }
+        }
+        scene.jumpToIndex(scene.scene.index);
+      }
+    }
+  },
+  Visa: {
+    screen: VisaScreen,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Visa'
+    })
+  },
+  Miscelanea: {
+    screen: MiscelaneaScreen,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Miscelanea'
+    })
+  }
+},
+  {
+    tabBarPosition: 'bottom',
+    ...TabNavigator.Presets.AndroidTopTabs,
+    tabBarOptions: {
+      upperCaseLabel: false,
+      activeTintColor: '#ffffff',
+      inactiveTintColor: '#9796ce',
+      swipeEnabled: true,
+      style: {
+        backgroundColor: '#5856d6',
+        height: 60
+      },
+      labelStyle: {
+        color: 'white',
+        fontSize: 14,
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontFamily: 'Hind-Light',
+        paddingBottom: 20
+      },
+      upperCaseLabel: false,
+      tabStyle: {
+        elevation: 4
+      },
+      indicatorStyle: {
+        backgroundColor: 'white',
+        height: 3
+      }
+    }
+  });
+
 export const MenuBar = TabNavigator({
   Destination: {
     screen: DestinationScreen,
@@ -67,35 +125,65 @@ export const MenuBar = TabNavigator({
         }
         scene.jumpToIndex(scene.scene.index);
       },
-      tabBarIcon: ({ tintColor }) => (<SvgUri width={24} height={24} source={require('../assets/svg/airportNO.svg')} />)
+      tabBarIcon: ({ tintColor }) => {
+        if (tintColor === '#9796ce') {
+          return (<SvgUri width={24} height={24} source={require('../assets/svg/airportYES.svg')} />);
+        } else {
+          return (<SvgUri width={24} height={24} source={require('../assets/svg/airportNO.svg')} />);
+        }
+      }
     }
   },
   General: {
-    screen: GeneralScreen,
+    screen: General,
     navigationOptions: ({ navigation }) => ({
       title: 'General',
-      tabBarIcon: ({ tintColor }) => (<SvgUri width={24} height={24} source={require('../assets/svg/earthGlobe.svg')} />)
+      tabBarIcon: ({ tintColor }) => {
+        if (tintColor === '#9796ce') {
+          return (<SvgUri width={24} height={24} source={require('../assets/svg/generalYES.svg')} />);
+        } else {
+          return (<SvgUri width={24} height={24} source={require('../assets/svg/generalNO.svg')} />);
+        }
+      }
     })
   },
   Accommodation: {
     screen: AccommodationScreen,
     navigationOptions: ({ navigation }) => ({
-      title: 'Stay',
-      tabBarIcon: ({ tintColor }) => (<SvgUri width={24} height={24} source={require('../assets/svg/house.svg')} />)
+      title: 'Sleep',
+      tabBarIcon: ({ tintColor }) => {
+        if (tintColor === '#9796ce') {
+          return (<SvgUri width={24} height={24} source={require('../assets/svg/sleepYES.svg')} />);
+        } else {
+          return (<SvgUri width={24} height={24} source={require('../assets/svg/sleepNO.svg')} />);
+        }
+      }
     })
   },
   Food: {
     screen: FoodScreen,
     navigationOptions: ({ navigation }) => ({
-      title: 'Food',
-      tabBarIcon: ({ tintColor }) => (<SvgUri width={24} height={24} source={require('../assets/svg/food.svg')} />)
+      title: 'Meals',
+      tabBarIcon: ({ tintColor }) => {
+        if (tintColor === '#9796ce') {
+          return (<SvgUri width={24} height={24} source={require('../assets/svg/foodYES.svg')} />);
+        } else {
+          return (<SvgUri width={24} height={24} source={require('../assets/svg/foodNO.svg')} />);
+        }
+      }
     })
   },
   Pois: {
     screen: PoisScreen,
     navigationOptions: ({ navigation }) => ({
       title: 'POIs',
-      tabBarIcon: ({ tintColor }) => (<SvgUri width={24} height={24} source={require('../assets/svg/pois.svg')} />)
+      tabBarIcon: ({ tintColor }) => {
+        if (tintColor === '#9796ce') {
+          return (<SvgUri width={24} height={24} source={require('../assets/svg/poiYES.svg')} />);
+        } else {
+          return (<SvgUri width={24} height={24} source={require('../assets/svg/poiNO.svg')} />);
+        }
+      }
     })
   }
 },
@@ -113,7 +201,8 @@ export const MenuBar = TabNavigator({
       labelStyle: styles.labelStyle,
       indicatorStyle: {
         backgroundColor: '#ffffff'
-      }
+      },
+      swipeEnabled: true
     }
   });
 
@@ -137,10 +226,22 @@ export const RootStack = StackNavigator({
     screen: FoodScreen
   },
   General: {
-    screen: GeneralScreen
+    screen: General
   },
   Pois: {
     screen: PoisScreen
+  },
+  Vaccinations: {
+    screen: VaccinationsScreen
+  },
+  Visa: {
+    screen: VisaScreen
+  },
+  Miscelanea: {
+    screen: MiscelaneaScreen
+  },
+  Login: {
+    screen: loginScreen
   }
 },
   {

@@ -24,6 +24,7 @@ import PoisScreen from '../scenes/pois';
 import SplashScreen from '../scenes/splash';
 import HomeScreen from '../scenes/home';
 import loginScreen from '../scenes/login';
+import signupScreen from '../scenes/signup';
 
 import VaccinationsScreen from '../scenes/home';
 import VisaScreen from '../scenes/home';
@@ -242,6 +243,9 @@ export const RootStack = StackNavigator({
   },
   Login: {
     screen: loginScreen
+  },
+  Signup: {
+    screen: signupScreen
   }
 },
   {

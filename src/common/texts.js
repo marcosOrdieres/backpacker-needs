@@ -146,13 +146,6 @@ export default StyleSheet.create({
     color: Color.Anthrazit
   },
 
-  amountCoins: {
-    fontFamily: 'Hind-Medium',
-    fontSize: 24,
-    lineHeight: 30,
-    color: Color.shineGreen
-  },
-
   bannerTitle: {
     fontFamily: 'Hind-Bold',
     fontSize: 30,

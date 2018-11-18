@@ -11,20 +11,17 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-@import GoogleMaps;
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   NSURL *jsCodeLocation;
-  [GMSServices provideAPIKey:@"AIzaSyAkfY70LFfTs_iANuuBLs44khzZJ8OH8Vg"];
-
 
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
 
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
-                                                      moduleName:@"map-products"
+                                                      moduleName:@"mapProducts"
                                                initialProperties:nil
                                                    launchOptions:launchOptions];
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];

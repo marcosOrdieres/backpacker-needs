@@ -4,7 +4,6 @@ export default class User {
     static accessToken;
     static accountId;
     static userId;
-    static householdId;
     static accountAdmin;
 
     getToken() {
@@ -31,14 +30,6 @@ export default class User {
       this.userId = value;
     }
 
-    getHouseholdId() {
-      return this.householdId;
-    }
-
-    setHouseholdId(value) {
-      this.householdId = value;
-    }
-
     getAccountAdmin() {
       return this.accountAdmin;
     }
@@ -52,7 +43,6 @@ export default class User {
         accessToken: this.accessToken,
         accountId: parseInt(this.accountId),
         userId: parseInt(this.userId),
-        householdId: parseInt(this.householdId),
         accountAdmin: this.accountAdmin
       };
 

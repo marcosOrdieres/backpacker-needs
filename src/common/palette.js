@@ -1,8 +1,8 @@
 export default {
-  'logoColor': '#00ADAD', // shineGreen
-  'primaryColor': '#00ADAD', // shineGreen
+  'logoColor': '#00ADAD',
+  'primaryColor': '#00ADAD',
   'secondaryColor': '#FFFFFF', // White
-  'accentColor': '#FFF605', // shineYellow
+  'accentColor': '#FFF605',
   'textColorDefault': '#2C2C2C', // Anthrazit
   'textColorShade': '',
   'textLink': '#B8B8B8',

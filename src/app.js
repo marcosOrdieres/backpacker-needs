@@ -16,4 +16,4 @@ class App extends Component {
 
 export default App;
 
-AppRegistry.registerComponent('map-products', () => App);
+AppRegistry.registerComponent('mapProducts', () => App);

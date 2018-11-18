@@ -2,10 +2,18 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import destinationStyles from './destinationStyles';
 import MapView from 'react-native-maps';
+import { Button } from 'components';
+import PopupDialog, { DialogTitle } from 'react-native-popup-dialog';
 
 const styles = StyleSheet.create({
   map: {
     ...StyleSheet.absoluteFillObject
+  },
+  buttonView: {
+    position: 'absolute',
+    top: 400,
+    width: 350,
+    marginLeft: 10
   }
 });
 export default (controller) => (
@@ -33,5 +41,26 @@ export default (controller) => (
         </View>
       </MapView.Marker>
     </MapView>
+    {controller.state.buttonFly ?
+      <View style={styles.buttonView}>
+        <Button
+          onPress={() => { this.popupDialog.show(); }}
+          title={'I want to Fly, Now!'}
+          color={'#5856d6'}
+          textColor={'white'} />
+      </View>
+      :
+      null
+    }
+    <PopupDialog
+      dialogTitle={<DialogTitle title='Dialog Title' />}
+      ref={(popupDialog) => { this.popupDialog = popupDialog; }}
+      onDismissed={() => { controller.setState({buttonFly: false}); }}
+      dialogAnimation={controller.slideAnimation}>
+      <View>
+        <Text>Hello</Text>
+      </View>
+    </PopupDialog>
+
   </View>
 );

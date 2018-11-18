@@ -1,6 +1,7 @@
 import { BaseScene } from 'components';
 import template from './destinationTemplate';
 import { connect } from 'react-redux';
+import PopupDialog, { SlideAnimation } from 'react-native-popup-dialog';
 
 class DestinationController extends BaseScene {
   constructor (args) {
@@ -8,13 +9,14 @@ class DestinationController extends BaseScene {
     this.state = {
       mapRegion: null,
       lastLat: null,
-      lastLong: null
+      lastLong: null,
+      buttonFly: true
     };
+    this.slideAnimation = new SlideAnimation({slideFrom: 'bottom'});
   }
 
   componentDidMount () {
     this.region = navigator.geolocation.watchPosition((position) => {
-      console.warn('position: ', position);
       let region = {
         latitude: position.coords.latitude,
         longitude: position.coords.longitude,

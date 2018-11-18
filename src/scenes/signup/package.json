@@ -1,0 +1,4 @@
+{
+    "name": "signup-scene",
+    "main": "signupController.js"
+}

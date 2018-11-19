@@ -1,4 +1,4 @@
-package com.mapProducts;
+package com.marcos.myProject;
 
 import android.app.Application;
 

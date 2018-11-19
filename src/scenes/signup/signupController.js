@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 import { AccessToken, LoginManager, LoginButton } from 'react-native-fbsdk';
 import { GoogleSignin } from 'react-native-google-signin';
-import jwt from 'jwt-decode';
 
 class SignupController extends BaseScene {
   constructor (args) {

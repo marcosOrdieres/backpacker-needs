@@ -1,12 +1,18 @@
-import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
+import {
+	combineReducers,
+	createStore,
+	applyMiddleware,
+	compose
+} from 'redux';
 import thunk from 'redux-thunk';
 import reduxReset from 'redux-reset';
 
 import splashReducer from '../reducers/splashReducer';
+import userReducer from '../reducers/userReducer';
 
 const appReducer = combineReducers({
-  isVersionAllowed: splashReducer.isVersionAllowed,
-  isUserLoggedIn: splashReducer.isUserLoggedIn
+	isFromSignup: userReducer.isFromSignup,
+	isFromLogin: userReducer.isFromLogin
 });
 
 const rootStore = createStore(appReducer, applyMiddleware(thunk), reduxReset());

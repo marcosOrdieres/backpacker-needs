@@ -23,8 +23,7 @@ import FoodScreen from '../scenes/food';
 import PoisScreen from '../scenes/pois';
 import SplashScreen from '../scenes/splash';
 import HomeScreen from '../scenes/home';
-import loginScreen from '../scenes/login';
-import signupScreen from '../scenes/signup';
+import sendCredentialsScreen from '../scenes/sendCredentials';
 
 import VaccinationsScreen from '../scenes/home';
 import VisaScreen from '../scenes/home';
@@ -241,11 +240,8 @@ export const RootStack = StackNavigator({
   Miscelanea: {
     screen: MiscelaneaScreen
   },
-  Login: {
-    screen: loginScreen
-  },
-  Signup: {
-    screen: signupScreen
+  SendCredentials: {
+    screen: sendCredentialsScreen
   }
 },
   {

@@ -16,56 +16,39 @@ import {
 } from 'react-native-google-signin';
 
 class sendCredentialsController extends BaseScene {
-	constructor(args) {
-		super(args);
-		console.warn(this.state);
+  constructor (args) {
+    super(args);
+    this.state = {
+      userName: '',
+      password: ''
+    };
+  }
 
-		this.state = {
-			loginButtonPressed: false,
-			signUpButtonPressed: false,
-			userName: '',
-			password: ''
-		};
-	}
+  async handleSignupEmail () {
+    try {
+      const signUp = await firebase.auth().createUserAndRetrieveDataWithEmailAndPassword(this.state.userName, this.state.password);
+      return this.navigateTo('Menu');
+			// return this.navigateTo('WhatDoesThisApp');
+    } catch (error) {
+      console.warn(error.message);
+    }
+  }
 
-	validate() {
-		alph = /^[a-zA-Z]+$/;
-		if (type === 'username') {
-			if (alph.test(text)) {
-				console.warn('text is correct');
-			} else {
-				console.warn('text is incorrect');
-			}
-		}
-	}
+  async handleLogin () {
+    try {
+      await firebase.auth().signInAndRetrieveDataWithEmailAndPassword(this.state.userName, this.state.password);
+      return this.navigateTo('Menu');
+    } catch (error) {
+      this.setState({
+        errorMessage: error.message
+      });
+      console.warn(error.message);
+    }
+  }
 
-	async handleSignupEmail() {
-		try {
-			const signUp = await firebase.auth().createUserAndRetrieveDataWithEmailAndPassword('example@gmail.com', '123456');
-			return this.routes.home;
-		} catch (error) {
-			console.warn(error.message);
-		}
-	}
-
-	async handleLogin() {
-		try {
-			console.warn('userName: ', this.state.userName);
-			console.warn('password: ', this.state.password);
-			await firebase.auth().signInWithEmailAndPassword(this.state.userName, this.state.password);
-			console.warn('LOGINNNNNNN');
-			return this.routes.home;
-		} catch (error) {
-			this.setState({
-				errorMessage: error.message
-			});
-			console.warn(error);
-		}
-	}
-
-	render() {
-		return template(this);
-	}
+  render () {
+    return template(this);
+  }
 }
 
 export default connect()(sendCredentialsController);

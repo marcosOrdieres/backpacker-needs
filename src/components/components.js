@@ -6,6 +6,7 @@ import Pin from './pin';
 import Popup from './popup';
 import Product from './product';
 import Slider from './slider';
+import Swipper from './swipper';
 
 export {
 	BaseScene,
@@ -15,5 +16,6 @@ export {
 	Pin,
 	Popup,
 	Product,
-	Slider
+	Slider,
+	Swipper
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import destinationStyles from './destinationStyles';
-import MapView from 'react-native-maps';
+// import MapView from 'react-native-maps';
 import { Button } from 'components';
 import PopupDialog, { DialogTitle } from 'react-native-popup-dialog';
 
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 });
 export default (controller) => (
   <View style={{flex: 1}}>
-    <MapView
+    {/* <MapView
       style={styles.map}
       region={controller.state.mapRegion}
       showsUserLocation
@@ -40,7 +40,7 @@ export default (controller) => (
           </Text>
         </View>
       </MapView.Marker>
-    </MapView>
+    </MapView> */}
     {controller.state.buttonFly ?
       <View style={styles.buttonView}>
         <Button

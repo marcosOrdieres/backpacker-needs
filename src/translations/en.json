@@ -1,5 +1,15 @@
 {
   "splash" : {
     "noConnection": "No internet connection"
+  },
+  "home":{
+    "mainTitleText": "Welcome Backpacker !",
+    "checkBoxData": "Click Here",
+    "textDataPrivacy": "I accept the Terms and Conditions and Data Privacy",
+    "popupDialog": "Dialog Title",
+    "registerEmailTitle": "Register for free",
+    "registerFacebookTitle": "Continue with Facebook",
+    "loginTitle": "Log in with your email",
+    "areYouUser": "Are you already a user?"
   }
 }

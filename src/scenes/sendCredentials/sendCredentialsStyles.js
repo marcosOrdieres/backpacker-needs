@@ -4,6 +4,7 @@ export default StyleSheet.create({
   sendCredentialsContainer: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: '#5856d6'
   }
 });

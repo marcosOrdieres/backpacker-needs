@@ -16,6 +16,10 @@ export default class BaseScene extends Component {
     this.env = env;
   }
 
+  navigateTo (destination) {
+    this.props.navigation.navigate(destination);
+  }
+
   setState (args) {
     return new Promise((resolve) => super.setState(args, resolve));
   }

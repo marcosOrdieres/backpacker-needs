@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
+            "outputFile": "/Users/marcos/backpacker-needs/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/37cdb577af793cf75db41689c895b82e/res/values-ldltr-v21/values-ldltr-v21.xml",
+                    "source": "/Users/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/775f92fbe6cd22604cebe47d07bb7115/res/values-ldltr-v21/values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "/Users/marcos/backpacker-needs/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/dc6a8cfc0941801b69ea96a7a2387796/res/values-v24/values-v24.xml",
+                    "source": "/Users/marcos/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/47eb16b85921a0262c42d66df9b365d4/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/37cdb577af793cf75db41689c895b82e/res/values-v24/values-v24.xml",
+                    "source": "/Users/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/775f92fbe6cd22604cebe47d07bb7115/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

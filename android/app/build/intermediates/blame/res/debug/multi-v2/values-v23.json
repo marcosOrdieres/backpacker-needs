@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
+            "outputFile": "/Users/marcos/backpacker-needs/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/81ccfddd3b201f8d58621ffa22d421b0/res/values-v23/values-v23.xml",
+                    "source": "/Users/marcos/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/ba401050a648ffe315f1c1baeacbdd66/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/37cdb577af793cf75db41689c895b82e/res/values-v23/values-v23.xml",
+                    "source": "/Users/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/775f92fbe6cd22604cebe47d07bb7115/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

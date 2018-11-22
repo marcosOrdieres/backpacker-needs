@@ -5,6 +5,25 @@ export default class User {
     static accountId;
     static userId;
     static accountAdmin;
+    static accountAdmin;
+    static sendCredentialSignup;
+    static sendCredentialLogin;
+
+    getSendCredentialsSignup() {
+      return this.sendCredentialSignup;
+    }
+
+    setSendCredentialsSignup(value) {
+      this.sendCredentialSignup = value;
+    }
+
+    getSendCredentialsLogin() {
+      return this.sendCredentialLogin;
+    }
+
+    setSendCredentialsLogin(value) {
+      this.sendCredentialLogin = value;
+    }
 
     getToken() {
       return this.accessToken;
@@ -40,6 +59,8 @@ export default class User {
 
     getUserObject() {
       const user = {
+        sendCredentialSignup: this.sendCredentialSignup,
+        sendCredentialLogin: this.sendCredentialLogin,
         accessToken: this.accessToken,
         accountId: parseInt(this.accountId),
         userId: parseInt(this.userId),

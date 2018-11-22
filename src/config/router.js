@@ -14,7 +14,7 @@ import i18n from '../translations';
 import Color from '../common/colors.json';
 import routes from '../common/routes.json';
 // import { Palette } from '../common/palette.js';
-import SvgUri from 'react-native-svg-uri';
+// import SvgUri from 'react-native-svg-uri';
 
 import DestinationScreen from '../scenes/destination';
 import GeneralScreen from '../scenes/general';
@@ -23,11 +23,12 @@ import FoodScreen from '../scenes/food';
 import PoisScreen from '../scenes/pois';
 import SplashScreen from '../scenes/splash';
 import HomeScreen from '../scenes/home';
-import sendCredentialsScreen from '../scenes/sendCredentials';
+import SendCredentialsScreen from '../scenes/sendCredentials';
+import WhatDoesThisAppScreen from '../scenes/whatDoesThisApp';
 
-import VaccinationsScreen from '../scenes/home';
-import VisaScreen from '../scenes/home';
-import MiscelaneaScreen from '../scenes/home';
+import VaccinationsScreen from '../scenes/pois';
+import VisaScreen from '../scenes/pois';
+import MiscelaneaScreen from '../scenes/pois';
 
 const Splash = routes.Splash;
 const Home = routes.Home;
@@ -127,9 +128,11 @@ export const MenuBar = TabNavigator({
       },
       tabBarIcon: ({ tintColor }) => {
         if (tintColor === '#9796ce') {
-          return (<SvgUri width={24} height={24} source={require('../assets/svg/airportYES.svg')} />);
+          console.warn('wee');
+          // return (<SvgUri width={24} height={24} source={require('../assets/svg/airportYES.svg')} />);
         } else {
-          return (<SvgUri width={24} height={24} source={require('../assets/svg/airportNO.svg')} />);
+          console.warn('wee');
+          // return (<SvgUri width={24} height={24} source={require('../assets/svg/airportNO.svg')} />);
         }
       }
     }
@@ -140,9 +143,9 @@ export const MenuBar = TabNavigator({
       title: 'General',
       tabBarIcon: ({ tintColor }) => {
         if (tintColor === '#9796ce') {
-          return (<SvgUri width={24} height={24} source={require('../assets/svg/generalYES.svg')} />);
+          // return (<SvgUri width={24} height={24} source={require('../assets/svg/generalYES.svg')} />);
         } else {
-          return (<SvgUri width={24} height={24} source={require('../assets/svg/generalNO.svg')} />);
+          // return (<SvgUri width={24} height={24} source={require('../assets/svg/generalNO.svg')} />);
         }
       }
     })
@@ -153,9 +156,13 @@ export const MenuBar = TabNavigator({
       title: 'Sleep',
       tabBarIcon: ({ tintColor }) => {
         if (tintColor === '#9796ce') {
-          return (<SvgUri width={24} height={24} source={require('../assets/svg/sleepYES.svg')} />);
+          console.warn('wee');
+
+          // return (<SvgUri width={24} height={24} source={require('../assets/svg/sleepYES.svg')} />);
         } else {
-          return (<SvgUri width={24} height={24} source={require('../assets/svg/sleepNO.svg')} />);
+          console.warn('wee');
+
+          // return (<SvgUri width={24} height={24} source={require('../assets/svg/sleepNO.svg')} />);
         }
       }
     })
@@ -166,9 +173,13 @@ export const MenuBar = TabNavigator({
       title: 'Meals',
       tabBarIcon: ({ tintColor }) => {
         if (tintColor === '#9796ce') {
-          return (<SvgUri width={24} height={24} source={require('../assets/svg/foodYES.svg')} />);
+          console.warn('wee');
+
+          // return (<SvgUri width={24} height={24} source={require('../assets/svg/foodYES.svg')} />);
         } else {
-          return (<SvgUri width={24} height={24} source={require('../assets/svg/foodNO.svg')} />);
+          console.warn('wee');
+
+          // return (<SvgUri width={24} height={24} source={require('../assets/svg/foodNO.svg')} />);
         }
       }
     })
@@ -179,9 +190,13 @@ export const MenuBar = TabNavigator({
       title: 'POIs',
       tabBarIcon: ({ tintColor }) => {
         if (tintColor === '#9796ce') {
-          return (<SvgUri width={24} height={24} source={require('../assets/svg/poiYES.svg')} />);
+          console.warn('wee');
+
+          // return (<SvgUri width={24} height={24} source={require('../assets/svg/poiYES.svg')} />);
         } else {
-          return (<SvgUri width={24} height={24} source={require('../assets/svg/poiNO.svg')} />);
+          console.warn('wee');
+
+          // return (<SvgUri width={24} height={24} source={require('../assets/svg/poiNO.svg')} />);
         }
       }
     })
@@ -241,7 +256,10 @@ export const RootStack = StackNavigator({
     screen: MiscelaneaScreen
   },
   SendCredentials: {
-    screen: sendCredentialsScreen
+    screen: SendCredentialsScreen
+  },
+  WhatDoesThisApp: {
+    screen: WhatDoesThisAppScreen
   }
 },
   {

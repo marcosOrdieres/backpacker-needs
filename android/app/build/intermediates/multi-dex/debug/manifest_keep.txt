@@ -1,3 +1,0 @@
-# Referenced at /Users/marcos/backpacker-needs/android/app/build/intermediates/manifests/full/debug/AndroidManifest.xml:34
--keep class com.marcos.myProject.MainApplication { <init>(...); }
-

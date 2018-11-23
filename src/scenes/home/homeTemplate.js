@@ -36,23 +36,23 @@ export default(controller) => (
       </PopupDialog>
       <Button
         title={controller.i18n.t('home.registerEmailTitle')}
-        color={'#008000'}
-        textColor={'white'}
+        color={controller.palette.whiteTransparent}
+        textColor={controller.palette.white}
         onPress={() => {
           controller.user.setSendCredentialsSignup(true);
 				    return controller.props.navigation.navigate('SendCredentials');
         }} />
       <Button
         title={controller.i18n.t('home.registerFacebookTitle')}
-        color={'#3b5998'}
-        textColor={'white'}
+        color={controller.palette.blueFacebook}
+        textColor={controller.palette.white}
         onPress={() => controller.handleSignupFacebook()} />
       <Text style={homeStyles.areYouUserText}>{controller.i18n.t('home.areYouUser')}</Text>
       <Button
         title={controller.i18n.t('home.loginTitle')}
-        color={'white'}
-        buttonBorderColor={'black'}
-        textColor={'black'}
+        color={controller.palette.white}
+        buttonBorderColor={controller.palette.black}
+        textColor={controller.palette.black}
         onPress={() => {
           controller.user.setSendCredentialsLogin(true);
           return controller.props.navigation.navigate('SendCredentials');

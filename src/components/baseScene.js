@@ -5,6 +5,7 @@ import User from '../models/user';
 import rootStore from '../stores/root';
 import routes from '../common/routes';
 import env from '../config/env';
+import palette from '../common/palette';
 
 export default class BaseScene extends Component {
   constructor (args) {
@@ -14,6 +15,7 @@ export default class BaseScene extends Component {
     this.user = User.instance;
     this.rootStore = rootStore;
     this.env = env;
+    this.palette = palette;
   }
 
   navigateTo (destination) {

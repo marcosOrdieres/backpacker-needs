@@ -9,25 +9,25 @@ export default (controller) => (
     <View style={{flex: 1, paddingTop: '20%'}}>
       <TextInput
         onChangeText={(userName) => { controller.setState({userName: userName}); }}
-        placeholder='email' />
+        placeholder={controller.i18n.t('email')} />
 
       <TextInput
         onChangeText={(password) => { controller.setState({password: password}); }}
         secureTextEntry
-        placeholder='password' />
+        placeholder={controller.i18n.t('password')} />
       {controller.user.getSendCredentialsLogin() ?
         (
           <Button
-            title={'Log in with your email'}
-            color={'#bebdef'}
-            textColor={'black'}
+            title={controller.i18n.t('sendCredentials.login')}
+            color={controller.palette.primaryColorTransparent}
+            textColor={controller.palette.black}
             onPress={() => controller.handleLogin()}
              />
          ) : (
            <Button
-             title={'Register with your email'}
-             color={'#bebdef'}
-             textColor={'black'}
+             title={controller.i18n.t('sendCredentials.register')}
+             color={controller.palette.primaryColorTransparent}
+             textColor={controller.palette.black}
              onPress={() => controller.handleSignupEmail()}
            />
        )}

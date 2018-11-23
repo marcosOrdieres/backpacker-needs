@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native';
+import Palette from '../../common/palette';
 
 export default StyleSheet.create({
   sendCredentialsContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#5856d6'
+    backgroundColor: Palette.primaryColor
   }
 });

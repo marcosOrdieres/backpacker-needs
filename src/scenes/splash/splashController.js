@@ -41,11 +41,9 @@ class SplashController extends BaseScene {
     return new Promise(function (resolve, reject) {
       firebase.auth().onAuthStateChanged(userMetadata => {
         if (userMetadata) {
-          console.warn('LOGIN_SUCCESS');
           resolve(userMetadata.uid);
         } else {
-          console.warn('LOGIN_FAIL');
-          reject(Error('It broke'));
+          reject(Error(this.i18n.t('splash.broken')));
         }
       });
     });
@@ -54,9 +52,7 @@ class SplashController extends BaseScene {
   async isNewOrExistingUser () {
     try {
       const isUserLoggedIn = await this.isUserLoggedIn();
-      console.warn('isUserLoggedIn: ', isUserLoggedIn);
       if (isUserLoggedIn) {
-        console.warn('pa dentrooo');
         return this.navigateTo('Menu');
       } else {
         return this.navigateTo('Home');

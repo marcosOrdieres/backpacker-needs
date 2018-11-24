@@ -7,6 +7,7 @@ import Popup from './popup';
 import Product from './product';
 import Slider from './slider';
 import Swipper from './swipper';
+import Splash from './splash';
 
 export {
 	BaseScene,
@@ -17,5 +18,6 @@ export {
 	Popup,
 	Product,
 	Slider,
-	Swipper
+	Swipper,
+	Splash
 };

@@ -11,15 +11,9 @@ import {
   TabNavigator
  } from 'react-navigation';
 import i18n from '../translations';
-import Color from '../common/colors.json';
 import routes from '../common/routes.json';
-// import { Palette } from '../common/palette.js';
-// import SvgUri from 'react-native-svg-uri';
-
 import DestinationScreen from '../scenes/destination';
 import GeneralScreen from '../scenes/general';
-import AccommodationScreen from '../scenes/accommodation';
-import FoodScreen from '../scenes/food';
 import PoisScreen from '../scenes/pois';
 import SplashScreen from '../scenes/splash';
 import HomeScreen from '../scenes/home';
@@ -128,10 +122,8 @@ export const MenuBar = TabNavigator({
       },
       tabBarIcon: ({ tintColor }) => {
         if (tintColor === '#9796ce') {
-          console.warn('wee');
           // return (<SvgUri width={24} height={24} source={require('../assets/svg/airportYES.svg')} />);
         } else {
-          console.warn('wee');
           // return (<SvgUri width={24} height={24} source={require('../assets/svg/airportNO.svg')} />);
         }
       }
@@ -150,52 +142,14 @@ export const MenuBar = TabNavigator({
       }
     })
   },
-  Accommodation: {
-    screen: AccommodationScreen,
-    navigationOptions: ({ navigation }) => ({
-      title: 'Sleep',
-      tabBarIcon: ({ tintColor }) => {
-        if (tintColor === '#9796ce') {
-          console.warn('wee');
-
-          // return (<SvgUri width={24} height={24} source={require('../assets/svg/sleepYES.svg')} />);
-        } else {
-          console.warn('wee');
-
-          // return (<SvgUri width={24} height={24} source={require('../assets/svg/sleepNO.svg')} />);
-        }
-      }
-    })
-  },
-  Food: {
-    screen: FoodScreen,
-    navigationOptions: ({ navigation }) => ({
-      title: 'Meals',
-      tabBarIcon: ({ tintColor }) => {
-        if (tintColor === '#9796ce') {
-          console.warn('wee');
-
-          // return (<SvgUri width={24} height={24} source={require('../assets/svg/foodYES.svg')} />);
-        } else {
-          console.warn('wee');
-
-          // return (<SvgUri width={24} height={24} source={require('../assets/svg/foodNO.svg')} />);
-        }
-      }
-    })
-  },
   Pois: {
     screen: PoisScreen,
     navigationOptions: ({ navigation }) => ({
       title: 'POIs',
       tabBarIcon: ({ tintColor }) => {
         if (tintColor === '#9796ce') {
-          console.warn('wee');
-
           // return (<SvgUri width={24} height={24} source={require('../assets/svg/poiYES.svg')} />);
         } else {
-          console.warn('wee');
-
           // return (<SvgUri width={24} height={24} source={require('../assets/svg/poiNO.svg')} />);
         }
       }
@@ -231,14 +185,8 @@ export const RootStack = StackNavigator({
   Menu: {
     screen: MenuBar
   },
-  Accommodation: {
-    screen: AccommodationScreen
-  },
   Destination: {
     screen: DestinationScreen
-  },
-  Food: {
-    screen: FoodScreen
   },
   General: {
     screen: General

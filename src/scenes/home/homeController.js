@@ -14,10 +14,21 @@ import {
 import {
 	GoogleSignin
 } from 'react-native-google-signin';
+import { NetInfo } from 'react-native';
 
 class HomeController extends BaseScene {
   constructor (args) {
     super(args);
+    this.state = {
+      noConnectionSplash: false
+    };
+  }
+
+  async componentWillMount () {
+    const connectionInfo = await NetInfo.getConnectionInfo();
+    if (connectionInfo.type == 'none') {
+      this.setState({noConnectionSplash: true});
+    }
   }
 
   async handleSignupFacebook () {
@@ -27,7 +38,7 @@ class HomeController extends BaseScene {
       const dataUser = await AccessToken.getCurrentAccessToken();
       const credential = firebase.auth.FacebookAuthProvider.credential(dataUser.accessToken);
       const firebaseSignUpFacebookUser = await firebase.auth().signInAndRetrieveDataWithCredential(credential);
-      return this.props.navigation.navigate('Menu');
+      return this.navigateTo('Menu');
     } catch (error) {
       console.warn(error.message);
     }
@@ -47,7 +58,7 @@ class HomeController extends BaseScene {
       const dataGoogleSignin = await GoogleSignin.signIn();
       const credential = firebase.auth.GoogleAuthProvider.credential(dataGoogleSignin.idToken, dataGoogleSignin.accessToken);
       const signInGoogle = await firebase.auth().signInAndRetrieveDataWithCredential(credential);
-      return this.props.navigation.navigate('Menu');
+      return this.navigateTo('Menu');
     } catch (error) {
       console.warn(error.message);
     }

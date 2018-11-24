@@ -5,17 +5,24 @@ import template from './splashTemplate';
 import {
 	connect
 } from 'react-redux';
-import TimerMixin from 'react-timer-mixin';
 import firebase from 'react-native-firebase';
 
 class SplashController extends BaseScene {
   constructor (args) {
     super(args);
-    this.initializeFirebaseApp();
-    this.isNewOrExistingUser();
+    this.initializeApplication();
     this.state = {
       userLoggedIn: false
     };
+  }
+
+  async initializeApplication () {
+    try {
+      this.initializeFirebaseApp();
+      this.isNewOrExistingUser();
+    } catch (error) {
+      console.warn(error);
+    }
   }
 
   async initializeFirebaseApp () {
@@ -31,10 +38,13 @@ class SplashController extends BaseScene {
     }
   }
 
-  componentDidMount () {
-    TimerMixin.setTimeout(() => {
-      this.props.navigation.navigate('Home');
-    }, 1000);
+  async isNewOrExistingUser () {
+    try {
+      const isUserLoggedIn = await this.isUserLoggedIn();
+      return this.navigateTo('Menu');
+    } catch (error) {
+      this.navigateTo('Home');
+    }
   }
 
   async isUserLoggedIn () {
@@ -43,23 +53,10 @@ class SplashController extends BaseScene {
         if (userMetadata) {
           resolve(userMetadata.uid);
         } else {
-          reject(Error(this.i18n.t('splash.broken')));
+          reject('Not Logged in', userMetadata);
         }
       });
     });
-  }
-
-  async isNewOrExistingUser () {
-    try {
-      const isUserLoggedIn = await this.isUserLoggedIn();
-      if (isUserLoggedIn) {
-        return this.navigateTo('Menu');
-      } else {
-        return this.navigateTo('Home');
-      }
-    } catch (error) {
-      console.warn(error);
-    }
   }
 
   render () {

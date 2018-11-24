@@ -9,11 +9,12 @@ import {
   TouchableHighlight
 } from 'react-native';
 import homeStyles from './homeStyles';
-import {Button} from 'components';
+import { Button, Splash } from 'components';
 import loginBackgroundImage from '../../assets/images/loginBackgroundImage.png';
 import PopupDialog, { DialogTitle } from 'react-native-popup-dialog';
+import logo from '../../images/logoMaps.png';
 
-export default(controller) => (
+export default(controller) => (!controller.state.noConnectionSplash ? (
   <View style={homeStyles.homeContainer}>
     <ImageBackground
       style={{width: '100%', height: '100%'}}
@@ -40,7 +41,7 @@ export default(controller) => (
         textColor={controller.palette.white}
         onPress={() => {
           controller.user.setSendCredentialsSignup(true);
-				    return controller.props.navigation.navigate('SendCredentials');
+          return controller.props.navigation.navigate('SendCredentials');
         }} />
       <Button
         title={controller.i18n.t('home.registerFacebookTitle')}
@@ -58,5 +59,7 @@ export default(controller) => (
           return controller.props.navigation.navigate('SendCredentials');
         }} />
     </ImageBackground >
-  </View>
+  </View>)
+  :
+  (<Splash logo={logo} textSplash={controller.i18n.t('home.noInternet')} />)
 );

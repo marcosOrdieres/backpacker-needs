@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { View, StyleSheet, Platform } from 'react-native';
 import { Button } from 'react-native-elements';
-import Color from '../common/colors';
 
 const styles = StyleSheet.create({
   viewButtonStyle: {

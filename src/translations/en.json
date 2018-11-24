@@ -1,7 +1,7 @@
 {
   "splash" : {
     "noConnection": "No internet connection",
-    "broken":" It broke"
+    "broken":"It broke"
   },
   "home":{
     "mainTitleText": "Welcome Backpacker !",
@@ -11,7 +11,8 @@
     "registerEmailTitle": "Register for free",
     "registerFacebookTitle": "Continue with Facebook",
     "loginTitle": "Log in with your email",
-    "areYouUser": "Are you already a user?"
+    "areYouUser": "Are you already a user?",
+    "noInternet":"'We are sorry, you need Internet Conection'"
   },
   "email":"email",
   "password":"password",

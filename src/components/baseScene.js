@@ -6,6 +6,7 @@ import rootStore from '../stores/root';
 import routes from '../common/routes';
 import env from '../config/env';
 import palette from '../common/palette';
+import { NetInfo } from 'react-native';
 
 export default class BaseScene extends Component {
   constructor (args) {

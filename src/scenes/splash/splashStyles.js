@@ -7,13 +7,5 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Palette.primaryColor
-  },
-
-  image: {
-    height: 200,
-    width: 200,
-    resizeMode: 'contain',
-    justifyContent: 'center',
-    alignItems: 'center'
   }
 });

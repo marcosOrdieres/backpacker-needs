@@ -6,30 +6,43 @@ import loginBackgroundImage from '../../assets/images/loginBackgroundImage.png';
 
 export default (controller) => (
   <View style={sendCredentialsStyles.sendCredentialsContainer}>
-    <View style={{flex: 1, paddingTop: '20%'}}>
-      <TextInput
-        onChangeText={(userName) => { controller.setState({userName: userName}); }}
-        placeholder={controller.i18n.t('email')} />
+    <View style={{flex: 1}}>
+      <View style={{flex: 1}} />
+      <View style={{flex: 1}}>
+        <TextInput
+          underlineColorAndroid={controller.palette.white}
+          placeholderTextColor={controller.palette.white}
+          style={{width: '100%'}}
+          onChangeText={(userName) => { controller.setState({userName: userName}); }}
+          placeholder={controller.i18n.t('email')} />
 
-      <TextInput
-        onChangeText={(password) => { controller.setState({password: password}); }}
-        secureTextEntry
-        placeholder={controller.i18n.t('password')} />
+        <TextInput
+          underlineColorAndroid={controller.palette.white}
+          placeholderTextColor={controller.palette.white}
+          style={{width: '100%'}}
+          onChangeText={(password) => { controller.setState({password: password}); }}
+          secureTextEntry
+          placeholder={controller.i18n.t('password')} />
+      </View>
       {controller.user.getSendCredentialsLogin() ?
         (
-          <Button
-            title={controller.i18n.t('sendCredentials.login')}
-            color={controller.palette.primaryColorTransparent}
-            textColor={controller.palette.black}
-            onPress={() => controller.handleLogin()}
+          <View style={{flex: 1}}>
+            <Button
+              title={controller.i18n.t('sendCredentials.login')}
+              color={controller.palette.primaryColorTransparent}
+              textColor={controller.palette.black}
+              onPress={() => controller.handleLogin()}
              />
+          </View>
          ) : (
-           <Button
-             title={controller.i18n.t('sendCredentials.register')}
-             color={controller.palette.primaryColorTransparent}
-             textColor={controller.palette.black}
-             onPress={() => controller.handleSignupEmail()}
+           <View style={{flex: 1}}>
+             <Button
+               title={controller.i18n.t('sendCredentials.register')}
+               color={controller.palette.primaryColorTransparent}
+               textColor={controller.palette.black}
+               onPress={() => controller.handleSignupEmail()}
            />
+           </View>
        )}
     </View>
   </View>

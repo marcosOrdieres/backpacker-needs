@@ -12,7 +12,7 @@ import homeStyles from './homeStyles';
 import { Button, Splash } from 'components';
 import loginBackgroundImage from '../../assets/images/loginBackgroundImage.png';
 import PopupDialog, { DialogTitle } from 'react-native-popup-dialog';
-import logo from '../../images/logoMaps.png';
+import logo from '../../assets/images/backpackerNeeds.png';
 
 export default(controller) => (!controller.state.noConnectionSplash ? (
   <View style={homeStyles.homeContainer}>

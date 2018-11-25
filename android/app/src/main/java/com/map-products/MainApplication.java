@@ -13,7 +13,8 @@ import com.facebook.appevents.AppEventsLogger;
 import com.facebook.soloader.SoLoader;
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.auth.RNFirebaseAuthPackage;
-import co.apptailor.googlesignin.RNGoogleSigninPackage;  // <--- import
+import co.apptailor.googlesignin.RNGoogleSigninPackage;
+import com.horcrux.svg.SvgPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -38,7 +39,8 @@ public class MainApplication extends Application implements ReactApplication {
           new RNFirebasePackage(),
           new RNFirebaseAuthPackage(),
           new FBSDKPackage(mCallbackManager),
-          new RNGoogleSigninPackage()
+          new RNGoogleSigninPackage(),
+          new SvgPackage()
       );
     }
 

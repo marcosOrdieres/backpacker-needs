@@ -43,7 +43,7 @@ class SplashController extends BaseScene {
       const isUserLoggedIn = await this.isUserLoggedIn();
       return this.navigateTo('Menu');
     } catch (error) {
-      this.navigateTo('Home');
+      this.navigateTo('Menu');
     }
   }
 

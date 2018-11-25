@@ -8,7 +8,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.2' // <--- use this version or newer
-        classpath 'com.google.gms:google-services:3.2.1' // <--- use this version or newer
+        classpath 'com.google.gms:google-services:4.0.0' // <--- use this version or newer
     }
     ext {
       buildToolsVersion = "27.0.3"
@@ -17,6 +17,8 @@ buildscript {
       targetSdkVersion = 26
       supportLibVersion = "27.1.1"
       googlePlayServicesAuthVersion = "15.0.1" // <--- use this version or newer
+      googlePlayServicesVersion = "11.8.0"
+      androidMapsUtilsVersion = "0.5+"
   }
 }
 

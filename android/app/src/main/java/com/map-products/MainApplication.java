@@ -15,6 +15,7 @@ import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import com.horcrux.svg.SvgPackage;
+import com.airbnb.android.react.maps.MapsPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -40,7 +41,8 @@ public class MainApplication extends Application implements ReactApplication {
           new RNFirebaseAuthPackage(),
           new FBSDKPackage(mCallbackManager),
           new RNGoogleSigninPackage(),
-          new SvgPackage()
+          new SvgPackage(),
+          new MapsPackage()
       );
     }
 
@@ -60,6 +62,5 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     FacebookSdk.sdkInitialize(getApplicationContext());
     AppEventsLogger.activateApp(this);
-    //SoLoader.init(this, /* native exopackage */ false);
   }
 }

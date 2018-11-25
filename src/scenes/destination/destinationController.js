@@ -15,29 +15,38 @@ class DestinationController extends BaseScene {
     this.slideAnimation = new SlideAnimation({slideFrom: 'bottom'});
   }
 
-  // componentDidMount () {
-  //   this.region = navigator.geolocation.watchPosition((position) => {
-  //     let region = {
-  //       latitude: position.coords.latitude,
-  //       longitude: position.coords.longitude,
-  //       latitudeDelta: 0.00922 * 1.5,
-  //       longitudeDelta: 0.00421 * 1.5
-  //     };
-  //     this.onRegionChange(region, region.latitude, region.longitude);
-  //   });
-  // }
-  //
-  // onRegionChange (region, lastLat, lastLong) {
-  //   this.setState({
-  //     mapRegion: region,
-  //     lastLat: lastLat || this.state.lastLat,
-  //     lastLong: lastLong || this.state.lastLong
-  //   });
-  // }
-  //
-  // componentWillUnmount () {
-  //   navigator.geolocation.clearWatch(this.region);
-  // }
+  async componentDidMount () {
+    try {
+      var options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+      };
+      this.region = await navigator.geolocation.getCurrentPosition((position, error, options) => {
+        let region = {
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+          latitudeDelta: 0.00922 * 1.5,
+          longitudeDelta: 0.00421 * 1.5
+        };
+        this.onRegionChange(region, region.latitude, region.longitude);
+      });
+    } catch (error) {
+      console.warn(error);
+    }
+  }
+
+  onRegionChange (region, lastLat, lastLong) {
+    this.setState({
+      mapRegion: region,
+      lastLat: lastLat || this.state.lastLat,
+      lastLong: lastLong || this.state.lastLong
+    });
+  }
+
+  componentWillUnmount () {
+    navigator.geolocation.clearWatch(this.region);
+  }
 
   render () {
     return template(this);

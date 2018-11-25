@@ -12,6 +12,8 @@ import {
  } from 'react-navigation';
 import i18n from '../translations';
 import routes from '../common/routes.json';
+import Palette from '../common/palette';
+
 import DestinationScreen from '../scenes/destination';
 import GeneralScreen from '../scenes/general';
 import PoisScreen from '../scenes/pois';
@@ -23,6 +25,10 @@ import WhatDoesThisAppScreen from '../scenes/whatDoesThisApp';
 import VaccinationsScreen from '../scenes/pois';
 import VisaScreen from '../scenes/pois';
 import MiscelaneaScreen from '../scenes/pois';
+
+import AirportSvg from '../assets/svg/Airport';
+import GeneralSvg from '../assets/svg/General';
+import PoiSvg from '../assets/svg/Poi';
 
 const Splash = routes.Splash;
 const Home = routes.Home;
@@ -121,10 +127,10 @@ export const MenuBar = TabNavigator({
         scene.jumpToIndex(scene.scene.index);
       },
       tabBarIcon: ({ tintColor }) => {
-        if (tintColor === '#9796ce') {
-          // return (<SvgUri width={24} height={24} source={require('../assets/svg/airportYES.svg')} />);
+        if (tintColor === Palette.primaryColorUnselected) {
+          return <AirportSvg color={Palette.primaryColorUnselected} width={24} height={24} />;
         } else {
-          // return (<SvgUri width={24} height={24} source={require('../assets/svg/airportNO.svg')} />);
+          return <AirportSvg width={24} height={24} />;
         }
       }
     }
@@ -134,10 +140,10 @@ export const MenuBar = TabNavigator({
     navigationOptions: ({ navigation }) => ({
       title: 'General',
       tabBarIcon: ({ tintColor }) => {
-        if (tintColor === '#9796ce') {
-          // return (<SvgUri width={24} height={24} source={require('../assets/svg/generalYES.svg')} />);
+        if (tintColor === Palette.primaryColorUnselected) {
+          return <GeneralSvg color={Palette.primaryColorUnselected} width={24} height={24} />;
         } else {
-          // return (<SvgUri width={24} height={24} source={require('../assets/svg/generalNO.svg')} />);
+          return <GeneralSvg width={24} height={24} />;
         }
       }
     })
@@ -147,10 +153,10 @@ export const MenuBar = TabNavigator({
     navigationOptions: ({ navigation }) => ({
       title: 'POIs',
       tabBarIcon: ({ tintColor }) => {
-        if (tintColor === '#9796ce') {
-          // return (<SvgUri width={24} height={24} source={require('../assets/svg/poiYES.svg')} />);
+        if (tintColor === Palette.primaryColorUnselected) {
+          return <PoiSvg color={Palette.primaryColorUnselected} width={24} height={24} />;
         } else {
-          // return (<SvgUri width={24} height={24} source={require('../assets/svg/poiNO.svg')} />);
+          return <PoiSvg width={24} height={24} />;
         }
       }
     })

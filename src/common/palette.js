@@ -17,6 +17,7 @@ export default {
   'fuchsia':	'#FF00FF',
   'purple':	'#800080',
   'primaryColor': '#5856d6',
+  'primaryColorUnselected': '#9796ce',
   'primaryColorTransparent': '#BEBDEF',
   'selected': '',
   'unselected': '#B8B8B8', // Gray

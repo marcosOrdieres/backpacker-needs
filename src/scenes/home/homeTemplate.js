@@ -41,7 +41,7 @@ export default(controller) => (!controller.state.noConnectionSplash ? (
         textColor={controller.palette.white}
         onPress={() => {
           controller.user.setSendCredentialsSignup(true);
-          return controller.props.navigation.navigate('SendCredentials');
+          return controller.props.navigation.navigate('sendCredentials');
         }} />
       <Button
         title={controller.i18n.t('home.registerFacebookTitle')}
@@ -56,7 +56,7 @@ export default(controller) => (!controller.state.noConnectionSplash ? (
         textColor={controller.palette.black}
         onPress={() => {
           controller.user.setSendCredentialsLogin(true);
-          return controller.props.navigation.navigate('SendCredentials');
+          return controller.props.navigation.navigate('sendCredentials');
         }} />
     </ImageBackground >
   </View>)

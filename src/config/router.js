@@ -21,6 +21,7 @@ import SplashScreen from '../scenes/splash';
 import HomeScreen from '../scenes/home';
 import SendCredentialsScreen from '../scenes/sendCredentials';
 import WhatDoesThisAppScreen from '../scenes/whatDoesThisApp';
+import CountriesListScreen from '../scenes/countriesList';
 
 import VaccinationsScreen from '../scenes/pois';
 import VisaScreen from '../scenes/pois';
@@ -214,6 +215,9 @@ export const RootStack = StackNavigator({
   },
   WhatDoesThisApp: {
     screen: WhatDoesThisAppScreen
+  },
+  CountriesList: {
+    screen: CountriesListScreen
   }
 },
   {

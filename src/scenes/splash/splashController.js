@@ -33,7 +33,6 @@ class SplashController extends BaseScene {
         databaseURL: this.env.databaseURL
       };
       const firebaseApp = firebase.app(firebaseConfig);
-      console.warn('firebaseApp: ', firebaseApp);
     } catch (error) {
       console.warn('ERROR: ', error.message);
     }
@@ -42,8 +41,10 @@ class SplashController extends BaseScene {
   async isNewOrExistingUser () {
     try {
       const isUserLoggedIn = await this.isUserLoggedIn();
-      return this.navigateTo('Home');
+      console.warn(isUserLoggedIn);
+      return this.navigateTo('CountriesList');
     } catch (error) {
+      console.warn('error', error.message);
       this.navigateTo('Home');
     }
   }
@@ -51,6 +52,7 @@ class SplashController extends BaseScene {
   async isUserLoggedIn () {
     return new Promise(function (resolve, reject) {
       firebase.auth().onAuthStateChanged(userMetadata => {
+        console.warn('userMetadata', userMetadata);
         if (userMetadata) {
           resolve(userMetadata.uid);
         } else {

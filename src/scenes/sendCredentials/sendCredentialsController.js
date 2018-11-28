@@ -15,9 +15,10 @@ import {
 	GoogleSignin
 } from 'react-native-google-signin';
 
-class sendCredentialsController extends BaseScene {
+class SendCredentialsController extends BaseScene {
   constructor (args) {
     super(args);
+    console.warn('ewewe');
     this.state = {
       userName: '',
       password: ''
@@ -51,4 +52,4 @@ class sendCredentialsController extends BaseScene {
   }
 }
 
-export default connect()(sendCredentialsController);
+export default connect()(SendCredentialsController);

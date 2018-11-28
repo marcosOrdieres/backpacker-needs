@@ -20,15 +20,6 @@ const styles = StyleSheet.create({
   }
 });
 
-// const list = [
-//   {
-//     title: 'South East Asia'
-//   },
-//   {
-//     title: 'North America'
-//   }
-// ];
-
 export default class ListItemComponent extends Component {
   constructor (args) {
     super(args);
@@ -39,7 +30,7 @@ export default class ListItemComponent extends Component {
       <View style={[this.props.viewButtonStyle, styles.viewButtonStyle]}>
         <List>
           {this.props.dataItem.map((item) => (
-            <TouchableOpacity onPress={this.props.onClickListItem}>
+            <TouchableOpacity onPress={this.props.onClickListItem()}>
               <ListItem
                 key={item.title}
                 title={item.title}

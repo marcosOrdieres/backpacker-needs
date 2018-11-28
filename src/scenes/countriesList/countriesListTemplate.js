@@ -7,6 +7,6 @@ import {
 
 export default (controller) => (
   <ListItem
-    dataItem={controller.getDataItem()}
+    dataItem={controller.user.getCountries()}
     onClickListItem={controller.onClickListItem()} />
 );

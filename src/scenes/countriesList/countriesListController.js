@@ -14,14 +14,13 @@ class CountriesListController extends BaseScene {
   }
 
   async componentDidMount () {
-    const hola = await this.getDataItem();
-    console.warn(hola);
-    console.warn('antes que 2');
+    const getDataItemDidMount = await this.getDataItem();
     await this.setState({externalData: 'yes'});
   }
 
   async getDataItem () {
     try {
+      // Move it to splash
       const eventref = firebase.database().ref('region/');
       const snapshot = await eventref.once('value');
       const valueList = snapshot.val();
@@ -33,9 +32,9 @@ class CountriesListController extends BaseScene {
     }
   }
 
-  onClickListItem () {
-    // Aqui cuando clicko, ademas de elegirse ese item (region), mando a Leaflet que se me vea ese MapJson que quiero y con else {
-      // centroide pongo una chincheta en el medrio de la region que tengo.
+  onClickListItem (item) {
+    this.user.setChosenRegion(item.id);
+    return this.navigateTo('Menu');
   }
 
   render () {

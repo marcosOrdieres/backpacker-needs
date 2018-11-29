@@ -139,7 +139,7 @@ export const MenuBar = TabNavigator({
   General: {
     screen: General,
     navigationOptions: ({ navigation }) => ({
-      title: 'General',
+      title: 'Recommend',
       tabBarIcon: ({ tintColor }) => {
         if (tintColor === Palette.primaryColorUnselected) {
           return <GeneralSvg color={Palette.primaryColorUnselected} width={24} height={24} />;
@@ -152,7 +152,7 @@ export const MenuBar = TabNavigator({
   Pois: {
     screen: PoisScreen,
     navigationOptions: ({ navigation }) => ({
-      title: 'POIs',
+      title: 'To-Do List',
       tabBarIcon: ({ tintColor }) => {
         if (tintColor === Palette.primaryColorUnselected) {
           return <PoiSvg color={Palette.primaryColorUnselected} width={24} height={24} />;

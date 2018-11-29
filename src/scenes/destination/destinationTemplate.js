@@ -1,7 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import destinationStyles from './destinationStyles';
+import Caribbean from '../../assets/mapJson/subregion/Caribbean.json';
 import MapView from 'react-native-maps';
+import Geojson from 'react-native-geojson';
 import { Button } from 'components';
 import PopupDialog, { DialogTitle } from 'react-native-popup-dialog';
 
@@ -20,7 +22,9 @@ export default (controller) => (
   <View style={{flex: 1}}>
     <MapView
       style={styles.map}
-      region={controller.state.mapRegion}
+      // region={controller.state.mapRegion}
+      minZoomLevel={10}
+      maxZoomLevel={12}
       showsUserLocation
       followUserLocation
       zoomEnabled
@@ -28,7 +32,11 @@ export default (controller) => (
       rotateEnabled
       scrollEnabled
       loadingEnabled
-      onRegionChange={controller.onRegionChange.bind(controller)}>
+      // onRegionChange={controller.onRegionChange.bind(controller)}
+      >
+      <Geojson geojson={controller.regionChosen()}
+        fillColor={{color: 'red'}} />
+
       <MapView.Marker
         coordinate={{
           latitude: (controller.state.lastLat + 0.00050) || -36.82339,
@@ -41,26 +49,5 @@ export default (controller) => (
         </View>
       </MapView.Marker>
     </MapView>
-    {controller.state.buttonFly ?
-      <View style={styles.buttonView}>
-        <Button
-          onPress={() => { this.popupDialog.show(); }}
-          title={'I want to Fly, Now!'}
-          color={'#5856d6'}
-          textColor={'white'} />
-      </View>
-      :
-      null
-    }
-    <PopupDialog
-      dialogTitle={<DialogTitle title='Dialog Title' />}
-      ref={(popupDialog) => { this.popupDialog = popupDialog; }}
-      onDismissed={() => { controller.setState({buttonFly: false}); }}
-      dialogAnimation={controller.slideAnimation}>
-      <View>
-        <Text>Hello</Text>
-      </View>
-    </PopupDialog>
-
   </View>
 );

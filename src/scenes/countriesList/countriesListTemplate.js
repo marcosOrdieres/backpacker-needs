@@ -8,5 +8,5 @@ import {
 export default (controller) => (
   <ListItem
     dataItem={controller.user.getCountries()}
-    onClickListItem={controller.onClickListItem()} />
+    onClickListItem={(itemTitle) => controller.onClickListItem(itemTitle)} />
 );

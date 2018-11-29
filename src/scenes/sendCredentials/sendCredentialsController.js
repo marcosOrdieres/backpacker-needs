@@ -28,7 +28,7 @@ class SendCredentialsController extends BaseScene {
   async handleSignupEmail () {
     try {
       const signUp = await firebase.auth().createUserAndRetrieveDataWithEmailAndPassword(this.state.userName, this.state.password);
-      return this.navigateTo('Menu');
+      return this.navigateTo('CountriesList');
 			// return this.navigateTo('WhatDoesThisApp');
     } catch (error) {
       console.warn(error.message);
@@ -38,7 +38,7 @@ class SendCredentialsController extends BaseScene {
   async handleLogin () {
     try {
       await firebase.auth().signInAndRetrieveDataWithEmailAndPassword(this.state.userName, this.state.password);
-      return this.navigateTo('Menu');
+      return this.navigateTo('CountriesList');
     } catch (error) {
       this.setState({
         errorMessage: error.message

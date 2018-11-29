@@ -8,7 +8,8 @@ export default class User {
     static accountAdmin;
     static sendCredentialSignup;
     static sendCredentialLogin;
-    static country
+    static country;
+    static chosenRegion;
 
     getSendCredentialsSignup() {
       return this.sendCredentialSignup;
@@ -66,6 +67,15 @@ export default class User {
       this.country = value;
     }
 
+    getChosenRegion() {
+      return this.chosenRegion;
+    }
+
+    setChosenRegion(value) {
+      this.chosenRegion = value;
+    }
+
+
     getUserObject() {
       const user = {
         sendCredentialSignup: this.sendCredentialSignup,
@@ -74,7 +84,8 @@ export default class User {
         accountId: parseInt(this.accountId),
         userId: parseInt(this.userId),
         accountAdmin: this.accountAdmin,
-        country: this.country
+        country: this.country,
+        chosenRegion: this.chosenRegion
       };
 
       return user;

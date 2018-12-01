@@ -23,10 +23,6 @@ import SendCredentialsScreen from '../scenes/sendCredentials';
 import WhatDoesThisAppScreen from '../scenes/whatDoesThisApp';
 import CountriesListScreen from '../scenes/countriesList';
 
-import VaccinationsScreen from '../scenes/pois';
-import VisaScreen from '../scenes/pois';
-import MiscelaneaScreen from '../scenes/pois';
-
 import AirportSvg from '../assets/svg/Airport';
 import GeneralSvg from '../assets/svg/General';
 import PoiSvg from '../assets/svg/Poi';
@@ -55,65 +51,6 @@ const styles = StyleSheet.create({
   }
 });
 
-export const General = TabNavigator({
-  Vaccinations: {
-    screen: VaccinationsScreen,
-    navigationOptions: {
-      title: 'Vaccinations',
-      tabBarOnPress: (scene, jumpToIndex) => {
-        if (typeof scene.previousScene.routes !== 'undefined') {
-          if (scene.previousScene.routes[0].key === 'Tariff') {
-            return;
-          }
-        }
-        scene.jumpToIndex(scene.scene.index);
-      }
-    }
-  },
-  Visa: {
-    screen: VisaScreen,
-    navigationOptions: ({ navigation }) => ({
-      title: 'Visa'
-    })
-  },
-  Miscelanea: {
-    screen: MiscelaneaScreen,
-    navigationOptions: ({ navigation }) => ({
-      title: 'Miscelanea'
-    })
-  }
-},
-  {
-    tabBarPosition: 'bottom',
-    ...TabNavigator.Presets.AndroidTopTabs,
-    tabBarOptions: {
-      upperCaseLabel: false,
-      activeTintColor: '#ffffff',
-      inactiveTintColor: '#9796ce',
-      swipeEnabled: true,
-      style: {
-        backgroundColor: '#5856d6',
-        height: 60
-      },
-      labelStyle: {
-        color: 'white',
-        fontSize: 14,
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontFamily: 'Hind-Light',
-        paddingBottom: 20
-      },
-      upperCaseLabel: false,
-      tabStyle: {
-        elevation: 4
-      },
-      indicatorStyle: {
-        backgroundColor: 'white',
-        height: 3
-      }
-    }
-  });
-
 export const MenuBar = TabNavigator({
   Destination: {
     screen: DestinationScreen,
@@ -137,7 +74,7 @@ export const MenuBar = TabNavigator({
     }
   },
   General: {
-    screen: General,
+    screen: GeneralScreen,
     navigationOptions: ({ navigation }) => ({
       title: 'Recommend',
       tabBarIcon: ({ tintColor }) => {
@@ -196,19 +133,10 @@ export const RootStack = StackNavigator({
     screen: DestinationScreen
   },
   General: {
-    screen: General
+    screen: GeneralScreen
   },
   Pois: {
     screen: PoisScreen
-  },
-  Vaccinations: {
-    screen: VaccinationsScreen
-  },
-  Visa: {
-    screen: VisaScreen
-  },
-  Miscelanea: {
-    screen: MiscelaneaScreen
   },
   SendCredentials: {
     screen: SendCredentialsScreen

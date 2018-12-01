@@ -15,6 +15,7 @@ class CountriesListController extends BaseScene {
 
   async componentDidMount () {
     const getDataItemDidMount = await this.getDataItem();
+    const getDataItemRecommendationsDidMount = await this.getDataItemRecommendations();
     await this.setState({externalData: 'yes'});
   }
 
@@ -24,17 +25,38 @@ class CountriesListController extends BaseScene {
       const eventref = firebase.database().ref('region/');
       const snapshot = await eventref.once('value');
       const valueList = snapshot.val();
-      let result = Object.keys(valueList).map(key => ({id: Number(key), title: valueList[key]}));
-      this.user.setCountries(result);
-      return result;
+      this.user.setCountries(valueList);
+      const countries = Object.keys(valueList);
+      return countries;
+    } catch (error) {
+      console.warn(error.message);
+    }
+  }
+
+  async getDataItemRecommendations () {
+    try {
+      // Move it to splash
+      const eventref = firebase.database().ref('recommendations/');
+      const snapshot = await eventref.once('value');
+      const valueList = snapshot.val();
+      this.user.setRecommendations(valueList);
+      return valueList;
     } catch (error) {
       console.warn(error.message);
     }
   }
 
   onClickListItem (item) {
-    this.user.setChosenRegion(item.id);
-    return this.navigateTo('Menu');
+    try {
+      this.user.setChosenRegion(item);
+      firebase.database().ref('users/' + this.user.getUserId()).set({
+        region: item
+      });
+
+      return this.navigateTo('Menu');
+    } catch (error) {
+      console.warn(error.message);
+    }
   }
 
   render () {

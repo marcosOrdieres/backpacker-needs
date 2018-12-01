@@ -40,9 +40,7 @@ export default(controller) => (!controller.state.noConnectionSplash ? (
         color={controller.palette.whiteTransparent}
         textColor={controller.palette.white}
         onPress={() => {
-          console.warn('111');
           controller.user.setSendCredentialsSignup(true);
-          console.warn('222');
           return controller.navigateTo('SendCredentials');
         }} />
       <Button

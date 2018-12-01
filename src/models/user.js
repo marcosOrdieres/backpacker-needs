@@ -1,15 +1,29 @@
 export default class User {
     static instance = this.instance == null ? new User() : this.instance;
-
-    static accessToken;
-    static accountId;
     static userId;
-    static accountAdmin;
-    static accountAdmin;
     static sendCredentialSignup;
     static sendCredentialLogin;
     static country;
     static chosenRegion;
+    static chosenRegionCoordinates;
+    static recommendations;
+    static toDos;
+
+    getToDos() {
+      return this.toDos;
+    }
+
+    setToDos(value) {
+      this.toDos = value;
+    }
+
+    getRecommendations() {
+      return this.recommendations;
+    }
+
+    setRecommendations(value) {
+      this.recommendations = value;
+    }
 
     getSendCredentialsSignup() {
       return this.sendCredentialSignup;
@@ -27,36 +41,12 @@ export default class User {
       this.sendCredentialLogin = value;
     }
 
-    getToken() {
-      return this.accessToken;
-    }
-
-    setToken(value) {
-      this.accessToken = value;
-    }
-
-    getAccountId() {
-      return this.accountId;
-    }
-
-    setAccountId(value) {
-      this.accountId = value;
-    }
-
     getUserId() {
       return this.userId;
     }
 
     setUserId(value) {
       this.userId = value;
-    }
-
-    getAccountAdmin() {
-      return this.accountAdmin;
-    }
-
-    setAccountAdmin(value) {
-      this.accountAdmin = value;
     }
 
     getCountries() {
@@ -75,17 +65,24 @@ export default class User {
       this.chosenRegion = value;
     }
 
+    getChosenRegionCoordinates() {
+      return this.chosenRegionCoordinates;
+    }
+
+    setChosenRegionCoordinates(value) {
+      this.chosenRegionCoordinates = value;
+    }
 
     getUserObject() {
       const user = {
         sendCredentialSignup: this.sendCredentialSignup,
         sendCredentialLogin: this.sendCredentialLogin,
-        accessToken: this.accessToken,
-        accountId: parseInt(this.accountId),
         userId: parseInt(this.userId),
-        accountAdmin: this.accountAdmin,
         country: this.country,
-        chosenRegion: this.chosenRegion
+        chosenRegion: this.chosenRegion,
+        chosenRegionCoordinates: this.chosenRegionCoordinates,
+        recommendations: this.recommendations,
+        toDos: this.toDos
       };
 
       return user;

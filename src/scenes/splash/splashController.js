@@ -34,17 +34,17 @@ class SplashController extends BaseScene {
       };
       const firebaseApp = firebase.app(firebaseConfig);
     } catch (error) {
-      console.warn('ERROR: ', error.message);
+      console.warn(error.message);
     }
   }
 
   async isNewOrExistingUser () {
     try {
       const isUserLoggedIn = await this.isUserLoggedIn();
-      console.warn(isUserLoggedIn);
+      this.user.setUserId(isUserLoggedIn);
       return this.navigateTo('CountriesList');
     } catch (error) {
-      console.warn('error', error.message);
+      console.warn(error.message);
       this.navigateTo('Home');
     }
   }
@@ -52,7 +52,6 @@ class SplashController extends BaseScene {
   async isUserLoggedIn () {
     return new Promise(function (resolve, reject) {
       firebase.auth().onAuthStateChanged(userMetadata => {
-        console.warn('userMetadata', userMetadata);
         if (userMetadata) {
           resolve(userMetadata.uid);
         } else {

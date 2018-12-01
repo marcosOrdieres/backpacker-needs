@@ -18,7 +18,6 @@ import {
 class SendCredentialsController extends BaseScene {
   constructor (args) {
     super(args);
-    console.warn('ewewe');
     this.state = {
       userName: '',
       password: ''

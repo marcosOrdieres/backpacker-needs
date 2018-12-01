@@ -35,99 +35,97 @@ class DestinationController extends BaseScene {
     this.slideAnimation = new SlideAnimation({slideFrom: 'bottom'});
   }
 
-  async componentDidMount () {
+  async componentWillMount () {
     try {
-      var options = {
-        enableHighAccuracy: true,
-        timeout: 5000,
-        maximumAge: 0
-      };
-      this.region = await navigator.geolocation.getCurrentPosition((position, error, options) => {
-        let region = {
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude,
-          latitudeDelta: 0.00922 * 1.5,
-          longitudeDelta: 0.00421 * 1.5
-        };
-        this.onRegionChange(region, region.latitude, region.longitude);
+      const country = this.user.getCountries();
+      let result = Object.keys(country).map(function (key) { return [key, country[key]]; });
+      const resultCoordinates = result.forEach((element) => {
+        element.find((place) => {
+          if (place === this.user.getChosenRegion()) {
+            return this.user.setChosenRegionCoordinates(element[1]);
+          }
+        });
       });
+
+      let mapRegion = {
+        latitude: this.user.getChosenRegionCoordinates().latitude,
+        longitude: this.user.getChosenRegionCoordinates().longitude,
+        latitudeDelta: 60,
+        longitudeDelta: 60
+      };
+      this.onRegionChange(mapRegion, mapRegion.latitude, mapRegion.longitude);
     } catch (error) {
-      console.warn(error);
+      console.warn(error.message);
     }
   }
 
-  onRegionChange (region, lastLat, lastLong) {
+  onRegionChange (mapRegion, lastLat, lastLong) {
     this.setState({
-      mapRegion: region,
+      mapRegion: mapRegion,
       lastLat: lastLat || this.state.lastLat,
       lastLong: lastLong || this.state.lastLong
     });
   }
 
   regionChosen () {
-    console.warn('chosen regionnn:', this.user.getChosenRegion());
     switch (this.user.getChosenRegion()) {
-      case 1:
+      case 'Australia':
         return Australia;
         break;
-      case 2:
+      case 'Caribbean':
         return Caribbean;
         break;
-      case 3:
+      case 'CentralAmerica':
         return CentralAmerica;
         break;
-      case 4:
+      case 'CentralAsia':
         return CentralAsia;
         break;
-      case 5:
+      case 'EasternAfrica':
         return EasternAfrica;
         break;
-      case 6:
+      case 'EasternAsia':
         return EasternAsia;
         break;
-      case 7:
+      case 'EasternEurope':
         return EasternEurope;
         break;
-      case 8:
+      case 'Melanesia':
         return Melanesia;
         break;
-      case 9:
+      case 'NorthernAfrica':
         return NorthernAfrica;
         break;
-      case 10:
+      case 'NorthernAmerica':
         return NorthernAmerica;
         break;
-      case 11:
+      case 'NorthernEurope':
         return NorthernEurope;
         break;
-      case 12:
+      case 'Polynesia':
         return Polynesia;
         break;
-      case 13:
+      case 'SouthAmerica':
         return SouthAmerica;
         break;
-      case 14:
+      case 'SouthEasternAsia':
         return SouthEasternAsia;
         break;
-      case 15:
+      case 'SouthernAfrica':
         return SouthernAfrica;
         break;
-      case 16:
+      case 'SouthernAsia':
         return SouthernAsia;
         break;
-      case 17:
+      case 'SouthernEurope':
         return SouthernEurope;
         break;
-      case 18:
+      case 'WesternAsia':
         return WesternAsia;
         break;
       default: WesternEurope;
 
     }
-  }
-
-  componentWillUnmount () {
-    navigator.geolocation.clearWatch(this.region);
   }
 
   render () {

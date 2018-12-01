@@ -33,8 +33,8 @@ export default class ListItemComponent extends Component {
             {this.props.dataItem.map((item) => (
               <TouchableOpacity onPress={this.props.onClickListItem.bind(this, item)}>
                 <ListItem
-                  key={item.title}
-                  title={item.title}
+                  key={item}
+                  title={item}
               />
               </TouchableOpacity>
           ))}

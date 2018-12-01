@@ -1,34 +1,70 @@
+import React from 'react';
 import { BaseScene } from 'components';
 import template from './countriesListTemplate';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
+import { View, Text } from 'react-native';
 
 class CountriesListController extends BaseScene {
   constructor (args) {
     super(args);
+    this.state = {
+      externalData: null
+    };
   }
 
-  getDataItem () {
-    let database = firebase.database();
-    console.warn('DATABASE: ', database);
-    const list = [
-      {
-        title: 'South East Asia'
-      },
-      {
-        title: 'North America'
-      }
-    ];
-    return list;
+  async componentDidMount () {
+    const getDataItemDidMount = await this.getDataItem();
+    const getDataItemRecommendationsDidMount = await this.getDataItemRecommendations();
+    await this.setState({externalData: 'yes'});
   }
 
-  onClickListItem () {
-    // Aqui cuando clicko, ademas de elegirse ese item (region), mando a Leaflet que se me vea ese MapJson que quiero y con else {
-      // centroide pongo una chincheta en el medrio de la region que tengo.
+  async getDataItem () {
+    try {
+      // Move it to splash
+      const eventref = firebase.database().ref('region/');
+      const snapshot = await eventref.once('value');
+      const valueList = snapshot.val();
+      this.user.setCountries(valueList);
+      const countries = Object.keys(valueList);
+      return countries;
+    } catch (error) {
+      console.warn(error.message);
+    }
+  }
+
+  async getDataItemRecommendations () {
+    try {
+      // Move it to splash
+      const eventref = firebase.database().ref('recommendations/');
+      const snapshot = await eventref.once('value');
+      const valueList = snapshot.val();
+      this.user.setRecommendations(valueList);
+      return valueList;
+    } catch (error) {
+      console.warn(error.message);
+    }
+  }
+
+  onClickListItem (item) {
+    try {
+      this.user.setChosenRegion(item);
+      firebase.database().ref('users/' + this.user.getUserId()).set({
+        region: item
+      });
+
+      return this.navigateTo('Menu');
+    } catch (error) {
+      console.warn(error.message);
+    }
   }
 
   render () {
-    return template(this);
+    if (this.state.externalData === null) {
+      return <View />;
+    } else {
+      return template(this);
+    }
   }
 }
 

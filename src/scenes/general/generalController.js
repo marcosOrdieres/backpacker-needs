@@ -7,6 +7,14 @@ class GeneralController extends BaseScene {
     super(args);
   }
 
+  onClickListItemRecommendations (item) {
+    try {
+      this.user.setToDos(item);
+    } catch (error) {
+      console.warn(error.message);
+    }
+  }
+
   render () {
     return template(this);
   }

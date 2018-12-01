@@ -1,7 +1,10 @@
 import React from 'react';
-import { View } from 'react-native';
 import poisStyles from './poisStyles';
+import { ListItem } from 'components';
 
 export default (controller) => (
-  <View style={poisStyles.poisContainer} />
+  <ListItem
+    dataItem={Object.values(controller.user.getToDos())}
+    onClickListItem={(item) => controller.onClickListItemRecommendations(item)}
+  />
 );

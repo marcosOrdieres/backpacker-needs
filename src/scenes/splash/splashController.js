@@ -33,17 +33,18 @@ class SplashController extends BaseScene {
         databaseURL: this.env.databaseURL
       };
       const firebaseApp = firebase.app(firebaseConfig);
-      console.warn('firebaseApp: ', firebaseApp);
     } catch (error) {
-      console.warn('ERROR: ', error.message);
+      console.warn(error.message);
     }
   }
 
   async isNewOrExistingUser () {
     try {
       const isUserLoggedIn = await this.isUserLoggedIn();
-      return this.navigateTo('Home');
+      this.user.setUserId(isUserLoggedIn);
+      return this.navigateTo('CountriesList');
     } catch (error) {
+      console.warn(error.message);
       this.navigateTo('Home');
     }
   }

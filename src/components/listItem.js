@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 
 const styles = StyleSheet.create({
@@ -20,15 +20,6 @@ const styles = StyleSheet.create({
   }
 });
 
-// const list = [
-//   {
-//     title: 'South East Asia'
-//   },
-//   {
-//     title: 'North America'
-//   }
-// ];
-
 export default class ListItemComponent extends Component {
   constructor (args) {
     super(args);
@@ -37,16 +28,18 @@ export default class ListItemComponent extends Component {
   render () {
     return (
       <View style={[this.props.viewButtonStyle, styles.viewButtonStyle]}>
-        <List>
-          {this.props.dataItem.map((item) => (
-            <TouchableOpacity onPress={this.props.onClickListItem}>
-              <ListItem
-                key={item.title}
-                title={item.title}
+        <ScrollView>
+          <List>
+            {this.props.dataItem.map((item) => (
+              <TouchableOpacity onPress={this.props.onClickListItem.bind(this, item)}>
+                <ListItem
+                  key={item}
+                  title={item}
               />
-            </TouchableOpacity>
+              </TouchableOpacity>
           ))}
-        </List>
+          </List>
+        </ScrollView>
       </View>
     );
   }

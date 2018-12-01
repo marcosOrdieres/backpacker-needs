@@ -15,7 +15,7 @@ import {
 	GoogleSignin
 } from 'react-native-google-signin';
 
-class sendCredentialsController extends BaseScene {
+class SendCredentialsController extends BaseScene {
   constructor (args) {
     super(args);
     this.state = {
@@ -27,7 +27,7 @@ class sendCredentialsController extends BaseScene {
   async handleSignupEmail () {
     try {
       const signUp = await firebase.auth().createUserAndRetrieveDataWithEmailAndPassword(this.state.userName, this.state.password);
-      return this.navigateTo('Menu');
+      return this.navigateTo('CountriesList');
 			// return this.navigateTo('WhatDoesThisApp');
     } catch (error) {
       console.warn(error.message);
@@ -37,7 +37,7 @@ class sendCredentialsController extends BaseScene {
   async handleLogin () {
     try {
       await firebase.auth().signInAndRetrieveDataWithEmailAndPassword(this.state.userName, this.state.password);
-      return this.navigateTo('Menu');
+      return this.navigateTo('CountriesList');
     } catch (error) {
       this.setState({
         errorMessage: error.message
@@ -51,4 +51,4 @@ class sendCredentialsController extends BaseScene {
   }
 }
 
-export default connect()(sendCredentialsController);
+export default connect()(SendCredentialsController);

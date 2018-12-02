@@ -23,7 +23,7 @@ class GeneralController extends BaseScene {
     let myArr = [];
     Object.values(this.user.getRecommendations()).forEach((value) => {
       if (checkListRecos && Object.values(checkListRecos).includes(value)) {
-        myArr.push({value: value, selected: true});
+        myArr.push({value: value, selectedRecommendations: true});
       } else {
         return myArr.push(value);
       }

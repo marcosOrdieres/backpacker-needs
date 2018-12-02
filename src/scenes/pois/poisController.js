@@ -27,8 +27,40 @@ class PoisController extends BaseScene {
     this.user.setToDos(valueListRecommendationSelected);
   }
 
+  async readValueListInTheBackpack () {
+    const inTheBackpack = firebase.database().ref('users/' + this.user.getUserId() + '/inTheBackpack');
+    const snapshot = await inTheBackpack.once('value');
+    const valueListInTheBackpack = snapshot.val();
+    return valueListInTheBackpack;
+  }
+
+  listInTheBackpackSelected (checkListInTheBackpack) {
+    let myArr = [];
+    Object.values(this.user.getRecommendations()).forEach((value) => {
+      if (checkListInTheBackpack && Object.values(checkListInTheBackpack).includes(value)) {
+        myArr.push({value: value, selectedInTheBackpack: true});
+      } else {
+        return myArr.push(value);
+      }
+    });
+    this.user.setInTheBackpackSelected(myArr);
+    return myArr;
+  }
+
   onClickListItem (item) {
-    console.warn(item);
+    const listInTheBackpack = await this.readValueListInTheBackpack();
+    if (!listInTheBackpack) {
+      firebase.database().ref('users/' + this.user.getUserId()).set({inTheBackpack: {item}});
+    } else {
+      if (!Object.values(listInTheBackpack).includes(item)) {
+        firebase.database().ref('users/' + this.user.getUserId()).child('inTheBackpack').push().set(item);
+        const listInTheBackpack = await this.readValueListInTheBackpack();
+        this.listInTheBackpackSelected(listInTheBackpack);
+        this.setState({externalData: true});
+      } else {
+        console.warn('THE ITEM IS ALREADY IN DATABASE, PLEASE CHOOSE ANOTHER ONE');
+      }
+    }
   }
 
   render () {

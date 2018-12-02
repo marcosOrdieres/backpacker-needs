@@ -52,6 +52,19 @@ const styles = StyleSheet.create({
 });
 
 export const MenuBar = TabNavigator({
+  General: {
+    screen: GeneralScreen,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Recommend',
+      tabBarIcon: ({ tintColor }) => {
+        if (tintColor === Palette.primaryColorUnselected) {
+          return <GeneralSvg color={Palette.primaryColorUnselected} width={24} height={24} />;
+        } else {
+          return <GeneralSvg width={24} height={24} />;
+        }
+      }
+    })
+  },
   Destination: {
     screen: DestinationScreen,
     navigationOptions: {
@@ -72,19 +85,6 @@ export const MenuBar = TabNavigator({
         }
       }
     }
-  },
-  General: {
-    screen: GeneralScreen,
-    navigationOptions: ({ navigation }) => ({
-      title: 'Recommend',
-      tabBarIcon: ({ tintColor }) => {
-        if (tintColor === Palette.primaryColorUnselected) {
-          return <GeneralSvg color={Palette.primaryColorUnselected} width={24} height={24} />;
-        } else {
-          return <GeneralSvg width={24} height={24} />;
-        }
-      }
-    })
   },
   Pois: {
     screen: PoisScreen,

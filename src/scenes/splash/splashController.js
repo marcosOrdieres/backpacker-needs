@@ -1,10 +1,8 @@
-import {
-	BaseScene
-} from 'components';
+import React from 'react';
+import { View} from 'react-native';
+import { BaseScene } from 'components';
 import template from './splashTemplate';
-import {
-	connect
-} from 'react-redux';
+import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 
 class SplashController extends BaseScene {
@@ -12,7 +10,8 @@ class SplashController extends BaseScene {
     super(args);
     this.initializeApplication();
     this.state = {
-      userLoggedIn: false
+      userLoggedIn: false,
+      externalData: null
     };
   }
 
@@ -42,7 +41,12 @@ class SplashController extends BaseScene {
     try {
       const isUserLoggedIn = await this.isUserLoggedIn();
       this.user.setUserId(isUserLoggedIn);
-      return this.navigateTo('CountriesList');
+
+      const getDataItemDidMount = await this.getDataItem();
+      const getDataItemRecommendationsDidMount = await this.getDataItemRecommendations();
+      await this.setState({externalData: 'yes'});
+
+      return this.navigateTo('Menu');
     } catch (error) {
       console.warn(error.message);
       this.navigateTo('Home');
@@ -61,8 +65,39 @@ class SplashController extends BaseScene {
     });
   }
 
+  async getDataItem () {
+    try {
+			// Move it to splash
+      const eventref = firebase.database().ref('region/');
+      const snapshot = await eventref.once('value');
+      const valueList = snapshot.val();
+      this.user.setCountries(valueList);
+      const countries = Object.keys(valueList);
+      return countries;
+    } catch (error) {
+      console.warn(error.message);
+    }
+  }
+
+  async getDataItemRecommendations () {
+    try {
+			// Move it to splash
+      const eventref = firebase.database().ref('recommendations/');
+      const snapshot = await eventref.once('value');
+      const valueList = snapshot.val();
+      this.user.setRecommendations(valueList);
+      return valueList;
+    } catch (error) {
+      console.warn(error.message);
+    }
+  }
+
   render () {
-    return template(this);
+    if (this.state.externalData === null) {
+      return <View />;
+    } else {
+      return template(this);
+    }
   }
 }
 

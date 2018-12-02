@@ -7,7 +7,16 @@ export default class User {
     static chosenRegion;
     static chosenRegionCoordinates;
     static recommendations;
+    static recommendationsSelected;
     static toDos;
+
+    getRecommendationsSelected() {
+      return this.recommendationsSelected;
+    }
+
+    setRecommendationsSelected(value) {
+      this.recommendationsSelected = value;
+    }
 
     getToDos() {
       return this.toDos;
@@ -82,6 +91,7 @@ export default class User {
         chosenRegion: this.chosenRegion,
         chosenRegionCoordinates: this.chosenRegionCoordinates,
         recommendations: this.recommendations,
+        recommendationsSelected: this.recommendationsSelected,
         toDos: this.toDos
       };
 

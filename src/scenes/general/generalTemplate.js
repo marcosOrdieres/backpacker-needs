@@ -4,7 +4,7 @@ import { ListItem } from 'components';
 
 export default (controller) => (
   <ListItem
-    dataItem={Object.values(controller.user.getRecommendations())}
-    onClickListItem={(item) => controller.onClickListItemRecommendations(item)}
+    dataItem={Object.values(controller.user.getRecommendationsSelected())}
+    onClickListItem={(item) => { controller.onClickListItemRecommendations(item); }}
   />
 );

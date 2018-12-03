@@ -31,13 +31,12 @@ export default class ListItemComponent extends Component {
         <ScrollView>
           <List>
             {this.props.dataItem.map((item) => (
-              // change the listItem to work as for the selectedRecommendations. a ? b : (c ? d : e)
               <TouchableOpacity
-                onPress={item.selectedRecommendations ? null : this.props.onClickListItem.bind(this, item)}>
+                onPress={(item.selectedRecommendations) ? null : (item.selectedInTheBackpack ? null : this.props.onClickListItem.bind(this, item))}>
                 <ListItem
-                  key={item.selectedRecommendations ? item.value : item}
-                  titleStyle={{ color: item.selectedRecommendations ? 'red' : 'black'}}
-                  title={item.selectedRecommendations ? item.value : item} />
+                  key={(item.selectedRecommendations) ? item.value : (item.selectedInTheBackpack ? item.value : item)}
+                  titleStyle={{ color: (item.selectedRecommendations) ? 'red' : (item.selectedInTheBackpack ? 'blue' : 'black')}}
+                  title={(item.selectedRecommendations) ? item.value : (item.selectedInTheBackpack ? item.value : item)} />
               </TouchableOpacity>
           ))}
           </List>

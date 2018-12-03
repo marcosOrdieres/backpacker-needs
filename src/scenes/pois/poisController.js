@@ -15,16 +15,23 @@ class PoisController extends BaseScene {
 
   async componentDidMount () {
     this.props.navigation.addListener('didFocus', async () => {
-      await this.readRecommendationsSelected();
+      await this.checkSelectedToDos();
       await this.setState({externalData: true});
     });
+  }
+
+  async checkSelectedToDos () {
+    const recosSelected = await this.readRecommendationsSelected();
+    const listInTheBackpack = await this.readValueListInTheBackpack();
+    const listToDosArray = await this.listInTheBackpackSelected(listInTheBackpack);
+    return listToDosArray;
   }
 
   async readRecommendationsSelected () {
     const recommendationSelected = firebase.database().ref('users/' + this.user.getUserId()).child('recommendationSelected');
     const snapshot = await recommendationSelected.once('value');
     const valueListRecommendationSelected = snapshot.val();
-    this.user.setToDos(valueListRecommendationSelected);
+    this.user.setRecommendationsSelected(valueListRecommendationSelected);
   }
 
   async readValueListInTheBackpack () {
@@ -34,23 +41,25 @@ class PoisController extends BaseScene {
     return valueListInTheBackpack;
   }
 
-  listInTheBackpackSelected (checkListInTheBackpack) {
+  listInTheBackpackSelected (listInTheBackpack) {
     let myArr = [];
-    Object.values(this.user.getRecommendations()).forEach((value) => {
-      if (checkListInTheBackpack && Object.values(checkListInTheBackpack).includes(value)) {
+    Object.values(this.user.getRecommendationsSelected()).forEach((value) => {
+      if (listInTheBackpack && Object.values(listInTheBackpack).includes(value)) {
+        console.warn('VALUEEE: ', value);
         myArr.push({value: value, selectedInTheBackpack: true});
       } else {
         return myArr.push(value);
       }
     });
+
     this.user.setInTheBackpackSelected(myArr);
     return myArr;
   }
 
-  onClickListItem (item) {
+  async onClickListItemBackpack (item) {
     const listInTheBackpack = await this.readValueListInTheBackpack();
     if (!listInTheBackpack) {
-      firebase.database().ref('users/' + this.user.getUserId()).set({inTheBackpack: {item}});
+      firebase.database().ref('users/' + this.user.getUserId()).update({inTheBackpack: {item}});
     } else {
       if (!Object.values(listInTheBackpack).includes(item)) {
         firebase.database().ref('users/' + this.user.getUserId()).child('inTheBackpack').push().set(item);
@@ -58,7 +67,7 @@ class PoisController extends BaseScene {
         this.listInTheBackpackSelected(listInTheBackpack);
         this.setState({externalData: true});
       } else {
-        console.warn('THE ITEM IS ALREADY IN DATABASE, PLEASE CHOOSE ANOTHER ONE');
+        console.warn('THE ITEM IS ALREADY IN THE BACKPACK DATABASE, PLEASE CHOOSE ANOTHER ONE');
       }
     }
   }

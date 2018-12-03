@@ -32,11 +32,11 @@ export default class ListItemComponent extends Component {
           <List>
             {this.props.dataItem.map((item) => (
               <TouchableOpacity
-                onPress={(typeof item === 'object' && item.selected) ? null : this.props.onClickListItem.bind(this, item)}>
+                onPress={(item.selectedRecommendations) ? null : (item.selectedInTheBackpack ? null : this.props.onClickListItem.bind(this, item))}>
                 <ListItem
-                  key={(typeof item === 'object') ? item.value : item}
-                  titleStyle={{ color: (typeof item === 'object' && item.selected) ? 'red' : 'black'}}
-                  title={(typeof item === 'object') ? item.value : item} />
+                  key={(item.selectedRecommendations) ? item.value : (item.selectedInTheBackpack ? item.value : item)}
+                  titleStyle={{ color: (item.selectedRecommendations) ? 'red' : (item.selectedInTheBackpack ? 'blue' : 'black')}}
+                  title={(item.selectedRecommendations) ? item.value : (item.selectedInTheBackpack ? item.value : item)} />
               </TouchableOpacity>
           ))}
           </List>

@@ -23,7 +23,7 @@ class GeneralController extends BaseScene {
     let myArr = [];
     Object.values(this.user.getRecommendations()).forEach((value) => {
       if (checkListRecos && Object.values(checkListRecos).includes(value)) {
-        myArr.push({value: value, selected: true});
+        myArr.push({value: value, selectedRecommendations: true});
       } else {
         return myArr.push(value);
       }
@@ -57,7 +57,7 @@ class GeneralController extends BaseScene {
           this.listRecommendationsWhichSelected(listRecos);
           this.setState({externalData: true});
         } else {
-          console.warn('THE ITEM IS ALREADY IN DATABASE, PLEASE CHOOSE ANOTHER ONE');
+          console.warn('THE ITEM IS ALREADY IN THE RECOMMENDATIONS SELECTED DATABASE, PLEASE CHOOSE ANOTHER ONE');
         }
       }
     } catch (error) {

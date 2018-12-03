@@ -23,7 +23,15 @@
           }
         },
         {
-          "client_id": "482310010961-5ccoliqifmrf5jdjvo8ieecr877oq5cs.apps.googleusercontent.com",
+          "client_id": "482310010961-aj8gjscaj2b7g27d7bff8ulitafehfj7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.marcos.myProject",
+            "certificate_hash": "ca5f8c071bb6620dfd9e3b5c6dfdcf98591819b2"
+          }
+        },
+        {
+          "client_id": "482310010961-ono3linpppng40n69j37c5i9kc81not3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -40,7 +48,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "482310010961-5ccoliqifmrf5jdjvo8ieecr877oq5cs.apps.googleusercontent.com",
+              "client_id": "482310010961-8i9fei9f4qldmcbk91ieeuo81ldf52ca.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

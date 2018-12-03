@@ -9,6 +9,15 @@ export default class User {
     static recommendations;
     static recommendationsSelected;
     static toDos;
+    static inTheBackpackSelected;
+
+    getInTheBackpackSelected() {
+      return this.inTheBackpackSelected;
+    }
+
+    setInTheBackpackSelected(value) {
+      this.inTheBackpackSelected = value;
+    }
 
     getRecommendationsSelected() {
       return this.recommendationsSelected;
@@ -77,6 +86,7 @@ export default class User {
     getChosenRegionCoordinates() {
       return this.chosenRegionCoordinates;
     }
+    
 
     setChosenRegionCoordinates(value) {
       this.chosenRegionCoordinates = value;
@@ -92,7 +102,8 @@ export default class User {
         chosenRegionCoordinates: this.chosenRegionCoordinates,
         recommendations: this.recommendations,
         recommendationsSelected: this.recommendationsSelected,
-        toDos: this.toDos
+        toDos: this.toDos,
+        inTheBackpackSelected: this.inTheBackpackSelected
       };
 
       return user;

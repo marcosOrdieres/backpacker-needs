@@ -86,6 +86,7 @@ export default class User {
     getChosenRegionCoordinates() {
       return this.chosenRegionCoordinates;
     }
+    
 
     setChosenRegionCoordinates(value) {
       this.chosenRegionCoordinates = value;

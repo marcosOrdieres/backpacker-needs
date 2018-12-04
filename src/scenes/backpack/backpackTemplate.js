@@ -1,5 +1,5 @@
 import React from 'react';
-import poisStyles from './poisStyles';
+import backpackStyles from './backpackStyles';
 import { ListItem } from 'components';
 
 export default (controller) => (

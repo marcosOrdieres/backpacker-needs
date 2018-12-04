@@ -1,11 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 import { BaseScene } from 'components';
-import template from './poisTemplate';
+import template from './backpackTemplate';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 
-class PoisController extends BaseScene {
+class BackpackController extends BaseScene {
   constructor (args) {
     super(args);
     this.state = {
@@ -45,7 +45,6 @@ class PoisController extends BaseScene {
     let myArr = [];
     Object.values(this.user.getRecommendationsSelected()).forEach((value) => {
       if (listInTheBackpack && Object.values(listInTheBackpack).includes(value)) {
-        console.warn('VALUEEE: ', value);
         myArr.push({value: value, selectedInTheBackpack: true});
       } else {
         return myArr.push(value);
@@ -81,4 +80,4 @@ class PoisController extends BaseScene {
   }
 }
 
-export default connect()(PoisController);
+export default connect()(BackpackController);

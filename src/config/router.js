@@ -16,7 +16,7 @@ import Palette from '../common/palette';
 
 import DestinationScreen from '../scenes/destination';
 import GeneralScreen from '../scenes/general';
-import PoisScreen from '../scenes/pois';
+import BackpackScreen from '../scenes/backpack';
 import SplashScreen from '../scenes/splash';
 import HomeScreen from '../scenes/home';
 import SendCredentialsScreen from '../scenes/sendCredentials';
@@ -24,8 +24,9 @@ import WhatDoesThisAppScreen from '../scenes/whatDoesThisApp';
 import CountriesListScreen from '../scenes/countriesList';
 
 import AirportSvg from '../assets/svg/Airport';
-import GeneralSvg from '../assets/svg/General';
-import PoiSvg from '../assets/svg/Poi';
+import CheckMark from '../assets/svg/CheckMark';
+// import GeneralSvg from '../assets/svg/General';
+import BackpackSvg from '../assets/svg/Backpack';
 
 const Splash = routes.Splash;
 const Home = routes.Home;
@@ -55,12 +56,12 @@ export const MenuBar = TabNavigator({
   General: {
     screen: GeneralScreen,
     navigationOptions: ({ navigation }) => ({
-      title: 'Recommend',
+      title: 'Recommends',
       tabBarIcon: ({ tintColor }) => {
         if (tintColor === Palette.primaryColorUnselected) {
-          return <GeneralSvg color={Palette.primaryColorUnselected} width={24} height={24} />;
+          return <CheckMark color={Palette.primaryColorUnselected} width={24} height={24} />;
         } else {
-          return <GeneralSvg width={24} height={24} />;
+          return <CheckMark width={24} height={24} />;
         }
       }
     })
@@ -86,15 +87,15 @@ export const MenuBar = TabNavigator({
       }
     }
   },
-  Pois: {
-    screen: PoisScreen,
+  Backpack: {
+    screen: BackpackScreen,
     navigationOptions: ({ navigation }) => ({
       title: 'To-Do List',
       tabBarIcon: ({ tintColor }) => {
         if (tintColor === Palette.primaryColorUnselected) {
-          return <PoiSvg color={Palette.primaryColorUnselected} width={24} height={24} />;
+          return <BackpackSvg color={Palette.primaryColorUnselected} width={24} height={24} />;
         } else {
-          return <PoiSvg width={24} height={24} />;
+          return <BackpackSvg width={24} height={24} />;
         }
       }
     })
@@ -135,8 +136,8 @@ export const RootStack = StackNavigator({
   General: {
     screen: GeneralScreen
   },
-  Pois: {
-    screen: PoisScreen
+  Backpack: {
+    screen: BackpackScreen
   },
   SendCredentials: {
     screen: SendCredentialsScreen

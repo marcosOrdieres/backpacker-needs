@@ -16,7 +16,12 @@ class BackpackController extends BaseScene {
   async componentDidMount () {
     this.props.navigation.addListener('didFocus', async () => {
       await this.checkSelectedToDos();
+      await this.rootStore.dispatch({ type: 'BACKPACK_SCREEN', isBackpackScreen: true});
       await this.setState({externalData: true});
+    });
+
+    this.props.navigation.addListener('willBlur', async () => {
+      await this.rootStore.dispatch({ type: 'BACKPACK_SCREEN', isBackpackScreen: false});
     });
   }
 

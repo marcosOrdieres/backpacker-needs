@@ -41,36 +41,25 @@ export default class ListItemComponent extends Component {
                 <ListItem
                   key={(item.selectedRecommendations) ? item.value : (item.selectedInTheBackpack ? item.value : item)}
                   title={(item.selectedRecommendations) ? item.value : (item.selectedInTheBackpack ? item.value : item)}
-                  subtitle={(item.selectedRecommendations) ? '(Already Selected)' : null}
-                  titleStyle={{paddingLeft: 30, fontSize: 20, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? 'blue' : 'black')}}
-                  subtitleStyle={{paddingLeft: 30, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? 'blue' : 'black')}}
-                  leftIcon={!item.selectedInTheBackpack ? // La scene en la que estoy
+                  subtitle={(item.selectedRecommendations) ? '(Already Selected)' : (item.selectedInTheBackpack ? '(Backpacked)' : null)}
+                  titleStyle={{paddingLeft: 30, fontSize: 20, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? Palette.disabled : 'black')}}
+                  subtitleStyle={{paddingLeft: 30, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? Palette.disabled : 'black')}}
+                  rightIcon={{name: 'check', color: item.selectedInTheBackpack ? Palette.green: Palette.transparent}}
+                  leftIcon={!item.selectedInTheBackpack && !this.rootStore.getState().isBackpackScreen ?
                     (<CheckMark
                       color={item.selectedRecommendations ? Palette.disabled : Palette.primaryColor}
                       width={40}
                       height={40} />)
                     :
-                    (<Backpack
-                      color={item.selectedRecommendations ? Palette.disabled : Palette.primaryColor}
-                      width={40}
-                      height={40} />)
+                    (item.selectedInTheBackpack && this.rootStore.getState().isBackpackScreen ?
+                      null
+                      :
+                      (<Backpack
+                        color={item.selectedRecommendations ? Palette.disabled : Palette.primaryColor}
+                        width={40}
+                        height={40} />)
+                    )
                   }
-
-                  // leftIcon={item.selectedInTheBackpack ? // La scene en la que estoy
-                  //   (<Backpack
-                  //     color={item.selectedRecommendations ? Palette.disabled : Palette.primaryColor}
-                  //     width={40}
-                  //     height={40} />)
-                  //   :
-                  //   (this.rootStore.getState().user.isBackpackScreen ?
-                  //   (<CheckMark
-                  //     color={item.selectedRecommendations ? Palette.disabled : Palette.primaryColor}
-                  //     width={40}
-                  //     height={40} />)
-                  //     :
-                  //     null
-                  //   )
-                  // }
                 />
               </TouchableOpacity>
           ))}

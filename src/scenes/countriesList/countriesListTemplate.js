@@ -4,6 +4,6 @@ import { ListItem } from 'components';
 
 export default (controller) => (
   <ListItem
-    dataItem={Object.keys(controller.user.getCountries())}
+    dataItem={Object.keys(controller.user.getCountries()).sort()}
     onClickListItem={(itemTitle) => controller.onClickListItem(itemTitle)} />
 );

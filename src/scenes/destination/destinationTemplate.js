@@ -7,7 +7,7 @@ import Geojson from 'react-native-geojson';
 import { Button } from 'components';
 import PopupDialog, { DialogTitle } from 'react-native-popup-dialog';
 import Palette from '../../common/palette';
-import markerBackpacker from '../../assets/images/markerBackpackerNeeds.png';
+import markerBackpacker from '../../assets/images/markerBackpack.png';
 
 const styles = StyleSheet.create({
   map: {

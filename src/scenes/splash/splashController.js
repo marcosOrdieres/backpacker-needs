@@ -46,7 +46,7 @@ class SplashController extends BaseScene {
       const getDataItemRecommendationsDidMount = await this.getDataItemRecommendations();
       await this.setState({externalData: 'yes'});
 
-      return this.navigateTo('Menu');
+      return this.navigateTo('CountriesList');
     } catch (error) {
       console.warn(error.message);
       this.navigateTo('Home');
@@ -67,13 +67,13 @@ class SplashController extends BaseScene {
 
   async getDataItem () {
     try {
-			// Move it to splash
       const eventref = firebase.database().ref('region/');
       const snapshot = await eventref.once('value');
       const valueList = snapshot.val();
       this.user.setCountries(valueList);
       const countries = Object.keys(valueList);
-      return countries;
+      countriesSorted = countries.sort();
+      return countriesSorted;
     } catch (error) {
       console.warn(error.message);
     }

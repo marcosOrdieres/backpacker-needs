@@ -25,7 +25,6 @@ import CountriesListScreen from '../scenes/countriesList';
 
 import AirportSvg from '../assets/svg/Airport';
 import CheckMark from '../assets/svg/CheckMark';
-// import GeneralSvg from '../assets/svg/General';
 import BackpackSvg from '../assets/svg/Ruck';
 
 const Splash = routes.Splash;
@@ -53,19 +52,6 @@ const styles = StyleSheet.create({
 });
 
 export const MenuBar = TabNavigator({
-  General: {
-    screen: GeneralScreen,
-    navigationOptions: ({ navigation }) => ({
-      title: 'Recommends',
-      tabBarIcon: ({ tintColor }) => {
-        if (tintColor === Palette.primaryColorUnselected) {
-          return <CheckMark color={Palette.primaryColorUnselected} width={25} height={25} />;
-        } else {
-          return <CheckMark width={25} height={25} />;
-        }
-      }
-    })
-  },
   Destination: {
     screen: DestinationScreen,
     navigationOptions: {
@@ -86,6 +72,19 @@ export const MenuBar = TabNavigator({
         }
       }
     }
+  },
+  General: {
+    screen: GeneralScreen,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Recommends',
+      tabBarIcon: ({ tintColor }) => {
+        if (tintColor === Palette.primaryColorUnselected) {
+          return <CheckMark color={Palette.primaryColorUnselected} width={25} height={25} />;
+        } else {
+          return <CheckMark width={25} height={25} />;
+        }
+      }
+    })
   },
   Backpack: {
     screen: BackpackScreen,

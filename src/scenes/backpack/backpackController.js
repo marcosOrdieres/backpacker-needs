@@ -21,7 +21,6 @@ class BackpackController extends BaseScene {
     });
 
     this.props.navigation.addListener('didBlur', async () => {
-      console.warn('this.rootStore.getState().isBackpackScreen: ', this.rootStore.getState().isBackpackScreen);
       await this.rootStore.dispatch({ type: 'BACKPACK_SCREEN', isBackpackScreen: false});
     });
   }

@@ -26,7 +26,7 @@ import CountriesListScreen from '../scenes/countriesList';
 import AirportSvg from '../assets/svg/Airport';
 import CheckMark from '../assets/svg/CheckMark';
 // import GeneralSvg from '../assets/svg/General';
-import BackpackSvg from '../assets/svg/Backpack';
+import BackpackSvg from '../assets/svg/Ruck';
 
 const Splash = routes.Splash;
 const Home = routes.Home;
@@ -59,9 +59,9 @@ export const MenuBar = TabNavigator({
       title: 'Recommends',
       tabBarIcon: ({ tintColor }) => {
         if (tintColor === Palette.primaryColorUnselected) {
-          return <CheckMark color={Palette.primaryColorUnselected} width={24} height={24} />;
+          return <CheckMark color={Palette.primaryColorUnselected} width={25} height={25} />;
         } else {
-          return <CheckMark width={24} height={24} />;
+          return <CheckMark width={25} height={25} />;
         }
       }
     })
@@ -80,9 +80,9 @@ export const MenuBar = TabNavigator({
       },
       tabBarIcon: ({ tintColor }) => {
         if (tintColor === Palette.primaryColorUnselected) {
-          return <AirportSvg color={Palette.primaryColorUnselected} width={24} height={24} />;
+          return <AirportSvg color={Palette.primaryColorUnselected} width={25} height={25} />;
         } else {
-          return <AirportSvg width={24} height={24} />;
+          return <AirportSvg width={25} height={25} />;
         }
       }
     }
@@ -93,9 +93,9 @@ export const MenuBar = TabNavigator({
       title: 'To-Do List',
       tabBarIcon: ({ tintColor }) => {
         if (tintColor === Palette.primaryColorUnselected) {
-          return <BackpackSvg color={Palette.primaryColorUnselected} width={24} height={24} />;
+          return <BackpackSvg color={Palette.primaryColorUnselected} width={25} height={25} />;
         } else {
-          return <BackpackSvg width={24} height={24} />;
+          return <BackpackSvg width={25} height={25} />;
         }
       }
     })

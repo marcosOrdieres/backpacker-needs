@@ -1,0 +1,4 @@
+{
+    "name": "recommendations-scene",
+    "main": "recommendationsController.js"
+}

@@ -10,6 +10,24 @@ export default class User {
     static recommendationsSelected;
     static toDos;
     static inTheBackpackSelected;
+    static recommendationsOnlyItemSelected;
+    static countriesInTheWorld;
+
+    getCountriesInTheWorld() {
+      return this.countriesInTheWorld;
+    }
+
+    setCountriesInTheWorld(value) {
+      this.countriesInTheWorld = value;
+    }
+
+    getRecommendationsOnlyIntemSelected() {
+      return this.recommendationsOnlyItemSelected;
+    }
+
+    setRecommendationsOnlyIntemSelected(value) {
+      this.recommendationsOnlyItemSelected = value;
+    }
 
     getInTheBackpackSelected() {
       return this.inTheBackpackSelected;
@@ -86,7 +104,7 @@ export default class User {
     getChosenRegionCoordinates() {
       return this.chosenRegionCoordinates;
     }
-    
+
 
     setChosenRegionCoordinates(value) {
       this.chosenRegionCoordinates = value;
@@ -103,7 +121,9 @@ export default class User {
         recommendations: this.recommendations,
         recommendationsSelected: this.recommendationsSelected,
         toDos: this.toDos,
-        inTheBackpackSelected: this.inTheBackpackSelected
+        inTheBackpackSelected: this.inTheBackpackSelected,
+        recommendationsOnlyItemSelected: this.recommendationsOnlyItemSelected,
+        countriesInTheWorld: this.countriesInTheWorld
       };
 
       return user;

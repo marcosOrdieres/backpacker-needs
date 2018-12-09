@@ -29,12 +29,6 @@ export default class MapComponent extends Component {
     return (
       <View style={styles.containerTotal} >
         <View style={styles.containerMap} >
-          <Text>holaaaa</Text>
-          <Text>holaaaa</Text>
-          <Text>holaaaa</Text>
-          <Text>holaaaa</Text>
-          <Text>holaaaa</Text>
-
           <MapView
             provider={PROVIDER_GOOGLE}
             initialRegion={{

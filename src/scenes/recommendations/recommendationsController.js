@@ -1,16 +1,17 @@
 import React from 'react';
 import { BaseScene } from 'components';
-import template from './generalTemplate';
+import template from './recommendationsTemplate';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 import { View } from 'react-native';
 
-class GeneralController extends BaseScene {
+class RecommendationsController extends BaseScene {
   constructor (args) {
     super(args);
     this.state = {
       selected: false,
-      externalData: null
+      externalData: null,
+      index: 0
     };
   }
 
@@ -19,17 +20,30 @@ class GeneralController extends BaseScene {
     await this.setState({externalData: true});
   }
 
-  listRecommendationsWhichSelected (checkListRecos) {
+  async listRecommendationsWhichSelected (checkListRecos) {
     let myArr = [];
-    Object.values(this.user.getRecommendations()).forEach((value) => {
-      if (checkListRecos && Object.values(checkListRecos).includes(value)) {
-        myArr.push({value: value, selectedRecommendations: true});
-      } else {
-        return myArr.push(value);
-      }
+    let myArrFinal = [];
+    let myArrItem = [];
+    const group = Object.keys(this.user.getRecommendations()).map((group, index) => {
+      myArrFinal[index] = {title: group};
+      return this.user.getRecommendations()[group];
     });
-    this.user.setRecommendationsSelected(myArr);
-    return myArr;
+    group.forEach((groupItem, index, array) => {
+      const indexOfArray = group.indexOf(groupItem);
+      Object.values(groupItem).forEach((item, index, array) => {
+        if (checkListRecos && Object.values(checkListRecos).includes(item)) {
+          myArrItem.push({value: item, selectedRecommendations: true});
+          return myArrFinal[indexOfArray].data = [myArrItem];
+        } else {
+          myArrItem.push(item);
+          return myArrFinal[indexOfArray].data = [myArrItem];
+        }
+      });
+
+      this.user.setRecommendationsSelected(myArrFinal);
+      myArrItem = [];
+      return myArrFinal;
+    });
   }
 
   async checkSelectedRecommendations () {
@@ -74,4 +88,4 @@ class GeneralController extends BaseScene {
   }
 }
 
-export default connect()(GeneralController);
+export default connect()(RecommendationsController);

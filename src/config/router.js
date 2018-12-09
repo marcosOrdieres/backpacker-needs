@@ -15,13 +15,13 @@ import routes from '../common/routes.json';
 import Palette from '../common/palette';
 
 import DestinationScreen from '../scenes/destination';
-import GeneralScreen from '../scenes/general';
+import RecommendationsScreen from '../scenes/recommendations';
 import BackpackScreen from '../scenes/backpack';
 import SplashScreen from '../scenes/splash';
 import HomeScreen from '../scenes/home';
 import SendCredentialsScreen from '../scenes/sendCredentials';
 import WhatDoesThisAppScreen from '../scenes/whatDoesThisApp';
-import CountriesListScreen from '../scenes/countriesList';
+import TravelDecisionScreen from '../scenes/travelDecision';
 
 import AirportSvg from '../assets/svg/Airport';
 import CheckMark from '../assets/svg/CheckMark';
@@ -73,8 +73,8 @@ export const MenuBar = TabNavigator({
       }
     }
   },
-  General: {
-    screen: GeneralScreen,
+  Recommendations: {
+    screen: RecommendationsScreen,
     navigationOptions: ({ navigation }) => ({
       title: 'Recommends',
       tabBarIcon: ({ tintColor }) => {
@@ -109,7 +109,8 @@ export const MenuBar = TabNavigator({
       inactiveTintColor: '#9796ce',
       style: {
         backgroundColor: '#5856d6',
-        height: 60
+        height: 60,
+        shadowOpacity: 0
       },
       labelStyle: styles.labelStyle,
       indicatorStyle: {
@@ -132,8 +133,8 @@ export const RootStack = StackNavigator({
   Destination: {
     screen: DestinationScreen
   },
-  General: {
-    screen: GeneralScreen
+  Recommendations: {
+    screen: RecommendationsScreen
   },
   Backpack: {
     screen: BackpackScreen
@@ -144,8 +145,8 @@ export const RootStack = StackNavigator({
   WhatDoesThisApp: {
     screen: WhatDoesThisAppScreen
   },
-  CountriesList: {
-    screen: CountriesListScreen
+  TravelDecision: {
+    screen: TravelDecisionScreen
   }
 },
   {

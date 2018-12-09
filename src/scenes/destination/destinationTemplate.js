@@ -28,6 +28,11 @@ export default (controller) => (
       rotateEnabled
       scrollEnabled
       loadingEnabled
+      showsScale
+      showsCompass
+      showsPointsOfInterest
+      zoomControlEnabled
+      toolbarEnabled
       // onRegionChange={controller.onRegionChange.bind(controller)}
       >
       <Geojson

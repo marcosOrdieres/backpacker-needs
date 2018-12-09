@@ -16,7 +16,15 @@ export default {
   'navy':	'#000080',
   'fuchsia':	'#FF00FF',
   'purple':	'#800080',
-  'primaryColor': '#5856d6',
+  'primaryColor15': '#100f3e', // 15%
+  'primaryColor30': '#1f1e7b', // 30%
+  'primaryColor40': '#2a28a4', // 40%
+  'primaryColor50': '#3432cd', // 50% darker
+  'primaryColor': '#5856d6', // 59% main color
+  'primaryColor65': '#716fdc', // 65% lighter
+  'primaryColor75': '#9a98e6', // 75%
+  'primaryColor85': '#c2c1f0', // 85%
+  'primaryColor95': '#ebeafa', // 95%
   'primaryColorUnselected': '#9796ce',
   'primaryColorTransparent': '#BEBDEF',
   'selected': '',

@@ -44,7 +44,7 @@ export default class ListItemComponent extends Component {
                   subtitle={(item.selectedRecommendations) ? '(Already Selected)' : (item.selectedInTheBackpack ? '(Backpacked)' : null)}
                   titleStyle={{paddingLeft: 30, fontSize: 20, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? Palette.disabled : 'black')}}
                   subtitleStyle={{paddingLeft: 30, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? Palette.disabled : 'black')}}
-                  rightIcon={{name: 'check', color: item.selectedInTheBackpack ? Palette.green: Palette.transparent}}
+                  rightIcon={{name: 'check', color: item.selectedInTheBackpack ? Palette.green : Palette.transparent}}
                   leftIcon={!item.selectedInTheBackpack && !this.rootStore.getState().isBackpackScreen ?
                     (<CheckMark
                       color={item.selectedRecommendations ? Palette.disabled : Palette.primaryColor}

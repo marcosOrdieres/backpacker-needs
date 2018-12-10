@@ -1,8 +1,9 @@
 import React from 'react';
 import travelDecisionStyles from './travelDecisionStyles';
 import { ListItem } from 'components';
-import { View, Text, TextInput, TouchableOpacity, Button } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import Palette from '../../common/palette';
+import { Button } from 'react-native-elements';
 
 export default (controller) => (
   <View>
@@ -22,6 +23,7 @@ export default (controller) => (
           style={{height: 40}}
           placeholder='Type here the country!'
           value={controller.state.countryInput}
+          underlineColorAndroid={Palette.transparent}
           onChangeText={(text) => {
             controller.setState({text});
             controller.checkCountry();
@@ -32,29 +34,15 @@ export default (controller) => (
         <Text style={travelDecisionStyles.textDividerStatic}>Country (eg. Thailand)</Text>
       </View>
       <View style={travelDecisionStyles.dividerDynamic}>
-        <Button
-  onPress={()=>{controller.navigateTo('Destination')}}
-  title="HOLAAAAA"
-  color="#841584"
-  accessibilityLabel="Learn more about this purple button"/>
         <Text>Backpacker Needs</Text>
       </View>
       <View style={travelDecisionStyles.destinyView}>
         <Text style={travelDecisionStyles.destinyText}>About the Trip</Text>
       </View>
       <View style={travelDecisionStyles.aboutTheTripView}>
-        <View style={{backgroundColor: 'yellow'}}>
-          <Text>hello world 1.........</Text>
-          <Text>hello world 1.........</Text>
-          <Text>hello world 1.........</Text>
-          <Text>hello world 1.........</Text>
-        </View>
-        <View style={{backgroundColor: 'green'}}>
-          <Text>hello world 2.........</Text>
-          <Text>hello world 2.........</Text>
-          <Text>hello world 2.........</Text>
-          <Text>hello world 2.........</Text>
-        </View>
+        <Button
+          onPress={() => { controller.navigateTo('Destination'); }}
+          title='Let´s Go!!' />
       </View>
     </View>
   </View>

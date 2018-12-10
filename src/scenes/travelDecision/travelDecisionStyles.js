@@ -30,7 +30,7 @@ export default StyleSheet.create({
   },
   aboutTheTripView: {
     height: 300,
-    backgroundColor: 'red',
+    backgroundColor: Palette.primaryColor75,
     alignItems: 'center',
     justifyContent: 'center'
   },
@@ -47,7 +47,8 @@ export default StyleSheet.create({
     backgroundColor: Palette.primaryColor75
   },
   dividerDynamicLoco: {
-    height: 300,
+    height: 50,
+    justifyContent: 'flex-start',
     backgroundColor: Palette.white
   },
   dividerDynamic: {

@@ -28,8 +28,8 @@ class DestinationController extends BaseScene {
     super(args);
     this.state = {
       mapRegion: null,
-      lastLat: null,
-      lastLong: null,
+      lastLat: 20.15,
+      lastLong: -74.91,
       buttonFly: true
     };
     this.slideAnimation = new SlideAnimation({slideFrom: 'bottom'});
@@ -68,10 +68,9 @@ class DestinationController extends BaseScene {
   }
 
   regionChosen () {
-    if(this.user.getCountryGeojson()){
-      console.warn('por aquiiiiiAAA');
+    if (this.user.getCountryGeojson()) {
       return this.user.getCountryGeojson();
-    } else{
+    } else {
       switch (this.user.getChosenRegion()) {
         case 'Australia':
           return Australia;

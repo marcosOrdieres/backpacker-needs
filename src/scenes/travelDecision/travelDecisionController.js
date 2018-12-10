@@ -4,7 +4,7 @@ import template from './travelDecisionTemplate';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 import { View, Text } from 'react-native';
-import FuckinCountries from '../../assets/mapJson/countriesJson.json';
+import GeojsonCountries from '../../assets/mapJson/countriesJson.json';
 
 class TravelDecisionController extends BaseScene {
   constructor (args) {
@@ -42,18 +42,20 @@ class TravelDecisionController extends BaseScene {
     }
   }
 
-  chargeGeojsonCountry(){
-    FuckinCountries.features.forEach((putoObj) => {
-      if(putoObj.properties.name === this.state.country){
-        return this.user.setCountryGeojson(putoObj.properties);
+  chargeGeojsonCountry () {
+    GeojsonCountries.features.forEach((objEachCountry) => {
+      if (objEachCountry.properties.name === this.state.country) {
+        const completeGeojsonCountry = {'type': 'FeatureCollection', 'features': [objEachCountry]};
+        return this.user.setCountryGeojson(completeGeojsonCountry);
       }
     });
   }
 
   getCountries () {
     let countriesArr = [];
-    FuckinCountries.features.forEach((putoObj) => {
-      countriesArr.push(putoObj.properties.name);
+    GeojsonCountries.features.forEach((objEachCountry) => {
+      const countryName = objEachCountry.properties.name;
+      countriesArr.push(countryName);
     });
     return countriesArr;
   }

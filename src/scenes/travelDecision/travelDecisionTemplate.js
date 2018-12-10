@@ -1,7 +1,7 @@
 import React from 'react';
 import travelDecisionStyles from './travelDecisionStyles';
 import { ListItem } from 'components';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Button } from 'react-native';
 import Palette from '../../common/palette';
 
 export default (controller) => (
@@ -32,6 +32,11 @@ export default (controller) => (
         <Text style={travelDecisionStyles.textDividerStatic}>Country (eg. Thailand)</Text>
       </View>
       <View style={travelDecisionStyles.dividerDynamic}>
+        <Button
+  onPress={()=>{controller.navigateTo('Destination')}}
+  title="HOLAAAAA"
+  color="#841584"
+  accessibilityLabel="Learn more about this purple button"/>
         <Text>Backpacker Needs</Text>
       </View>
       <View style={travelDecisionStyles.destinyView}>
@@ -52,9 +57,5 @@ export default (controller) => (
         </View>
       </View>
     </View>
-
-    {/* <ListItem
-      dataItem={Object.keys(controller.user.getCountries()).sort()}
-      onClickListItem={(itemTitle) => controller.onClickListItem(itemTitle)} /> */}
   </View>
 );

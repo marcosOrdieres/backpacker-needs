@@ -33,12 +33,21 @@ class TravelDecisionController extends BaseScene {
     if (this.state.text.length >= 2) {
       this.user.getCountriesInTheWorld().find((country) => {
         if (country.includes(this.state.text)) {
-          return this.setState({ country: country });
+          this.setState({ country: country });
+          this.chargeGeojsonCountry();
         } else {
           return false;
         }
       });
     }
+  }
+
+  chargeGeojsonCountry(){
+    FuckinCountries.features.forEach((putoObj) => {
+      if(putoObj.properties.name === this.state.country){
+        return this.user.setCountryGeojson(putoObj.properties);
+      }
+    });
   }
 
   getCountries () {

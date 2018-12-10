@@ -68,63 +68,67 @@ class DestinationController extends BaseScene {
   }
 
   regionChosen () {
-    switch (this.user.getChosenRegion()) {
-      case 'Australia':
-        return Australia;
-        break;
-      case 'Caribbean':
-        return Caribbean;
-        break;
-      case 'CentralAmerica':
-        return CentralAmerica;
-        break;
-      case 'CentralAsia':
-        return CentralAsia;
-        break;
-      case 'EasternAfrica':
-        return EasternAfrica;
-        break;
-      case 'EasternAsia':
-        return EasternAsia;
-        break;
-      case 'EasternEurope':
-        return EasternEurope;
-        break;
-      case 'Melanesia':
-        return Melanesia;
-        break;
-      case 'NorthernAfrica':
-        return NorthernAfrica;
-        break;
-      case 'NorthernAmerica':
-        return NorthernAmerica;
-        break;
-      case 'NorthernEurope':
-        return NorthernEurope;
-        break;
-      case 'Polynesia':
-        return Polynesia;
-        break;
-      case 'SouthAmerica':
-        return SouthAmerica;
-        break;
-      case 'SouthEasternAsia':
-        return SouthEasternAsia;
-        break;
-      case 'SouthernAfrica':
-        return SouthernAfrica;
-        break;
-      case 'SouthernAsia':
-        return SouthernAsia;
-        break;
-      case 'SouthernEurope':
-        return SouthernEurope;
-        break;
-      case 'WesternAsia':
-        return WesternAsia;
-        break;
-      default: WesternEurope;
-
+    if(this.user.getCountryGeojson()){
+      console.warn('por aquiiiiiAAA');
+      return this.user.getCountryGeojson();
+    } else{
+      switch (this.user.getChosenRegion()) {
+        case 'Australia':
+          return Australia;
+          break;
+        case 'Caribbean':
+          return Caribbean;
+          break;
+        case 'CentralAmerica':
+          return CentralAmerica;
+          break;
+        case 'CentralAsia':
+          return CentralAsia;
+          break;
+        case 'EasternAfrica':
+          return EasternAfrica;
+          break;
+        case 'EasternAsia':
+          return EasternAsia;
+          break;
+        case 'EasternEurope':
+          return EasternEurope;
+          break;
+        case 'Melanesia':
+          return Melanesia;
+          break;
+        case 'NorthernAfrica':
+          return NorthernAfrica;
+          break;
+        case 'NorthernAmerica':
+          return NorthernAmerica;
+          break;
+        case 'NorthernEurope':
+          return NorthernEurope;
+          break;
+        case 'Polynesia':
+          return Polynesia;
+          break;
+        case 'SouthAmerica':
+          return SouthAmerica;
+          break;
+        case 'SouthEasternAsia':
+          return SouthEasternAsia;
+          break;
+        case 'SouthernAfrica':
+          return SouthernAfrica;
+          break;
+        case 'SouthernAsia':
+          return SouthernAsia;
+          break;
+        case 'SouthernEurope':
+          return SouthernEurope;
+          break;
+        case 'WesternAsia':
+          return WesternAsia;
+          break;
+        default: WesternEurope;
+      }
     }
   }
 

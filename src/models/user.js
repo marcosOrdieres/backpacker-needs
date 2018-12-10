@@ -12,6 +12,16 @@ export default class User {
     static inTheBackpackSelected;
     static recommendationsOnlyItemSelected;
     static countriesInTheWorld;
+    static countryGeojson;
+
+    getCountryGeojson() {
+      return this.countryGeojson;
+    }
+
+    setCountryGeojson(value) {
+      this.countryGeojson = value;
+    }
+
 
     getCountriesInTheWorld() {
       return this.countriesInTheWorld;
@@ -123,7 +133,8 @@ export default class User {
         toDos: this.toDos,
         inTheBackpackSelected: this.inTheBackpackSelected,
         recommendationsOnlyItemSelected: this.recommendationsOnlyItemSelected,
-        countriesInTheWorld: this.countriesInTheWorld
+        countriesInTheWorld: this.countriesInTheWorld,
+        countryGeojson: this.countryGeojson
       };
 
       return user;

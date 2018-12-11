@@ -48,11 +48,12 @@ class DestinationController extends BaseScene {
       });
 
       let mapRegion = {
-        latitude: this.user.getChosenRegionCoordinates().latitude,
-        longitude: this.user.getChosenRegionCoordinates().longitude,
+        latitude: this.user.getLat(),
+        longitude: this.user.getLong(),
         latitudeDelta: 60,
         longitudeDelta: 60
       };
+      console.warn(mapRegion);
       this.onRegionChange(mapRegion, mapRegion.latitude, mapRegion.longitude);
     } catch (error) {
       console.warn(error.message);
@@ -62,8 +63,8 @@ class DestinationController extends BaseScene {
   onRegionChange (mapRegion, lastLat, lastLong) {
     this.setState({
       mapRegion: mapRegion,
-      lastLat: lastLat || this.state.lastLat,
-      lastLong: lastLong || this.state.lastLong
+      lastLat: lastLat,
+      lastLong: lastLong
     });
   }
 

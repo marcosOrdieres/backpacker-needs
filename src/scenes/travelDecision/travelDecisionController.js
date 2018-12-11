@@ -45,6 +45,9 @@ class TravelDecisionController extends BaseScene {
   chargeGeojsonCountry () {
     GeojsonCountries.features.forEach((objEachCountry) => {
       if (objEachCountry.properties.name === this.state.country) {
+        const latLong = calc(objEachCountry.geometry.coordinates);
+        this.user.setLat(latLong.lat)
+        this.user.setLong(latLong.long)
         const completeGeojsonCountry = {'type': 'FeatureCollection', 'features': [objEachCountry]};
         return this.user.setCountryGeojson(completeGeojsonCountry);
       }
@@ -76,6 +79,19 @@ class TravelDecisionController extends BaseScene {
   render () {
     return template(this);
   }
+}
+
+function calc(array) {
+  const firstLongLat = array[0][0];
+  const lastLongLat = array[0][0];
+  const long = getNumber(firstLongLat[0], 0)
+  const lat = getNumber(firstLongLat[1], 1)
+  return {long, lat}
+}
+
+function getNumber(num, index) {
+  if (!num[index]) return Number(num)
+  return getNumber(num[index])
 }
 
 export default connect()(TravelDecisionController);

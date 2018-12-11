@@ -13,6 +13,24 @@ export default class User {
     static recommendationsOnlyItemSelected;
     static countriesInTheWorld;
     static countryGeojson;
+    static lat;
+    static long;
+
+    getLat() {
+      return this.lat;
+    }
+
+    getLong() {
+      return this.long;
+    }
+
+    setLat(val) {
+      this.lat=val;
+    }
+
+    setLong(val) {
+      this.long=val;
+    }
 
     getCountryGeojson() {
       return this.countryGeojson;
@@ -134,7 +152,9 @@ export default class User {
         inTheBackpackSelected: this.inTheBackpackSelected,
         recommendationsOnlyItemSelected: this.recommendationsOnlyItemSelected,
         countriesInTheWorld: this.countriesInTheWorld,
-        countryGeojson: this.countryGeojson
+        countryGeojson: this.countryGeojson,
+        lat: this.lat,
+        long: this.long
       };
 
       return user;

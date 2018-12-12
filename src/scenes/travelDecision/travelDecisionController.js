@@ -11,7 +11,9 @@ class TravelDecisionController extends BaseScene {
     super(args);
     this.state = {
       text: '',
-      country: ''
+      country: '',
+      date: '2016-05-15',
+      letsgo: false
     };
   }
 
@@ -37,8 +39,8 @@ class TravelDecisionController extends BaseScene {
     GeojsonCountries.features.forEach((objEachCountry) => {
       if (objEachCountry.properties.name === this.state.country) {
         const coordinatesLatAndLong = calculateLongAndLat(objEachCountry.geometry.coordinates);
-        this.user.setLat(coordinatesLatAndLong.latitude)
-        this.user.setLong(coordinatesLatAndLong.longitude)
+        this.user.setLat(coordinatesLatAndLong.latitude);
+        this.user.setLong(coordinatesLatAndLong.longitude);
         const completeGeojsonCountry = {'type': 'FeatureCollection', 'features': [objEachCountry]};
         return this.user.setCountryGeojson(completeGeojsonCountry);
       }
@@ -72,17 +74,17 @@ class TravelDecisionController extends BaseScene {
   }
 }
 
-function calculateLongAndLat(array) {
+function calculateLongAndLat (array) {
   const firstLongLat = array[0][0];
   const lastLongLat = array[0][0];
-  const longitude = getNumber(firstLongLat[0], 0)
-  const latitude = getNumber(firstLongLat[1], 1)
-  return {longitude, latitude}
+  const longitude = getNumber(firstLongLat[0], 0);
+  const latitude = getNumber(firstLongLat[1], 1);
+  return {longitude, latitude};
 }
 
-function getNumber(num, index) {
-  if (!num[index]) return Number(num)
-  return getNumber(num[index])
+function getNumber (num, index) {
+  if (!num[index]) return Number(num);
+  return getNumber(num[index]);
 }
 
 export default connect()(TravelDecisionController);

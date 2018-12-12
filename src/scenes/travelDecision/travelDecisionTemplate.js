@@ -4,28 +4,31 @@ import { ListItem } from 'components';
 import { View, Text, TextInput, TouchableOpacity, Dimensions } from 'react-native';
 import Palette from '../../common/palette';
 import { Button } from 'react-native-elements';
+import AirportSvg from '../../assets/svg/Airport';
+import Calendar from '../../assets/svg/Calendar';
+import DatePicker from 'react-native-datepicker';
 
-const {width, height} = Dimensions.get('window')
+const {width, height} = Dimensions.get('window');
 
 const textStyle = {
-  zIndex: 10000000,
+  zIndex: 100,
   position: 'absolute',
   top: 260,
   backgroundColor: 'white',
-  width: width-6,
+  width: width - 6,
   margin: 3,
   borderColor: 'black',
   borderRadius: 3,
   borderWidth: 1
-}
+};
 
 export default (controller) => (
   <View>
     {controller.state.show && controller.state.country ? <TouchableOpacity
-     style={textStyle}
+      style={textStyle}
       onPress={() => {
-        controller.setState({countryInput: controller.state.country, text: controller.state.country})
-        controller.refs.countryInput.blur()
+        controller.setState({countryInput: controller.state.country, text: controller.state.country});
+        controller.refs.countryInput.blur();
         controller.checkCountry();
       }}>
       <Text style={{fontSize: 18, margin: 5}}>
@@ -51,7 +54,7 @@ export default (controller) => (
           value={controller.state.countryInput}
           underlineColorAndroid={Palette.transparent}
           onBlur={() => {
-            controller.setState({show: false})
+            controller.setState({show: false});
           }}
           onChangeText={(text) => {
             controller.setState({text, countryInput: text, show: true});
@@ -62,23 +65,57 @@ export default (controller) => (
             }
           }} />
       </View>
-      <View style={[travelDecisionStyles.dividerStatic, controller.state.show && controller.state.country ? {marginTop: 40}: null]}>
+      <View style={[travelDecisionStyles.dividerStatic, controller.state.show && controller.state.country ? {marginTop: 40} : null]}>
         <Text style={travelDecisionStyles.textDividerStatic}>Country (eg. Thailand)</Text>
       </View>
       <View style={travelDecisionStyles.dividerDynamic}>
         <Text>Backpacker Needs</Text>
       </View>
       <View style={travelDecisionStyles.destinyView}>
-        <Text style={travelDecisionStyles.destinyText}>About the Trip</Text>
+        <Text style={travelDecisionStyles.destinyText}>About the trip</Text>
       </View>
       <View style={travelDecisionStyles.aboutTheTripView}>
-        <View style={travelDecisionStyles.whenView} />
-        <View style={travelDecisionStyles.howManyDaysView} />
+        <View style={travelDecisionStyles.whenView}>
+          <View style={{marginTop: 5, width: 80, height: 30}} />
+          <Text style={travelDecisionStyles.textTopBar}>When?</Text>
+          <View style={{marginTop: 30, width: 100, height: 100}}>
+            <Calendar width={100} height={100} />
+          </View>
+          <DatePicker
+            style={{width: '80%', paddingTop: 20}}
+            date={controller.state.date}
+            mode='date'
+            placeholder='select date'
+            format='YYYY-MM-DD'
+            minDate='2016-05-01'
+            maxDate='2016-06-01'
+            confirmBtnText='Confirm'
+            cancelBtnText='Cancel'
+            customStyles={{
+              dateIcon: {
+                position: 'absolute',
+                left: 0,
+                top: 4,
+                marginLeft: 0
+              },
+              dateInput: {
+                marginLeft: 36,
+                borderColor: 'white'
+              },
+              dateText: {
+                color: 'white',
+                fontSize: 16,
+                fontFamily: 'Calibri'
+              }
+              // ... You can check the source to find the other keys.
+            }}
+            onDateChange={(date) => { controller.setState({date: date}); }} />
+        </View>
       </View>
 
-        {/*<Button
+      {/* <Button
           onPress={() => { controller.navigateTo('Destination'); }}
-          title='Let´s Go!!' />*/}
+          title='Let´s Go!!' /> */}
     </View>
   </View>
 );

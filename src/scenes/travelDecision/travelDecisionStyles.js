@@ -64,16 +64,15 @@ export default StyleSheet.create({
     fontSize: 18
   },
   whenView: {
-    width: width/2,
+    width: width,
     height: 300,
-    backgroundColor: Palette.primaryColorTransparent,
-    borderRightWidth:1,
-    borderRightColor: Palette.black,
-    borderTopRightRadius:2
-  },
-  howManyDaysView: {
-    width: width/2,
-    height: 300,
-    backgroundColor: Palette.primaryColorTransparent
+    backgroundColor: Palette.primaryColor75,
+    alignItems: 'center'
   }
+  // howManyDaysView: {
+  //   width: width / 2,
+  //   height: 300,
+  //   backgroundColor: Palette.primaryColor75,
+  //   alignItems: 'center'
+  // }
 });

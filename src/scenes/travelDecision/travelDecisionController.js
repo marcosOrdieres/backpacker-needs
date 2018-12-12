@@ -4,7 +4,7 @@ import template from './travelDecisionTemplate';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 import { View, Text } from 'react-native';
-import FuckinCountries from '../../assets/mapJson/countriesJson.json';
+import GeojsonCountries from '../../assets/mapJson/countriesJson.json';
 
 class TravelDecisionController extends BaseScene {
   constructor (args) {
@@ -12,17 +12,8 @@ class TravelDecisionController extends BaseScene {
     this.state = {
       text: '',
       country: ''
-      // countryInput: false
-
-      // TODO: A picker for the Countries that match the letters
-      // TODO: with this country chosen, check the geoJson and send it to the next screen
-      // and for make a geoJson with this country.
     };
   }
-
-  // onClickCountry (countryInput) {
-  //   return this.setState({countryInput: countryInput});
-  // }
 
   async componentDidMount () {
     const countriesInTheWorld = await this.getCountries();
@@ -33,7 +24,8 @@ class TravelDecisionController extends BaseScene {
     if (this.state.text.length >= 2) {
       this.user.getCountriesInTheWorld().find((country) => {
         if (country.includes(this.state.text)) {
-          return this.setState({ country: country });
+          this.setState({ country: country });
+          this.chargeGeojsonCountry();
         } else {
           return false;
         }
@@ -41,10 +33,23 @@ class TravelDecisionController extends BaseScene {
     }
   }
 
+  chargeGeojsonCountry () {
+    GeojsonCountries.features.forEach((objEachCountry) => {
+      if (objEachCountry.properties.name === this.state.country) {
+        const coordinatesLatAndLong = calculateLongAndLat(objEachCountry.geometry.coordinates);
+        this.user.setLat(coordinatesLatAndLong.latitude)
+        this.user.setLong(coordinatesLatAndLong.longitude)
+        const completeGeojsonCountry = {'type': 'FeatureCollection', 'features': [objEachCountry]};
+        return this.user.setCountryGeojson(completeGeojsonCountry);
+      }
+    });
+  }
+
   getCountries () {
     let countriesArr = [];
-    FuckinCountries.features.forEach((putoObj) => {
-      countriesArr.push(putoObj.properties.name);
+    GeojsonCountries.features.forEach((objEachCountry) => {
+      const countryName = objEachCountry.properties.name;
+      countriesArr.push(countryName);
     });
     return countriesArr;
   }
@@ -65,6 +70,19 @@ class TravelDecisionController extends BaseScene {
   render () {
     return template(this);
   }
+}
+
+function calculateLongAndLat(array) {
+  const firstLongLat = array[0][0];
+  const lastLongLat = array[0][0];
+  const longitude = getNumber(firstLongLat[0], 0)
+  const latitude = getNumber(firstLongLat[1], 1)
+  return {longitude, latitude}
+}
+
+function getNumber(num, index) {
+  if (!num[index]) return Number(num)
+  return getNumber(num[index])
 }
 
 export default connect()(TravelDecisionController);

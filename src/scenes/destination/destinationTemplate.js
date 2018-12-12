@@ -32,9 +32,7 @@ export default (controller) => (
       showsCompass
       showsPointsOfInterest
       zoomControlEnabled
-      toolbarEnabled
-      // onRegionChange={controller.onRegionChange.bind(controller)}
-      >
+      toolbarEnabled>
       <Geojson
         geojson={controller.regionChosen()}
         fillColor={Palette.primaryColorTransparent} />

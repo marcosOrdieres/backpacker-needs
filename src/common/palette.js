@@ -26,7 +26,7 @@ export default {
   'primaryColor85': '#c2c1f0', // 85%
   'primaryColor95': '#ebeafa', // 95%
   'primaryColorUnselected': '#9796ce',
-  'primaryColorTransparent': '#BEBDEF',
+  'primaryColorTransparent': 'rgba(190, 189, 239, 0.5)',
   'selected': '',
   'unselected': '#B8B8B8', // Gray
   'disabled': '#E0E0E0', // LightGray

@@ -28,8 +28,8 @@ class DestinationController extends BaseScene {
     super(args);
     this.state = {
       mapRegion: null,
-      lastLat: null,
-      lastLong: null,
+      lastLat: 20.15,
+      lastLong: -74.91,
       buttonFly: true
     };
     this.slideAnimation = new SlideAnimation({slideFrom: 'bottom'});
@@ -48,11 +48,12 @@ class DestinationController extends BaseScene {
       });
 
       let mapRegion = {
-        latitude: this.user.getChosenRegionCoordinates().latitude,
-        longitude: this.user.getChosenRegionCoordinates().longitude,
+        latitude: this.user.getLat(),
+        longitude: this.user.getLong(),
         latitudeDelta: 60,
         longitudeDelta: 60
       };
+      console.warn(mapRegion);
       this.onRegionChange(mapRegion, mapRegion.latitude, mapRegion.longitude);
     } catch (error) {
       console.warn(error.message);
@@ -62,69 +63,72 @@ class DestinationController extends BaseScene {
   onRegionChange (mapRegion, lastLat, lastLong) {
     this.setState({
       mapRegion: mapRegion,
-      lastLat: lastLat || this.state.lastLat,
-      lastLong: lastLong || this.state.lastLong
+      lastLat: lastLat,
+      lastLong: lastLong
     });
   }
 
   regionChosen () {
-    switch (this.user.getChosenRegion()) {
-      case 'Australia':
-        return Australia;
-        break;
-      case 'Caribbean':
-        return Caribbean;
-        break;
-      case 'CentralAmerica':
-        return CentralAmerica;
-        break;
-      case 'CentralAsia':
-        return CentralAsia;
-        break;
-      case 'EasternAfrica':
-        return EasternAfrica;
-        break;
-      case 'EasternAsia':
-        return EasternAsia;
-        break;
-      case 'EasternEurope':
-        return EasternEurope;
-        break;
-      case 'Melanesia':
-        return Melanesia;
-        break;
-      case 'NorthernAfrica':
-        return NorthernAfrica;
-        break;
-      case 'NorthernAmerica':
-        return NorthernAmerica;
-        break;
-      case 'NorthernEurope':
-        return NorthernEurope;
-        break;
-      case 'Polynesia':
-        return Polynesia;
-        break;
-      case 'SouthAmerica':
-        return SouthAmerica;
-        break;
-      case 'SouthEasternAsia':
-        return SouthEasternAsia;
-        break;
-      case 'SouthernAfrica':
-        return SouthernAfrica;
-        break;
-      case 'SouthernAsia':
-        return SouthernAsia;
-        break;
-      case 'SouthernEurope':
-        return SouthernEurope;
-        break;
-      case 'WesternAsia':
-        return WesternAsia;
-        break;
-      default: WesternEurope;
-
+    if (this.user.getCountryGeojson()) {
+      return this.user.getCountryGeojson();
+    } else {
+      switch (this.user.getChosenRegion()) {
+        case 'Australia':
+          return Australia;
+          break;
+        case 'Caribbean':
+          return Caribbean;
+          break;
+        case 'CentralAmerica':
+          return CentralAmerica;
+          break;
+        case 'CentralAsia':
+          return CentralAsia;
+          break;
+        case 'EasternAfrica':
+          return EasternAfrica;
+          break;
+        case 'EasternAsia':
+          return EasternAsia;
+          break;
+        case 'EasternEurope':
+          return EasternEurope;
+          break;
+        case 'Melanesia':
+          return Melanesia;
+          break;
+        case 'NorthernAfrica':
+          return NorthernAfrica;
+          break;
+        case 'NorthernAmerica':
+          return NorthernAmerica;
+          break;
+        case 'NorthernEurope':
+          return NorthernEurope;
+          break;
+        case 'Polynesia':
+          return Polynesia;
+          break;
+        case 'SouthAmerica':
+          return SouthAmerica;
+          break;
+        case 'SouthEasternAsia':
+          return SouthEasternAsia;
+          break;
+        case 'SouthernAfrica':
+          return SouthernAfrica;
+          break;
+        case 'SouthernAsia':
+          return SouthernAsia;
+          break;
+        case 'SouthernEurope':
+          return SouthernEurope;
+          break;
+        case 'WesternAsia':
+          return WesternAsia;
+          break;
+        default: WesternEurope;
+      }
     }
   }
 

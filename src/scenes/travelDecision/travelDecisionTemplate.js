@@ -72,10 +72,13 @@ export default (controller) => (
         <Text style={travelDecisionStyles.destinyText}>About the Trip</Text>
       </View>
       <View style={travelDecisionStyles.aboutTheTripView}>
-        <Button
-          onPress={() => { controller.navigateTo('Destination'); }}
-          title='Let´s Go!!' />
+        <View style={travelDecisionStyles.whenView} />
+        <View style={travelDecisionStyles.howManyDaysView} />
       </View>
+
+        {/*<Button
+          onPress={() => { controller.navigateTo('Destination'); }}
+          title='Let´s Go!!' />*/}
     </View>
   </View>
 );

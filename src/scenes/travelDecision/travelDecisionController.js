@@ -12,17 +12,8 @@ class TravelDecisionController extends BaseScene {
     this.state = {
       text: '',
       country: ''
-      // countryInput: false
-
-      // TODO: A picker for the Countries that match the letters
-      // TODO: with this country chosen, check the geoJson and send it to the next screen
-      // and for make a geoJson with this country.
     };
   }
-
-  // onClickCountry (countryInput) {
-  //   return this.setState({countryInput: countryInput});
-  // }
 
   async componentDidMount () {
     const countriesInTheWorld = await this.getCountries();
@@ -45,9 +36,9 @@ class TravelDecisionController extends BaseScene {
   chargeGeojsonCountry () {
     GeojsonCountries.features.forEach((objEachCountry) => {
       if (objEachCountry.properties.name === this.state.country) {
-        const latLong = calc(objEachCountry.geometry.coordinates);
-        this.user.setLat(latLong.lat)
-        this.user.setLong(latLong.long)
+        const coordinatesLatAndLong = calculateLongAndLat(objEachCountry.geometry.coordinates);
+        this.user.setLat(coordinatesLatAndLong.latitude)
+        this.user.setLong(coordinatesLatAndLong.longitude)
         const completeGeojsonCountry = {'type': 'FeatureCollection', 'features': [objEachCountry]};
         return this.user.setCountryGeojson(completeGeojsonCountry);
       }
@@ -81,12 +72,12 @@ class TravelDecisionController extends BaseScene {
   }
 }
 
-function calc(array) {
+function calculateLongAndLat(array) {
   const firstLongLat = array[0][0];
   const lastLongLat = array[0][0];
-  const long = getNumber(firstLongLat[0], 0)
-  const lat = getNumber(firstLongLat[1], 1)
-  return {long, lat}
+  const longitude = getNumber(firstLongLat[0], 0)
+  const latitude = getNumber(firstLongLat[1], 1)
+  return {longitude, latitude}
 }
 
 function getNumber(num, index) {

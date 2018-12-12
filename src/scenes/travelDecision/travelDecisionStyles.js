@@ -1,5 +1,8 @@
 import { StyleSheet } from 'react-native';
 import Palette from '../../common/palette';
+import { Dimensions } from 'react-native';
+
+const {width, height} = Dimensions.get('window');
 
 export default StyleSheet.create({
   topBar: {
@@ -29,10 +32,9 @@ export default StyleSheet.create({
     elevation: 3
   },
   aboutTheTripView: {
-    height: 300,
-    backgroundColor: Palette.primaryColor75,
-    alignItems: 'center',
-    justifyContent: 'center'
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   destinyText: {
     textAlign: 'center',
@@ -60,5 +62,18 @@ export default StyleSheet.create({
     textAlign: 'center',
     fontFamily: 'Calibri',
     fontSize: 18
+  },
+  whenView: {
+    width: width/2,
+    height: 300,
+    backgroundColor: Palette.primaryColorTransparent,
+    borderRightWidth:1,
+    borderRightColor: Palette.black,
+    borderTopRightRadius:2
+  },
+  howManyDaysView: {
+    width: width/2,
+    height: 300,
+    backgroundColor: Palette.primaryColorTransparent
   }
 });

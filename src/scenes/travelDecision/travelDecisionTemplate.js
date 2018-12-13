@@ -1,7 +1,8 @@
 import React from 'react';
 import travelDecisionStyles from './travelDecisionStyles';
 import { ListItem } from 'components';
-import { View, Text, TextInput, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Dimensions, TouchableHighlight, ScrollView } from 'react-native';
+import Modal from "react-native-modal";
 import Palette from '../../common/palette';
 import { Button } from 'react-native-elements';
 import AirportSvg from '../../assets/svg/Airport';
@@ -46,7 +47,47 @@ export default (controller) => (
       <View style={travelDecisionStyles.dividerStatic}>
         <Text style={travelDecisionStyles.textDividerStatic}>Region (eg. South East Asia)</Text>
       </View>
+
       <View style={travelDecisionStyles.dividerDynamicLoco}>
+
+          <TouchableOpacity onPress={()=>{controller.toggleModal()}}>
+            <Text>Show Modal</Text>
+          </TouchableOpacity>
+          <Modal
+              style={travelDecisionStyles.modal}
+              isVisible={controller.state.isModalVisible}>
+
+            <View style={{ flex: 1 }}>
+
+
+              <View style={travelDecisionStyles.modalContent}>
+                <Text>Hello!</Text>
+                  <TouchableOpacity onPress={()=>{controller.toggleModal()}}>
+                    <View style={travelDecisionStyles.hideModalButton}>
+                      <Text>Hide me!</Text>
+                      </View>
+
+                  </TouchableOpacity>
+                </View>
+
+
+
+
+              <TouchableOpacity onPress={()=>{controller.toggleModal()}}>
+                <Text>[Hide me!]</Text>
+              </TouchableOpacity>
+            </View>
+          </Modal>
+
+    </View>
+
+      <View style={[travelDecisionStyles.dividerStatic, controller.state.show && controller.state.country ? {marginTop: 40} : null]}>
+        <Text style={travelDecisionStyles.textDividerStatic}>Country (eg. Thailand)</Text>
+      </View>
+
+
+      <View style={travelDecisionStyles.dividerDynamic}>
+
         <TextInput
           ref='countryInput'
           style={{height: 40}}
@@ -65,12 +106,7 @@ export default (controller) => (
             }
           }} />
       </View>
-      <View style={[travelDecisionStyles.dividerStatic, controller.state.show && controller.state.country ? {marginTop: 40} : null]}>
-        <Text style={travelDecisionStyles.textDividerStatic}>Country (eg. Thailand)</Text>
-      </View>
-      <View style={travelDecisionStyles.dividerDynamic}>
-        <Text>Backpacker Needs</Text>
-      </View>
+
       <View style={travelDecisionStyles.destinyView}>
         <Text style={travelDecisionStyles.destinyText}>About the trip</Text>
       </View>
@@ -87,8 +123,8 @@ export default (controller) => (
             mode='date'
             placeholder='select date'
             format='YYYY-MM-DD'
-            minDate='2016-05-01'
-            maxDate='2016-06-01'
+            minDate='2018-05-01'
+            maxDate='2019-12-01'
             confirmBtnText='Confirm'
             cancelBtnText='Cancel'
             customStyles={{
@@ -107,11 +143,13 @@ export default (controller) => (
                 fontSize: 16,
                 fontFamily: 'Calibri'
               }
-              // ... You can check the source to find the other keys.
             }}
             onDateChange={(date) => { controller.setState({date: date}); }} />
         </View>
       </View>
+      {/* <ListItem
+  dataItem={Object.keys(controller.user.getCountries()).sort()}
+  onClickListItem={(itemTitle) => controller.onClickListItem(itemTitle)} /> */}
 
       {/* <Button
           onPress={() => { controller.navigateTo('Destination'); }}

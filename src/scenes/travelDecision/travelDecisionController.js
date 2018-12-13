@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 import { View, Text } from 'react-native';
 import GeojsonCountries from '../../assets/mapJson/countriesJson.json';
+import moment from 'moment';
 
 class TravelDecisionController extends BaseScene {
   constructor (args) {
@@ -12,9 +13,15 @@ class TravelDecisionController extends BaseScene {
     this.state = {
       text: '',
       country: '',
-      date: '2016-05-15',
-      letsgo: false
+      region: '',
+      date: moment().format(),
+      letsgo: false,
+      isModalVisible: false
     };
+  }
+
+  toggleModal(){
+    this.setState({ isModalVisible: !this.state.isModalVisible });
   }
 
   async componentDidMount () {

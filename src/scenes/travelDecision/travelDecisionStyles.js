@@ -71,25 +71,28 @@ export default StyleSheet.create({
   },
   modal: {
     justifyContent: "flex-end",
+    width:width,
     margin: 0
   },
   modalContent: {
     backgroundColor: "white",
     padding: 22,
     justifyContent: "center",
+    height:'50%',
+    width:width,
     alignItems: "center",
     borderRadius: 4,
     borderColor: "rgba(0, 0, 0, 0.1)"
 },
-hideModalButton: {
-  backgroundColor: "lightblue",
-  padding: 12,
-  margin: 16,
-  justifyContent: "center",
-  alignItems: "center",
-  borderRadius: 4,
-  borderColor: "rgba(0, 0, 0, 0.1)"
-},
+  hideModalButton: {
+    backgroundColor: "lightblue",
+    padding: 12,
+    margin: 16,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 4,
+    borderColor: "rgba(0, 0, 0, 0.1)"
+  }
   // howManyDaysView: {
   //   width: width / 2,
   //   height: 300,

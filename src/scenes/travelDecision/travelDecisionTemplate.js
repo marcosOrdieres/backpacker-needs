@@ -51,26 +51,22 @@ export default (controller) => (
       <View style={travelDecisionStyles.dividerDynamicLoco}>
 
           <TouchableOpacity onPress={()=>{controller.toggleModal()}}>
-            <Text>Show Modal</Text>
+            <Text>Please Choose a Region!</Text>
           </TouchableOpacity>
           <Modal
               style={travelDecisionStyles.modal}
               isVisible={controller.state.isModalVisible}>
 
-            <View style={{ flex: 1 }}>
-
 
               <View style={travelDecisionStyles.modalContent}>
-                <Text>Hello!</Text>
+                  <Text>Choose a Region!</Text>
                   <TouchableOpacity onPress={()=>{controller.toggleModal()}}>
-                    <View style={travelDecisionStyles.hideModalButton}>
-                      <Text>Hide me!</Text>
-                      </View>
-
+                    <View style = {{width:width}}>
+                      <ListItem
+                        dataItem={Object.keys(controller.user.getCountries()).sort()}
+                        onClickListItem={(itemTitle) => controller.onClickListItem(itemTitle)} />
+                    </View>
                   </TouchableOpacity>
-                </View>
-
-
 
 
               <TouchableOpacity onPress={()=>{controller.toggleModal()}}>
@@ -84,7 +80,6 @@ export default (controller) => (
       <View style={[travelDecisionStyles.dividerStatic, controller.state.show && controller.state.country ? {marginTop: 40} : null]}>
         <Text style={travelDecisionStyles.textDividerStatic}>Country (eg. Thailand)</Text>
       </View>
-
 
       <View style={travelDecisionStyles.dividerDynamic}>
 

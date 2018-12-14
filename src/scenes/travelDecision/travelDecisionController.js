@@ -20,6 +20,18 @@ class TravelDecisionController extends BaseScene {
     };
   }
 
+  // handleScrollTo(p){
+  //   if (this.scrollViewRef) {
+  //     this.scrollViewRef.scrollTo(p);
+  //   }
+  // }
+  //
+  // handleOnScroll(event){
+  //   this.setState({
+  //     scrollOffset: event.nativeEvent.contentOffset.y
+  //   });
+  // }
+
   toggleModal(){
     this.setState({ isModalVisible: !this.state.isModalVisible });
   }

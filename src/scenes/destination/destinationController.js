@@ -48,8 +48,8 @@ class DestinationController extends BaseScene {
       });
 
       let mapRegion = {
-        latitude: this.user.getLat(),
-        longitude: this.user.getLong(),
+        latitude: this.user.getChosenRegionCoordinates() ? this.user.getChosenRegionCoordinates().latitude : this.user.getLat(),
+        longitude: this.user.getChosenRegionCoordinates() ? this.user.getChosenRegionCoordinates().longitude : this.user.getLong(),
         latitudeDelta: 60,
         longitudeDelta: 60
       };
@@ -73,58 +73,58 @@ class DestinationController extends BaseScene {
       return this.user.getCountryGeojson();
     } else {
       switch (this.user.getChosenRegion()) {
-        case 'Australia':
+        case 'Australia and New Zealand':
           return Australia;
           break;
         case 'Caribbean':
           return Caribbean;
           break;
-        case 'CentralAmerica':
+        case 'Central America':
           return CentralAmerica;
           break;
-        case 'CentralAsia':
+        case 'Central Asia':
           return CentralAsia;
           break;
-        case 'EasternAfrica':
+        case 'East Africa':
           return EasternAfrica;
           break;
-        case 'EasternAsia':
+        case 'East Asia':
           return EasternAsia;
           break;
-        case 'EasternEurope':
+        case 'East Europe':
           return EasternEurope;
           break;
         case 'Melanesia':
           return Melanesia;
           break;
-        case 'NorthernAfrica':
+        case 'North Africa':
           return NorthernAfrica;
           break;
         case 'NorthernAmerica':
           return NorthernAmerica;
           break;
-        case 'NorthernEurope':
+        case 'North Europe':
           return NorthernEurope;
           break;
         case 'Polynesia':
           return Polynesia;
           break;
-        case 'SouthAmerica':
+        case 'South America':
           return SouthAmerica;
           break;
-        case 'SouthEasternAsia':
+        case 'South East Asia':
           return SouthEasternAsia;
           break;
-        case 'SouthernAfrica':
+        case 'South Africa':
           return SouthernAfrica;
           break;
-        case 'SouthernAsia':
+        case 'South Asia':
           return SouthernAsia;
           break;
-        case 'SouthernEurope':
+        case 'South Europe':
           return SouthernEurope;
           break;
-        case 'WesternAsia':
+        case 'West Asia':
           return WesternAsia;
           break;
         default: WesternEurope;

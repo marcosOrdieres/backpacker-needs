@@ -15,6 +15,16 @@ export default class User {
     static countryGeojson;
     static lat;
     static long;
+    static dateOfTravel;
+
+    setDateOfTravel(value) {
+      this.dateOfTravel = value;
+    }
+
+    getDateOfTravel() {
+      return this.dateOfTravel;
+    }
+
 
     getLat() {
       return this.lat;
@@ -154,7 +164,8 @@ export default class User {
         countriesInTheWorld: this.countriesInTheWorld,
         countryGeojson: this.countryGeojson,
         lat: this.lat,
-        long: this.long
+        long: this.long,
+        dateOfTravel: this.dateOfTravel
       };
 
       return user;

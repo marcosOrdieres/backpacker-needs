@@ -36,13 +36,6 @@ export default (controller) => (
       <Geojson
         geojson={controller.regionChosen()}
         fillColor={Palette.primaryColorTransparent} />
-
-      <MapView.Marker
-        image={markerBackpacker}
-        coordinate={{
-          latitude: controller.state.lastLat,
-          longitude: controller.state.lastLong
-        }} />
     </MapView>
   </View>
 );

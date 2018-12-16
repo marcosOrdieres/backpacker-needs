@@ -25,7 +25,6 @@ export default StyleSheet.create({
     fontFamily: 'Calibri'
   },
   destinyView: {
-    backgroundColor: Palette.disabled,
     justifyContent: 'center',
     alignItems: 'center',
     height: 70,
@@ -38,7 +37,6 @@ export default StyleSheet.create({
   },
   destinyText: {
     textAlign: 'center',
-    color: Palette.black,
     fontSize: 20,
     fontFamily: 'Calibri'
   },
@@ -50,7 +48,6 @@ export default StyleSheet.create({
   },
   dividerDynamicLoco: {
     height: 50,
-    justifyContent: 'flex-start',
     backgroundColor: Palette.white
   },
   dividerDynamic: {
@@ -70,28 +67,44 @@ export default StyleSheet.create({
     alignItems: 'center'
   },
   modal: {
-    justifyContent: "flex-end",
-    width:width,
+    justifyContent: 'flex-end',
+    width: width,
     margin: 0
   },
   modalContent: {
-    backgroundColor: "white",
+    backgroundColor: Palette.white,
     padding: 22,
-    justifyContent: "center",
-    height:'50%',
-    width:width,
-    alignItems: "center",
+    justifyContent: 'center',
+    height: '50%',
+    width: width,
+    alignItems: 'center',
     borderRadius: 4,
-    borderColor: "rgba(0, 0, 0, 0.1)"
-},
+    borderColor: 'rgba(0, 0, 0, 0.1)'
+  },
   hideModalButton: {
-    backgroundColor: "lightblue",
+    backgroundColor: Palette.primaryColor75,
     padding: 12,
     margin: 16,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     borderRadius: 4,
-    borderColor: "rgba(0, 0, 0, 0.1)"
+    borderColor: 'rgba(0, 0, 0, 0.1)'
+  },
+  datePickerView: {
+    paddingTop: 20,
+    width: '80%',
+    alignItems: 'center'
+  },
+  countryTextOverlay: {
+    zIndex: 100,
+    position: 'absolute',
+    top: 260,
+    backgroundColor: Palette.white,
+    width: width - 6,
+    margin: 3,
+    borderColor: Palette.black,
+    borderRadius: 3,
+    borderWidth: 1
   }
   // howManyDaysView: {
   //   width: width / 2,

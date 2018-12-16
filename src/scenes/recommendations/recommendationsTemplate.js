@@ -8,15 +8,16 @@ export default (controller) => (
     <Text
       style={recommendationsStyles.mainTitle}>Recommendations for {controller.user.getChosenRegion()} </Text>
     <SectionList
-      renderItem={({item}) =>
+      renderItem={({item, index, section}) =>
         <ListItem
           dataItem={item}
           onClickListItem={(item) => controller.onClickListItemRecommendations(item)} />}
-      renderSectionHeader={({section: {title}}) => (
+      renderSectionHeader={({section: {key}}) => (
         <View style={recommendationsStyles.sectionContainer}>
-          <Text style={recommendationsStyles.sectionTitle}>{title}</Text>
+          <Text style={recommendationsStyles.sectionTitle}>{key}</Text>
         </View>
           )}
+      keyExtractor={(item, index) => item + index}
       sections={controller.user.getRecommendationsSelected()}
       stickySectionHeadersEnabled
  />

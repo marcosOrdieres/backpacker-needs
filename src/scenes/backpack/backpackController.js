@@ -36,9 +36,13 @@ class BackpackController extends BaseScene {
     const recommendationSelected = firebase.database().ref('users/' + this.user.getUserId()).child('recommendationSelected');
     const snapshot = await recommendationSelected.once('value');
     const valueListRecommendationSelected = snapshot.val();
-    const arrSelected = Object.values(valueListRecommendationSelected);
-    this.user.setRecommendationsOnlyIntemSelected(Object.values(valueListRecommendationSelected));
-    return arrSelected;
+    if (valueListRecommendationSelected) {
+      const arrSelected = Object.values(valueListRecommendationSelected);
+      this.user.setRecommendationsOnlyIntemSelected(Object.values(valueListRecommendationSelected));
+      return arrSelected;
+    } else {
+      return false;
+    }
   }
 
   async readValueListInTheBackpack () {
@@ -49,25 +53,24 @@ class BackpackController extends BaseScene {
   }
 
   async listInTheBackpackSelected (listInTheBackpack) {
-    console.warn('listInTheBackpack: ', listInTheBackpack);
     let myArrFinal = [];
     let myArrItem = [];
     let itemTitle;
     let indexOfArray;
     this.user.getRecommendationsSelected().forEach((item, index) => {
       indexOfArray = this.user.getRecommendationsSelected().indexOf(item);
-      itemTitle = item.title;
+      itemTitle = item.key;
       item.data.forEach((recommendation) => {
         recommendation.forEach((itemRecommendation) => {
           if (itemRecommendation.selectedRecommendations) {
             if (listInTheBackpack && Object.values(listInTheBackpack).includes(itemRecommendation.value)) {
               // These are the selected and not backpacked ones
-              myArrFinal[indexOfArray] = {title: itemTitle};
+              myArrFinal[indexOfArray] = {key: itemTitle};
               myArrItem.push({value: itemRecommendation.value, selectedInTheBackpack: true});
               return myArrFinal[indexOfArray].data = [myArrItem];
             } else {
               // These are the selected and the backpacked ones
-              myArrFinal[indexOfArray] = {title: itemTitle};
+              myArrFinal[indexOfArray] = {key: itemTitle};
               myArrItem.push(itemRecommendation.value);
               return myArrFinal[indexOfArray].data = [myArrItem];
             }

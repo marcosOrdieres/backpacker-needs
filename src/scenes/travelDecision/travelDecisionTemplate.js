@@ -93,7 +93,7 @@ export default (controller) => (
       </View>
 
       <TouchableOpacity
-        onPress={() => { return controller.state.letsgo ? controller.navigateTo('Menu') : false; }}
+        onPress={() => { controller.state.letsgo ? controller.navigateTo('Menu') : false; }}
         style={[{backgroundColor: controller.state.letsgo ? Palette.green : Palette.disabled}, travelDecisionStyles.destinyView]}>
         <Text style={[{color: controller.state.letsgo ? Palette.white : Palette.black}, travelDecisionStyles.destinyText]}>
           {controller.state.letsgo ? 'Let´s Go!' : 'About the trip'}

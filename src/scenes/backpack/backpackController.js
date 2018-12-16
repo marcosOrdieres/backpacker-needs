@@ -86,10 +86,13 @@ class BackpackController extends BaseScene {
   async onClickListItemBackpack (item) {
     const listInTheBackpack = await this.readValueListInTheBackpack();
     if (!listInTheBackpack) {
-      firebase.database().ref('users/' + this.user.getUserId()).update({inTheBackpack: {item}});
+      await firebase.database().ref('users/' + this.user.getUserId()).update({inTheBackpack: {item}});
+      const listInTheBackpack = await this.readValueListInTheBackpack();
+      this.listInTheBackpackSelected(listInTheBackpack);
+      this.setState({externalData: true});
     } else {
       if (!Object.values(listInTheBackpack).includes(item)) {
-        firebase.database().ref('users/' + this.user.getUserId()).child('inTheBackpack').push().set(item);
+        await firebase.database().ref('users/' + this.user.getUserId()).child('inTheBackpack').push().set(item);
         const listInTheBackpack = await this.readValueListInTheBackpack();
         this.listInTheBackpackSelected(listInTheBackpack);
         this.setState({externalData: true});

@@ -2,6 +2,7 @@ import { BaseScene } from 'components';
 import template from './destinationTemplate';
 import { connect } from 'react-redux';
 import PopupDialog, { SlideAnimation } from 'react-native-popup-dialog';
+import Toast, {DURATION} from 'react-native-easy-toast';
 
 import Australia from '../../assets/mapJson/subregion/Australia_and_NewZealand.json';
 import Caribbean from '../../assets/mapJson/subregion/Caribbean.json';
@@ -33,6 +34,10 @@ class DestinationController extends BaseScene {
       buttonFly: true
     };
     this.slideAnimation = new SlideAnimation({slideFrom: 'bottom'});
+  }
+
+  async componentDidMount () {
+    setTimeout(() => { this.refs.toast.show('To Help you with the Backpack, Press Recommendations!', 6000); }, 1500);
   }
 
   async componentWillMount () {

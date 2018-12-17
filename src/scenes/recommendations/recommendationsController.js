@@ -64,13 +64,11 @@ class RecommendationsController extends BaseScene {
     try {
       const listRecos = await this.readValueListRecommendations();
       if (!listRecos) {
-        console.warn('LA PRIMERA VEZZZZ');
         await firebase.database().ref('users/' + this.user.getUserId()).set({recommendationSelected: {item}});
         const listRecos = await this.readValueListRecommendations();
         this.listRecommendationsWhichSelected(listRecos);
         this.setState({externalData: true});
       } else {
-        console.warn('LAS DEMAS VECESSSS');
         if (!Object.values(listRecos).includes(item)) {
           await firebase.database().ref('users/' + this.user.getUserId()).child('recommendationSelected').push().set(item);
           const listRecos = await this.readValueListRecommendations();

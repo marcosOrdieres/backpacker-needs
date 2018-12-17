@@ -21,7 +21,7 @@ export default (controller) => (
           </View>
             )}
         sections={controller.user.getInTheBackpackSelected()}
-        keyExtractor={(item, index) => item + index}
+        //keyExtractor={(item, index) => item + index}
         stickySectionHeadersEnabled />
             :
       <View>

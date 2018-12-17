@@ -54,12 +54,17 @@ class BackpackController extends BaseScene {
 
   async listInTheBackpackSelected (listInTheBackpack) {
     let myArrFinal = [];
+    let myArrFinalClean = [];
     let myArrItem = [];
+
+    let itemTitleArray = [];
+
     let itemTitle;
     let indexOfArray;
-    this.user.getRecommendationsSelected().forEach((item, index) => {
+    this.user.getRecommendationsSelected().forEach((item) => {
       indexOfArray = this.user.getRecommendationsSelected().indexOf(item);
       itemTitle = item.key;
+
       item.data.forEach((recommendation) => {
         recommendation.forEach((itemRecommendation) => {
           if (itemRecommendation.selectedRecommendations) {
@@ -79,8 +84,9 @@ class BackpackController extends BaseScene {
       });
       myArrItem = [];
     });
-    this.user.setInTheBackpackSelected(myArrFinal);
-    return myArrFinal;
+    myArrFinalClean = myArrFinal.filter(()=>return true);
+    this.user.setInTheBackpackSelected(myArrFinalClean);
+    return myArrFinalClean;
   }
 
   async onClickListItemBackpack (item) {

@@ -58,7 +58,6 @@ class DestinationController extends BaseScene {
         latitudeDelta: 60,
         longitudeDelta: 60
       };
-      console.warn(mapRegion);
       this.onRegionChange(mapRegion, mapRegion.latitude, mapRegion.longitude);
     } catch (error) {
       console.warn(error.message);

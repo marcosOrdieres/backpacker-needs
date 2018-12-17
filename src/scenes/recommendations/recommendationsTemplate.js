@@ -17,7 +17,6 @@ export default (controller) => (
           <Text style={recommendationsStyles.sectionTitle}>{key}</Text>
         </View>
           )}
-      keyExtractor={(item, index) => item + index}
       sections={controller.user.getRecommendationsSelected()}
       stickySectionHeadersEnabled
  />

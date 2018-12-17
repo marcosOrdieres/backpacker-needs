@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BaseScene } from 'components';
 import template from './recommendationsTemplate';
@@ -25,7 +26,7 @@ class RecommendationsController extends BaseScene {
     let myArrFinal = [];
     let myArrItem = [];
     const group = Object.keys(this.user.getRecommendations()).map((group, index) => {
-      myArrFinal[index] = {title: group};
+      myArrFinal[index] = {key: group};
       return this.user.getRecommendations()[group];
     });
     group.forEach((groupItem, index, array) => {
@@ -63,10 +64,13 @@ class RecommendationsController extends BaseScene {
     try {
       const listRecos = await this.readValueListRecommendations();
       if (!listRecos) {
-        firebase.database().ref('users/' + this.user.getUserId()).set({recommendationSelected: {item}});
+        await firebase.database().ref('users/' + this.user.getUserId()).set({recommendationSelected: {item}});
+        const listRecos = await this.readValueListRecommendations();
+        this.listRecommendationsWhichSelected(listRecos);
+        this.setState({externalData: true});
       } else {
         if (!Object.values(listRecos).includes(item)) {
-          firebase.database().ref('users/' + this.user.getUserId()).child('recommendationSelected').push().set(item);
+          await firebase.database().ref('users/' + this.user.getUserId()).child('recommendationSelected').push().set(item);
           const listRecos = await this.readValueListRecommendations();
           this.listRecommendationsWhichSelected(listRecos);
           this.setState({externalData: true});

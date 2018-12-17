@@ -34,12 +34,13 @@ export default class ListItemComponent extends Component {
     return (
       <View style={[this.props.viewButtonStyle, styles.viewButtonStyle]}>
         <ScrollView>
-          <List>
-            {this.props.dataItem.map((item) => (
+          <List containerStyle={{marginTop: -10, marginBottom: -10}}>
+            {this.props.dataItem.map((item, key) => (
               <TouchableOpacity
                 onPress={(item.selectedRecommendations) ? null : (item.selectedInTheBackpack ? null : this.props.onClickListItem.bind(this, item))}>
                 <ListItem
-                  key={(item.selectedRecommendations) ? item.value : (item.selectedInTheBackpack ? item.value : item)}
+                  key={key}
+                  keyExtractor={key}
                   title={(item.selectedRecommendations) ? item.value : (item.selectedInTheBackpack ? item.value : item)}
                   subtitle={(item.selectedRecommendations) ? '(Already Selected)' : (item.selectedInTheBackpack ? '(Backpacked)' : null)}
                   titleStyle={{paddingLeft: 30, fontSize: 20, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? Palette.disabled : 'black')}}

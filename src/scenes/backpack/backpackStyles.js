@@ -28,5 +28,19 @@ export default StyleSheet.create({
     fontSize: 18,
     marginBottom: 20,
     marginTop: 20
+  },
+  subtitleNoItemsBackpack: {
+    borderTopWidth: 2,
+    borderTopColor: Palette.black,
+    paddingTop: '25%',
+    textAlign: 'center',
+    color: Palette.primaryColor75,
+    fontSize: 20,
+    fontFamily: 'Calibri'
+  },
+  checkmarkNoItemsBackpack: {
+    paddingTop: '25%',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });

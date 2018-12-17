@@ -2,6 +2,7 @@ import { BaseScene } from 'components';
 import template from './destinationTemplate';
 import { connect } from 'react-redux';
 import PopupDialog, { SlideAnimation } from 'react-native-popup-dialog';
+import Toast, {DURATION} from 'react-native-easy-toast';
 
 import Australia from '../../assets/mapJson/subregion/Australia_and_NewZealand.json';
 import Caribbean from '../../assets/mapJson/subregion/Caribbean.json';
@@ -35,6 +36,10 @@ class DestinationController extends BaseScene {
     this.slideAnimation = new SlideAnimation({slideFrom: 'bottom'});
   }
 
+  async componentDidMount () {
+    setTimeout(() => { this.refs.toast.show('To Help you with the Backpack, Press Recommendations!', 6000); }, 1500);
+  }
+
   async componentWillMount () {
     try {
       const country = this.user.getCountries();
@@ -48,12 +53,11 @@ class DestinationController extends BaseScene {
       });
 
       let mapRegion = {
-        latitude: this.user.getLat(),
-        longitude: this.user.getLong(),
+        latitude: this.user.getChosenRegionCoordinates() ? this.user.getChosenRegionCoordinates().latitude : this.user.getLat(),
+        longitude: this.user.getChosenRegionCoordinates() ? this.user.getChosenRegionCoordinates().longitude : this.user.getLong(),
         latitudeDelta: 60,
         longitudeDelta: 60
       };
-      console.warn(mapRegion);
       this.onRegionChange(mapRegion, mapRegion.latitude, mapRegion.longitude);
     } catch (error) {
       console.warn(error.message);
@@ -73,58 +77,58 @@ class DestinationController extends BaseScene {
       return this.user.getCountryGeojson();
     } else {
       switch (this.user.getChosenRegion()) {
-        case 'Australia':
+        case 'Australia and New Zealand':
           return Australia;
           break;
         case 'Caribbean':
           return Caribbean;
           break;
-        case 'CentralAmerica':
+        case 'Central America':
           return CentralAmerica;
           break;
-        case 'CentralAsia':
+        case 'Central Asia':
           return CentralAsia;
           break;
-        case 'EasternAfrica':
+        case 'East Africa':
           return EasternAfrica;
           break;
-        case 'EasternAsia':
+        case 'East Asia':
           return EasternAsia;
           break;
-        case 'EasternEurope':
+        case 'East Europe':
           return EasternEurope;
           break;
         case 'Melanesia':
           return Melanesia;
           break;
-        case 'NorthernAfrica':
+        case 'North Africa':
           return NorthernAfrica;
           break;
         case 'NorthernAmerica':
           return NorthernAmerica;
           break;
-        case 'NorthernEurope':
+        case 'North Europe':
           return NorthernEurope;
           break;
         case 'Polynesia':
           return Polynesia;
           break;
-        case 'SouthAmerica':
+        case 'South America':
           return SouthAmerica;
           break;
-        case 'SouthEasternAsia':
+        case 'South East Asia':
           return SouthEasternAsia;
           break;
-        case 'SouthernAfrica':
+        case 'South Africa':
           return SouthernAfrica;
           break;
-        case 'SouthernAsia':
+        case 'South Asia':
           return SouthernAsia;
           break;
-        case 'SouthernEurope':
+        case 'South Europe':
           return SouthernEurope;
           break;
-        case 'WesternAsia':
+        case 'West Asia':
           return WesternAsia;
           break;
         default: WesternEurope;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import destinationStyles from './destinationStyles';
 import Caribbean from '../../assets/mapJson/subregion/Caribbean.json';
 import MapView from 'react-native-maps';
@@ -8,6 +8,7 @@ import { Button } from 'components';
 import PopupDialog, { DialogTitle } from 'react-native-popup-dialog';
 import Palette from '../../common/palette';
 import markerBackpacker from '../../assets/images/markerBackpack.png';
+import Toast, {DURATION} from 'react-native-easy-toast';
 
 const styles = StyleSheet.create({
   map: {
@@ -36,13 +37,18 @@ export default (controller) => (
       <Geojson
         geojson={controller.regionChosen()}
         fillColor={Palette.primaryColorTransparent} />
-
-      <MapView.Marker
-        image={markerBackpacker}
-        coordinate={{
-          latitude: controller.state.lastLat,
-          longitude: controller.state.lastLong
-        }} />
     </MapView>
+
+    <Toast
+      ref='toast'
+      style={{backgroundColor: Palette.primaryColor30, width: '70%'}}
+      position='bottom'
+      positionValue={200}
+      fadeInDuration={3000}
+      fadeOutDuration={2000}
+      opacity={0.7}
+      textStyle={{color: Palette.white, fontSize: 18, fontFamily: 'Calibri', textAlign: 'center' }}>
+      <Button style={{width: '80%', borderColor: 'red', borderWidth: 1}} onPress={() => controller.navigateTo('Recommendations')} />
+    </Toast>
   </View>
 );

@@ -5,14 +5,33 @@ import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 import { View, Text } from 'react-native';
 import GeojsonCountries from '../../assets/mapJson/countriesJson.json';
+import moment from 'moment';
 
 class TravelDecisionController extends BaseScene {
   constructor (args) {
     super(args);
+    const now = moment().format();
     this.state = {
       text: '',
-      country: ''
+      country: '',
+      region: '',
+      date: now,
+      letsgo: false,
+      isModalVisible: false
     };
+  }
+
+  checkLetsGo () {
+    const now = moment().format();
+    if (this.state.country.length > 3 || this.user.getChosenRegion()) {
+      return this.setState({ letsgo: true });
+    } else {
+      return true;
+    }
+  }
+
+  toggleModal () {
+    this.setState({ isModalVisible: !this.state.isModalVisible });
   }
 
   async componentDidMount () {
@@ -36,9 +55,9 @@ class TravelDecisionController extends BaseScene {
   chargeGeojsonCountry () {
     GeojsonCountries.features.forEach((objEachCountry) => {
       if (objEachCountry.properties.name === this.state.country) {
-        const coordinatesLatAndLong = calculateLongAndLat(objEachCountry.geometry.coordinates);
-        this.user.setLat(coordinatesLatAndLong.latitude)
-        this.user.setLong(coordinatesLatAndLong.longitude)
+        const coordinatesLatAndLong = this.calculateLongAndLat(objEachCountry.geometry.coordinates);
+        this.user.setLat(coordinatesLatAndLong.latitude);
+        this.user.setLong(coordinatesLatAndLong.longitude);
         const completeGeojsonCountry = {'type': 'FeatureCollection', 'features': [objEachCountry]};
         return this.user.setCountryGeojson(completeGeojsonCountry);
       }
@@ -60,29 +79,28 @@ class TravelDecisionController extends BaseScene {
       firebase.database().ref('users/' + this.user.getUserId()).set({
         region: item
       });
-
-      return this.navigateTo('Menu');
+      return this.toggleModal();
     } catch (error) {
       console.warn(error.message);
     }
   }
 
+  calculateLongAndLat (array) {
+    const firstLongLat = array[0][0];
+    const lastLongLat = array[0][0];
+    const longitude = this.getNumber(firstLongLat[0], 0);
+    const latitude = this.getNumber(firstLongLat[1], 1);
+    return {longitude, latitude};
+  }
+
+  getNumber (num, index) {
+    if (!num[index]) return Number(num);
+    return getNumber(num[index]);
+  }
+
   render () {
     return template(this);
   }
-}
-
-function calculateLongAndLat(array) {
-  const firstLongLat = array[0][0];
-  const lastLongLat = array[0][0];
-  const longitude = getNumber(firstLongLat[0], 0)
-  const latitude = getNumber(firstLongLat[1], 1)
-  return {longitude, latitude}
-}
-
-function getNumber(num, index) {
-  if (!num[index]) return Number(num)
-  return getNumber(num[index])
 }
 
 export default connect()(TravelDecisionController);

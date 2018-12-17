@@ -25,7 +25,6 @@ export default StyleSheet.create({
     fontFamily: 'Calibri'
   },
   destinyView: {
-    backgroundColor: Palette.disabled,
     justifyContent: 'center',
     alignItems: 'center',
     height: 70,
@@ -38,7 +37,6 @@ export default StyleSheet.create({
   },
   destinyText: {
     textAlign: 'center',
-    color: Palette.black,
     fontSize: 20,
     fontFamily: 'Calibri'
   },
@@ -50,7 +48,6 @@ export default StyleSheet.create({
   },
   dividerDynamicLoco: {
     height: 50,
-    justifyContent: 'flex-start',
     backgroundColor: Palette.white
   },
   dividerDynamic: {
@@ -64,16 +61,55 @@ export default StyleSheet.create({
     fontSize: 18
   },
   whenView: {
-    width: width/2,
+    width: width,
     height: 300,
-    backgroundColor: Palette.primaryColorTransparent,
-    borderRightWidth:1,
-    borderRightColor: Palette.black,
-    borderTopRightRadius:2
+    backgroundColor: Palette.primaryColor75,
+    alignItems: 'center'
   },
-  howManyDaysView: {
-    width: width/2,
-    height: 300,
-    backgroundColor: Palette.primaryColorTransparent
+  modal: {
+    justifyContent: 'flex-end',
+    width: width,
+    margin: 0
+  },
+  modalContent: {
+    backgroundColor: Palette.white,
+    padding: 22,
+    justifyContent: 'center',
+    height: '50%',
+    width: width,
+    alignItems: 'center',
+    borderRadius: 4,
+    borderColor: 'rgba(0, 0, 0, 0.1)'
+  },
+  hideModalButton: {
+    backgroundColor: Palette.primaryColor75,
+    padding: 12,
+    margin: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 4,
+    borderColor: 'rgba(0, 0, 0, 0.1)'
+  },
+  datePickerView: {
+    paddingTop: 20,
+    width: '80%',
+    alignItems: 'center'
+  },
+  countryTextOverlay: {
+    zIndex: 100,
+    position: 'absolute',
+    top: 260,
+    backgroundColor: Palette.white,
+    width: width - 6,
+    margin: 3,
+    borderColor: Palette.black,
+    borderRadius: 3,
+    borderWidth: 1
   }
+  // howManyDaysView: {
+  //   width: width / 2,
+  //   height: 300,
+  //   backgroundColor: Palette.primaryColor75,
+  //   alignItems: 'center'
+  // }
 });

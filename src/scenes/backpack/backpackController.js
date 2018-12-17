@@ -36,9 +36,13 @@ class BackpackController extends BaseScene {
     const recommendationSelected = firebase.database().ref('users/' + this.user.getUserId()).child('recommendationSelected');
     const snapshot = await recommendationSelected.once('value');
     const valueListRecommendationSelected = snapshot.val();
-    const arrSelected = Object.values(valueListRecommendationSelected);
-    this.user.setRecommendationsOnlyIntemSelected(Object.values(valueListRecommendationSelected));
-    return arrSelected;
+    if (valueListRecommendationSelected) {
+      const arrSelected = Object.values(valueListRecommendationSelected);
+      this.user.setRecommendationsOnlyIntemSelected(Object.values(valueListRecommendationSelected));
+      return arrSelected;
+    } else {
+      return false;
+    }
   }
 
   async readValueListInTheBackpack () {
@@ -49,25 +53,29 @@ class BackpackController extends BaseScene {
   }
 
   async listInTheBackpackSelected (listInTheBackpack) {
-    console.warn('listInTheBackpack: ', listInTheBackpack);
     let myArrFinal = [];
+    let myArrFinalClean = [];
     let myArrItem = [];
+
+    let itemTitleArray = [];
+
     let itemTitle;
     let indexOfArray;
-    this.user.getRecommendationsSelected().forEach((item, index) => {
+    this.user.getRecommendationsSelected().forEach((item) => {
       indexOfArray = this.user.getRecommendationsSelected().indexOf(item);
-      itemTitle = item.title;
+      itemTitle = item.key;
+
       item.data.forEach((recommendation) => {
         recommendation.forEach((itemRecommendation) => {
           if (itemRecommendation.selectedRecommendations) {
             if (listInTheBackpack && Object.values(listInTheBackpack).includes(itemRecommendation.value)) {
               // These are the selected and not backpacked ones
-              myArrFinal[indexOfArray] = {title: itemTitle};
+              myArrFinal[indexOfArray] = {key: itemTitle};
               myArrItem.push({value: itemRecommendation.value, selectedInTheBackpack: true});
               return myArrFinal[indexOfArray].data = [myArrItem];
             } else {
               // These are the selected and the backpacked ones
-              myArrFinal[indexOfArray] = {title: itemTitle};
+              myArrFinal[indexOfArray] = {key: itemTitle};
               myArrItem.push(itemRecommendation.value);
               return myArrFinal[indexOfArray].data = [myArrItem];
             }
@@ -76,17 +84,21 @@ class BackpackController extends BaseScene {
       });
       myArrItem = [];
     });
-    this.user.setInTheBackpackSelected(myArrFinal);
-    return myArrFinal;
+    myArrFinalClean = myArrFinal.filter(()=>return true);
+    this.user.setInTheBackpackSelected(myArrFinalClean);
+    return myArrFinalClean;
   }
 
   async onClickListItemBackpack (item) {
     const listInTheBackpack = await this.readValueListInTheBackpack();
     if (!listInTheBackpack) {
-      firebase.database().ref('users/' + this.user.getUserId()).update({inTheBackpack: {item}});
+      await firebase.database().ref('users/' + this.user.getUserId()).update({inTheBackpack: {item}});
+      const listInTheBackpack = await this.readValueListInTheBackpack();
+      this.listInTheBackpackSelected(listInTheBackpack);
+      this.setState({externalData: true});
     } else {
       if (!Object.values(listInTheBackpack).includes(item)) {
-        firebase.database().ref('users/' + this.user.getUserId()).child('inTheBackpack').push().set(item);
+        await firebase.database().ref('users/' + this.user.getUserId()).child('inTheBackpack').push().set(item);
         const listInTheBackpack = await this.readValueListInTheBackpack();
         this.listInTheBackpackSelected(listInTheBackpack);
         this.setState({externalData: true});

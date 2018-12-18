@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BaseScene } from 'components';
 import template from './recommendationsTemplate';
@@ -12,7 +11,9 @@ class RecommendationsController extends BaseScene {
     this.state = {
       selected: false,
       externalData: null,
-      index: 0
+      index: 0,
+      spinnerVisible: false,
+      collapsed: {}
     };
   }
 
@@ -62,19 +63,21 @@ class RecommendationsController extends BaseScene {
 
   async onClickListItemRecommendations (item) {
     try {
+      this.setState({spinnerVisible: true})
       const listRecos = await this.readValueListRecommendations();
       if (!listRecos) {
         await firebase.database().ref('users/' + this.user.getUserId()).set({recommendationSelected: {item}});
         const listRecos = await this.readValueListRecommendations();
         this.listRecommendationsWhichSelected(listRecos);
-        this.setState({externalData: true});
+        this.setState({externalData: true, spinnerVisible: false});
       } else {
         if (!Object.values(listRecos).includes(item)) {
           await firebase.database().ref('users/' + this.user.getUserId()).child('recommendationSelected').push().set(item);
           const listRecos = await this.readValueListRecommendations();
           this.listRecommendationsWhichSelected(listRecos);
-          this.setState({externalData: true});
+          this.setState({externalData: true, spinnerVisible: false});
         } else {
+          this.setState({spinnerVisible: false})
           console.warn('THE ITEM IS ALREADY IN THE RECOMMENDATIONS SELECTED DATABASE, PLEASE CHOOSE ANOTHER ONE');
         }
       }

@@ -9,7 +9,8 @@ class BackpackController extends BaseScene {
   constructor (args) {
     super(args);
     this.state = {
-      externalData: null
+      externalData: null,
+      collapsed: {}
     };
   }
 
@@ -84,7 +85,7 @@ class BackpackController extends BaseScene {
       });
       myArrItem = [];
     });
-    myArrFinalClean = myArrFinal.filter(()=>return true);
+    myArrFinalClean = myArrFinal.filter(()=>{return true});
     this.user.setInTheBackpackSelected(myArrFinalClean);
     return myArrFinalClean;
   }

@@ -5,7 +5,6 @@ import { View, Text, TextInput, TouchableOpacity, Dimensions, TouchableHighlight
 import Modal from 'react-native-modal';
 import Palette from '../../common/palette';
 import { Button } from 'react-native-elements';
-import AirportSvg from '../../assets/svg/Airport';
 import Calendar from '../../assets/svg/Calendar';
 import DatePicker from 'react-native-datepicker';
 

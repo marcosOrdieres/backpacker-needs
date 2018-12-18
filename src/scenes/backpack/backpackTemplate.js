@@ -1,7 +1,7 @@
 import React from 'react';
 import backpackStyles from './backpackStyles';
 import { ListItem } from 'components';
-import { View, Text, SectionList } from 'react-native';
+import { View, Text, SectionList, TouchableOpacity } from 'react-native';
 import CheckMark from '../../assets/svg/CheckMark';
 import Palette from '../../common/palette';
 
@@ -11,15 +11,23 @@ export default (controller) => (
       style={backpackStyles.mainTitle}>Backpack for {controller.user.getChosenRegion()} </Text>
     {controller.user.getRecommendationsOnlyIntemSelected() ?
       <SectionList
-        renderItem={({item, index, section}) =>
+        renderItem={({item, index, section}) => {
+          return (
           <ListItem
-            dataItem={item}
-            onClickListItem={(item) => controller.onClickListItemBackpack(item)} />}
-        renderSectionHeader={({section: {key}}) => (
-          <View style={backpackStyles.sectionContainer}>
-            <Text style={backpackStyles.sectionTitle}>{key}</Text>
-          </View>
-            )}
+            dataItem={!controller.state.collapsed[section.key] ? item : []}
+            onClickListItem={(item) => controller.onClickListItemBackpack(item)} />)}}
+            renderSectionHeader={(prop) => {
+               return (
+                <TouchableOpacity
+                  onPress={() => {
+                    const state = controller.state;
+                    state.collapsed[prop.section.key] = !state.collapsed[prop.section.key]
+                    controller.setState(state)
+                  }}
+                   style={backpackStyles.sectionContainer}>
+                  <Text style={backpackStyles.sectionTitle}>{prop.section.key}</Text>
+                </TouchableOpacity>
+            )}}
         sections={controller.user.getInTheBackpackSelected()}
         stickySectionHeadersEnabled />
             :

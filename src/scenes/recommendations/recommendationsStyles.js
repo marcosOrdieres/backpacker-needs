@@ -28,5 +28,18 @@ export default StyleSheet.create({
     fontSize: 18,
     marginBottom: 20,
     marginTop: 20
+  },
+
+  containerSpinner: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor:'white',
+    opacity: 0.5,
+
+  },
+  horizontalSpinner: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    padding: 10
   }
 });

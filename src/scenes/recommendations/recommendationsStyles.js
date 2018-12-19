@@ -41,5 +41,12 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     padding: 10
+  },
+  iconChevronView: {
+    position: 'absolute',
+    paddingTop: '35%',
+    paddingLeft: '40%',
+    width: 65,
+    height: 65
   }
 });

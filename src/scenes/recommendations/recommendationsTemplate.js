@@ -4,10 +4,7 @@ import { ListItem } from 'components';
 import { View, Text, SectionList, ActivityIndicator, TouchableOpacity } from 'react-native';
 import Palette from '../../common/palette';
 import AirportSvg from '../../assets/svg/Airport';
-import * as Animatable from 'react-native-animatable';
-
-
-handleTextRef = ref => this.text = ref;
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default (controller) => (
   <View>
@@ -30,16 +27,19 @@ export default (controller) => (
            dataItem={!controller.state.collapsed[section.key] ? item : []}
            onClickListItem={(item) => controller.onClickListItemRecommendations(item)} />)}}
            renderSectionHeader={(prop) => {
-              return (
-               <TouchableOpacity
-                 onPress={() => {
-                   const state = controller.state;
-                   state.collapsed[prop.section.key] = !state.collapsed[prop.section.key]
-                   controller.setState(state)
-                 }}
-                  style={recommendationsStyles.sectionContainer}>
-                 <Text style={recommendationsStyles.sectionTitle}>{prop.section.key}</Text>
-               </TouchableOpacity>
+            return (
+             <TouchableOpacity
+               onPress={() => {
+                 const state = controller.state;
+                 state.collapsed[prop.section.key] = !state.collapsed[prop.section.key]
+                 controller.setState(state)
+               }}
+                style={recommendationsStyles.sectionContainer}>
+                <View style={[recommendationsStyles.iconChevronView, {transform: [{ rotate: controller.state.collapsed[prop.section.key] ? '0deg' : '90deg'}]}]}>
+                  <Icon name="chevron-right" size={20} color={Palette.white} />
+                </View>
+               <Text style={recommendationsStyles.sectionTitle}>{prop.section.key}</Text>
+             </TouchableOpacity>
            )}}
        sections={controller.user.getRecommendationsSelected()}
        stickySectionHeadersEnabled />

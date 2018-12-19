@@ -42,5 +42,12 @@ export default StyleSheet.create({
     paddingTop: '25%',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  iconChevronView: {
+    position: 'absolute',
+    paddingTop: '35%',
+    paddingLeft: '40%',
+    width: 65,
+    height: 65
   }
 });

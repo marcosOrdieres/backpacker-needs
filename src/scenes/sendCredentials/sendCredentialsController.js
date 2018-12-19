@@ -26,7 +26,9 @@ class SendCredentialsController extends BaseScene {
 
   async handleSignupEmail () {
     try {
+			console.warn('www: ', this.state.userName, this.state.password);
       const signUp = await firebase.auth().createUserAndRetrieveDataWithEmailAndPassword(this.state.userName, this.state.password);
+			console.warn('dafsadf: ', signUp);
       return this.navigateTo('TravelDecision');
 			// return this.navigateTo('WhatDoesThisApp');
     } catch (error) {

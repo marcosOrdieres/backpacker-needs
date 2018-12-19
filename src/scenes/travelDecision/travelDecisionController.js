@@ -21,7 +21,23 @@ class TravelDecisionController extends BaseScene {
     };
   }
 
-  checkLetsGo () {
+  async sendRegionAndDate(){
+    const getChosenRegion = this.user.getChosenRegion();
+    console.warn('232323: ', this.user.getUserId());
+
+    const ese = await firebase.database().ref('users/' + this.user.getUserId()).set({
+      "region": {
+        "getChosenRegion": {
+          "date": this.state.date
+        }
+      }
+    });
+
+    console.warn('ESEE: ', ese);
+    return true
+  }
+
+  async checkLetsGo () {
     const now = moment().format();
     if (this.state.country.length > 3 || this.user.getChosenRegion()) {
       return this.setState({ letsgo: true });
@@ -76,9 +92,6 @@ class TravelDecisionController extends BaseScene {
   onClickListItem (item) {
     try {
       this.user.setChosenRegion(item);
-      firebase.database().ref('users/' + this.user.getUserId()).set({
-        region: item
-      });
       return this.toggleModal();
     } catch (error) {
       console.warn(error.message);

@@ -1,5 +1,8 @@
 {
   "splash" : {
     "noConnection": "No internet connection"
+  },
+  "travelDecision":{
+    "BN": "Backpacker Needs"
   }
 }

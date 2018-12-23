@@ -7,5 +7,18 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Palette.primaryColor
+  },
+  textInputPassword: {
+    width: '100%',
+    color: Palette.white,
+    fontSize: 18,
+    fontFamily: 'Calibri',
+    marginTop: '15%'
+  },
+  textInputUserName: {
+    width: '100%',
+    color: Palette.white,
+    fontSize: 18,
+    fontFamily: 'Calibri'
   }
 });

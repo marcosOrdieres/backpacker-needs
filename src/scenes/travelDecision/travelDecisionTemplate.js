@@ -5,13 +5,13 @@ import { View, Text, TextInput, TouchableOpacity, Dimensions, TouchableHighlight
 import Modal from 'react-native-modal';
 import Palette from '../../common/palette';
 import { Button } from 'react-native-elements';
-import Calendar from '../../assets/svg/Calendar';
-import DatePicker from 'react-native-datepicker';
+import { DateTravel } from 'components';
 
 const {width, height} = Dimensions.get('window');
 
 export default (controller) => (
-  <View>
+  <ScrollView style={{flex: 1, flexDirection: 'column'}}>
+
     {controller.state.show && controller.state.country ? <TouchableOpacity
       style={travelDecisionStyles.countryTextOverlay}
       onPress={() => {
@@ -23,16 +23,17 @@ export default (controller) => (
         {controller.state.country}
       </Text>
     </TouchableOpacity> : null}
+
     <View style={travelDecisionStyles.topBar}>
-      <Text style={travelDecisionStyles.textTopBar}>Backpacker Needs</Text>
+      <Text style={travelDecisionStyles.textTopBar}>{controller.i18n.translate('travelDecision.BN')}</Text>
     </View>
 
-    <View>
+    <View style={{flex: 1}}>
       <View style={travelDecisionStyles.destinyView}>
-        <Text style={travelDecisionStyles.destinyText}>Destination</Text>
+        <Text style={travelDecisionStyles.destinyText}>{controller.i18n.translate('travelDecision.destination')}</Text>
       </View>
       <View style={travelDecisionStyles.dividerStatic}>
-        <Text style={travelDecisionStyles.textDividerStatic}>Region (eg. South East Asia)</Text>
+        <Text style={travelDecisionStyles.textDividerStatic}>{controller.i18n.translate('travelDecision.region')}</Text>
       </View>
 
       <View style={travelDecisionStyles.dividerDynamicLoco}>
@@ -40,7 +41,7 @@ export default (controller) => (
         <TouchableOpacity
           style={{height: '100%', justifyContent: 'flex-start'}}
           onPress={() => { controller.toggleModal(); }}>
-          <Text style={{paddingTop: '2.5%', paddingLeft: 5, height: '100%', fontFamily: 'Calibri', fontSize: 16}}>
+          <Text style={travelDecisionStyles.textChoseRegion}>
             {controller.user.getChosenRegion() ? controller.user.getChosenRegion() : 'Please Choose a Region!' }
           </Text>
         </TouchableOpacity>
@@ -49,7 +50,7 @@ export default (controller) => (
           isVisible={controller.state.isModalVisible}>
 
           <View style={travelDecisionStyles.modalContent}>
-            <Text>Choose a Region!</Text>
+            <Text>{controller.i18n.translate('travelDecision.choose')}</Text>
             <TouchableOpacity onPress={() => { controller.toggleModal(); }}>
               <View style={{width: width}}>
                 <ListItem
@@ -69,18 +70,14 @@ export default (controller) => (
       <View style={[travelDecisionStyles.dividerStatic, controller.state.show && controller.state.country ? {marginTop: 40} : null]}>
         <Text style={travelDecisionStyles.textDividerStatic}>Country (eg. Thailand)</Text>
       </View>
-
       <View style={travelDecisionStyles.dividerDynamic}>
-
         <TextInput
           ref='countryInput'
-          style={{height: '100%', fontFamily: 'Calibri', fontSize: 16, alignItems: 'center', justifyContent: 'flex-start'}}
-          placeholder='Type here the country!'
+          style={travelDecisionStyles.textInputCountry}
+          placeholder={controller.i18n.translate('travelDecision.placeholderCountry')}
           value={controller.state.countryInput}
           underlineColorAndroid={Palette.transparent}
-          onBlur={() => {
-            controller.setState({show: false});
-          }}
+          onBlur={() => { controller.setState({show: false}); }}
           onChangeText={(text) => {
             controller.setState({text, countryInput: text, show: true});
             if (text.length > 0) {
@@ -90,6 +87,9 @@ export default (controller) => (
             }
           }} />
       </View>
+    </View>
+
+    <View style={{flex: 1}}>
 
       <TouchableOpacity
         onPress={() => {
@@ -107,45 +107,14 @@ export default (controller) => (
       </TouchableOpacity>
 
       <View style={travelDecisionStyles.aboutTheTripView}>
-        <View style={travelDecisionStyles.whenView}>
-          <View style={{marginTop: 5, width: 80, height: 30}} />
-          <Text style={travelDecisionStyles.textTopBar}>When?</Text>
-          <View style={{marginTop: 30, width: 100, height: 100}}>
-            <Calendar width={100} height={100} />
-          </View>
-          <DatePicker
-            style={travelDecisionStyles.datePickerView}
-            date={controller.state.date}
-            mode='date'
-            placeholder='select date'
-            format='YYYY-MM-DD'
-            minDate='2018-05-01'
-            maxDate='2019-12-01'
-            confirmBtnText='Confirm'
-            cancelBtnText='Cancel'
-            customStyles={{
-              dateIcon: {
-                width: 0,
-                height: 0
-              },
-              dateInput: {
-                marginLeft: '3%',
-                borderColor: 'white'
-              },
-              dateText: {
-                color: 'white',
-                fontSize: 18,
-                fontFamily: 'Calibri'
-              }
-            }}
-            onDateChange={(date) => {
-              controller.user.setDateOfTravel(date);
-              controller.setState({date: date});
-              controller.checkLetsGo();
-            }}
-          />
-        </View>
+        <DateTravel
+          date={controller.state.date}
+          onDateChange={(date) => {
+            controller.user.setDateOfTravel(date);
+            controller.setState({date: date});
+            controller.checkLetsGo();
+          }} />
       </View>
     </View>
-  </View>
+  </ScrollView>
 );

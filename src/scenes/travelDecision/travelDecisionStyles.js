@@ -6,7 +6,7 @@ const {width, height} = Dimensions.get('window');
 
 export default StyleSheet.create({
   topBar: {
-    height: 100,
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Palette.primaryColor,
@@ -55,16 +55,10 @@ export default StyleSheet.create({
     backgroundColor: Palette.white
   },
   textDividerStatic: {
-    color: Palette.primaryColorTransparent,
+    color: Palette.white,
     textAlign: 'center',
     fontFamily: 'Calibri',
     fontSize: 18
-  },
-  whenView: {
-    width: width,
-    height: 300,
-    backgroundColor: Palette.primaryColor75,
-    alignItems: 'center'
   },
   modal: {
     justifyContent: 'flex-end',
@@ -90,11 +84,6 @@ export default StyleSheet.create({
     borderRadius: 4,
     borderColor: 'rgba(0, 0, 0, 0.1)'
   },
-  datePickerView: {
-    paddingTop: 20,
-    width: '80%',
-    alignItems: 'center'
-  },
   countryTextOverlay: {
     zIndex: 100,
     position: 'absolute',
@@ -105,6 +94,20 @@ export default StyleSheet.create({
     borderColor: Palette.black,
     borderRadius: 3,
     borderWidth: 1
+  },
+  textInputCountry: {
+    height: '100%',
+    fontFamily: 'Calibri',
+    fontSize: 16,
+    alignItems: 'center',
+    justifyContent: 'flex-start'
+  },
+  textChoseRegion: {
+    paddingTop: '2.5%',
+    paddingLeft: 5,
+    height: '100%',
+    fontFamily: 'Calibri',
+    fontSize: 16
   }
   // howManyDaysView: {
   //   width: width / 2,

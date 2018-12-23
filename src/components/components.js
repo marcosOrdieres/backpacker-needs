@@ -7,6 +7,7 @@ import Slider from './slider';
 import Swipper from './swipper';
 import Splash from './splash';
 import ListItem from './listItem';
+import DateTravel from './dateTravel';
 
 export {
 	BaseScene,
@@ -17,5 +18,6 @@ export {
 	Slider,
 	Swipper,
 	Splash,
-	ListItem
+	ListItem,
+	DateTravel
 };

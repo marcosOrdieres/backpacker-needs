@@ -8,7 +8,7 @@ export default StyleSheet.create({
     alignItems: 'center'
   },
   textDataPrivacy: {
-    color: Palette.black,
+    color: Palette.white,
     textAlign: 'center',
     fontSize: 14,
     paddingTop: '5%',
@@ -18,13 +18,16 @@ export default StyleSheet.create({
   mainTitleView: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingBottom: '60%'
+
   },
   mainTitleText: {
-    color: Palette.white,
+    color: Palette.primaryColor15,
     textAlign: 'center',
     fontSize: 35,
-    fontFamily: 'Calibri'
+    fontFamily: 'Calibri',
+    fontWeight: 'bold'
   },
   areYouUserText: {
     color: Palette.white,

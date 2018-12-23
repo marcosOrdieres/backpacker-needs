@@ -46,10 +46,14 @@ class SplashController extends BaseScene {
       const getDataItemRecommendationsDidMount = await this.getDataItemRecommendations();
       await this.setState({externalData: 'yes'});
 
-      return this.navigateTo('TravelDecision');
+      return await this.navigateTo('TravelDecision');
     } catch (error) {
+      const getDataItemDidMount = await this.getDataItem();
+      const getDataItemRecommendationsDidMount = await this.getDataItemRecommendations();
+      await this.setState({externalData: 'yes'});
+
       console.warn(error.message);
-      this.navigateTo('Home');
+      return await this.navigateTo('Home');
     }
   }
 

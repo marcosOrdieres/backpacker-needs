@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import homeStyles from './homeStyles';
 import { Button, Splash } from 'components';
-import loginBackgroundImage from '../../assets/images/loginBackgroundImage.png';
+import loginBackgroundImage from '../../assets/images/backpackerBack.png';
 import PopupDialog, { DialogTitle } from 'react-native-popup-dialog';
 import logo from '../../assets/images/backpackerNeeds.png';
 

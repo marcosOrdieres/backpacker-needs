@@ -41,6 +41,7 @@ class SplashController extends BaseScene {
     try {
       const isUserLoggedIn = await this.isUserLoggedIn();
       this.user.setUserId(isUserLoggedIn);
+      console.warn('VAMOS PA ALLA: ', this.user.getUserId());
 
       const getDataItemDidMount = await this.getDataItem();
       const getDataItemRecommendationsDidMount = await this.getDataItemRecommendations();

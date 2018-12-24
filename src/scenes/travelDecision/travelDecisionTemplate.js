@@ -92,7 +92,14 @@ export default (controller) => (
     <View style={{flex: 1}}>
 
       <TouchableOpacity
-        onPress={() => { controller.state.letsgo ? controller.navigateTo('Menu') : false; }}
+        onPress={() => {
+          if(controller.state.letsgo){
+            controller.sendRegionAndDate();
+            return controller.navigateTo('Menu')
+          }else{
+            return false
+          }
+        }}
         style={[{backgroundColor: controller.state.letsgo ? Palette.green : Palette.disabled}, travelDecisionStyles.destinyView]}>
         <Text style={[{color: controller.state.letsgo ? Palette.white : Palette.black}, travelDecisionStyles.destinyText]}>
           {controller.state.letsgo ? 'Let´s Go!' : 'About the trip'}

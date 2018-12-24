@@ -1,8 +1,10 @@
+import React from 'react';
 import { BaseScene } from 'components';
 import template from './destinationTemplate';
 import { connect } from 'react-redux';
 import PopupDialog, { SlideAnimation } from 'react-native-popup-dialog';
 import Toast, {DURATION} from 'react-native-easy-toast';
+import { View } from 'react-native';
 
 import Australia from '../../assets/mapJson/subregion/Australia_and_NewZealand.json';
 import Caribbean from '../../assets/mapJson/subregion/Caribbean.json';
@@ -27,16 +29,19 @@ import WesternEurope from '../../assets/mapJson/subregion/WesternEurope.json';
 class DestinationController extends BaseScene {
   constructor (args) {
     super(args);
+    this.mapsArr = [];
     this.state = {
       mapRegion: null,
       lastLat: 20.15,
       lastLong: -74.91,
-      buttonFly: true
+      buttonFly: true,
+      externalData: null
     };
     this.slideAnimation = new SlideAnimation({slideFrom: 'bottom'});
   }
 
   async componentDidMount () {
+    this.setState({externalData: true});
     setTimeout(() => { this.refs.toast.show('To Help you with the Backpack, Press Recommendations!', 6000); }, 1500);
   }
 
@@ -137,7 +142,11 @@ class DestinationController extends BaseScene {
   }
 
   render () {
-    return template(this);
+    if (this.state.externalData === null) {
+      return <View />;
+    } else {
+      return template(this);
+    }
   }
 }
 

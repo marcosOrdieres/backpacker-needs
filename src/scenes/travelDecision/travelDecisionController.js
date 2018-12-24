@@ -21,20 +21,26 @@ class TravelDecisionController extends BaseScene {
     };
   }
 
-  async sendRegionAndDate(){
-    const getChosenRegion = this.user.getChosenRegion();
-    console.warn('232323: ', this.user.getUserId());
-
-    const ese = await firebase.database().ref('users/' + this.user.getUserId()).set({
-      "region": {
-        "getChosenRegion": {
-          "date": this.state.date
+  async sendRegionAndDate () {
+    const getChosenRegion = await this.user.getChosenRegion();
+    const isCountryStored = await this.readListSelectedCountries();
+    if (!isCountryStored) {
+      await firebase.database().ref('users/' + this.user.getUserId()).set({
+        'region': {
+          [getChosenRegion]: {
+            'date': this.state.date
+          }
         }
-      }
-    });
-
-    console.warn('ESEE: ', ese);
-    return true
+      });
+      return true;
+    } else {
+      await firebase.database().ref('users/' + this.user.getUserId())
+      .child('region')
+      .update({ [getChosenRegion]: {
+        'date': this.state.date
+      }});
+      return true;
+    }
   }
 
   async checkLetsGo () {
@@ -89,7 +95,7 @@ class TravelDecisionController extends BaseScene {
     return countriesArr;
   }
 
-  onClickListItem (item) {
+  async onClickListItem (item) {
     try {
       this.user.setChosenRegion(item);
       return this.toggleModal();

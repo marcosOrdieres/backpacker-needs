@@ -47,8 +47,22 @@ export default (controller) => (
       fadeInDuration={3000}
       fadeOutDuration={2000}
       opacity={0.7}
-      textStyle={{color: Palette.white, fontSize: 18, fontFamily: 'Calibri', textAlign: 'center' }}>
-      <Button style={{width: '80%', borderColor: 'red', borderWidth: 1}} onPress={() => controller.navigateTo('Recommendations')} />
-    </Toast>
+      textStyle={{color: Palette.white, fontSize: 18, fontFamily: 'Calibri', textAlign: 'center' }} />
+    {/* <TouchableOpacity
+      onPress={() => { controller.navigateTo('TravelDecision'); }}
+      style={{
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 100,
+        height: 100,
+        position: 'absolute',
+        // marginLeft: '70%',
+        // marginTop: '120%',
+        backgroundColor: Palette.primaryColor30,
+        borderRadius: 100
+      }}
+    >
+      <Icon name={'chevron-right'} size={30} color='#01a699' />
+    </TouchableOpacity> */}
   </View>
 );

@@ -7,6 +7,7 @@ import routes from '../common/routes';
 import env from '../config/env';
 import palette from '../common/palette';
 import { NetInfo } from 'react-native';
+import firebase from 'react-native-firebase';
 
 export default class BaseScene extends Component {
   constructor (args) {
@@ -17,6 +18,21 @@ export default class BaseScene extends Component {
     this.rootStore = rootStore;
     this.env = env;
     this.palette = palette;
+  }
+
+  async readListSelectedCountries () {
+    const countriesSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region');
+    const snapshot = await countriesSelected.once('value');
+    const valueListCountriesSelected = snapshot.val();
+    return valueListCountriesSelected;
+  }
+
+  checkHowManyDays () {
+    const oneDay = 24 * 60 * 60 * 1000;
+    const dateOfTravel = new Date(this.user.getDateOfTravel());
+    const now = new Date();
+    const diffDays = Math.round(Math.abs((now.getTime() - dateOfTravel.getTime()) / (oneDay)));
+    return diffDays;
   }
 
   navigateTo (destination) {

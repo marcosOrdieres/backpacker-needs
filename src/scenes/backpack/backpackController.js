@@ -34,7 +34,7 @@ class BackpackController extends BaseScene {
   }
 
   async readRecommendationsSelected () {
-    const recommendationSelected = firebase.database().ref('users/' + this.user.getUserId()).child('recommendationSelected');
+    const recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/recommendationSelected');
     const snapshot = await recommendationSelected.once('value');
     const valueListRecommendationSelected = snapshot.val();
     if (valueListRecommendationSelected) {
@@ -47,7 +47,8 @@ class BackpackController extends BaseScene {
   }
 
   async readValueListInTheBackpack () {
-    const inTheBackpack = firebase.database().ref('users/' + this.user.getUserId() + '/inTheBackpack');
+    const inTheBackpack = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/inTheBackpack');
+    // const inTheBackpack = firebase.database().ref('users/' + this.user.getUserId() + '/inTheBackpack');
     const snapshot = await inTheBackpack.once('value');
     const valueListInTheBackpack = snapshot.val();
     return valueListInTheBackpack;
@@ -85,7 +86,7 @@ class BackpackController extends BaseScene {
       });
       myArrItem = [];
     });
-    myArrFinalClean = myArrFinal.filter(()=>{return true});
+    myArrFinalClean = myArrFinal.filter(() => { return true; });
     this.user.setInTheBackpackSelected(myArrFinalClean);
     return myArrFinalClean;
   }
@@ -93,13 +94,20 @@ class BackpackController extends BaseScene {
   async onClickListItemBackpack (item) {
     const listInTheBackpack = await this.readValueListInTheBackpack();
     if (!listInTheBackpack) {
-      await firebase.database().ref('users/' + this.user.getUserId()).update({inTheBackpack: {item}});
+      await firebase.database().ref('users/' + this.user.getUserId())
+        .child('region')
+        .child(this.user.getChosenRegion())
+        .update({inTheBackpack: {item}});
       const listInTheBackpack = await this.readValueListInTheBackpack();
       this.listInTheBackpackSelected(listInTheBackpack);
       this.setState({externalData: true});
     } else {
       if (!Object.values(listInTheBackpack).includes(item)) {
-        await firebase.database().ref('users/' + this.user.getUserId()).child('inTheBackpack').push().set(item);
+        await firebase.database().ref('users/' + this.user.getUserId())
+          .child('region')
+          .child(this.user.getChosenRegion())
+          .child('inTheBackpack')
+          .push(item);
         const listInTheBackpack = await this.readValueListInTheBackpack();
         this.listInTheBackpackSelected(listInTheBackpack);
         this.setState({externalData: true});

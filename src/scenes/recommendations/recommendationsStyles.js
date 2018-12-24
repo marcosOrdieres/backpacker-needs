@@ -12,7 +12,15 @@ export default StyleSheet.create({
     color: Palette.primaryColor,
     fontSize: 25,
     marginTop: 25,
-    marginBottom: 25,
+    marginBottom: 10,
+    fontFamily: 'Calibri'
+  },
+  howManyDays: {
+    textAlign: 'center',
+    color: Palette.primaryColor,
+    fontSize: 18,
+    marginTop: 5,
+    marginBottom: 10,
     fontFamily: 'Calibri'
   },
   sectionContainer: {
@@ -33,8 +41,8 @@ export default StyleSheet.create({
   containerSpinner: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor:'white',
-    opacity: 0.5,
+    backgroundColor: Palette.white,
+    opacity: 0.5
 
   },
   horizontalSpinner: {

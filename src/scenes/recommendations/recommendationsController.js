@@ -55,7 +55,7 @@ class RecommendationsController extends BaseScene {
   }
 
   async readValueListRecommendations () {
-    const recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/recommendationSelected');
+    const recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/recommendationSelected');
     const snapshot = await recommendationSelected.once('value');
     const valueListRecommendations = snapshot.val();
     return valueListRecommendations;
@@ -63,21 +63,28 @@ class RecommendationsController extends BaseScene {
 
   async onClickListItemRecommendations (item) {
     try {
-      this.setState({spinnerVisible: true})
+      this.setState({spinnerVisible: true});
       const listRecos = await this.readValueListRecommendations();
       if (!listRecos) {
-        await firebase.database().ref('users/' + this.user.getUserId()).set({recommendationSelected: {item}});
+        await firebase.database().ref('users/' + this.user.getUserId())
+          .child('region')
+          .child(this.user.getChosenRegion())
+          .update({recommendationSelected: {item}});
         const listRecos = await this.readValueListRecommendations();
         this.listRecommendationsWhichSelected(listRecos);
         this.setState({externalData: true, spinnerVisible: false});
       } else {
         if (!Object.values(listRecos).includes(item)) {
-          await firebase.database().ref('users/' + this.user.getUserId()).child('recommendationSelected').push().set(item);
+          await firebase.database().ref('users/' + this.user.getUserId())
+            .child('region')
+            .child(this.user.getChosenRegion())
+            .child('recommendationSelected')
+            .push(item);
           const listRecos = await this.readValueListRecommendations();
           this.listRecommendationsWhichSelected(listRecos);
           this.setState({externalData: true, spinnerVisible: false});
         } else {
-          this.setState({spinnerVisible: false})
+          this.setState({spinnerVisible: false});
           console.warn('THE ITEM IS ALREADY IN THE RECOMMENDATIONS SELECTED DATABASE, PLEASE CHOOSE ANOTHER ONE');
         }
       }

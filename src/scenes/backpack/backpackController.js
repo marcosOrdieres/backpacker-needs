@@ -48,7 +48,6 @@ class BackpackController extends BaseScene {
 
   async readValueListInTheBackpack () {
     const inTheBackpack = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/inTheBackpack');
-    // const inTheBackpack = firebase.database().ref('users/' + this.user.getUserId() + '/inTheBackpack');
     const snapshot = await inTheBackpack.once('value');
     const valueListInTheBackpack = snapshot.val();
     return valueListInTheBackpack;
@@ -58,9 +57,6 @@ class BackpackController extends BaseScene {
     let myArrFinal = [];
     let myArrFinalClean = [];
     let myArrItem = [];
-
-    let itemTitleArray = [];
-
     let itemTitle;
     let indexOfArray;
     this.user.getRecommendationsSelected().forEach((item) => {

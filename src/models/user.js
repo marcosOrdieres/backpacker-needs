@@ -8,7 +8,6 @@ export default class User {
     static chosenRegionCoordinates;
     static recommendations;
     static recommendationsSelected;
-    static toDos;
     static inTheBackpackSelected;
     static recommendationsOnlyItemSelected;
     static countriesInTheWorld;
@@ -24,7 +23,6 @@ export default class User {
     getDateOfTravel() {
       return this.dateOfTravel;
     }
-
 
     getLat() {
       return this.lat;
@@ -81,14 +79,6 @@ export default class User {
 
     setRecommendationsSelected(value) {
       this.recommendationsSelected = value;
-    }
-
-    getToDos() {
-      return this.toDos;
-    }
-
-    setToDos(value) {
-      this.toDos = value;
     }
 
     getRecommendations() {
@@ -158,7 +148,6 @@ export default class User {
         chosenRegionCoordinates: this.chosenRegionCoordinates,
         recommendations: this.recommendations,
         recommendationsSelected: this.recommendationsSelected,
-        toDos: this.toDos,
         inTheBackpackSelected: this.inTheBackpackSelected,
         recommendationsOnlyItemSelected: this.recommendationsOnlyItemSelected,
         countriesInTheWorld: this.countriesInTheWorld,

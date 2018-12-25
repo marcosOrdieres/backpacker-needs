@@ -1,19 +1,9 @@
-import {
-	BaseScene
-} from 'components';
+import { BaseScene } from 'components';
 import template from './sendCredentialsTemplate';
-import {
-	connect
-} from 'react-redux';
+import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
-import {
-	AccessToken,
-	LoginManager,
-	LoginButton
-} from 'react-native-fbsdk';
-import {
-	GoogleSignin
-} from 'react-native-google-signin';
+import { AccessToken, LoginManager, LoginButton } from 'react-native-fbsdk';
+import { GoogleSignin } from 'react-native-google-signin';
 
 class SendCredentialsController extends BaseScene {
   constructor (args) {
@@ -26,12 +16,10 @@ class SendCredentialsController extends BaseScene {
 
   async handleSignupEmail () {
     try {
-      console.warn('www: ', this.state.userName, this.state.password);
       const signUp = await firebase.auth().createUserAndRetrieveDataWithEmailAndPassword(this.state.userName, this.state.password);
-      console.warn('dafsadf: ', signUp.user);
       this.user.setUserId(signUp.user.uid);
       return this.navigateTo('TravelDecision');
-			// return this.navigateTo('WhatDoesThisApp');
+			// should be when everzthing it will be done: return this.navigateTo('WhatDoesThisApp');
     } catch (error) {
       console.warn(error.message);
     }
@@ -42,9 +30,7 @@ class SendCredentialsController extends BaseScene {
       await firebase.auth().signInAndRetrieveDataWithEmailAndPassword(this.state.userName, this.state.password);
       return this.navigateTo('TravelDecision');
     } catch (error) {
-      this.setState({
-        errorMessage: error.message
-      });
+      this.setState({errorMessage: error.message});
       console.warn(error.message);
     }
   }

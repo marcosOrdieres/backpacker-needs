@@ -11,7 +11,6 @@ const {width, height} = Dimensions.get('window');
 
 export default (controller) => (
   <ScrollView style={{flex: 1, flexDirection: 'column'}}>
-
     {controller.state.show && controller.state.country ? <TouchableOpacity
       style={travelDecisionStyles.countryTextOverlay}
       onPress={() => {
@@ -42,7 +41,7 @@ export default (controller) => (
           style={{height: '100%', justifyContent: 'flex-start'}}
           onPress={() => { controller.toggleModal(); }}>
           <Text style={travelDecisionStyles.textChoseRegion}>
-            {controller.user.getChosenRegion() ? controller.user.getChosenRegion() : 'Please Choose a Region!' }
+            {controller.user.getChosenRegion() ? controller.user.getChosenRegion() : controller.i18n.translate('travelDecision.chooseRegion') }
           </Text>
         </TouchableOpacity>
         <Modal
@@ -68,13 +67,13 @@ export default (controller) => (
       </View>
 
       <View style={[travelDecisionStyles.dividerStatic, controller.state.show && controller.state.country ? {marginTop: 40} : null]}>
-        <Text style={travelDecisionStyles.textDividerStatic}>Country (eg. Thailand)</Text>
+        <Text style={travelDecisionStyles.textDividerStatic}>{controller.i18n.t('travelDecision.country')}</Text>
       </View>
       <View style={travelDecisionStyles.dividerDynamic}>
         <TextInput
           ref='countryInput'
           style={travelDecisionStyles.textInputCountry}
-          placeholder={controller.i18n.translate('travelDecision.placeholderCountry')}
+          placeholder={controller.i18n.t('travelDecision.placeholderCountry')}
           value={controller.state.countryInput}
           underlineColorAndroid={Palette.transparent}
           onBlur={() => { controller.setState({show: false}); }}
@@ -93,16 +92,16 @@ export default (controller) => (
 
       <TouchableOpacity
         onPress={() => {
-          if(controller.state.letsgo){
+          if (controller.state.letsgo) {
             controller.sendRegionAndDate();
-            return controller.navigateTo('Menu')
-          }else{
-            return false
+            return controller.navigateTo('Menu');
+          } else {
+            return false;
           }
         }}
         style={[{backgroundColor: controller.state.letsgo ? Palette.green : Palette.disabled}, travelDecisionStyles.destinyView]}>
         <Text style={[{color: controller.state.letsgo ? Palette.white : Palette.black}, travelDecisionStyles.destinyText]}>
-          {controller.state.letsgo ? 'Let´s Go!' : 'About the trip'}
+          {controller.state.letsgo ? controller.i18n.t('travelDecision.letsgo') : controller.i18n.t('travelDecision.aboutTrip')}
         </Text>
       </TouchableOpacity>
 

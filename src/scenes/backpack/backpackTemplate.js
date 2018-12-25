@@ -42,9 +42,7 @@ export default (controller) => (
         stickySectionHeadersEnabled />
             :
       <View>
-        <Text style={backpackStyles.subtitleNoItemsBackpack}>
-        There are not items in the Backpack! Please choose some in Recommendations
-        </Text>
+        <Text style={backpackStyles.subtitleNoItemsBackpack}>{controller.i18n.t('backpack.noItems')}</Text>
         <View style={backpackStyles.checkmarkNoItemsBackpack}>
           <CheckMark
             color={Palette.primaryColor75}

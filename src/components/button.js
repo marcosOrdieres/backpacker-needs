@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { View, StyleSheet, Platform } from 'react-native';
 import { Button } from 'react-native-elements';
+import Palette from '../common/palette';
 
 const styles = StyleSheet.create({
   viewButtonStyle: {
@@ -32,10 +33,10 @@ export default class ButtonComponent extends Component {
           containerViewStyle={{marginLeft: 0, marginRight: 0}}
           onPress={this.props.onPress}
           activeOpacity={0.5}
-          buttonStyle={[{borderColor: this.props.buttonBorderColor ? this.props.buttonBorderColor : 'transparent'}, this.props.buttonStyle, styles.buttonStyle]}
-          backgroundColor={this.props.color != null ? this.props.color : 'white'}
+          buttonStyle={[{borderColor: this.props.buttonBorderColor ? this.props.buttonBorderColor : Palette.transparent}, this.props.buttonStyle, styles.buttonStyle]}
+          backgroundColor={this.props.color != null ? this.props.color : Palette.white}
           title={this.props.title}
-          textStyle={[{textAlign: 'center', color: this.props.textColor ? this.props.textColor : 'black'}, this.props.textStyle]} />
+          textStyle={[{textAlign: 'center', color: this.props.textColor ? this.props.textColor : Palette.black}, this.props.textStyle]} />
       </View>
     );
   }

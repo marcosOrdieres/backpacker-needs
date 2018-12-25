@@ -1,17 +1,7 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Image,
-  Icon,
-  SafeAreaView,
-  Platform
-} from 'react-native';
-import {
-  StackNavigator,
-  TabNavigator
- } from 'react-navigation';
+import { StyleSheet, Image, Icon, SafeAreaView, Platform } from 'react-native';
+import { StackNavigator, TabNavigator } from 'react-navigation';
 import i18n from '../translations';
-import routes from '../common/routes.json';
 import Palette from '../common/palette';
 
 import DestinationScreen from '../scenes/destination';
@@ -27,13 +17,10 @@ import AirportSvg from '../assets/svg/Airport';
 import CheckMark from '../assets/svg/CheckMark';
 import BackpackSvg from '../assets/svg/Ruck';
 
-const Splash = routes.Splash;
-const Home = routes.Home;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: Palette.white,
     alignItems: 'center',
     justifyContent: 'center'
   },
@@ -55,7 +42,7 @@ export const MenuBar = TabNavigator({
   Destination: {
     screen: DestinationScreen,
     navigationOptions: {
-      title: 'Destination',
+      title: i18n.t('destination.destination'),
       tabBarOnPress: (scene, jumpToIndex) => {
         if (typeof scene.previousScene.routes !== 'undefined') {
           if (scene.previousScene.routes[0].key === 'Tariff') {
@@ -76,7 +63,7 @@ export const MenuBar = TabNavigator({
   Recommendations: {
     screen: RecommendationsScreen,
     navigationOptions: ({ navigation }) => ({
-      title: 'Recommends',
+      title: i18n.t('recommendations.recommendations'),
       tabBarIcon: ({ tintColor }) => {
         if (tintColor === Palette.primaryColorUnselected) {
           return <CheckMark color={Palette.primaryColorUnselected} width={25} height={25} />;
@@ -89,7 +76,7 @@ export const MenuBar = TabNavigator({
   Backpack: {
     screen: BackpackScreen,
     navigationOptions: ({ navigation }) => ({
-      title: 'To-Do List',
+      title: i18n.t('backpack.backpack'),
       tabBarIcon: ({ tintColor }) => {
         if (tintColor === Palette.primaryColorUnselected) {
           return <BackpackSvg color={Palette.primaryColorUnselected} width={25} height={25} />;
@@ -105,16 +92,16 @@ export const MenuBar = TabNavigator({
     tabBarOptions: {
       upperCaseLabel: false,
       showIcon: true,
-      activeTintColor: '#ffffff',
-      inactiveTintColor: '#9796ce',
+      activeTintColor: Palette.white,
+      inactiveTintColor: Palette.primaryColorUnselected,
       style: {
-        backgroundColor: '#5856d6',
+        backgroundColor: Palette.primaryColor,
         height: 60,
         shadowOpacity: 0
       },
       labelStyle: styles.labelStyle,
       indicatorStyle: {
-        backgroundColor: '#ffffff'
+        backgroundColor: Palette.white
       },
       swipeEnabled: true
     }
@@ -151,9 +138,9 @@ export const RootStack = StackNavigator({
 },
   {
     navigationOptions: {
-      header: Platform.OS === 'ios' ? <SafeAreaView style={{backgroundColor: '#fff'}} /> : null
+      header: Platform.OS === 'ios' ? <SafeAreaView style={{backgroundColor: Palette.white}} /> : null
     },
     cardStyle: {
-      backgroundColor: 'white'
+      backgroundColor: Palette.white
     }
   });

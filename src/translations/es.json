@@ -1,5 +1,50 @@
 {
   "splash" : {
-    "noConnection": "No internet connection"
+    "noConnection": "No tienes Conexion a Internet",
+    "broken":"Roto"
+  },
+  "home":{
+    "mainTitleText": "Bienvenido Backpacker !",
+    "checkBoxData": "Haz click aqui",
+    "textDataPrivacy": "Acepto Terminos y Condiciones y la Politica de Privacidad",
+    "popupDialog": "Titulo Dialogo",
+    "registerEmailTitle": "Registrate Gratis",
+    "registerFacebookTitle": "Continua con Facebook",
+    "loginTitle": "Log in con tu email",
+  "areYouUser": "¿Eres ya un usuario?",
+    "noInternet":"Lo sentimos, no tienes Conexion a Internet"
+  },
+  "travelDecision":{
+    "BN": "Backpacker Needs",
+    "destination": "Destino",
+    "region":"Region (eg. Sudeste Asiatico)",
+    "chooseRegion":"¡Escoge una Region, por favor!",
+    "choose":"¡Escoge una Region!",
+    "placeholderCountry":"¡Escribe aqui el Pais!",
+    "letsgo": "¡Vamos",
+    "aboutTrip": "¡Sobre el viaje!",
+    "country":"Pais (eg. Tailandia)"
+  },
+  "destination":{
+    "destination":"Destino",
+    "toast":"¡Para ayudarte con la Mochila, Presiona Recomendaciones!"
+  },
+  "recommendations":{
+    "recommendations":"Recomendaciones"
+  },
+  "backpack":{
+    "backpack":"Mochila",
+    "noItems":"¡No hay objetos en la Mochila! Por favor, escoge algunos en Recommendaciones."
+  },
+  "email":"email",
+  "password":"contraseña",
+  "sendCredentials": {
+    "login": "Log in con tu email",
+    "register": "Registrate con tu email"
+  },
+  "components":{
+    "dateWhen": "¿Cuando?",
+    "listItemSelect": "(Seleccionado)",
+    "listItemBack": "(En la Mochila)"
   }
 }

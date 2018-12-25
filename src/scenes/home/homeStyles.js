@@ -20,7 +20,6 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingBottom: '60%'
-
   },
   mainTitleText: {
     color: Palette.primaryColor15,

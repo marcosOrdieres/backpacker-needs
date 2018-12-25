@@ -10,7 +10,7 @@ import Palette from '../../common/palette';
 import markerBackpacker from '../../assets/images/markerBackpack.png';
 import Toast, {DURATION} from 'react-native-easy-toast';
 
-const styles = StyleSheet.create({
+const localStyles = StyleSheet.create({
   map: {
     ...StyleSheet.absoluteFillObject
   },
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
 export default (controller) => (
   <View style={{flex: 1}}>
     <MapView
-      style={styles.map}
+      style={localStyles.map}
       region={controller.state.mapRegion}
       rotateEnabled
       scrollEnabled

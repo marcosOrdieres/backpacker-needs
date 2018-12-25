@@ -4,7 +4,7 @@ import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 
 const ScreenHeight = Dimensions.get('window').height;
 
-const styles = StyleSheet.create({
+const localStyles = StyleSheet.create({
   containerTotal: {
     flex: 1,
     justifyContent: 'center',
@@ -27,8 +27,8 @@ export default class MapComponent extends Component {
 
   render () {
     return (
-      <View style={styles.containerTotal} >
-        <View style={styles.containerMap} >
+      <View style={localStyles.containerTotal} >
+        <View style={localStyles.containerMap} >
           <MapView
             provider={PROVIDER_GOOGLE}
             initialRegion={{
@@ -38,8 +38,7 @@ export default class MapComponent extends Component {
               longitudeDelta: 0.0421
             }} />
         </View>
-        <View style={styles.containerProduct} />
-        <Text>holaaaa</Text>
+        <View style={localStyles.containerProduct} />
       </View>
 
     );

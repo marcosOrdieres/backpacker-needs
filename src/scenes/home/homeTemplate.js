@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  ImageBackground,
-  TouchableOpacity,
-  TextInput,
-  TouchableHighlight
-} from 'react-native';
+import { View, Text, ScrollView, ImageBackground, TouchableOpacity, TextInput, TouchableHighlight } from 'react-native';
 import homeStyles from './homeStyles';
 import { Button, Splash } from 'components';
 import loginBackgroundImage from '../../assets/images/backpackerBack.png';

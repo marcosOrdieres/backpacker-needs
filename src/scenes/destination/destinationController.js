@@ -42,7 +42,7 @@ class DestinationController extends BaseScene {
 
   async componentDidMount () {
     this.setState({externalData: true});
-    setTimeout(() => { this.refs.toast.show('To Help you with the Backpack, Press Recommendations!', 6000); }, 1500);
+    setTimeout(() => { this.refs.toast.show(this.i18n.t('destination.toast'), 6000); }, 1500);
   }
 
   async componentWillMount () {

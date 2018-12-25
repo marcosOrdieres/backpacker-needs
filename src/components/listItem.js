@@ -5,6 +5,7 @@ import CheckMark from '../assets/svg/CheckMark';
 import Backpack from '../assets/svg/BackpackNoLetters';
 import Palette from '../common/palette';
 import rootStore from '../stores/root';
+import i18n from '../translations';
 
 const styles = StyleSheet.create({
   viewButtonStyle: {
@@ -42,9 +43,9 @@ export default class ListItemComponent extends Component {
                   key={key}
                   keyExtractor={key}
                   title={(item.selectedRecommendations) ? item.value : (item.selectedInTheBackpack ? item.value : item)}
-                  subtitle={(item.selectedRecommendations) ? '(Already Selected)' : (item.selectedInTheBackpack ? '(Backpacked)' : null)}
-                  titleStyle={{paddingLeft: 30, fontSize: 20, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? Palette.disabled : 'black')}}
-                  subtitleStyle={{paddingLeft: 30, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? Palette.disabled : 'black')}}
+                  subtitle={(item.selectedRecommendations) ? i18n.t('components.listItemSelect') : (item.selectedInTheBackpack ? i18n.t('components.listItemBack') : null)}
+                  titleStyle={{paddingLeft: 30, fontSize: 20, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? Palette.disabled : Palette.totalBlack)}}
+                  subtitleStyle={{paddingLeft: 30, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? Palette.disabled : Palette.totalBlack)}}
                   rightIcon={{name: 'check', color: item.selectedInTheBackpack ? Palette.green : Palette.transparent}}
                   leftIcon={!item.selectedInTheBackpack && !this.rootStore.getState().isBackpackScreen ?
                     (<CheckMark

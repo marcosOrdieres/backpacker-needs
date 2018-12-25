@@ -2,11 +2,6 @@ import { StyleSheet } from 'react-native';
 import Palette from '../../common/palette';
 
 export default StyleSheet.create({
-  recommendationsContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
   mainTitle: {
     textAlign: 'center',
     color: Palette.primaryColor,
@@ -31,19 +26,17 @@ export default StyleSheet.create({
   },
   sectionTitle: {
     textAlign: 'center',
-    color: 'black',
+    color: Palette.totalBlack,
     fontFamily: 'Calibri',
     fontSize: 18,
     marginBottom: 20,
     marginTop: 20
   },
-
   containerSpinner: {
     flex: 1,
     justifyContent: 'center',
     backgroundColor: Palette.white,
     opacity: 0.5
-
   },
   horizontalSpinner: {
     flexDirection: 'row',

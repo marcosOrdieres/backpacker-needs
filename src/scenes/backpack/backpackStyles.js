@@ -2,11 +2,6 @@ import { StyleSheet } from 'react-native';
 import Palette from '../../common/palette';
 
 export default StyleSheet.create({
-  backpackContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
   mainTitle: {
     textAlign: 'center',
     color: Palette.primaryColor,
@@ -31,7 +26,7 @@ export default StyleSheet.create({
   },
   sectionTitle: {
     textAlign: 'center',
-    color: 'black',
+    color: Palette.totalBlack,
     fontFamily: 'Calibri',
     fontSize: 18,
     marginBottom: 20,

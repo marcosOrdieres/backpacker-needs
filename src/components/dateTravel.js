@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, Dimensions } from 'react-native';
 import Palette from '../common/palette';
 import DatePicker from 'react-native-datepicker';
 import Calendar from '../assets/svg/Calendar';
+import i18n from '../translations';
 
 const {width, height} = Dimensions.get('window');
 
@@ -36,7 +37,7 @@ export default class DateTravelComponent extends Component {
   render () {
     return (
       <View style={styles.whenView}>
-        <Text style={styles.textWhen}>When?</Text>
+        <Text style={styles.textWhen}>{i18n.t('components.dateWhen')}</Text>
         <View style={{paddingTop: 15, width: 100, height: 100}}>
           <Calendar color={Palette.primaryColor75} width={100} height={100} />
         </View>

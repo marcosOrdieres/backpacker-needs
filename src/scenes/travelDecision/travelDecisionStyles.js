@@ -109,10 +109,4 @@ export default StyleSheet.create({
     fontFamily: 'Calibri',
     fontSize: 16
   }
-  // howManyDaysView: {
-  //   width: width / 2,
-  //   height: 300,
-  //   backgroundColor: Palette.primaryColor75,
-  //   alignItems: 'center'
-  // }
 });

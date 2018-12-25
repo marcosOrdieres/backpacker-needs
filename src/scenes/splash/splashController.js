@@ -41,7 +41,6 @@ class SplashController extends BaseScene {
     try {
       const isUserLoggedIn = await this.isUserLoggedIn();
       this.user.setUserId(isUserLoggedIn);
-      console.warn('weeeee 1');
       const getDataItemDidMount = await this.getDataItem();
       const getDataItemRecommendationsDidMount = await this.getDataItemRecommendations();
       await this.setState({externalData: 'yes'});
@@ -49,8 +48,6 @@ class SplashController extends BaseScene {
     } catch (error) {
       // TODO: fix this
       const getDataItemDidMount = await this.getDataItem();
-      console.warn('weeeee 2');
-
       const getDataItemRecommendationsDidMount = await this.getDataItemRecommendations();
       await this.setState({externalData: 'yes'});
       return await this.navigateTo('Home');
@@ -74,7 +71,6 @@ class SplashController extends BaseScene {
       const eventref = firebase.database().ref('region/');
       const snapshot = await eventref.once('value');
       const valueList = snapshot.val();
-      console.warn('valueList: ', valueList);
       this.user.setCountries(valueList);
       const countries = Object.keys(valueList);
       countriesSorted = countries.sort();

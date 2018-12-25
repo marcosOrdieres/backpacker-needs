@@ -109,7 +109,7 @@ class DestinationController extends BaseScene {
         case 'North Africa':
           return NorthernAfrica;
           break;
-        case 'NorthernAmerica':
+        case 'North America':
           return NorthernAmerica;
           break;
         case 'North Europe':

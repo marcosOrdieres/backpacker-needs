@@ -9,6 +9,9 @@ import PopupDialog, { DialogTitle } from 'react-native-popup-dialog';
 import Palette from '../../common/palette';
 import markerBackpacker from '../../assets/images/markerBackpack.png';
 import Toast, {DURATION} from 'react-native-easy-toast';
+import ActionButton from 'react-native-action-button';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import BackpackSvg from '../../assets/svg/Ruck';
 
 const localStyles = StyleSheet.create({
   map: {
@@ -42,27 +45,16 @@ export default (controller) => (
     <Toast
       ref='toast'
       style={{backgroundColor: Palette.primaryColor30, width: '70%'}}
-      position='bottom'
+      position='top'
       positionValue={200}
       fadeInDuration={3000}
       fadeOutDuration={2000}
       opacity={0.7}
       textStyle={{color: Palette.white, fontSize: 18, fontFamily: 'Calibri', textAlign: 'center' }} />
-    {/* <TouchableOpacity
-      onPress={() => { controller.navigateTo('TravelDecision'); }}
-      style={{
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: 100,
-        height: 100,
-        position: 'absolute',
-        // marginLeft: '70%',
-        // marginTop: '120%',
-        backgroundColor: Palette.primaryColor30,
-        borderRadius: 100
-      }}
-    >
-      <Icon name={'chevron-right'} size={30} color='#01a699' />
-    </TouchableOpacity> */}
+    <ActionButton buttonColor={Palette.primaryColor}>
+      <ActionButton.Item buttonColor={Palette.green} title='Add Backpack' onPress={() => { console.warn('vamos para el TravelDecision'); }}>
+        <BackpackSvg width={25} height={25} colorFillCorner={Palette.green} colorFillRest={Palette.green} />
+      </ActionButton.Item>
+    </ActionButton>
   </View>
 );

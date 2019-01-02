@@ -8,6 +8,8 @@ import Swipper from './swipper';
 import Splash from './splash';
 import ListItem from './listItem';
 import DateTravel from './dateTravel';
+import ControlPanel from './controlPanel';
+import Main from './main';
 
 export {
 	BaseScene,
@@ -19,5 +21,7 @@ export {
 	Swipper,
 	Splash,
 	ListItem,
-	DateTravel
+	DateTravel,
+	ControlPanel,
+	Main
 };

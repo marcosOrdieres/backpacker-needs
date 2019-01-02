@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import PopupDialog, { SlideAnimation } from 'react-native-popup-dialog';
 import Toast, {DURATION} from 'react-native-easy-toast';
 import { View } from 'react-native';
+import firebase from 'react-native-firebase';
 
 import Australia from '../../assets/mapJson/subregion/Australia_and_NewZealand.json';
 import Caribbean from '../../assets/mapJson/subregion/Caribbean.json';
@@ -29,15 +30,20 @@ import WesternEurope from '../../assets/mapJson/subregion/WesternEurope.json';
 class DestinationController extends BaseScene {
   constructor (args) {
     super(args);
-    this.mapsArr = [];
+    this.myArrRegion = [];
     this.state = {
       mapRegion: null,
       lastLat: 20.15,
       lastLong: -74.91,
       buttonFly: true,
+      isModalVisible: false,
       externalData: null
     };
     this.slideAnimation = new SlideAnimation({slideFrom: 'bottom'});
+  }
+
+  toggleModal () {
+    this.setState({ isModalVisible: !this.state.isModalVisible });
   }
 
   async componentDidMount () {

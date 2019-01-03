@@ -25,8 +25,18 @@ const isBackpackScreenReducer = (state = false, action) => {
   }
 };
 
+const isRegionChangedReducer = (state = true, action) => {
+  switch (action.type) {
+    case 'REGION_CHANGED':
+      return action.isRegionChanged;
+    default:
+      return state;
+  }
+};
+
 export default {
   isFromSignup: isFromSignupReducer,
   isFromLogin: isFromLoginReducer,
-  isBackpackScreen: isBackpackScreenReducer
+  isBackpackScreen: isBackpackScreenReducer,
+  isRegionChanged:isRegionChangedReducer
 };

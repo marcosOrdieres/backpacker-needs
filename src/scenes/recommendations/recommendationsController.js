@@ -18,8 +18,13 @@ class RecommendationsController extends BaseScene {
   }
 
   async componentDidMount () {
-    await this.checkSelectedRecommendations();
-    await this.setState({externalData: true});
+    this.props.navigation.addListener('didFocus', async () => {
+      if(this.rootStore.getState().isRegionChanged){
+        await this.checkSelectedRecommendations();
+        await this.rootStore.dispatch({ type: 'REGION_CHANGED', isRegionChanged: false});
+        await this.setState({externalData: true});
+      }
+    });
   }
 
   async listRecommendationsWhichSelected (checkListRecos) {

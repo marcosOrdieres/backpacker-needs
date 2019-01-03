@@ -13,7 +13,7 @@ export default StyleSheet.create({
   actionButtonIcon: {
     fontSize: 18,
     height: 18,
-    color: 'white'
+    color: Palette.white
   },
   modal: {
     justifyContent: 'flex-end',
@@ -24,15 +24,22 @@ export default StyleSheet.create({
   },
   modalContent: {
     backgroundColor: Palette.white,
-    // justifyContent: 'center',
     height: height,
     flex: 3,
-    // alignItems: 'center',
     borderColor: 'rgba(0, 0, 0, 0.1)'
   },
   modalContentRest: {
     height: height,
     backgroundColor: Palette.transparent,
     flex: 1
+  },
+  hamburguerView:{
+    width: 30,
+    height: 30,
+    backgroundColor: Palette.primaryColor,
+    marginTop: 5,
+    marginLeft: 5,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });

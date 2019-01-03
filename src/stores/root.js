@@ -8,7 +8,9 @@ import userReducer from '../reducers/userReducer';
 const appReducer = combineReducers({
   isFromSignup: userReducer.isFromSignup,
   isFromLogin: userReducer.isFromLogin,
-  isBackpackScreen: userReducer.isBackpackScreen
+  isBackpackScreen: userReducer.isBackpackScreen,
+  isRegionChanged: userReducer.isRegionChanged
+
 });
 
 const rootStore = createStore(appReducer, applyMiddleware(thunk), reduxReset());

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import PopupDialog, { SlideAnimation } from 'react-native-popup-dialog';
 import Toast, {DURATION} from 'react-native-easy-toast';
 import { View } from 'react-native';
+import firebase from 'react-native-firebase';
 
 import Australia from '../../assets/mapJson/subregion/Australia_and_NewZealand.json';
 import Caribbean from '../../assets/mapJson/subregion/Caribbean.json';
@@ -29,41 +30,51 @@ import WesternEurope from '../../assets/mapJson/subregion/WesternEurope.json';
 class DestinationController extends BaseScene {
   constructor (args) {
     super(args);
-    this.mapsArr = [];
+    this.myArrRegion = [];
     this.state = {
       mapRegion: null,
       lastLat: 20.15,
       lastLong: -74.91,
       buttonFly: true,
+      isModalVisible: false,
       externalData: null
     };
     this.slideAnimation = new SlideAnimation({slideFrom: 'bottom'});
   }
 
+  toggleModal () {
+    this.setState({ isModalVisible: !this.state.isModalVisible });
+  }
+
   async componentDidMount () {
-    this.setState({externalData: true});
+    //this.setState({externalData: true});
     setTimeout(() => { this.refs.toast.show(this.i18n.t('destination.toast'), 6000); }, 1500);
+  }
+
+  async mapBuilderWithJson(){
+    await this.listItemBackpacks();
+    const country = this.user.getCountries();
+    let result = Object.keys(country).map(function (key) { return [key, country[key]]; });
+    const resultCoordinates = result.forEach((element) => {
+      element.find((place) => {
+        if (place === this.user.getChosenRegion()) {
+          return this.user.setChosenRegionCoordinates(element[1]);
+        }
+      });
+    });
+
+    let mapRegion = {
+      latitude: this.user.getChosenRegionCoordinates() ? this.user.getChosenRegionCoordinates().latitude : this.user.getLat(),
+      longitude: this.user.getChosenRegionCoordinates() ? this.user.getChosenRegionCoordinates().longitude : this.user.getLong(),
+      latitudeDelta: 60,
+      longitudeDelta: 60
+    };
+    this.onRegionChange(mapRegion, mapRegion.latitude, mapRegion.longitude);
   }
 
   async componentWillMount () {
     try {
-      const country = this.user.getCountries();
-      let result = Object.keys(country).map(function (key) { return [key, country[key]]; });
-      const resultCoordinates = result.forEach((element) => {
-        element.find((place) => {
-          if (place === this.user.getChosenRegion()) {
-            return this.user.setChosenRegionCoordinates(element[1]);
-          }
-        });
-      });
-
-      let mapRegion = {
-        latitude: this.user.getChosenRegionCoordinates() ? this.user.getChosenRegionCoordinates().latitude : this.user.getLat(),
-        longitude: this.user.getChosenRegionCoordinates() ? this.user.getChosenRegionCoordinates().longitude : this.user.getLong(),
-        latitudeDelta: 60,
-        longitudeDelta: 60
-      };
-      this.onRegionChange(mapRegion, mapRegion.latitude, mapRegion.longitude);
+      await this.mapBuilderWithJson();
     } catch (error) {
       console.warn(error.message);
     }
@@ -75,6 +86,20 @@ class DestinationController extends BaseScene {
       lastLat: lastLat,
       lastLong: lastLong
     });
+  }
+
+   async listItemBackpacks(){
+    const countriesBackpack = await this.readListSelectedCountries();
+    this.user.setRegionsStoredFirebase(Object.keys(countriesBackpack));
+    return this.setState({externalData: true});
+  }
+
+  onClickListItemRegion(item){
+    this.user.setChosenRegion(item);
+    this.mapBuilderWithJson();
+    this.rootStore.dispatch({ type: 'REGION_CHANGED', isRegionChanged: true});
+
+    return this.toggleModal();
   }
 
   regionChosen () {

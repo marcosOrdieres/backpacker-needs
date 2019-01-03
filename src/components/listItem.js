@@ -44,16 +44,16 @@ export default class ListItemComponent extends Component {
                   keyExtractor={key}
                   title={(item.selectedRecommendations) ? item.value : (item.selectedInTheBackpack ? item.value : item)}
                   subtitle={(item.selectedRecommendations) ? i18n.t('components.listItemSelect') : (item.selectedInTheBackpack ? i18n.t('components.listItemBack') : null)}
-                  titleStyle={{paddingLeft: 30, fontSize: 20, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? Palette.disabled : Palette.totalBlack)}}
+                  titleStyle={{fontSize: this.props.fontTitle ? this.props.fontTitle : 20,paddingLeft: this.props.noPaddingLeft ? 0 : 30, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? Palette.disabled : Palette.totalBlack)}}
                   subtitleStyle={{paddingLeft: 30, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? Palette.disabled : Palette.totalBlack)}}
                   rightIcon={{name: 'check', color: item.selectedInTheBackpack ? Palette.green : Palette.transparent}}
-                  leftIcon={!item.selectedInTheBackpack && !this.rootStore.getState().isBackpackScreen ?
+                  leftIcon={!item.selectedInTheBackpack && !this.rootStore.getState().isBackpackScreen && !this.props.noFirstIcon ?
                     (<CheckMark
                       color={item.selectedRecommendations ? Palette.disabled : Palette.primaryColor}
                       width={40}
                       height={40} />)
                     :
-                    (item.selectedInTheBackpack && this.rootStore.getState().isBackpackScreen ?
+                    ((item.selectedInTheBackpack && this.rootStore.getState().isBackpackScreen) || this.props.noIcon ?
                       null
                       :
                       (<Backpack

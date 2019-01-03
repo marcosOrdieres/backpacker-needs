@@ -15,6 +15,15 @@ export default class User {
     static lat;
     static long;
     static dateOfTravel;
+    static regionsStoredFirebase;
+
+    setRegionsStoredFirebase(value) {
+      this.regionsStoredFirebase = value;
+    }
+
+    getRegionsStoredFirebase() {
+      return this.regionsStoredFirebase;
+    }
 
     setDateOfTravel(value) {
       this.dateOfTravel = value;
@@ -154,7 +163,8 @@ export default class User {
         countryGeojson: this.countryGeojson,
         lat: this.lat,
         long: this.long,
-        dateOfTravel: this.dateOfTravel
+        dateOfTravel: this.dateOfTravel,
+        regionsStoredFirebase: this.regionsStoredFirebase
       };
 
       return user;

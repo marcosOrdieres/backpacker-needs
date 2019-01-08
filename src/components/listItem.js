@@ -9,11 +9,11 @@ import i18n from '../translations';
 
 const styles = StyleSheet.create({
   viewButtonStyle: {
-    paddingTop: 10,
-    paddingBottom: 10
+    paddingTop: 5,
+    paddingBottom: 5
   },
   buttonStyle: {
-    fontSize: 20,
+    fontSize: 14,
     fontFamily: 'Hind-Medium',
     marginLeft: 30,
     marginRight: 30,
@@ -35,7 +35,7 @@ export default class ListItemComponent extends Component {
     return (
       <View style={[this.props.viewButtonStyle, styles.viewButtonStyle]}>
         <ScrollView>
-          <List containerStyle={{marginTop: -10, marginBottom: -10}}>
+          <List containerStyle={{marginTop: -5, marginBottom: -5}}>
             {this.props.dataItem.map((item, key) => (
               <TouchableOpacity
                 onPress={(item.selectedRecommendations) ? null : (item.selectedInTheBackpack ? null : this.props.onClickListItem.bind(this, item))}>
@@ -50,16 +50,16 @@ export default class ListItemComponent extends Component {
                   leftIcon={!item.selectedInTheBackpack && !this.rootStore.getState().isBackpackScreen && !this.props.noFirstIcon ?
                     (<CheckMark
                       color={item.selectedRecommendations ? Palette.disabled : Palette.primaryColor}
-                      width={40}
-                      height={40} />)
+                      width={25}
+                      height={25} />)
                     :
                     ((item.selectedInTheBackpack && this.rootStore.getState().isBackpackScreen) || this.props.noIcon ?
                       null
                       :
                       (<Backpack
                         color={item.selectedRecommendations ? Palette.disabled : Palette.primaryColor}
-                        width={40}
-                        height={40} />)
+                        width={25}
+                        height={25} />)
                     )
                   }
                 />

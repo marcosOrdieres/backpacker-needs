@@ -5,17 +5,16 @@ export default StyleSheet.create({
   mainTitle: {
     textAlign: 'center',
     color: Palette.primaryColor,
-    fontSize: 25,
-    marginTop: 25,
-    marginBottom: 10,
+    fontSize: 20,
+    marginTop: 20,
+    marginBottom: 5,
     fontFamily: 'Calibri'
   },
   howManyDays: {
     textAlign: 'center',
     color: Palette.primaryColor,
-    fontSize: 18,
-    marginTop: 5,
-    marginBottom: 10,
+    fontSize: 14,
+    marginBottom: 5,
     fontFamily: 'Calibri'
   },
   sectionContainer: {
@@ -28,9 +27,9 @@ export default StyleSheet.create({
     textAlign: 'center',
     color: Palette.totalBlack,
     fontFamily: 'Calibri',
-    fontSize: 18,
-    marginBottom: 20,
-    marginTop: 20
+    fontSize: 20,
+    marginBottom: 16,
+    marginTop: 16
   },
   containerSpinner: {
     flex: 1,
@@ -45,7 +44,7 @@ export default StyleSheet.create({
   },
   iconChevronView: {
     position: 'absolute',
-    paddingTop: '35%',
+    paddingTop: '25%',
     paddingLeft: '40%',
     width: 65,
     height: 65

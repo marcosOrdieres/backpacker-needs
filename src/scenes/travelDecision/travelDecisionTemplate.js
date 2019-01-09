@@ -14,7 +14,7 @@ export default (controller) => (
     {controller.state.show && controller.state.country ? <TouchableOpacity
       style={travelDecisionStyles.countryTextOverlay}
       onPress={() => {
-        controller.setState({countryInput: controller.state.country, text: controller.state.country});
+        controller.setState({countryInput: controller.state.country, text: controller.state.countryInput});
         controller.refs.countryInput.blur();
         controller.checkCountry();
       }}>
@@ -53,6 +53,9 @@ export default (controller) => (
             <TouchableOpacity onPress={() => { controller.toggleModal(); }}>
               <View style={{width: width}}>
                 <ListItem
+                  noFirstIcon
+                  noPaddingLeft
+                  noIcon
                   dataItem={Object.keys(controller.user.getCountries()).sort()}
                   onClickListItem={(itemTitle) => controller.onClickListItem(itemTitle)} />
               </View>

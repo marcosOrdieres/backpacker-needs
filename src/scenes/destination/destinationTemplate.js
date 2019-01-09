@@ -13,7 +13,7 @@ import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import BackpackSvg from '../../assets/svg/Ruck';
 import drawerBackgroundImage from '../../assets/images/drawerBackpack.png';
-import { ListItem } from 'components'
+import { ListItem } from 'components';
 
 import NavigationDrawerLayout from 'react-native-navigation-drawer-layout';
 import Drawer from 'react-native-drawer';
@@ -70,7 +70,7 @@ export default (controller) => (
 
       <View style={destinationStyles.modalContent}>
         <View
-          style={{width: width, height: '20%', backgroundColor:'black', opacity:0.5}}>
+          style={{width: width, height: '20%', backgroundColor: 'black', opacity: 0.5}}>
           <ImageBackground
             style={{width: '100%', height: '100%', resizeMode: 'contain'}}
             source={drawerBackgroundImage} />
@@ -78,36 +78,38 @@ export default (controller) => (
         <View
           style={{width: width, height: '80%', padding: 22}}>
           <View style={{width: width}}>
-            <View style={{flex:1, flexDirection:'row'}}>
-              <View style={{flex:1}}>
+            <View style={{flex: 1, flexDirection: 'row'}}>
+              <View style={{flex: 1}}>
                 <BackpackSvg width={25} height={25} color={Palette.black} colorFillCorner={Palette.white} colorFillRest={Palette.white} />
               </View>
-              <View style={{flex:5}}>
+              <View style={{flex: 5}}>
                 <Text>My Backpacks</Text>
               </View>
             </View>
-              <View style={{borderBottomColor: 'black', borderBottomWidth: 0.5, opacity:0.6, paddingTop:'10%'}}/>
-                <View style={{height:'100%'}}>
-                  <ListItem
-                    noFirstIcon
-                    noPaddingLeft
-                    noIcon
-                    fontTitle={14}
-                    dataItem={controller.user.getRegionsStoredFirebase()}
-                    onClickListItem={(item) => controller.onClickListItemRegion(item)} />
+            <View style={{borderBottomColor: 'black', borderBottomWidth: 0.5, opacity: 0.6, paddingTop: '10%'}} />
+            <View style={{height: '100%'}}>
+              <ListItem
+                noFirstIcon
+                noPaddingLeft
+                noIcon
+                fontTitle={14}
+                dataItem={controller.user.getRegionsStoredFirebase()}
+                onClickListItem={(item) => controller.onClickListItemRegion(item)} />
             </View>
           </View>
         </View>
       </View>
       <TouchableOpacity
         style={destinationStyles.modalContentRest}
-        onPress={() => { controller.setState({isModalVisible: false}); }} />
+        onPress={() => {
+          controller.toggleModal();
+        }} />
     </Modal>
 
     <TouchableOpacity
       style={destinationStyles.hamburguerView}
-      onPress={() => {controller.toggleModal(); }}>
-      <Icon size={20} name="bars" color={Palette.white} />
+      onPress={() => { controller.toggleModal(); }}>
+      <Icon size={20} name='bars' color={Palette.white} />
     </TouchableOpacity>
 
     <ActionButton buttonColor={Palette.primaryColor}>

@@ -17,6 +17,7 @@ class BackpackController extends BaseScene {
   async componentDidMount () {
     this.props.navigation.addListener('didFocus', async () => {
       await this.checkSelectedToDos();
+      await this.checkDaysFocus();
       await this.rootStore.dispatch({ type: 'BACKPACK_SCREEN', isBackpackScreen: true});
       await this.setState({externalData: true});
     });
@@ -39,6 +40,7 @@ class BackpackController extends BaseScene {
     const valueListRecommendationSelected = snapshot.val();
     if (valueListRecommendationSelected) {
       const arrSelected = Object.values(valueListRecommendationSelected);
+      console.warn('ARE SELECTED: ', arrSelected);
       this.user.setRecommendationsOnlyIntemSelected(Object.values(valueListRecommendationSelected));
       return arrSelected;
     } else {
@@ -83,6 +85,8 @@ class BackpackController extends BaseScene {
       myArrItem = [];
     });
     myArrFinalClean = myArrFinal.filter(() => { return true; });
+    console.warn('my final arr clean: ', myArrFinalClean);
+    // myArrFinalClean[0].push({key: 'My Items'});
     this.user.setInTheBackpackSelected(myArrFinalClean);
     return myArrFinalClean;
   }

@@ -19,8 +19,9 @@ class RecommendationsController extends BaseScene {
 
   async componentDidMount () {
     this.props.navigation.addListener('didFocus', async () => {
-      if(this.rootStore.getState().isRegionChanged){
+      if (this.rootStore.getState().isRegionChanged) {
         await this.checkSelectedRecommendations();
+        await this.checkDaysFocus();
         await this.rootStore.dispatch({ type: 'REGION_CHANGED', isRegionChanged: false});
         await this.setState({externalData: true});
       }

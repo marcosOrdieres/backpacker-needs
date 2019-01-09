@@ -65,6 +65,7 @@ class TravelDecisionController extends BaseScene {
     if (this.state.text.length >= 2) {
       this.user.getCountriesInTheWorld().find((country) => {
         if (country.includes(this.state.text)) {
+          this.user.setChosenRegion(country);
           this.setState({ country: country });
           this.chargeGeojsonCountry();
         } else {

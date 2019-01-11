@@ -6,6 +6,7 @@ import Modal from 'react-native-modal';
 import Palette from '../../common/palette';
 import { Button } from 'react-native-elements';
 import { DateTravel } from 'components';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const {width, height} = Dimensions.get('window');
 
@@ -43,7 +44,10 @@ export default (controller) => (
           <Text style={travelDecisionStyles.textChoseRegion}>
             {controller.user.getChosenRegion() ? controller.user.getChosenRegion() : controller.i18n.translate('travelDecision.chooseRegion') }
           </Text>
-        </TouchableOpacity>
+          <View style={{justifyContent:'right'}}>
+            <Icon size={10} name='search' color={Palette.primaryColor} />
+          </View>
+      </TouchableOpacity>
         <Modal
           style={travelDecisionStyles.modal}
           isVisible={controller.state.isModalVisible}>

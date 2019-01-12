@@ -17,6 +17,7 @@ export default (controller) => (
         renderItem={({item, index, section}) => {
           return (
             <ListItem
+              backpackListItem
               dataItem={!controller.state.collapsed[section.key] ? item : []}
               onClickListItem={(item) => controller.onClickListItemBackpack(item)} />);
         }}

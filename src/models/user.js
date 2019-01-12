@@ -4,6 +4,7 @@ export default class User {
     static sendCredentialSignup;
     static sendCredentialLogin;
     static country;
+    static chosenCountry;
     static chosenRegion;
     static chosenRegionCoordinates;
     static recommendations;
@@ -130,6 +131,14 @@ export default class User {
       this.country = value;
     }
 
+    getChosenCountry() {
+      return this.chosenCountry;
+    }
+
+    setChosenCountry(value) {
+      this.chosenCountry = value;
+    }
+
     getChosenRegion() {
       return this.chosenRegion;
     }
@@ -153,6 +162,7 @@ export default class User {
         sendCredentialLogin: this.sendCredentialLogin,
         userId: parseInt(this.userId),
         country: this.country,
+        chosenCountry: this.chosenCountry,
         chosenRegion: this.chosenRegion,
         chosenRegionCoordinates: this.chosenRegionCoordinates,
         recommendations: this.recommendations,

@@ -85,8 +85,6 @@ class BackpackController extends BaseScene {
       myArrItem = [];
     });
     myArrFinalClean = myArrFinal.filter(() => { return true; });
-    console.warn('my final arr clean: ', myArrFinalClean);
-    // myArrFinalClean[0].push({key: 'My Items'});
     this.user.setInTheBackpackSelected(myArrFinalClean);
     return myArrFinalClean;
   }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, ScrollView, Text } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 import CheckMark from '../assets/svg/CheckMark';
 import Backpack from '../assets/svg/BackpackNoLetters';
@@ -44,7 +44,7 @@ export default class ListItemComponent extends Component {
                   keyExtractor={key}
                   title={(item.selectedRecommendations) ? item.value : (item.selectedInTheBackpack ? item.value : item)}
                   subtitle={(item.selectedRecommendations) ? i18n.t('components.listItemSelect') : (item.selectedInTheBackpack ? i18n.t('components.listItemBack') : null)}
-                  titleStyle={{fontSize: this.props.fontTitle ? this.props.fontTitle : 20,paddingLeft: this.props.noPaddingLeft ? 0 : 30, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? Palette.disabled : Palette.totalBlack)}}
+                  titleStyle={{fontSize: this.props.fontTitle ? this.props.fontTitle : 20, paddingLeft: this.props.noPaddingLeft ? 0 : 30, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? Palette.disabled : Palette.totalBlack)}}
                   subtitleStyle={{paddingLeft: 30, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? Palette.disabled : Palette.totalBlack)}}
                   rightIcon={{name: 'check', color: item.selectedInTheBackpack ? Palette.green : Palette.transparent}}
                   leftIcon={!item.selectedInTheBackpack && !this.rootStore.getState().isBackpackScreen && !this.props.noFirstIcon ?
@@ -63,8 +63,26 @@ export default class ListItemComponent extends Component {
                     )
                   }
                 />
+
               </TouchableOpacity>
           ))}
+            {this.props.backpackListItem ?
+              <ListItem
+                ref='addItemsBackpack'
+                // Y con esta referencia, cuando hago blur en el textField se guarda el estado de textInputValue,
+                // se guarda el item y se incluye en la seccion,
+                // ademas de leer otra vey para volver a ponerlo en la seccion
+                //
+                hideChevron
+                title='Add your own item...'
+                textInputStyle={{ paddingTop: 0, paddingBottom: 0, marginVertical: 3.5}}
+                // textInputValue={this.state.title}
+                // textInputOnChangeText={(title) => this.setState({title})}
+                textInputReturnKeyType={'done'}
+
+                textInput />
+              :
+              null }
           </List>
         </ScrollView>
       </View>

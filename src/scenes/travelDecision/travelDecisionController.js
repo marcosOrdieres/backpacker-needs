@@ -21,13 +21,21 @@ class TravelDecisionController extends BaseScene {
     };
   }
 
+  regionOrCountry () {
+    if (this.user.getChosenRegion()) {
+      return this.user.getChosenRegion();
+    } else {
+      return this.user.getChosenCountry();
+    }
+  }
+
   async sendRegionAndDate () {
-    const getChosenRegion = await this.user.getChosenRegion();
+    const chosenRegionOrCountry = await this.regionOrCountry();
     const isCountryStored = await this.readListSelectedCountries();
     if (!isCountryStored) {
       await firebase.database().ref('users/' + this.user.getUserId()).set({
         'region': {
-          [getChosenRegion]: {
+          [chosenRegionOrCountry]: {
             'date': this.state.date
           }
         }
@@ -36,7 +44,7 @@ class TravelDecisionController extends BaseScene {
     } else {
       await firebase.database().ref('users/' + this.user.getUserId())
       .child('region')
-      .update({ [getChosenRegion]: {
+      .update({ [chosenRegionOrCountry]: {
         'date': this.state.date
       }});
       return true;
@@ -45,7 +53,7 @@ class TravelDecisionController extends BaseScene {
 
   async checkLetsGo () {
     const now = moment().format();
-    if (this.state.country.length > 3 || this.user.getChosenRegion()) {
+    if (this.state.country.length > 3 || (this.user.getChosenRegion() || this.user.getChosenCountry())) {
       return this.setState({ letsgo: true });
     } else {
       return true;
@@ -65,7 +73,7 @@ class TravelDecisionController extends BaseScene {
     if (this.state.text.length >= 2) {
       this.user.getCountriesInTheWorld().find((country) => {
         if (country.includes(this.state.text)) {
-          this.user.setChosenRegion(country);
+          this.user.setChosenCountry(country);
           this.setState({ country: country });
           this.chargeGeojsonCountry();
         } else {
@@ -116,6 +124,12 @@ class TravelDecisionController extends BaseScene {
   getNumber (num, index) {
     if (!num[index]) return Number(num);
     return getNumber(num[index]);
+  }
+
+  onPressCountryOverlay () {
+    this.setState({countryInput: this.state.country, text: this.state.countryInput});
+    this.refs.countryInput.blur();
+    this.checkCountry();
   }
 
   render () {

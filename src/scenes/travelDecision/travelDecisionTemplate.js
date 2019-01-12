@@ -11,18 +11,17 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const {width, height} = Dimensions.get('window');
 
 export default (controller) => (
-  <ScrollView style={{flex: 1, flexDirection: 'column'}}>
-    {controller.state.show && controller.state.country ? <TouchableOpacity
-      style={travelDecisionStyles.countryTextOverlay}
-      onPress={() => {
-        controller.setState({countryInput: controller.state.country, text: controller.state.countryInput});
-        controller.refs.countryInput.blur();
-        controller.checkCountry();
-      }}>
-      <Text style={{fontSize: 18, margin: 5}}>
-        {controller.state.country}
-      </Text>
-    </TouchableOpacity> : null}
+  <ScrollView
+    keyboardShouldPersistTaps='always'
+    style={{flex: 1, flexDirection: 'column'}}>
+    {controller.state.show && controller.state.country ?
+      <TouchableOpacity
+        style={travelDecisionStyles.countryTextOverlay}
+        onPress={() => { controller.onPressCountryOverlay(); }}>
+        <Text style={{fontSize: 18, margin: 5}}>
+          {controller.state.country}
+        </Text>
+      </TouchableOpacity> : null}
 
     <View style={travelDecisionStyles.topBar}>
       <Text style={travelDecisionStyles.textTopBar}>{controller.i18n.translate('travelDecision.BN')}</Text>
@@ -44,10 +43,10 @@ export default (controller) => (
           <Text style={travelDecisionStyles.textChoseRegion}>
             {controller.user.getChosenRegion() ? controller.user.getChosenRegion() : controller.i18n.translate('travelDecision.chooseRegion') }
           </Text>
-          <View style={{justifyContent:'right'}}>
+          <View style={{justifyContent: 'flex-end'}}>
             <Icon size={10} name='search' color={Palette.primaryColor} />
           </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
         <Modal
           style={travelDecisionStyles.modal}
           isVisible={controller.state.isModalVisible}>

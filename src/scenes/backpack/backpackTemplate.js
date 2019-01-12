@@ -17,6 +17,9 @@ export default (controller) => (
         renderItem={({item, index, section}) => {
           return (
             <ListItem
+              onBlurAddItem={() => { controller.onBlurAddItem(); }}
+              titleAddItem={controller.state.titleAddItem}
+              titleAddItemChangeText={(title) => { controller.setState({titleAddItem: title}); }}
               backpackListItem
               dataItem={!controller.state.collapsed[section.key] ? item : []}
               onClickListItem={(item) => controller.onClickListItemBackpack(item)} />);

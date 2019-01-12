@@ -47,7 +47,6 @@ class RecommendationsController extends BaseScene {
           return myArrFinal[indexOfArray].data = [myArrItem];
         }
       });
-
       this.user.setRecommendationsSelected(myArrFinal);
       myArrItem = [];
       return myArrFinal;

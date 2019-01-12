@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import { View, StyleSheet, TouchableOpacity, ScrollView, Text } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, ScrollView, Dimensions, Text } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 import CheckMark from '../assets/svg/CheckMark';
 import Backpack from '../assets/svg/BackpackNoLetters';
 import Palette from '../common/palette';
 import rootStore from '../stores/root';
 import i18n from '../translations';
+
+const {width, height} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   viewButtonStyle: {
@@ -69,17 +71,16 @@ export default class ListItemComponent extends Component {
             {this.props.backpackListItem ?
               <ListItem
                 ref='addItemsBackpack'
-                // Y con esta referencia, cuando hago blur en el textField se guarda el estado de textInputValue,
-                // se guarda el item y se incluye en la seccion,
-                // ademas de leer otra vey para volver a ponerlo en la seccion
-                //
+                containerStyle={{paddingRight: '5%', alignItems: 'flex-start'}}
+                // textInputStyle={{borderWidth: 1, color: 'red', alignItems: 'flex-start'}}
                 hideChevron
-                title='Add your own item...'
+                textInputPlaceholder='Add item in Backpack...'
                 textInputStyle={{ paddingTop: 0, paddingBottom: 0, marginVertical: 3.5}}
-                // textInputValue={this.state.title}
-                // textInputOnChangeText={(title) => this.setState({title})}
+                textInputValue={this.props.titleAddItem}
+                textInputOnChangeText={this.props.titleAddItemChangeText}
                 textInputReturnKeyType={'done'}
-
+                onBlur={this.props.onBlurAddItem}
+                textInputContainerStyle={{borderWidth: 1, color: 'yellow' }}
                 textInput />
               :
               null }

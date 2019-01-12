@@ -9,6 +9,7 @@ class BackpackController extends BaseScene {
   constructor (args) {
     super(args);
     this.state = {
+      titleAddItem: '',
       externalData: null,
       collapsed: {}
     };
@@ -28,6 +29,7 @@ class BackpackController extends BaseScene {
   }
 
   async checkSelectedToDos () {
+    console.warn('vamos pal checkSelectedToDos');
     const recosSelected = await this.readRecommendationsSelected();
     const listInTheBackpack = await this.readValueListInTheBackpack();
     const listToDosArray = await this.listInTheBackpackSelected(listInTheBackpack);
@@ -40,7 +42,6 @@ class BackpackController extends BaseScene {
     const valueListRecommendationSelected = snapshot.val();
     if (valueListRecommendationSelected) {
       const arrSelected = Object.values(valueListRecommendationSelected);
-      console.warn('ARE SELECTED: ', arrSelected);
       this.user.setRecommendationsOnlyIntemSelected(Object.values(valueListRecommendationSelected));
       return arrSelected;
     } else {
@@ -61,6 +62,7 @@ class BackpackController extends BaseScene {
     let myArrItem = [];
     let itemTitle;
     let indexOfArray;
+    console.warn('get recos selected: ', this.user.getRecommendationsSelected());
     this.user.getRecommendationsSelected().forEach((item) => {
       indexOfArray = this.user.getRecommendationsSelected().indexOf(item);
       itemTitle = item.key;
@@ -112,6 +114,52 @@ class BackpackController extends BaseScene {
       } else {
         console.warn('THE ITEM IS ALREADY IN THE BACKPACK DATABASE, PLEASE CHOOSE ANOTHER ONE');
       }
+    }
+  }
+
+  async onBlurAddItem () {
+    const addedItems = await this.storeAddItem(this.state.titleAddItem);
+
+    // en este punto ya estan los datos metidos en la BBDD.
+    // Ahora tengo que ver como meter esos datos en la seccion correspondiente, para
+    // despues leerlos en checkSelectedToDos y que se muestren
+    // Tambien que solo se vea una vez en cada listItem, no en cada uno. Solo en correspondiente
+
+    // await this.listRecosSelected(addedItems);
+    await this.checkSelectedToDos();
+  }
+
+  // async listRecosSelected(addedItems){
+  //   let myArr = [];
+  //   let myArrFinal = [];
+  //   let myArrItem = [];
+  //   const group = Object.keys(this.user.getRecommendations()).map((group, index) => {
+  //     myArrFinal[index] = {key: group};
+  //     return this.user.getRecommendations()[group];
+  //   });
+  //   group.forEach((groupItem, index, array) => {
+  //     const indexOfArray = group.indexOf(groupItem);
+  //     Object.values(groupItem).forEach((item, index, array) => {
+  //       myArrItem.push({value: item, selectedRecommendations: true});
+  //       return myArrFinal[indexOfArray].data = [myArrItem];
+  //     });
+  //
+  //     this.user.setRecommendationsSelected(myArrFinal);
+  //     myArrItem = [];
+  //     return myArrFinal;
+  //   });
+  // }
+
+  async storeAddItem (addItem) {
+    try {
+      // store the items that are Added manually by the user.
+      await firebase.database().ref('users/' + this.user.getUserId())
+        .child('region')
+        .child(this.user.getChosenRegion())
+        .child('recommendationSelected')
+        .push(addItem);
+    } catch (error) {
+      console.warn(error.message);
     }
   }
 

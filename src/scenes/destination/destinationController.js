@@ -57,8 +57,14 @@ class DestinationController extends BaseScene {
     let result = Object.keys(country).map(function (key) { return [key, country[key]]; });
     const resultCoordinates = result.forEach((element) => {
       element.find((place) => {
-        if (place === this.user.getChosenRegion()) {
-          return this.user.setChosenRegionCoordinates(element[1]);
+        if (!this.user.getChosenRegion()) {
+          if (place === this.user.getChosenCountry()) {
+            return this.user.setChosenRegionCoordinates(element[1]);
+          }
+        } else {
+          if (place === this.user.getChosenRegion()) {
+            return this.user.setChosenRegionCoordinates(element[1]);
+          }
         }
       });
     });

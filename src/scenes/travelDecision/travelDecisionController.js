@@ -29,7 +29,7 @@ class TravelDecisionController extends BaseScene {
     }
   }
 
-  async sendRegionAndDate () {
+  async sendRegionOrCountryAndDate () {
     const chosenRegionOrCountry = await this.regionOrCountry();
     const isCountryStored = await this.readListSelectedCountries();
     if (!isCountryStored) {

@@ -24,11 +24,21 @@ export default class BaseScene extends Component {
     return valueListCountriesSelected;
   }
 
-  async checkDaysFocus () {
-    const howManyDays = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/date');
+  async callToCheckDaysFocus (howManyDays) {
     const snapshot = await howManyDays.once('value');
     const valueDays = snapshot.val();
     return this.user.setDateOfTravel(valueDays);
+  }
+
+  async checkDaysFocus () {
+    // I check the days Focus, it depends if it is Region or Country.
+    if (!this.user.getChosenRegion()) {
+      const howManyDays = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenCountry() + '/date');
+      this.callToCheckDaysFocus(howManyDays);
+    } else {
+      const howManyDays = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/date');
+      this.callToCheckDaysFocus(howManyDays);
+    }
   }
 
   checkHowManyDays () {

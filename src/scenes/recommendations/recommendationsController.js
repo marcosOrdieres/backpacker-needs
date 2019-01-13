@@ -59,21 +59,37 @@ class RecommendationsController extends BaseScene {
     return listRecommendationsArray;
   }
 
-  async readValueListRecommendations () {
-    const recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/recommendationSelected');
+  async callToSelectedRecommendations (recommendationSelected) {
     const snapshot = await recommendationSelected.once('value');
     const valueListRecommendations = snapshot.val();
     return valueListRecommendations;
   }
 
+  async readValueListRecommendations () {
+    let recommendationSelected;
+    if (!this.user.getChosenRegion()) {
+      recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenCountry() + '/recommendationSelected');
+      await this.callToSelectedRecommendations(recommendationSelected);
+    } else {
+      recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/recommendationSelected');
+      await this.callToSelectedRecommendations(recommendationSelected);
+    }
+  }
+
   async onClickListItemRecommendations (item) {
     try {
+      let chosenRegionOrCountry;
+      if (!this.user.getChosenRegion()) {
+        chosenRegionOrCountry = this.user.getChosenCountry();
+      } else {
+        chosenRegionOrCountry = this.user.getChosenRegion();
+      }
       this.setState({spinnerVisible: true});
       const listRecos = await this.readValueListRecommendations();
       if (!listRecos) {
         await firebase.database().ref('users/' + this.user.getUserId())
           .child('region')
-          .child(this.user.getChosenRegion())
+          .child(chosenRegionOrCountry)
           .update({recommendationSelected: {item}});
         const listRecos = await this.readValueListRecommendations();
         this.listRecommendationsWhichSelected(listRecos);
@@ -82,7 +98,7 @@ class RecommendationsController extends BaseScene {
         if (!Object.values(listRecos).includes(item)) {
           await firebase.database().ref('users/' + this.user.getUserId())
             .child('region')
-            .child(this.user.getChosenRegion())
+            .child(chosenRegionOrCountry)
             .child('recommendationSelected')
             .push(item);
           const listRecos = await this.readValueListRecommendations();

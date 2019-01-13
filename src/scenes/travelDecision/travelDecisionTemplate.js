@@ -99,7 +99,7 @@ export default (controller) => (
       <TouchableOpacity
         onPress={() => {
           if (controller.state.letsgo) {
-            controller.sendRegionAndDate();
+            controller.sendRegionOrCountryAndDate();
             return controller.navigateTo('Menu');
           } else {
             return false;

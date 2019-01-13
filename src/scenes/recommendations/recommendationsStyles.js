@@ -27,7 +27,7 @@ export default StyleSheet.create({
     textAlign: 'center',
     color: Palette.totalBlack,
     fontFamily: 'Calibri',
-    fontSize: 20,
+    fontSize: 18,
     marginBottom: 16,
     marginTop: 16
   },

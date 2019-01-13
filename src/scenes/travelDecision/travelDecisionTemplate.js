@@ -6,22 +6,22 @@ import Modal from 'react-native-modal';
 import Palette from '../../common/palette';
 import { Button } from 'react-native-elements';
 import { DateTravel } from 'components';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const {width, height} = Dimensions.get('window');
 
 export default (controller) => (
-  <ScrollView style={{flex: 1, flexDirection: 'column'}}>
-    {controller.state.show && controller.state.country ? <TouchableOpacity
-      style={travelDecisionStyles.countryTextOverlay}
-      onPress={() => {
-        controller.setState({countryInput: controller.state.country, text: controller.state.country});
-        controller.refs.countryInput.blur();
-        controller.checkCountry();
-      }}>
-      <Text style={{fontSize: 18, margin: 5}}>
-        {controller.state.country}
-      </Text>
-    </TouchableOpacity> : null}
+  <ScrollView
+    keyboardShouldPersistTaps='always'
+    style={{flex: 1, flexDirection: 'column'}}>
+    {controller.state.show && controller.state.country ?
+      <TouchableOpacity
+        style={travelDecisionStyles.countryTextOverlay}
+        onPress={() => { controller.onPressCountryOverlay(); }}>
+        <Text style={{fontSize: 18, margin: 5}}>
+          {controller.state.country}
+        </Text>
+      </TouchableOpacity> : null}
 
     <View style={travelDecisionStyles.topBar}>
       <Text style={travelDecisionStyles.textTopBar}>{controller.i18n.translate('travelDecision.BN')}</Text>
@@ -43,6 +43,9 @@ export default (controller) => (
           <Text style={travelDecisionStyles.textChoseRegion}>
             {controller.user.getChosenRegion() ? controller.user.getChosenRegion() : controller.i18n.translate('travelDecision.chooseRegion') }
           </Text>
+          <View style={{justifyContent: 'flex-end'}}>
+            <Icon size={10} name='search' color={Palette.primaryColor} />
+          </View>
         </TouchableOpacity>
         <Modal
           style={travelDecisionStyles.modal}
@@ -53,6 +56,9 @@ export default (controller) => (
             <TouchableOpacity onPress={() => { controller.toggleModal(); }}>
               <View style={{width: width}}>
                 <ListItem
+                  noFirstIcon
+                  noPaddingLeft
+                  noIcon
                   dataItem={Object.keys(controller.user.getCountries()).sort()}
                   onClickListItem={(itemTitle) => controller.onClickListItem(itemTitle)} />
               </View>

@@ -9,6 +9,7 @@ class BackpackController extends BaseScene {
   constructor (args) {
     super(args);
     this.state = {
+      titleAddItem: '',
       externalData: null,
       collapsed: {}
     };
@@ -17,6 +18,7 @@ class BackpackController extends BaseScene {
   async componentDidMount () {
     this.props.navigation.addListener('didFocus', async () => {
       await this.checkSelectedToDos();
+      await this.checkDaysFocus();
       await this.rootStore.dispatch({ type: 'BACKPACK_SCREEN', isBackpackScreen: true});
       await this.setState({externalData: true});
     });
@@ -30,6 +32,7 @@ class BackpackController extends BaseScene {
     const recosSelected = await this.readRecommendationsSelected();
     const listInTheBackpack = await this.readValueListInTheBackpack();
     const listToDosArray = await this.listInTheBackpackSelected(listInTheBackpack);
+    await this.setState({externalData: true});
     return listToDosArray;
   }
 
@@ -111,6 +114,55 @@ class BackpackController extends BaseScene {
         console.warn('THE ITEM IS ALREADY IN THE BACKPACK DATABASE, PLEASE CHOOSE ANOTHER ONE');
       }
     }
+  }
+
+  async onBlurAddItem (section, index) {
+    const addedItems = await this.storeAddItem(this.state.titleAddItem);
+    await this.listRecosSelected(addedItems, section);
+    await this.checkSelectedToDos();
+    this.setState({titleAddItem: ''});
+  }
+
+  async listRecosSelected (addedItems, section) {
+    let sectionData = section;
+    this.user.getRecommendationsSelected().forEach((completeSection) => {
+      if (Object.values(completeSection)[0] === Object.values(sectionData)[0]) {
+        // Push into getRecommendationsSelected the added items in their own section
+        Object.values(completeSection)[1][0].push({value: addedItems, selectedRecommendations: true});
+      }
+    });
+  }
+
+  async storeAddItem (addItem) {
+    try {
+      // store the items that are Added manually by the user.
+      await firebase.database().ref('users/' + this.user.getUserId())
+        .child('region')
+        .child(this.user.getChosenRegion())
+        .child('recommendationSelected')
+        .push(addItem);
+      return addItem;
+    } catch (error) {
+      console.warn(error.message);
+    }
+  }
+
+  titleAddItem (section) {
+    Object.values(this.user.getRecommendationsSelected()).forEach((recommendation) => {
+      if (Object.values(recommendation)[0] === Object.values(section)[0]) {
+        return this.state.titleAddItem;
+      } else {
+        return '';
+      }
+    });
+  }
+
+  titleAddItemChangeText (title, section) {
+    Object.values(this.user.getRecommendationsSelected()).forEach((recommendation) => {
+      if (Object.values(recommendation)[0] === Object.values(section)[0]) {
+        this.setState({titleAddItem: title});
+      }
+    });
   }
 
   render () {

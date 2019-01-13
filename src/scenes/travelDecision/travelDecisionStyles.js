@@ -89,8 +89,7 @@ export default StyleSheet.create({
     position: 'absolute',
     top: 260,
     backgroundColor: Palette.white,
-    width: width - 6,
-    margin: 3,
+    width: width,
     borderColor: Palette.black,
     borderRadius: 3,
     borderWidth: 1

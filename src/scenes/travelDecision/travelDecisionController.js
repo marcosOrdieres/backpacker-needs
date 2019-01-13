@@ -21,13 +21,21 @@ class TravelDecisionController extends BaseScene {
     };
   }
 
+  regionOrCountry () {
+    if (this.user.getChosenRegion()) {
+      return this.user.getChosenRegion();
+    } else {
+      return this.user.getChosenCountry();
+    }
+  }
+
   async sendRegionAndDate () {
-    const getChosenRegion = await this.user.getChosenRegion();
+    const chosenRegionOrCountry = await this.regionOrCountry();
     const isCountryStored = await this.readListSelectedCountries();
     if (!isCountryStored) {
       await firebase.database().ref('users/' + this.user.getUserId()).set({
         'region': {
-          [getChosenRegion]: {
+          [chosenRegionOrCountry]: {
             'date': this.state.date
           }
         }
@@ -36,7 +44,7 @@ class TravelDecisionController extends BaseScene {
     } else {
       await firebase.database().ref('users/' + this.user.getUserId())
       .child('region')
-      .update({ [getChosenRegion]: {
+      .update({ [chosenRegionOrCountry]: {
         'date': this.state.date
       }});
       return true;
@@ -45,7 +53,7 @@ class TravelDecisionController extends BaseScene {
 
   async checkLetsGo () {
     const now = moment().format();
-    if (this.state.country.length > 3 || this.user.getChosenRegion()) {
+    if (this.state.country.length > 3 || (this.user.getChosenRegion() || this.user.getChosenCountry())) {
       return this.setState({ letsgo: true });
     } else {
       return true;
@@ -65,8 +73,8 @@ class TravelDecisionController extends BaseScene {
     if (this.state.text.length >= 2) {
       this.user.getCountriesInTheWorld().find((country) => {
         if (country.includes(this.state.text)) {
+          this.user.setChosenCountry(country);
           this.setState({ country: country });
-          this.chargeGeojsonCountry();
         } else {
           return false;
         }
@@ -74,16 +82,17 @@ class TravelDecisionController extends BaseScene {
     }
   }
 
-  chargeGeojsonCountry () {
-    GeojsonCountries.features.forEach((objEachCountry) => {
+  async chargeGeojsonCountry () {
+    const features = GeojsonCountries.features;
+    for (let objEachCountry of features) {
       if (objEachCountry.properties.name === this.state.country) {
-        const coordinatesLatAndLong = this.calculateLongAndLat(objEachCountry.geometry.coordinates);
+        const coordinatesLatAndLong = await this.calculateLongAndLat(objEachCountry.geometry.coordinates);
         this.user.setLat(coordinatesLatAndLong.latitude);
         this.user.setLong(coordinatesLatAndLong.longitude);
         const completeGeojsonCountry = {'type': 'FeatureCollection', 'features': [objEachCountry]};
         return this.user.setCountryGeojson(completeGeojsonCountry);
       }
-    });
+    }
   }
 
   getCountries () {
@@ -104,17 +113,24 @@ class TravelDecisionController extends BaseScene {
     }
   }
 
-  calculateLongAndLat (array) {
+  async calculateLongAndLat (array) {
     const firstLongLat = array[0][0];
     const lastLongLat = array[0][0];
-    const longitude = this.getNumber(firstLongLat[0], 0);
-    const latitude = this.getNumber(firstLongLat[1], 1);
+    const longitude = await this.getNumber(firstLongLat[0], 0);
+    const latitude = await this.getNumber(firstLongLat[1], 1);
     return {longitude, latitude};
   }
 
-  getNumber (num, index) {
+  async getNumber (num, index) {
     if (!num[index]) return Number(num);
-    return getNumber(num[index]);
+    return this.getNumber(num[index]);
+  }
+
+  async onPressCountryOverlay () {
+    this.setState({countryInput: this.state.country, text: this.state.countryInput});
+    await this.refs.countryInput.blur();
+    await this.checkCountry();
+    await this.chargeGeojsonCountry();
   }
 
   render () {

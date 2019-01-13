@@ -47,11 +47,11 @@ class DestinationController extends BaseScene {
   }
 
   async componentDidMount () {
-    //this.setState({externalData: true});
+    // this.setState({externalData: true});
     setTimeout(() => { this.refs.toast.show(this.i18n.t('destination.toast'), 6000); }, 1500);
   }
 
-  async mapBuilderWithJson(){
+  async mapBuilderWithJson () {
     await this.listItemBackpacks();
     const country = this.user.getCountries();
     let result = Object.keys(country).map(function (key) { return [key, country[key]]; });
@@ -88,13 +88,13 @@ class DestinationController extends BaseScene {
     });
   }
 
-   async listItemBackpacks(){
+  async listItemBackpacks () {
     const countriesBackpack = await this.readListSelectedCountries();
     this.user.setRegionsStoredFirebase(Object.keys(countriesBackpack));
     return this.setState({externalData: true});
   }
 
-  onClickListItemRegion(item){
+  onClickListItemRegion (item) {
     this.user.setChosenRegion(item);
     this.mapBuilderWithJson();
     this.rootStore.dispatch({ type: 'REGION_CHANGED', isRegionChanged: true});

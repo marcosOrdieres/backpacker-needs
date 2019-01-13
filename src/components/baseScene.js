@@ -24,6 +24,13 @@ export default class BaseScene extends Component {
     return valueListCountriesSelected;
   }
 
+  async checkDaysFocus () {
+    const howManyDays = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/date');
+    const snapshot = await howManyDays.once('value');
+    const valueDays = snapshot.val();
+    return this.user.setDateOfTravel(valueDays);
+  }
+
   checkHowManyDays () {
     const oneDay = 24 * 60 * 60 * 1000;
     const dateOfTravel = new Date(this.user.getDateOfTravel());

@@ -7,6 +7,11 @@ import firebase from 'react-native-firebase';
 
 class BackpackController extends BaseScene {
   constructor (args) {
+    // Ahora mismo en master funciona todo para country y para add items
+    // tengo que mirar que cuando haya country, haga todo todo con this.user.getCountry()
+    // si no que lo haga todo con this.user.getRegion
+    // y cuando se anyade backpack se limpian las dos.
+    // hay problemas con los jsons de las regiones, checkear
     super(args);
     this.state = {
       titleAddItem: '',

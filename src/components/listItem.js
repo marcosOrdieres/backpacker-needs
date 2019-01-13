@@ -6,6 +6,7 @@ import Backpack from '../assets/svg/BackpackNoLetters';
 import Palette from '../common/palette';
 import rootStore from '../stores/root';
 import i18n from '../translations';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const {width, height} = Dimensions.get('window');
 
@@ -71,17 +72,16 @@ export default class ListItemComponent extends Component {
             {this.props.backpackListItem ?
               <ListItem
                 ref='addItemsBackpack'
-                containerStyle={{paddingRight: '5%', alignItems: 'flex-start'}}
-                // textInputStyle={{borderWidth: 1, color: 'red', alignItems: 'flex-start'}}
+                hideTitle
                 hideChevron
                 textInputPlaceholder='Add item in Backpack...'
-                textInputStyle={{ paddingTop: 0, paddingBottom: 0, marginVertical: 3.5}}
+                textInputStyle={{ textAlign: 'left', paddingTop: 0, paddingBottom: 0, marginVertical: 3.5}}
                 textInputValue={this.props.titleAddItem}
                 textInputOnChangeText={this.props.titleAddItemChangeText}
                 textInputReturnKeyType={'done'}
                 onBlur={this.props.onBlurAddItem}
-                textInputOnFocus={this.props.textInputOnFocus}
-                textInputContainerStyle={{borderWidth: 1, color: 'yellow' }}
+                leftIcon={(<Icon size={25} name='plus' color={Palette.primaryColor} />)}
+                textInputContainerStyle={{flex: 8}}
                 textInput />
               :
               null }

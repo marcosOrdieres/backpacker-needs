@@ -75,7 +75,6 @@ class TravelDecisionController extends BaseScene {
         if (country.includes(this.state.text)) {
           this.user.setChosenCountry(country);
           this.setState({ country: country });
-          this.chargeGeojsonCountry();
         } else {
           return false;
         }
@@ -83,16 +82,17 @@ class TravelDecisionController extends BaseScene {
     }
   }
 
-  chargeGeojsonCountry () {
-    GeojsonCountries.features.forEach((objEachCountry) => {
+  async chargeGeojsonCountry () {
+    const features = GeojsonCountries.features;
+    for (let objEachCountry of features) {
       if (objEachCountry.properties.name === this.state.country) {
-        const coordinatesLatAndLong = this.calculateLongAndLat(objEachCountry.geometry.coordinates);
+        const coordinatesLatAndLong = await this.calculateLongAndLat(objEachCountry.geometry.coordinates);
         this.user.setLat(coordinatesLatAndLong.latitude);
         this.user.setLong(coordinatesLatAndLong.longitude);
         const completeGeojsonCountry = {'type': 'FeatureCollection', 'features': [objEachCountry]};
         return this.user.setCountryGeojson(completeGeojsonCountry);
       }
-    });
+    }
   }
 
   getCountries () {
@@ -113,23 +113,24 @@ class TravelDecisionController extends BaseScene {
     }
   }
 
-  calculateLongAndLat (array) {
+  async calculateLongAndLat (array) {
     const firstLongLat = array[0][0];
     const lastLongLat = array[0][0];
-    const longitude = this.getNumber(firstLongLat[0], 0);
-    const latitude = this.getNumber(firstLongLat[1], 1);
+    const longitude = await this.getNumber(firstLongLat[0], 0);
+    const latitude = await this.getNumber(firstLongLat[1], 1);
     return {longitude, latitude};
   }
 
-  getNumber (num, index) {
+  async getNumber (num, index) {
     if (!num[index]) return Number(num);
-    return getNumber(num[index]);
+    return this.getNumber(num[index]);
   }
 
-  onPressCountryOverlay () {
+  async onPressCountryOverlay () {
     this.setState({countryInput: this.state.country, text: this.state.countryInput});
-    this.refs.countryInput.blur();
-    this.checkCountry();
+    await this.refs.countryInput.blur();
+    await this.checkCountry();
+    await this.chargeGeojsonCountry();
   }
 
   render () {

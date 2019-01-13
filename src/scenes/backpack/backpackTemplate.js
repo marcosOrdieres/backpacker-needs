@@ -18,11 +18,8 @@ export default (controller) => (
           return (
             <ListItem
               onBlurAddItem={() => { controller.onBlurAddItem(section); }}
-              titleAddItem={controller.state.titleAddItem}
-              titleAddItemChangeText={(title) => {
-                controller.setState({titleAddItem: title});
-              }}
-              // textInputOnFocus={}
+              titleAddItem={controller.titleAddItem(section)}
+              titleAddItemChangeText={(title) => { controller.titleAddItemChangeText(title, section); }}
               backpackListItem
               dataItem={!controller.state.collapsed[section.key] ? item : []}
               onClickListItem={(item) => controller.onClickListItemBackpack(item)} />);

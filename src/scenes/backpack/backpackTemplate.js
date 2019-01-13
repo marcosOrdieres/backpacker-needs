@@ -17,9 +17,12 @@ export default (controller) => (
         renderItem={({item, index, section}) => {
           return (
             <ListItem
-              onBlurAddItem={() => { controller.onBlurAddItem(); }}
+              onBlurAddItem={() => { controller.onBlurAddItem(section); }}
               titleAddItem={controller.state.titleAddItem}
-              titleAddItemChangeText={(title) => { controller.setState({titleAddItem: title}); }}
+              titleAddItemChangeText={(title) => {
+                controller.setState({titleAddItem: title});
+              }}
+              // textInputOnFocus={}
               backpackListItem
               dataItem={!controller.state.collapsed[section.key] ? item : []}
               onClickListItem={(item) => controller.onClickListItemBackpack(item)} />);

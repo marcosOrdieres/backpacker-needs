@@ -80,6 +80,7 @@ export default class ListItemComponent extends Component {
                 textInputOnChangeText={this.props.titleAddItemChangeText}
                 textInputReturnKeyType={'done'}
                 onBlur={this.props.onBlurAddItem}
+                textInputOnFocus={this.props.textInputOnFocus}
                 textInputContainerStyle={{borderWidth: 1, color: 'yellow' }}
                 textInput />
               :

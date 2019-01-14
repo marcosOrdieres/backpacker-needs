@@ -54,10 +54,10 @@ export default class BaseScene extends Component {
     this.props.navigation.navigate(destination);
   }
 
-  resetNavigation(route){
+  resetNavigation (route) {
     const resetAction = StackActions.reset({
       index: 0,
-      actions: [NavigationActions.navigate({ routeName: route })],
+      actions: [NavigationActions.navigate({ routeName: route })]
     });
     this.props.navigation.dispatch(resetAction);
   }

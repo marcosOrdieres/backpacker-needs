@@ -47,7 +47,7 @@ class DestinationController extends BaseScene {
   }
 
   async componentDidMount () {
-    // this.setState({externalData: true});
+    this.setState({externalData: true});
     setTimeout(() => { this.refs.toast.show(this.i18n.t('destination.toast'), 6000); }, 1500);
   }
 
@@ -109,7 +109,7 @@ class DestinationController extends BaseScene {
   }
 
   regionChosen () {
-    if (this.user.getCountryGeojson()) {
+    if (this.user.getChosenCountry()) {
       return this.user.getCountryGeojson();
     } else {
       switch (this.user.getChosenRegion()) {

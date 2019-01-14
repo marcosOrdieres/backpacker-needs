@@ -59,34 +59,30 @@ class RecommendationsController extends BaseScene {
     return listRecommendationsArray;
   }
 
-  async callToSelectedRecommendations (recommendationSelected) {
+  async readValueListRecommendations () {
+    let recommendationSelected;
+    if(this.user.getChosenRegion()){
+      recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/recommendationSelected');
+    } else{
+      recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenCountry() + '/recommendationSelected');
+    }
     const snapshot = await recommendationSelected.once('value');
     const valueListRecommendations = snapshot.val();
     return valueListRecommendations;
   }
 
-  async readValueListRecommendations () {
-    let recommendationSelected;
-    if (!this.user.getChosenRegion()) {
-      recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenCountry() + '/recommendationSelected');
-      await this.callToSelectedRecommendations(recommendationSelected);
-    } else {
-      recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/recommendationSelected');
-      await this.callToSelectedRecommendations(recommendationSelected);
-    }
-  }
-
   async onClickListItemRecommendations (item) {
     try {
       let chosenRegionOrCountry;
-      if (!this.user.getChosenRegion()) {
-        chosenRegionOrCountry = this.user.getChosenCountry();
-      } else {
+      if (this.user.getChosenRegion()) {
         chosenRegionOrCountry = this.user.getChosenRegion();
+      } else {
+        chosenRegionOrCountry = this.user.getChosenCountry();
       }
       this.setState({spinnerVisible: true});
       const listRecos = await this.readValueListRecommendations();
       if (!listRecos) {
+        //Here the list of Recommendations is empty cause there is none, so we update
         await firebase.database().ref('users/' + this.user.getUserId())
           .child('region')
           .child(chosenRegionOrCountry)
@@ -95,6 +91,7 @@ class RecommendationsController extends BaseScene {
         this.listRecommendationsWhichSelected(listRecos);
         this.setState({externalData: true, spinnerVisible: false});
       } else {
+        //Here the list of Recommendations has data, so we push into existing
         if (!Object.values(listRecos).includes(item)) {
           await firebase.database().ref('users/' + this.user.getUserId())
             .child('region')

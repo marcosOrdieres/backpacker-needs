@@ -7,9 +7,6 @@ import firebase from 'react-native-firebase';
 
 class BackpackController extends BaseScene {
   constructor (args) {
-    // Ahora mismo en master funciona todo para country y para add items
-    // tengo que mirar que cuando haya country, haga todo todo con this.user.getCountry()
-    // si no que lo haga todo con this.user.getRegion
     // y cuando se anyade backpack se limpian las dos.
     // hay problemas con los jsons de las regiones, checkear
     super(args);
@@ -114,6 +111,7 @@ class BackpackController extends BaseScene {
     }
     const listInTheBackpack = await this.readValueListInTheBackpack();
     if (!listInTheBackpack) {
+      //Here it comes if there are not items in the selectedInTheBackpack, so it update (first time), the inTheBackpack
       await firebase.database().ref('users/' + this.user.getUserId())
         .child('region')
         .child(countryOrRegion)
@@ -122,6 +120,7 @@ class BackpackController extends BaseScene {
       this.listInTheBackpackSelected(listInTheBackpack);
       this.setState({externalData: true});
     } else {
+      //Here it comes if there are already items in the selectedInTheBackpack, so it push (existing), the inTheBackpack
       if (!Object.values(listInTheBackpack).includes(item)) {
         await firebase.database().ref('users/' + this.user.getUserId())
           .child('region')

@@ -19,10 +19,11 @@ class RecommendationsController extends BaseScene {
 
   async componentDidMount () {
     this.props.navigation.addListener('didFocus', async () => {
-      if (this.rootStore.getState().isRegionChanged) {
+      if (this.rootStore.getState().isRegionChanged ||this.rootStore.getState().isRecosUpdated) {
         await this.checkSelectedRecommendations();
         await this.checkDaysFocus();
         await this.rootStore.dispatch({ type: 'REGION_CHANGED', isRegionChanged: false});
+        await this.rootStore.dispatch({ type: 'RECOS_UPDATED', isRecosUpdated: false});
         await this.setState({externalData: true});
       }
     });
@@ -61,6 +62,9 @@ class RecommendationsController extends BaseScene {
 
   async readValueListRecommendations () {
     let recommendationSelected;
+    console.warn('getChosenRegion', this.user.getChosenRegion());
+    console.warn('getChosenCountry', this.user.getChosenCountry());
+
     if(this.user.getChosenRegion()){
       recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/recommendationSelected');
     } else{

@@ -118,6 +118,7 @@ export default (controller) => (
         onPress={() => {
           controller.user.setChosenCountry(null);
           controller.user.setChosenRegion(null);
+          controller.rootStore.dispatch({ type: 'RECOS_UPDATED', isRecosUpdated: true});
           controller.navigateTo('TravelDecision');
         }}>
         <BackpackSvg width={25} height={25} colorFillCorner={Palette.green} colorFillRest={Palette.green} />

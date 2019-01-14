@@ -6,6 +6,7 @@ import env from '../config/env';
 import palette from '../common/palette';
 import { NetInfo } from 'react-native';
 import firebase from 'react-native-firebase';
+import { StackActions, NavigationActions } from 'react-navigation';
 
 export default class BaseScene extends Component {
   constructor (args) {
@@ -51,6 +52,14 @@ export default class BaseScene extends Component {
 
   navigateTo (destination) {
     this.props.navigation.navigate(destination);
+  }
+
+  resetNavigation(route){
+    const resetAction = StackActions.reset({
+      index: 0,
+      actions: [NavigationActions.navigate({ routeName: route })],
+    });
+    this.props.navigation.dispatch(resetAction);
   }
 
   setState (args) {

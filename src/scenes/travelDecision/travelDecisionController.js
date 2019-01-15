@@ -39,18 +39,23 @@ class TravelDecisionController extends BaseScene {
     const chosenRegionOrCountry = await this.regionOrCountry();
     const isCountryStored = await this.readListSelectedCountries();
     if (!isCountryStored) {
-      const userId = this.user.getUserId();
+      const userId = this.user.getUserId().toString();
       const dateAndRegion = {'users': {[userId]: {'region': {[chosenRegionOrCountry]: {'date': this.state.date}}}}};
+      //AsyncStorage
       const firstTimeStoreDataAndRegion = await this.storage.set(this.user.getUserId(), JSON.stringify(dateAndRegion));
       const existingDataAndRegion = await this.storage.get(this.user.getUserId());
+      //firebase
       firebase.database().ref('users/' + this.user.getUserId()).set({'region': {[chosenRegionOrCountry]: {'date': this.state.date}}});
       return true;
     } else {
-      // Same as I do in firebase I do it in the asyncStorage
       const dateAndRegion = {[chosenRegionOrCountry]: {'date': this.state.date}};
       const existingDataAndRegion = await this.storage.get(this.user.getUserId());
-      Object.assign(Object.values(JSON.parse(existingDataAndRegion).users[0].region, dateAndRegion));
-      const otherTimesStoreDataAndRegion = await this.storage.set(this.user.getUserId(), JSON.stringify(existingDataAndRegion));
+      const newObject = Object.assign(Object.values(JSON.parse(existingDataAndRegion).users)[0].region, dateAndRegion);
+      const newObjParsed = JSON.parse(existingDataAndRegion);
+      Object.values(newObjParsed.users)[0].region = newObject;
+      //AsyncStorage
+      const otherTimesStoreDataAndRegion = await this.storage.set(this.user.getUserId(), JSON.stringify(newObjParsed));
+      //firebase
       firebase.database().ref('users/' + this.user.getUserId()).child('region').update({ [chosenRegionOrCountry]: {'date': this.state.date}});
       return true;
     }

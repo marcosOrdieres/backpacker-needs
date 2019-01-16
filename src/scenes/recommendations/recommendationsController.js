@@ -87,12 +87,12 @@ class RecommendationsController extends BaseScene {
       // Instead of reading from Firebase, I read from AsyncStorage
       // recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenCountry() + '/recommendationSelected');
       const userDataStorage = await this.storage.get(this.user.getUserId());
-
-      if (!Object.values(JSON.parse(userDataStorage).users)[0].region.chosenRegionString) {
+      console.warn('EL MISTERIOOO: ', userDataStorage);
+      if (!Object.values(JSON.parse(userDataStorage).users)[0].region[chosenCountryString]) {
         recommendationSelected = null;
         return recommendationSelected;
       } else {
-        recommendationSelected = Object.values(JSON.parse(userDataStorage).users)[0].region.chosenRegionString.recommendationSelected;
+        recommendationSelected = Object.values(JSON.parse(userDataStorage).users)[0].region[chosenCountryString].recommendationSelected;
         return recommendationSelected;
       }
     }

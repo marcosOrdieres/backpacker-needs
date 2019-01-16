@@ -75,16 +75,26 @@ class RecommendationsController extends BaseScene {
 
       console.warn('ESE 11: ', userDataStorage);
 
-      recommendationSelected = Object.values(JSON.parse(userDataStorage).users)[0].region.chosenRegionString.recommendationSelected;
+      if(!Object.values(JSON.parse(userDataStorage).users)[0].region.chosenRegionString){
+        recommendationSelected = null;
+        return recommendationSelected;
+      } else{
+        recommendationSelected = Object.values(JSON.parse(userDataStorage).users)[0].region.chosenRegionString.recommendationSelected;
+        return recommendationSelected;
+      }
     } else{
       const chosenCountryString = this.user.getChosenCountry();
       //Instead of reading from Firebase, I read from AsyncStorage
       //recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenCountry() + '/recommendationSelected');
       const userDataStorage = await this.storage.get(this.user.getUserId());
 
-      console.warn('ESE 222: ', userDataStorage);
-
-      recommendationSelected = Object.values(JSON.parse(userDataStorage).users)[0].region.chosenCountryString.recommendationSelected;
+      if(!Object.values(JSON.parse(userDataStorage).users)[0].region.chosenRegionString){
+        recommendationSelected = null;
+        return recommendationSelected;
+      } else{
+        recommendationSelected = Object.values(JSON.parse(userDataStorage).users)[0].region.chosenRegionString.recommendationSelected;
+        return recommendationSelected;
+      }
     }
     console.warn('LAS RECOS SELECCIONADAS: ', recommendationSelected);
     return recommendationSelected;
@@ -140,6 +150,7 @@ class RecommendationsController extends BaseScene {
 
 
           const listRecos = await this.readValueListRecommendations();
+          console.warn('777777777777777 :', listRecos);
           this.listRecommendationsWhichSelected(listRecos);
           this.setState({externalData: true, spinnerVisible: false});
         } else {

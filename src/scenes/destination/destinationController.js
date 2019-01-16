@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import PopupDialog, { SlideAnimation } from 'react-native-popup-dialog';
 import Toast, {DURATION} from 'react-native-easy-toast';
 import { View } from 'react-native';
-import firebase from 'react-native-firebase';
 
 import Australia from '../../assets/mapJson/subregion/Australia_and_NewZealand.json';
 import Caribbean from '../../assets/mapJson/subregion/Caribbean.json';

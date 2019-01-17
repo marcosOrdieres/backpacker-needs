@@ -9,8 +9,8 @@ const appReducer = combineReducers({
   isFromSignup: userReducer.isFromSignup,
   isFromLogin: userReducer.isFromLogin,
   isBackpackScreen: userReducer.isBackpackScreen,
-  isRegionChanged: userReducer.isRegionChanged
-
+  isRegionChanged: userReducer.isRegionChanged,
+  isRecosUpdated: userReducer.isRecosUpdated
 });
 
 const rootStore = createStore(appReducer, applyMiddleware(thunk), reduxReset());

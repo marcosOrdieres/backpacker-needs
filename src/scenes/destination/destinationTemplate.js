@@ -113,7 +113,14 @@ export default (controller) => (
     </TouchableOpacity>
 
     <ActionButton buttonColor={Palette.primaryColor}>
-      <ActionButton.Item buttonColor={Palette.green} title='Add Backpack' onPress={() => { controller.navigateTo('TravelDecision'); }}>
+      <ActionButton.Item buttonColor={Palette.green}
+        title='Add Backpack'
+        onPress={() => {
+          controller.user.setChosenCountry(null);
+          controller.user.setChosenRegion(null);
+          controller.rootStore.dispatch({ type: 'RECOS_UPDATED', isRecosUpdated: true});
+          controller.navigateTo('TravelDecision');
+        }}>
         <BackpackSvg width={25} height={25} colorFillCorner={Palette.green} colorFillRest={Palette.green} />
       </ActionButton.Item>
     </ActionButton>

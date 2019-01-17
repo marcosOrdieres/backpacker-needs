@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import PopupDialog, { SlideAnimation } from 'react-native-popup-dialog';
 import Toast, {DURATION} from 'react-native-easy-toast';
 import { View } from 'react-native';
-import firebase from 'react-native-firebase';
 
 import Australia from '../../assets/mapJson/subregion/Australia_and_NewZealand.json';
 import Caribbean from '../../assets/mapJson/subregion/Caribbean.json';
@@ -47,7 +46,7 @@ class DestinationController extends BaseScene {
   }
 
   async componentDidMount () {
-    // this.setState({externalData: true});
+    this.setState({externalData: true});
     setTimeout(() => { this.refs.toast.show(this.i18n.t('destination.toast'), 6000); }, 1500);
   }
 
@@ -57,8 +56,14 @@ class DestinationController extends BaseScene {
     let result = Object.keys(country).map(function (key) { return [key, country[key]]; });
     const resultCoordinates = result.forEach((element) => {
       element.find((place) => {
-        if (place === this.user.getChosenRegion()) {
-          return this.user.setChosenRegionCoordinates(element[1]);
+        if (!this.user.getChosenRegion()) {
+          if (place === this.user.getChosenCountry()) {
+            return this.user.setChosenRegionCoordinates(element[1]);
+          }
+        } else {
+          if (place === this.user.getChosenRegion()) {
+            return this.user.setChosenRegionCoordinates(element[1]);
+          }
         }
       });
     });
@@ -103,7 +108,7 @@ class DestinationController extends BaseScene {
   }
 
   regionChosen () {
-    if (this.user.getCountryGeojson()) {
+    if (this.user.getChosenCountry()) {
       return this.user.getCountryGeojson();
     } else {
       switch (this.user.getChosenRegion()) {

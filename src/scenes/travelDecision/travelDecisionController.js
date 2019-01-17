@@ -1,6 +1,7 @@
 import React from 'react';
 import { BaseScene } from 'components';
 import template from './travelDecisionTemplate';
+import services from '../../services';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 import { View, Text } from 'react-native';
@@ -10,6 +11,8 @@ import moment from 'moment';
 class TravelDecisionController extends BaseScene {
   constructor (args) {
     super(args);
+    this.services = services;
+    this.storage = this.services.Storage;
     const now = moment().format();
     this.state = {
       text: '',
@@ -29,24 +32,29 @@ class TravelDecisionController extends BaseScene {
     }
   }
 
-  async sendRegionAndDate () {
+  async sendRegionOrCountryAndDate () {
     const chosenRegionOrCountry = await this.regionOrCountry();
     const isCountryStored = await this.readListSelectedCountries();
     if (!isCountryStored) {
-      await firebase.database().ref('users/' + this.user.getUserId()).set({
-        'region': {
-          [chosenRegionOrCountry]: {
-            'date': this.state.date
-          }
-        }
-      });
+      const userId = this.user.getUserId().toString();
+      const dateAndRegion = {'users': {[userId]: {'region': {[chosenRegionOrCountry]: {'date': this.state.date}}}}};
+      // AsyncStorage
+      const firstTimeStoreDataAndRegion = await this.storage.set(this.user.getUserId(), JSON.stringify(dateAndRegion));
+      const existingDataAndRegion = await this.storage.get(this.user.getUserId());
+      // firebase
+      firebase.database().ref('users/' + this.user.getUserId()).set({'region': {[chosenRegionOrCountry]: {'date': this.state.date}}});
       return true;
     } else {
-      await firebase.database().ref('users/' + this.user.getUserId())
-      .child('region')
-      .update({ [chosenRegionOrCountry]: {
-        'date': this.state.date
-      }});
+      const dateAndRegion = {[chosenRegionOrCountry]: {'date': this.state.date}};
+      const existingDataAndRegion = await this.storage.get(this.user.getUserId());
+      const newObject = Object.assign(Object.values(JSON.parse(existingDataAndRegion).users)[0].region, dateAndRegion);
+      const newObjParsed = JSON.parse(existingDataAndRegion);
+      Object.values(newObjParsed.users)[0].region = newObject;
+      // AsyncStorage
+      const otherTimesStoreDataAndRegion = await this.storage.set(this.user.getUserId(), JSON.stringify(newObjParsed));
+      const hola = await this.storage.get(this.user.getUserId());
+      // firebase
+      firebase.database().ref('users/' + this.user.getUserId()).child('region').update({ [chosenRegionOrCountry]: {'date': this.state.date}});
       return true;
     }
   }

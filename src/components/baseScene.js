@@ -6,6 +6,7 @@ import env from '../config/env';
 import palette from '../common/palette';
 import { NetInfo } from 'react-native';
 import firebase from 'react-native-firebase';
+import { StackActions, NavigationActions } from 'react-navigation';
 
 export default class BaseScene extends Component {
   constructor (args) {
@@ -24,11 +25,21 @@ export default class BaseScene extends Component {
     return valueListCountriesSelected;
   }
 
-  async checkDaysFocus () {
-    const howManyDays = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/date');
+  async callToCheckDaysFocus (howManyDays) {
     const snapshot = await howManyDays.once('value');
     const valueDays = snapshot.val();
     return this.user.setDateOfTravel(valueDays);
+  }
+
+  async checkDaysFocus () {
+    // I check the days Focus, it depends if it is Region or Country.
+    if (!this.user.getChosenRegion()) {
+      const howManyDays = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenCountry() + '/date');
+      this.callToCheckDaysFocus(howManyDays);
+    } else {
+      const howManyDays = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/date');
+      this.callToCheckDaysFocus(howManyDays);
+    }
   }
 
   checkHowManyDays () {
@@ -41,6 +52,14 @@ export default class BaseScene extends Component {
 
   navigateTo (destination) {
     this.props.navigation.navigate(destination);
+  }
+
+  resetNavigation (route) {
+    const resetAction = StackActions.reset({
+      index: 0,
+      actions: [NavigationActions.navigate({ routeName: route })]
+    });
+    this.props.navigation.dispatch(resetAction);
   }
 
   setState (args) {

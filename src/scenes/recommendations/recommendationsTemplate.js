@@ -21,7 +21,7 @@ export default (controller) => (
        null
      } */}
     <Text
-      style={recommendationsStyles.mainTitle}>Recommendations for {controller.user.getChosenRegion()} </Text>
+      style={recommendationsStyles.mainTitle}>Recommendations for { controller.user.getChosenRegion() ? controller.user.getChosenRegion() : controller.user.getChosenCountry()} </Text>
     <Text
       style={recommendationsStyles.howManyDays}>Still {controller.checkHowManyDays()} days to Go!</Text>
     <SectionList

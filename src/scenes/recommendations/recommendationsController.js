@@ -4,10 +4,15 @@ import template from './recommendationsTemplate';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 import { View } from 'react-native';
+import services from '../../services';
 
 class RecommendationsController extends BaseScene {
+  // The calls to Firebase that are read, instead of read in Firebase,
+  // I read it from AsyncStorage, but write, I write in both (firebase in the background)
   constructor (args) {
     super(args);
+    this.services = services;
+    this.storage = this.services.Storage;
     this.state = {
       selected: false,
       externalData: null,
@@ -19,10 +24,11 @@ class RecommendationsController extends BaseScene {
 
   async componentDidMount () {
     this.props.navigation.addListener('didFocus', async () => {
-      if (this.rootStore.getState().isRegionChanged) {
+      if (this.rootStore.getState().isRegionChanged || this.rootStore.getState().isRecosUpdated) {
         await this.checkSelectedRecommendations();
         await this.checkDaysFocus();
         await this.rootStore.dispatch({ type: 'REGION_CHANGED', isRegionChanged: false});
+        await this.rootStore.dispatch({ type: 'RECOS_UPDATED', isRecosUpdated: false});
         await this.setState({externalData: true});
       }
     });
@@ -60,31 +66,66 @@ class RecommendationsController extends BaseScene {
   }
 
   async readValueListRecommendations () {
-    const recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/recommendationSelected');
-    const snapshot = await recommendationSelected.once('value');
-    const valueListRecommendations = snapshot.val();
-    return valueListRecommendations;
+    let recommendationSelected;
+    if (this.user.getChosenRegion()) {
+      const chosenRegionString = this.user.getChosenRegion();
+      // Instead of reading from Firebase, I read from AsyncStorage
+      // recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/recommendationSelected');
+      const userDataStorage = await this.storage.get(this.user.getUserId());
+      if (!Object.values(JSON.parse(userDataStorage).users)[0].region[chosenCountryString]) {
+        recommendationSelected = null;
+        return recommendationSelected;
+      } else {
+        recommendationSelected = Object.values(JSON.parse(userDataStorage).users)[0].region[chosenCountryString].recommendationSelected;
+        return recommendationSelected;
+      }
+    } else {
+      const chosenCountryString = this.user.getChosenCountry();
+      // Instead of reading from Firebase, I read from AsyncStorage
+      // recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenCountry() + '/recommendationSelected');
+      const userDataStorage = await this.storage.get(this.user.getUserId());
+      if (!Object.values(JSON.parse(userDataStorage).users)[0].region[chosenCountryString]) {
+        recommendationSelected = null;
+        return recommendationSelected;
+      } else {
+        recommendationSelected = Object.values(JSON.parse(userDataStorage).users)[0].region[chosenCountryString].recommendationSelected;
+        return recommendationSelected;
+      }
+    }
   }
 
   async onClickListItemRecommendations (item) {
     try {
+      let chosenRegionOrCountry;
+      if (this.user.getChosenRegion()) {
+        chosenRegionOrCountry = this.user.getChosenRegion();
+      } else {
+        chosenRegionOrCountry = this.user.getChosenCountry();
+      }
       this.setState({spinnerVisible: true});
       const listRecos = await this.readValueListRecommendations();
       if (!listRecos) {
-        await firebase.database().ref('users/' + this.user.getUserId())
-          .child('region')
-          .child(this.user.getChosenRegion())
-          .update({recommendationSelected: {item}});
+        // Here the list of Recommendations is empty cause there is none, so we update
+        // Write in Firebase in Background, do it for AsyncStorage
+        firebase.database().ref('users/' + this.user.getUserId()).child('region').child(chosenRegionOrCountry).update({recommendationSelected: {item}});
+        const userDataStorage = await this.storage.get(this.user.getUserId());
+        const newRecommendation = {'recommendationSelected': {item}};
+        const newObject = Object.assign(Object.values(JSON.parse(userDataStorage).users)[0].region[chosenRegionOrCountry], newRecommendation);
+        const newObjParsed = JSON.parse(userDataStorage);
+        Object.values(newObjParsed.users)[0].region[chosenRegionOrCountry] = newObject;
+        await this.storage.set(this.user.getUserId(), JSON.stringify(newObjParsed));
         const listRecos = await this.readValueListRecommendations();
         this.listRecommendationsWhichSelected(listRecos);
         this.setState({externalData: true, spinnerVisible: false});
       } else {
+        // Here the list of Recommendations has data, so we push into existing
         if (!Object.values(listRecos).includes(item)) {
-          await firebase.database().ref('users/' + this.user.getUserId())
-            .child('region')
-            .child(this.user.getChosenRegion())
-            .child('recommendationSelected')
-            .push(item);
+          firebase.database().ref('users/' + this.user.getUserId()).child('region').child(chosenRegionOrCountry).child('recommendationSelected').push(item);
+          // Here get from asyncstorage, parse, add the item into recommendationSelected and set again the new obj for asyncstorage
+          let userDataStorage = await this.storage.get(this.user.getUserId());
+          const userDataStorageParsed = JSON.parse(userDataStorage);
+          Object.values(userDataStorageParsed.users)[0].region[chosenRegionOrCountry].recommendationSelected[item.toString()] = item.toString();
+          const otherTimesStoreDataAndRegion = await this.storage.set(this.user.getUserId(), JSON.stringify(userDataStorageParsed));
           const listRecos = await this.readValueListRecommendations();
           this.listRecommendationsWhichSelected(listRecos);
           this.setState({externalData: true, spinnerVisible: false});

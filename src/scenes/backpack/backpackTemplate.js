@@ -9,7 +9,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 export default (controller) => (
   <View style={{height: '100%'}}>
     <Text
-      style={backpackStyles.mainTitle}>Backpack for {controller.user.getChosenRegion()} </Text>
+      style={backpackStyles.mainTitle}>Backpack for {controller.user.getChosenRegion() ? controller.user.getChosenRegion() : controller.user.getChosenCountry()} </Text>
     <Text
       style={backpackStyles.howManyDays}>Still {controller.checkHowManyDays()} days to Go!</Text>
     {controller.user.getRecommendationsOnlyIntemSelected() ?

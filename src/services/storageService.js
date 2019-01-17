@@ -4,12 +4,21 @@ export default class StorageService {
   constructor () {
   }
 
-  set (key, value) {
-    return AsyncStorage.setItem(key, value);
+  async set (key, value) {
+    try {
+      await AsyncStorage.setItem(key, value);
+    } catch (error) {
+      console.warn(error);
+    }
   }
 
   async get (key) {
-    return AsyncStorage.getItem(key);
+    try {
+      const getAsyncStorage = await AsyncStorage.getItem(key);
+      return getAsyncStorage;
+    } catch (error) {
+      console.warn(error);
+    }
   }
 
   remove (key) {
@@ -17,7 +26,7 @@ export default class StorageService {
   }
 
   async multiGet (keys) {
-    return AsyncStorage.multiGet(keys);
+    await AsyncStorage.multiGet(keys);
   }
 
   clear () {

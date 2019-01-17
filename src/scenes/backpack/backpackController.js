@@ -7,6 +7,8 @@ import firebase from 'react-native-firebase';
 
 class BackpackController extends BaseScene {
   constructor (args) {
+    // y cuando se anyade backpack se limpian las dos.
+    // hay problemas con los jsons de las regiones, checkear
     super(args);
     this.state = {
       titleAddItem: '',
@@ -37,7 +39,12 @@ class BackpackController extends BaseScene {
   }
 
   async readRecommendationsSelected () {
-    const recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/recommendationSelected');
+    let recommendationSelected;
+    if (!this.user.getChosenRegion()) {
+      recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenCountry() + '/recommendationSelected');
+    } else {
+      recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/recommendationSelected');
+    }
     const snapshot = await recommendationSelected.once('value');
     const valueListRecommendationSelected = snapshot.val();
     if (valueListRecommendationSelected) {
@@ -50,7 +57,12 @@ class BackpackController extends BaseScene {
   }
 
   async readValueListInTheBackpack () {
-    const inTheBackpack = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/inTheBackpack');
+    let inTheBackpack;
+    if (!this.user.getChosenRegion()) {
+      inTheBackpack = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenCountry() + '/inTheBackpack');
+    } else {
+      inTheBackpack = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/inTheBackpack');
+    }
     const snapshot = await inTheBackpack.once('value');
     const valueListInTheBackpack = snapshot.val();
     return valueListInTheBackpack;
@@ -91,20 +103,28 @@ class BackpackController extends BaseScene {
   }
 
   async onClickListItemBackpack (item) {
+    let countryOrRegion;
+    if (!this.user.getChosenRegion()) {
+      countryOrRegion = this.user.getChosenCountry();
+    } else {
+      countryOrRegion = this.user.getChosenRegion();
+    }
     const listInTheBackpack = await this.readValueListInTheBackpack();
     if (!listInTheBackpack) {
+      //Here it comes if there are not items in the selectedInTheBackpack, so it update (first time), the inTheBackpack
       await firebase.database().ref('users/' + this.user.getUserId())
         .child('region')
-        .child(this.user.getChosenRegion())
+        .child(countryOrRegion)
         .update({inTheBackpack: {item}});
       const listInTheBackpack = await this.readValueListInTheBackpack();
       this.listInTheBackpackSelected(listInTheBackpack);
       this.setState({externalData: true});
     } else {
+      //Here it comes if there are already items in the selectedInTheBackpack, so it push (existing), the inTheBackpack
       if (!Object.values(listInTheBackpack).includes(item)) {
         await firebase.database().ref('users/' + this.user.getUserId())
           .child('region')
-          .child(this.user.getChosenRegion())
+          .child(countryOrRegion)
           .child('inTheBackpack')
           .push(item);
         const listInTheBackpack = await this.readValueListInTheBackpack();
@@ -135,13 +155,23 @@ class BackpackController extends BaseScene {
 
   async storeAddItem (addItem) {
     try {
-      // store the items that are Added manually by the user.
-      await firebase.database().ref('users/' + this.user.getUserId())
-        .child('region')
-        .child(this.user.getChosenRegion())
-        .child('recommendationSelected')
-        .push(addItem);
-      return addItem;
+      if (!this.user.getChosenRegion()) {
+        // change this, i did quickly
+        // store the items that are Added manually by the user.
+        await firebase.database().ref('users/' + this.user.getUserId())
+          .child('region')
+          .child(this.user.getChosenCountry())
+          .child('recommendationSelected')
+          .push(addItem);
+        return addItem;
+      } else {
+        await firebase.database().ref('users/' + this.user.getUserId())
+          .child('region')
+          .child(this.user.getChosenRegion())
+          .child('recommendationSelected')
+          .push(addItem);
+        return addItem;
+      }
     } catch (error) {
       console.warn(error.message);
     }

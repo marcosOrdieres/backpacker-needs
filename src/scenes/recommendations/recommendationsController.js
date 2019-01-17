@@ -72,8 +72,6 @@ class RecommendationsController extends BaseScene {
       // Instead of reading from Firebase, I read from AsyncStorage
       // recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/recommendationSelected');
       const userDataStorage = await this.storage.get(this.user.getUserId());
-      console.warn('EL MISTERIOOO 1111: ', userDataStorage);
-
       if (!Object.values(JSON.parse(userDataStorage).users)[0].region[chosenCountryString]) {
         recommendationSelected = null;
         return recommendationSelected;
@@ -86,7 +84,6 @@ class RecommendationsController extends BaseScene {
       // Instead of reading from Firebase, I read from AsyncStorage
       // recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenCountry() + '/recommendationSelected');
       const userDataStorage = await this.storage.get(this.user.getUserId());
-      console.warn('EL MISTERIOOO 22222: ', userDataStorage);
       if (!Object.values(JSON.parse(userDataStorage).users)[0].region[chosenCountryString]) {
         recommendationSelected = null;
         return recommendationSelected;
@@ -95,9 +92,6 @@ class RecommendationsController extends BaseScene {
         return recommendationSelected;
       }
     }
-    // const snapshot = await recommendationSelected.once('value');
-    // const valueListRecommendations = snapshot.val();
-    // return valueListRecommendations;
   }
 
   async onClickListItemRecommendations (item) {
@@ -115,51 +109,23 @@ class RecommendationsController extends BaseScene {
         // Write in Firebase in Background, do it for AsyncStorage
         firebase.database().ref('users/' + this.user.getUserId()).child('region').child(chosenRegionOrCountry).update({recommendationSelected: {item}});
         const userDataStorage = await this.storage.get(this.user.getUserId());
-        console.warn('AVERRR 1111: ',userDataStorage);
         const newRecommendation = {'recommendationSelected': {item}};
-
         const newObject = Object.assign(Object.values(JSON.parse(userDataStorage).users)[0].region[chosenRegionOrCountry], newRecommendation);
         const newObjParsed = JSON.parse(userDataStorage);
-
         Object.values(newObjParsed.users)[0].region[chosenRegionOrCountry] = newObject;
-
         await this.storage.set(this.user.getUserId(), JSON.stringify(newObjParsed));
         const listRecos = await this.readValueListRecommendations();
-
         this.listRecommendationsWhichSelected(listRecos);
         this.setState({externalData: true, spinnerVisible: false});
       } else {
         // Here the list of Recommendations has data, so we push into existing
         if (!Object.values(listRecos).includes(item)) {
           firebase.database().ref('users/' + this.user.getUserId()).child('region').child(chosenRegionOrCountry).child('recommendationSelected').push(item);
-
-          const userDataStorage = await this.storage.get(this.user.getUserId());
-
-          console.warn('AVERRR 222222: ',userDataStorage);
-
-
-          // "qMjXWKQENWdkFHzD9RrMNQWaOUC2" : {
-          //   "region" : {
-          //     "Egypt" : {
-          //       "date" : "2019-01-14",
-          //       "recommendationSelected" : {
-          //         "-LWCABbxafLvvuLhth2y" : "Travel Water Bottle",
-          //         "item" : "Lock"
-          //       }
-          //     }
-          const hola = {'item':{item}}
-          console.warn('643646: ', Object.values(JSON.parse(userDataStorage).users)[0].region[chosenRegionOrCountry].recommendationSelected);
-
-          const newObject = Object.assign(Object.values(Object.values(JSON.parse(userDataStorage).users)[0].region[chosenRegionOrCountry]), hola);
-          console.warn('aver 333333', newObject);
-          const newObjParsed = JSON.parse(userDataStorage);
-          console.warn('aver 4444444', newObjParsed);
-
-
-          Object.values(newObjParsed.users)[0].region[chosenRegionOrCountry].recommendationSelected = newObject;
-          console.warn('EL NUEVO OBJ: ',newObjParsed );
-          const otherTimesStoreDataAndRegion = await this.storage.set(this.user.getUserId(), JSON.stringify(newObjParsed));
-          const laMovida = await this.storage.get(this.user.getUserId());
+          // Here get from asyncstorage, parse, add the item into recommendationSelected and set again the new obj for asyncstorage
+          let userDataStorage = await this.storage.get(this.user.getUserId());
+          const userDataStorageParsed = JSON.parse(userDataStorage);
+          Object.values(userDataStorageParsed.users)[0].region[chosenRegionOrCountry].recommendationSelected[item.toString()] = item.toString();
+          const otherTimesStoreDataAndRegion = await this.storage.set(this.user.getUserId(), JSON.stringify(userDataStorageParsed));
           const listRecos = await this.readValueListRecommendations();
           this.listRecommendationsWhichSelected(listRecos);
           this.setState({externalData: true, spinnerVisible: false});

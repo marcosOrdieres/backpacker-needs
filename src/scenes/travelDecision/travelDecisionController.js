@@ -55,6 +55,8 @@ class TravelDecisionController extends BaseScene {
       Object.values(newObjParsed.users)[0].region = newObject;
       //AsyncStorage
       const otherTimesStoreDataAndRegion = await this.storage.set(this.user.getUserId(), JSON.stringify(newObjParsed));
+      const hola = await this.storage.get(this.user.getUserId());
+      console.warn('HOLAAA :', hola);
       //firebase
       firebase.database().ref('users/' + this.user.getUserId()).child('region').update({ [chosenRegionOrCountry]: {'date': this.state.date}});
       return true;

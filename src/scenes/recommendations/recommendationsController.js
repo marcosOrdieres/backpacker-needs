@@ -72,14 +72,13 @@ class RecommendationsController extends BaseScene {
       // Instead of reading from Firebase, I read from AsyncStorage
       // recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/recommendationSelected');
       const userDataStorage = await this.storage.get(this.user.getUserId());
+      console.warn('EL MISTERIOOO 1111: ', userDataStorage);
 
-      console.warn('ESE 11: ', userDataStorage);
-
-      if (!Object.values(JSON.parse(userDataStorage).users)[0].region.chosenRegionString) {
+      if (!Object.values(JSON.parse(userDataStorage).users)[0].region[chosenCountryString]) {
         recommendationSelected = null;
         return recommendationSelected;
       } else {
-        recommendationSelected = Object.values(JSON.parse(userDataStorage).users)[0].region.chosenRegionString.recommendationSelected;
+        recommendationSelected = Object.values(JSON.parse(userDataStorage).users)[0].region[chosenCountryString].recommendationSelected;
         return recommendationSelected;
       }
     } else {
@@ -87,7 +86,7 @@ class RecommendationsController extends BaseScene {
       // Instead of reading from Firebase, I read from AsyncStorage
       // recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenCountry() + '/recommendationSelected');
       const userDataStorage = await this.storage.get(this.user.getUserId());
-      console.warn('EL MISTERIOOO: ', userDataStorage);
+      console.warn('EL MISTERIOOO 22222: ', userDataStorage);
       if (!Object.values(JSON.parse(userDataStorage).users)[0].region[chosenCountryString]) {
         recommendationSelected = null;
         return recommendationSelected;
@@ -96,8 +95,6 @@ class RecommendationsController extends BaseScene {
         return recommendationSelected;
       }
     }
-    console.warn('LAS RECOS SELECCIONADAS: ', recommendationSelected);
-    return recommendationSelected;
     // const snapshot = await recommendationSelected.once('value');
     // const valueListRecommendations = snapshot.val();
     // return valueListRecommendations;
@@ -117,25 +114,18 @@ class RecommendationsController extends BaseScene {
         // Here the list of Recommendations is empty cause there is none, so we update
         // Write in Firebase in Background, do it for AsyncStorage
         firebase.database().ref('users/' + this.user.getUserId()).child('region').child(chosenRegionOrCountry).update({recommendationSelected: {item}});
-        let userDataStorage;
-        userDataStorage = await this.storage.get(this.user.getUserId());
-        console.warn('11111: ', userDataStorage);
+        const userDataStorage = await this.storage.get(this.user.getUserId());
+        console.warn('AVERRR 1111: ',userDataStorage);
         const newRecommendation = {'recommendationSelected': {item}};
-        console.warn('ESTO: ', newRecommendation);
 
         const newObject = Object.assign(Object.values(JSON.parse(userDataStorage).users)[0].region[chosenRegionOrCountry], newRecommendation);
-
         const newObjParsed = JSON.parse(userDataStorage);
+
         Object.values(newObjParsed.users)[0].region[chosenRegionOrCountry] = newObject;
 
-        console.warn('222222: ', newObjParsed);
         await this.storage.set(this.user.getUserId(), JSON.stringify(newObjParsed));
-
-        const laMovida = await this.storage.get(this.user.getUserId());
-        console.warn('ESTA ES LA MOVIDA DE CUANDO NOOOOOO HAY: ', laMovida);
-
         const listRecos = await this.readValueListRecommendations();
-        console.warn('333333333', listRecos);
+
         this.listRecommendationsWhichSelected(listRecos);
         this.setState({externalData: true, spinnerVisible: false});
       } else {
@@ -144,23 +134,33 @@ class RecommendationsController extends BaseScene {
           firebase.database().ref('users/' + this.user.getUserId()).child('region').child(chosenRegionOrCountry).child('recommendationSelected').push(item);
 
           const userDataStorage = await this.storage.get(this.user.getUserId());
-          console.warn('4444444', userDataStorage);
-          const newObject = Object.assign(Object.values(JSON.parse(userDataStorage).users)[0].region.chosenRegionOrCountry.recommendationSelected, item);
-          console.warn('555555', newObject);
 
+          console.warn('AVERRR 222222: ',userDataStorage);
+
+
+          // "qMjXWKQENWdkFHzD9RrMNQWaOUC2" : {
+          //   "region" : {
+          //     "Egypt" : {
+          //       "date" : "2019-01-14",
+          //       "recommendationSelected" : {
+          //         "-LWCABbxafLvvuLhth2y" : "Travel Water Bottle",
+          //         "item" : "Lock"
+          //       }
+          //     }
+          const hola = {'item':{item}}
+          console.warn('643646: ', Object.values(JSON.parse(userDataStorage).users)[0].region[chosenRegionOrCountry].recommendationSelected);
+
+          const newObject = Object.assign(Object.values(Object.values(JSON.parse(userDataStorage).users)[0].region[chosenRegionOrCountry]), hola);
+          console.warn('aver 333333', newObject);
           const newObjParsed = JSON.parse(userDataStorage);
-          console.warn('666666666', newObjParsed);
+          console.warn('aver 4444444', newObjParsed);
 
-          Object.values(newObjParsed.users)[0].region.chosenRegionOrCountry.recommendationSelected = newObject;
-          console.warn('777777', newObjParsed);
 
+          Object.values(newObjParsed.users)[0].region[chosenRegionOrCountry].recommendationSelected = newObject;
+          console.warn('EL NUEVO OBJ: ',newObjParsed );
           const otherTimesStoreDataAndRegion = await this.storage.set(this.user.getUserId(), JSON.stringify(newObjParsed));
-
           const laMovida = await this.storage.get(this.user.getUserId());
-          console.warn('ESTA ES LA MOVIDA DE CUANDO SIIIIII HAY: ', laMovida);
-
           const listRecos = await this.readValueListRecommendations();
-          console.warn('888888888 :', listRecos);
           this.listRecommendationsWhichSelected(listRecos);
           this.setState({externalData: true, spinnerVisible: false});
         } else {

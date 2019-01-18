@@ -122,10 +122,12 @@ class RecommendationsController extends BaseScene {
         if (!Object.values(listRecos).includes(item)) {
           firebase.database().ref('users/' + this.user.getUserId()).child('region').child(chosenRegionOrCountry).child('recommendationSelected').push(item);
           // Here get from asyncstorage, parse, add the item into recommendationSelected and set again the new obj for asyncstorage
+
           let userDataStorage = await this.storage.get(this.user.getUserId());
           const userDataStorageParsed = JSON.parse(userDataStorage);
           Object.values(userDataStorageParsed.users)[0].region[chosenRegionOrCountry].recommendationSelected[item.toString()] = item.toString();
           const otherTimesStoreDataAndRegion = await this.storage.set(this.user.getUserId(), JSON.stringify(userDataStorageParsed));
+
           const listRecos = await this.readValueListRecommendations();
           this.listRecommendationsWhichSelected(listRecos);
           this.setState({externalData: true, spinnerVisible: false});

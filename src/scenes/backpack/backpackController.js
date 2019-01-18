@@ -4,12 +4,13 @@ import { BaseScene } from 'components';
 import template from './backpackTemplate';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
+import services from '../../services';
 
 class BackpackController extends BaseScene {
   constructor (args) {
-    // y cuando se anyade backpack se limpian las dos.
-    // hay problemas con los jsons de las regiones, checkear
     super(args);
+    this.services = services;
+    this.storage = this.services.Storage;
     this.state = {
       titleAddItem: '',
       externalData: null,
@@ -38,35 +39,84 @@ class BackpackController extends BaseScene {
     return listToDosArray;
   }
 
+  // Primero cambiar para leer las dos que leo con Firebase, estas son : readRecommendationsSelected, readValueListInTheBackpack
+
   async readRecommendationsSelected () {
     let recommendationSelected;
-    if (!this.user.getChosenRegion()) {
-      recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenCountry() + '/recommendationSelected');
+    if (this.user.getChosenRegion()) {
+      const chosenRegionString = this.user.getChosenRegion();
+      const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
+      if (!Object.values(userDataStorage.users)[0].region[chosenCountryString]) {
+        recommendationSelected = null;
+        return recommendationSelected;
+      } else {
+        await this.addRecosIntoUser(userDataStorage, chosenRegionString);
+      }
     } else {
-      recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/recommendationSelected');
+      const chosenCountryString = this.user.getChosenCountry();
+      const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
+      if (!Object.values(userDataStorage.users)[0].region[chosenCountryString]) {
+        recommendationSelected = null;
+        return recommendationSelected;
+      } else {
+        await this.addRecosIntoUser(userDataStorage, chosenCountryString );
+      }
     }
-    const snapshot = await recommendationSelected.once('value');
-    const valueListRecommendationSelected = snapshot.val();
+  }
+
+  async addRecosIntoUser(userDataStorage, chosenRegionOrCountry){
+    valueListRecommendationSelected = Object.values(userDataStorage.users)[0].region[chosenRegionOrCountry].recommendationSelected;
     if (valueListRecommendationSelected) {
       const arrSelected = Object.values(valueListRecommendationSelected);
-      this.user.setRecommendationsOnlyIntemSelected(Object.values(valueListRecommendationSelected));
+      this.user.setRecommendationsOnlyIntemSelected(arrSelected);
       return arrSelected;
     } else {
       return false;
     }
   }
 
-  async readValueListInTheBackpack () {
-    let inTheBackpack;
-    if (!this.user.getChosenRegion()) {
-      inTheBackpack = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenCountry() + '/inTheBackpack');
-    } else {
-      inTheBackpack = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/inTheBackpack');
+
+  //
+  // async readValueListInTheBackpack () {
+  //   let inTheBackpack;
+  //   if (!this.user.getChosenRegion()) {
+  //     inTheBackpack = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenCountry() + '/inTheBackpack');
+  //   } else {
+  //     inTheBackpack = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/inTheBackpack');
+  //   }
+  //   const snapshot = await inTheBackpack.once('value');
+  //   const valueListInTheBackpack = snapshot.val();
+  //   return valueListInTheBackpack;
+  // }
+
+    async readValueListInTheBackpack () {
+      let inTheBackpack;
+      if (this.user.getChosenRegion()) {
+        const chosenRegionString = this.user.getChosenRegion();
+        const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
+        if (!Object.values(userDataStorage.users)[0].region[chosenRegionString]) {
+          inTheBackpack = null;
+          return inTheBackpack;
+        } else {
+          await this.addBackpackIntoUser(userDataStorage, chosenRegionString);
+        }
+      } else {
+        const chosenCountryString = this.user.getChosenCountry();
+        const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
+        if (!Object.values(userDataStorage.users)[0].region[chosenCountryString]) {
+          inTheBackpack = null;
+          return inTheBackpack;
+        } else {
+          await this.addBackpackIntoUser(userDataStorage, chosenCountryString );
+        }
+      }
     }
-    const snapshot = await inTheBackpack.once('value');
-    const valueListInTheBackpack = snapshot.val();
-    return valueListInTheBackpack;
-  }
+
+    async addBackpackIntoUser(userDataStorage, chosenRegionOrCountry){
+      const valueListInTheBackpackSelected = Object.values(userDataStorage.users)[0].region[chosenRegionOrCountry].inTheBackpack;
+      console.warn('VAMOS PA LANTE: ',valueListInTheBackpackSelected );
+      return valueListInTheBackpackSelected;
+    }
 
   async listInTheBackpackSelected (listInTheBackpack) {
     let myArrFinal = [];
@@ -77,7 +127,6 @@ class BackpackController extends BaseScene {
     this.user.getRecommendationsSelected().forEach((item) => {
       indexOfArray = this.user.getRecommendationsSelected().indexOf(item);
       itemTitle = item.key;
-
       item.data.forEach((recommendation) => {
         recommendation.forEach((itemRecommendation) => {
           if (itemRecommendation.selectedRecommendations) {
@@ -112,21 +161,31 @@ class BackpackController extends BaseScene {
     const listInTheBackpack = await this.readValueListInTheBackpack();
     if (!listInTheBackpack) {
       //Here it comes if there are not items in the selectedInTheBackpack, so it update (first time), the inTheBackpack
-      await firebase.database().ref('users/' + this.user.getUserId())
-        .child('region')
-        .child(countryOrRegion)
-        .update({inTheBackpack: {item}});
+      firebase.database().ref('users/' + this.user.getUserId()).child('region').child(countryOrRegion).update({inTheBackpack: {item}});
+      const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
+
+      const newRecommendation = {'inTheBackpack': {item}};
+      const newObject = Object.assign(Object.values(userDataStorage.users)[0].region[countryOrRegion], newRecommendation);
+      Object.values(userDataStorage.users)[0].region[countryOrRegion] = newObject;
+      await this.storage.setAsyncStorage(this.user.getUserId(), newObject);
+
       const listInTheBackpack = await this.readValueListInTheBackpack();
       this.listInTheBackpackSelected(listInTheBackpack);
       this.setState({externalData: true});
     } else {
       //Here it comes if there are already items in the selectedInTheBackpack, so it push (existing), the inTheBackpack
       if (!Object.values(listInTheBackpack).includes(item)) {
-        await firebase.database().ref('users/' + this.user.getUserId())
-          .child('region')
-          .child(countryOrRegion)
-          .child('inTheBackpack')
-          .push(item);
+        firebase.database().ref('users/' + this.user.getUserId()).child('region').child(countryOrRegion).child('inTheBackpack').push(item);
+
+
+
+        let userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
+        //const userDataStorageParsed = JSON.parse(userDataStorage);
+        Object.values(userDataStorage.users)[0].region[countryOrRegion].inTheBackpack[item.toString()] = item.toString();
+        const otherTimesStoreDataAndRegion = await this.storage.setAsyncStorage(this.user.getUserId(), userDataStorage);
+
+
+
         const listInTheBackpack = await this.readValueListInTheBackpack();
         this.listInTheBackpackSelected(listInTheBackpack);
         this.setState({externalData: true});

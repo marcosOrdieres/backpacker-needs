@@ -4,10 +4,13 @@ import { BaseScene } from 'components';
 import template from './splashTemplate';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
+import services from '../../services';
 
 class SplashController extends BaseScene {
   constructor (args) {
     super(args);
+    this.services = services;
+    this.storage = this.services.Storage;
     this.initializeApplication();
     this.state = {
       userLoggedIn: false,
@@ -41,10 +44,33 @@ class SplashController extends BaseScene {
     try {
       const isUserLoggedIn = await this.isUserLoggedIn();
       this.user.setUserId(isUserLoggedIn);
-      const getDataItemDidMount = await this.getDataItem();
-      const getDataItemRecommendationsDidMount = await this.getDataItemRecommendations();
+
+      // These two take them from AsyncStorage
+      // Also  do setChosenCountry and setChosenRegion here from AsyncStorage
+      await this.getDataItem();
+      await this.getDataItemRecommendations();
+
+      const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
+      const countryOrRegion = Object.keys(Object.values(userDataStorage.users)[0].region)[0];
+
+      // Check if it is region or country to store it.
+      const regions = this.user.getRegions();
+      const chooseRegionOrCountry = Object.keys(regions).forEach((region) => {
+        if (region === countryOrRegion) {
+          this.rootStore.dispatch({ type: 'SAME_REGION', isSameRegion: true});
+        }
+      });
+
+      if (this.rootStore.getState().isSameRegion) {
+        this.rootStore.dispatch({ type: 'SAME_REGION', isSameRegion: false});
+        this.user.setChosenRegion(countryOrRegion);
+      } else {
+        this.user.setChosenCountry(countryOrRegion);
+        this.chargeGeojsonCountry(countryOrRegion);
+      }
+
       await this.setState({externalData: 'yes'});
-      return await this.navigateTo('TravelDecision');
+      return await this.navigateTo('Destination');
     } catch (error) {
       // TODO: fix this
       const getDataItemDidMount = await this.getDataItem();
@@ -68,9 +94,16 @@ class SplashController extends BaseScene {
 
   async getDataItem () {
     try {
-      const eventref = firebase.database().ref('region/');
-      const snapshot = await eventref.once('value');
-      const valueList = snapshot.val();
+      let valueList;
+      const regionStored = await this.storage.getAsyncStorage('region');
+      if (!regionStored) {
+        const eventref = firebase.database().ref('region/');
+        const snapshot = await eventref.once('value');
+        valueList = snapshot.val();
+      } else {
+        valueList = await this.storage.getAsyncStorage('region');
+      }
+      await this.storage.setAsyncStorage('region', valueList);
       this.user.setRegions(valueList);
       const countries = Object.keys(valueList);
       countriesSorted = countries.sort();
@@ -82,9 +115,16 @@ class SplashController extends BaseScene {
 
   async getDataItemRecommendations () {
     try {
-      const eventref = firebase.database().ref('recommendations/');
-      const snapshot = await eventref.once('value');
-      const valueList = snapshot.val();
+      let valueList;
+      const recosStored = await this.storage.getAsyncStorage('recommendations');
+      if (!recosStored) {
+        const eventref = firebase.database().ref('recommendations/');
+        const snapshot = await eventref.once('value');
+        valueList = snapshot.val();
+      } else {
+        valueList = await this.storage.getAsyncStorage('recommendations');
+      }
+      await this.storage.setAsyncStorage('recommendations', valueList);
       this.user.setRecommendations(valueList);
       return valueList;
     } catch (error) {

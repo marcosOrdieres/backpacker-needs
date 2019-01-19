@@ -105,11 +105,11 @@ class DestinationController extends BaseScene {
     const chooseRegionOrCountry = Object.keys(regions).forEach((region) => {
       if (region === item) {
         this.rootStore.dispatch({ type: 'SAME_REGION', isSameRegion: true});
-        return true;
       }
     });
 
     if (this.rootStore.getState().isSameRegion) {
+      this.rootStore.dispatch({ type: 'SAME_REGION', isSameRegion: false});
       this.user.setChosenRegion(item);
     } else {
       this.user.setChosenCountry(item);
@@ -183,6 +183,13 @@ class DestinationController extends BaseScene {
         default: WesternEurope;
       }
     }
+  }
+
+  onPressAddBackpack () {
+    this.user.setChosenCountry(null);
+    this.user.setChosenRegion(null);
+    this.rootStore.dispatch({ type: 'RECOS_UPDATED', isRecosUpdated: true});
+    this.navigateTo('TravelDecision');
   }
 
   render () {

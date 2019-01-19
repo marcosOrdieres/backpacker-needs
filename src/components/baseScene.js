@@ -50,8 +50,12 @@ export default class BaseScene extends Component {
 
   async readListSelectedCountries () {
     const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
-    const countriesSelected = Object.values(userDataStorage.users)[0].region;
-    return countriesSelected;
+    if (!userDataStorage) {
+      return null;
+    } else {
+      const countriesSelected = Object.values(userDataStorage.users)[0].region;
+      return countriesSelected;
+    }
   }
 
   async callToCheckDaysFocus (howManyDays) {

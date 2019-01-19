@@ -71,7 +71,7 @@ class SplashController extends BaseScene {
       const eventref = firebase.database().ref('region/');
       const snapshot = await eventref.once('value');
       const valueList = snapshot.val();
-      this.user.setCountries(valueList);
+      this.user.setRegions(valueList);
       const countries = Object.keys(valueList);
       countriesSorted = countries.sort();
       return countriesSorted;

@@ -21,7 +21,6 @@ export default class StorageService {
     }
   }
 
-
   async setAsyncStorage (key, value) {
     try {
       await AsyncStorage.setItem(key, JSON.stringify(value));
@@ -32,9 +31,8 @@ export default class StorageService {
 
   async getAsyncStorage (key) {
     try {
-      console.warn('vamos pa dentrooooooooooo');
       const getAsyncStorageData = await AsyncStorage.getItem(key);
-      const getAsyncStorageParsed =  JSON.parse(getAsyncStorageData);
+      const getAsyncStorageParsed = JSON.parse(getAsyncStorageData);
       return getAsyncStorageParsed;
     } catch (error) {
       console.warn(error);

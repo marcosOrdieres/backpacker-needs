@@ -43,10 +43,20 @@ const isRecosUpdatedReducer = (state = false, action) => {
   }
 };
 
+const isSameRegionReducer = (state = false, action) => {
+  switch (action.type) {
+    case 'SAME_REGION':
+      return action.isSameRegion;
+    default:
+      return state;
+  }
+};
+
 export default {
   isFromSignup: isFromSignupReducer,
   isFromLogin: isFromLoginReducer,
   isBackpackScreen: isBackpackScreenReducer,
-  isRegionChanged:isRegionChangedReducer,
-  isRecosUpdated:isRecosUpdatedReducer
+  isRegionChanged: isRegionChangedReducer,
+  isRecosUpdated: isRecosUpdatedReducer,
+  isSameRegion: isSameRegionReducer
 };

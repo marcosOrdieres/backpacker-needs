@@ -72,11 +72,10 @@ class RecommendationsController extends BaseScene {
       // Instead of reading from Firebase, I read from AsyncStorage
       // recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/recommendationSelected');
       const userDataStorage = await this.storage.get(this.user.getUserId());
-      if (!Object.values(JSON.parse(userDataStorage).users)[0].region[chosenCountryString]) {
-        recommendationSelected = null;
-        return recommendationSelected;
+      if (!Object.values(JSON.parse(userDataStorage).users)[0].region[chosenRegionString]) {
+        return null;
       } else {
-        recommendationSelected = Object.values(JSON.parse(userDataStorage).users)[0].region[chosenCountryString].recommendationSelected;
+        recommendationSelected = Object.values(JSON.parse(userDataStorage).users)[0].region[chosenRegionString].recommendationSelected;
         return recommendationSelected;
       }
     } else {
@@ -85,8 +84,7 @@ class RecommendationsController extends BaseScene {
       // recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenCountry() + '/recommendationSelected');
       const userDataStorage = await this.storage.get(this.user.getUserId());
       if (!Object.values(JSON.parse(userDataStorage).users)[0].region[chosenCountryString]) {
-        recommendationSelected = null;
-        return recommendationSelected;
+        return null;
       } else {
         recommendationSelected = Object.values(JSON.parse(userDataStorage).users)[0].region[chosenCountryString].recommendationSelected;
         return recommendationSelected;

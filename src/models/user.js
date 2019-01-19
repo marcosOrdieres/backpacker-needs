@@ -18,11 +18,11 @@ export default class User {
     static dateOfTravel;
     static regionsStoredFirebase;
 
-    setRegionsStoredFirebase(value) {
+    setRegionsAsyncStorage(value) {
       this.regionsStoredFirebase = value;
     }
 
-    getRegionsStoredFirebase() {
+    getRegionsAsyncStorage() {
       return this.regionsStoredFirebase;
     }
 
@@ -123,11 +123,11 @@ export default class User {
       this.userId = value;
     }
 
-    getCountries() {
+    getRegions() {
       return this.country;
     }
 
-    setCountries(value) {
+    setRegions(value) {
       this.country = value;
     }
 

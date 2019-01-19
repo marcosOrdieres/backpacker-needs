@@ -73,7 +73,7 @@ class TravelDecisionController extends BaseScene {
   }
 
   async componentDidMount () {
-    const countriesInTheWorld = await this.getCountries();
+    const countriesInTheWorld = await this.getRegions();
     this.user.setCountriesInTheWorld(countriesInTheWorld);
   }
 
@@ -81,6 +81,7 @@ class TravelDecisionController extends BaseScene {
     if (this.state.text.length >= 2) {
       this.user.getCountriesInTheWorld().find((country) => {
         if (country.includes(this.state.text)) {
+          // set Coutrny
           this.user.setChosenCountry(country);
           this.setState({ country: country });
         } else {
@@ -90,20 +91,7 @@ class TravelDecisionController extends BaseScene {
     }
   }
 
-  async chargeGeojsonCountry () {
-    const features = GeojsonCountries.features;
-    for (let objEachCountry of features) {
-      if (objEachCountry.properties.name === this.state.country) {
-        const coordinatesLatAndLong = await this.calculateLongAndLat(objEachCountry.geometry.coordinates);
-        this.user.setLat(coordinatesLatAndLong.latitude);
-        this.user.setLong(coordinatesLatAndLong.longitude);
-        const completeGeojsonCountry = {'type': 'FeatureCollection', 'features': [objEachCountry]};
-        return this.user.setCountryGeojson(completeGeojsonCountry);
-      }
-    }
-  }
-
-  getCountries () {
+  getRegions () {
     let countriesArr = [];
     GeojsonCountries.features.forEach((objEachCountry) => {
       const countryName = objEachCountry.properties.name;
@@ -113,6 +101,7 @@ class TravelDecisionController extends BaseScene {
   }
 
   async onClickListItem (item) {
+    // set Region
     try {
       this.user.setChosenRegion(item);
       return this.toggleModal();
@@ -121,24 +110,12 @@ class TravelDecisionController extends BaseScene {
     }
   }
 
-  async calculateLongAndLat (array) {
-    const firstLongLat = array[0][0];
-    const lastLongLat = array[0][0];
-    const longitude = await this.getNumber(firstLongLat[0], 0);
-    const latitude = await this.getNumber(firstLongLat[1], 1);
-    return {longitude, latitude};
-  }
-
-  async getNumber (num, index) {
-    if (!num[index]) return Number(num);
-    return this.getNumber(num[index]);
-  }
-
   async onPressCountryOverlay () {
+    const country = this.state.country;
     this.setState({countryInput: this.state.country, text: this.state.countryInput});
     await this.refs.countryInput.blur();
     await this.checkCountry();
-    await this.chargeGeojsonCountry();
+    await this.chargeGeojsonCountry(country);
   }
 
   render () {

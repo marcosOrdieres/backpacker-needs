@@ -93,7 +93,7 @@ export default (controller) => (
                 noPaddingLeft
                 noIcon
                 fontTitle={14}
-                dataItem={controller.user.getRegionsStoredFirebase()}
+                dataItem={controller.user.getRegionsAsyncStorage()}
                 onClickListItem={(item) => controller.onClickListItemRegion(item)} />
             </View>
           </View>
@@ -101,9 +101,7 @@ export default (controller) => (
       </View>
       <TouchableOpacity
         style={destinationStyles.modalContentRest}
-        onPress={() => {
-          controller.toggleModal();
-        }} />
+        onPress={() => { controller.toggleModal(); }} />
     </Modal>
 
     <TouchableOpacity

@@ -59,7 +59,7 @@ export default (controller) => (
                   noFirstIcon
                   noPaddingLeft
                   noIcon
-                  dataItem={Object.keys(controller.user.getCountries()).sort()}
+                  dataItem={Object.keys(controller.user.getRegions()).sort()}
                   onClickListItem={(itemTitle) => controller.onClickListItem(itemTitle)} />
               </View>
             </TouchableOpacity>

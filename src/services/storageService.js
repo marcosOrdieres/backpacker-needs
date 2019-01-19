@@ -21,6 +21,24 @@ export default class StorageService {
     }
   }
 
+  async setAsyncStorage (key, value) {
+    try {
+      await AsyncStorage.setItem(key, JSON.stringify(value));
+    } catch (error) {
+      console.warn(error);
+    }
+  }
+
+  async getAsyncStorage (key) {
+    try {
+      const getAsyncStorageData = await AsyncStorage.getItem(key);
+      const getAsyncStorageParsed = JSON.parse(getAsyncStorageData);
+      return getAsyncStorageParsed;
+    } catch (error) {
+      console.warn(error);
+    }
+  }
+
   remove (key) {
     return AsyncStorage.removeItem(key);
   }

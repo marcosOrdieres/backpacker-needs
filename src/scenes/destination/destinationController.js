@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import PopupDialog, { SlideAnimation } from 'react-native-popup-dialog';
 import Toast, {DURATION} from 'react-native-easy-toast';
 import { View } from 'react-native';
-
 import Australia from '../../assets/mapJson/subregion/Australia_and_NewZealand.json';
 import Caribbean from '../../assets/mapJson/subregion/Caribbean.json';
 import CentralAmerica from '../../assets/mapJson/subregion/CentralAmerica.json';
@@ -52,8 +51,8 @@ class DestinationController extends BaseScene {
 
   async mapBuilderWithJson () {
     await this.listItemBackpacks();
-    const country = this.user.getCountries();
-    let result = Object.keys(country).map(function (key) { return [key, country[key]]; });
+    const regions = this.user.getRegions();
+    let result = Object.keys(regions).map(function (key) { return [key, regions[key]]; });
     const resultCoordinates = result.forEach((element) => {
       element.find((place) => {
         if (!this.user.getChosenRegion()) {
@@ -95,16 +94,31 @@ class DestinationController extends BaseScene {
 
   async listItemBackpacks () {
     const countriesBackpack = await this.readListSelectedCountries();
-    this.user.setRegionsStoredFirebase(Object.keys(countriesBackpack));
+    this.user.setRegionsAsyncStorage(Object.keys(countriesBackpack));
     return this.setState({externalData: true});
   }
 
   onClickListItemRegion (item) {
-    this.user.setChosenRegion(item);
+    this.user.setChosenCountry(null);
+    this.user.setChosenRegion(null);
+    const regions = this.user.getRegions();
+    const chooseRegionOrCountry = Object.keys(regions).forEach((region) => {
+      if (region === item) {
+        this.rootStore.dispatch({ type: 'SAME_REGION', isSameRegion: true});
+        return true;
+      }
+    });
+
+    if (this.rootStore.getState().isSameRegion) {
+      this.user.setChosenRegion(item);
+    } else {
+      this.user.setChosenCountry(item);
+      this.chargeGeojsonCountry(item);
+    }
     this.mapBuilderWithJson();
     this.rootStore.dispatch({ type: 'REGION_CHANGED', isRegionChanged: true});
-
-    return this.toggleModal();
+    this.toggleModal();
+    return this.setState({externalData: true});
   }
 
   regionChosen () {

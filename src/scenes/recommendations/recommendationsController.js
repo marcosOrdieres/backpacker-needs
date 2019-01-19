@@ -72,11 +72,10 @@ class RecommendationsController extends BaseScene {
       // Instead of reading from Firebase, I read from AsyncStorage
       // recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenRegion() + '/recommendationSelected');
       const userDataStorage = await this.storage.get(this.user.getUserId());
-      if (!Object.values(JSON.parse(userDataStorage).users)[0].region[chosenCountryString]) {
-        recommendationSelected = null;
-        return recommendationSelected;
+      if (!Object.values(JSON.parse(userDataStorage).users)[0].region[chosenRegionString]) {
+        return null;
       } else {
-        recommendationSelected = Object.values(JSON.parse(userDataStorage).users)[0].region[chosenCountryString].recommendationSelected;
+        recommendationSelected = Object.values(JSON.parse(userDataStorage).users)[0].region[chosenRegionString].recommendationSelected;
         return recommendationSelected;
       }
     } else {
@@ -85,8 +84,7 @@ class RecommendationsController extends BaseScene {
       // recommendationSelected = firebase.database().ref('users/' + this.user.getUserId() + '/region/' + this.user.getChosenCountry() + '/recommendationSelected');
       const userDataStorage = await this.storage.get(this.user.getUserId());
       if (!Object.values(JSON.parse(userDataStorage).users)[0].region[chosenCountryString]) {
-        recommendationSelected = null;
-        return recommendationSelected;
+        return null;
       } else {
         recommendationSelected = Object.values(JSON.parse(userDataStorage).users)[0].region[chosenCountryString].recommendationSelected;
         return recommendationSelected;
@@ -122,10 +120,12 @@ class RecommendationsController extends BaseScene {
         if (!Object.values(listRecos).includes(item)) {
           firebase.database().ref('users/' + this.user.getUserId()).child('region').child(chosenRegionOrCountry).child('recommendationSelected').push(item);
           // Here get from asyncstorage, parse, add the item into recommendationSelected and set again the new obj for asyncstorage
+
           let userDataStorage = await this.storage.get(this.user.getUserId());
           const userDataStorageParsed = JSON.parse(userDataStorage);
           Object.values(userDataStorageParsed.users)[0].region[chosenRegionOrCountry].recommendationSelected[item.toString()] = item.toString();
           const otherTimesStoreDataAndRegion = await this.storage.set(this.user.getUserId(), JSON.stringify(userDataStorageParsed));
+
           const listRecos = await this.readValueListRecommendations();
           this.listRecommendationsWhichSelected(listRecos);
           this.setState({externalData: true, spinnerVisible: false});

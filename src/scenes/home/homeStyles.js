@@ -9,11 +9,16 @@ export default StyleSheet.create({
   },
   textDataPrivacy: {
     color: Palette.white,
-    textAlign: 'center',
     fontSize: 14,
-    paddingTop: '5%',
-    paddingBottom: '5%',
     fontFamily: 'Calibri'
+  },
+  textDataPrivacyLink: {
+    color: Palette.blueFacebook,
+    fontSize: 14,
+    fontFamily: 'Calibri',
+    textDecorationLine: 'underline',
+    textDecorationStyle: 'solid',
+    textDecorationColor: Palette.blueFacebook
   },
   mainTitleView: {
     flex: 1,

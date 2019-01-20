@@ -6,13 +6,17 @@
   "home":{
     "mainTitleText": "Welcome Backpacker !",
     "checkBoxData": "Click Here",
-    "textDataPrivacy": "I accept the Terms and Conditions and Data Privacy",
+    "textDataPrivacyTC": "I accept the ",
+    "TC": "Terms and Conditions",
+    "andDataPrivacyTC": " and ",
+    "dataPrivacy": "Data Privacy",
     "popupDialog": "Dialog Title",
     "registerEmailTitle": "Register for free",
     "registerFacebookTitle": "Continue with Facebook",
     "loginTitle": "Log in with your email",
     "areYouUser": "Are you already a user?",
-    "noInternet":"'We are sorry, you need Internet Conection'"
+    "noInternet":"'We are sorry, you need Internet Conection'",
+    "toast": "Please, accept our Terms and Conditions and Data Privacy"
   },
   "travelDecision":{
     "BN": "Backpacker Needs",

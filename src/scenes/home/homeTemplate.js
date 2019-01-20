@@ -3,8 +3,10 @@ import { View, Text, ScrollView, ImageBackground, TouchableOpacity, TextInput, T
 import homeStyles from './homeStyles';
 import { Button, Splash } from 'components';
 import loginBackgroundImage from '../../assets/images/backpackerBack.png';
-import PopupDialog, { DialogTitle } from 'react-native-popup-dialog';
 import logo from '../../assets/images/backpackerNeeds.png';
+import { CheckBox } from 'react-native-elements';
+import Toast, {DURATION} from 'react-native-easy-toast';
+import Palette from '../../common/palette';
 
 export default(controller) => (!controller.state.noConnectionSplash ? (
   <View style={homeStyles.homeContainer}>
@@ -14,27 +16,41 @@ export default(controller) => (!controller.state.noConnectionSplash ? (
       <View style={homeStyles.mainTitleView}>
         <Text style={homeStyles.mainTitleText}>{controller.i18n.t('home.mainTitleText')}</Text>
       </View>
-      <TouchableHighlight
-        onPress={() => { controller.popupDialog.show(); }}>
-        <Text style={homeStyles.textDataPrivacy}>{controller.i18n.t('home.textDataPrivacy')}</Text>
-      </TouchableHighlight>
-      <PopupDialog
-        dialogTitle={<DialogTitle title='Dialog Title' />}
-        ref={(popupDialog) => { controller.popupDialog = popupDialog; }}
-        onDismissed={() => { controller.setState({buttonFly: false}); }}
-        dialogAnimation={controller.slideAnimation}>
-        <View>
-          <Text>{controller.i18n.t('home.popupDialog')}</Text>
-        </View>
-      </PopupDialog>
+      <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
+        <CheckBox
+          center
+          iconRight
+          containerStyle={{ backgroundColor: 'transparent', borderColor: 'transparent', justifyContent: 'center'}}
+          checked={controller.state.optinsChecked}
+          onPress={() => controller.setState({optinsChecked: !controller.state.optinsChecked})}
+        />
+        <Text style={homeStyles.textDataPrivacy}>{controller.i18n.t('home.textDataPrivacyTC')}</Text>
+        <Text
+          // Adapt for iOS
+          onPress={() => { controller.downloadTC(); }}
+          style={homeStyles.textDataPrivacyLink}>{controller.i18n.t('home.TC')}
+        </Text>
+        <Text style={homeStyles.textDataPrivacy}>{controller.i18n.t('home.andDataPrivacyTC')}</Text>
+        <Text
+          // Adapt for iOS
+          onPress={() => controller.downloadDataPrivacy()}
+          style={homeStyles.textDataPrivacyLink}>{controller.i18n.t('home.dataPrivacy')}
+        </Text>
+      </View>
+      <Toast
+        ref='toastHome'
+        style={{backgroundColor: Palette.primaryColor30, width: '70%'}}
+        position='top'
+        positionValue={200}
+        fadeInDuration={3000}
+        fadeOutDuration={2000}
+        opacity={0.7}
+        textStyle={{color: Palette.white, fontSize: 18, fontFamily: 'Calibri', textAlign: 'center' }} />
       <Button
         title={controller.i18n.t('home.registerEmailTitle')}
         color={controller.palette.whiteTransparent}
         textColor={controller.palette.white}
-        onPress={() => {
-          controller.user.setSendCredentialsSignup(true);
-          return controller.navigateTo('SendCredentials');
-        }} />
+        onPress={() => { controller.registerToCredentials(); }} />
       <Button
         title={controller.i18n.t('home.registerFacebookTitle')}
         color={controller.palette.blueFacebook}
@@ -46,10 +62,7 @@ export default(controller) => (!controller.state.noConnectionSplash ? (
         color={controller.palette.white}
         buttonBorderColor={controller.palette.black}
         textColor={controller.palette.black}
-        onPress={() => {
-          controller.user.setSendCredentialsLogin(true);
-          return controller.navigateTo('SendCredentials');
-        }} />
+        onPress={() => { controller.loginToCredentials(); }} />
     </ImageBackground >
   </View>)
   :

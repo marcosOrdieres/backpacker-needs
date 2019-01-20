@@ -17,6 +17,7 @@ import io.invertase.firebase.database.RNFirebaseDatabasePackage;
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import com.horcrux.svg.SvgPackage;
 import com.airbnb.android.react.maps.MapsPackage;
+import com.RNFetchBlob.RNFetchBlobPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -40,9 +41,8 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage(),
           new RNFirebasePackage(),
           new RNFirebaseAuthPackage(),
-
+          new RNFetchBlobPackage(),
           new RNFirebaseDatabasePackage(),
-
           new FBSDKPackage(mCallbackManager),
           new RNGoogleSigninPackage(),
           new SvgPackage(),

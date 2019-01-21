@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/8685372c22184c47d39620c2f887020d/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/8685372c22184c47d39620c2f887020d/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/8685372c22184c47d39620c2f887020d/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/8685372c22184c47d39620c2f887020d/res/layout-v21/notification_template_icon_group.xml"
+    }
+]

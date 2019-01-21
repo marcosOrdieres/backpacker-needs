@@ -1,0 +1,106 @@
+[
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/abc_tint_default.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/abc_tint_default.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/abc_btn_colored_text_material.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/com_facebook_button_text_color.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/facebook-common-4.34.0.aar/396207c7543a0d01a44a130e72714a12/res/color/com_facebook_button_text_color.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/6f47f1310d9a62645152e593ac1b99ef/res/color/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/abc_tint_seek_thumb.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/abc_search_url_text.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/abc_btn_colored_borderless_text_material.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/com_facebook_send_button_text_color.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/facebook-share-4.34.0.aar/862cb11898b84650a5a4c604b33ccd9a/res/color/com_facebook_send_button_text_color.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/6f47f1310d9a62645152e593ac1b99ef/res/color/common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/6f47f1310d9a62645152e593ac1b99ef/res/color/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/color/abc_primary_text_disable_only_material_dark.xml"
+    }
+]

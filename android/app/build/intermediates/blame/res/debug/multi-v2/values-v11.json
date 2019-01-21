@@ -1,0 +1,52 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/values-v11/values-v11.xml",
+            "map": [
+                {
+                    "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-16.0.1.aar/a2ba58296a73fcff12602b8d1c5757a3/res/values-v11/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "170",
+                        "endLines": "5",
+                        "endColumns": "8",
+                        "endOffsets": "291"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "3",
+                        "endColumns": "8",
+                        "endOffsets": "176"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
+            "map": [
+                {
+                    "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-16.0.1.aar/a2ba58296a73fcff12602b8d1c5757a3/res/values-v11/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "170",
+                        "endLines": "5",
+                        "endColumns": "8",
+                        "endOffsets": "291"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "3",
+                        "endColumns": "8",
+                        "endOffsets": "176"
+                    }
+                }
+            ]
+        }
+    ]
+}

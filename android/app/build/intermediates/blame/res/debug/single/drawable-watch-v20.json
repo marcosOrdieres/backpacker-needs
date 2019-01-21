@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/drawable-watch-v20/abc_dialog_material_background.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8327c8da18367d238929409467bed070/res/drawable-watch-v20/abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/drawable-watch-v20/common_google_signin_btn_text_disabled.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/831d39e480063b8e09b7bfb69b6844ef/res/drawable-watch-v20/common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/drawable-watch-v20/common_google_signin_btn_text_light_normal.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/831d39e480063b8e09b7bfb69b6844ef/res/drawable-watch-v20/common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "/home/marcos/workspaces/backpacker-needs/android/app/build/intermediates/res/merged/debug/drawable-watch-v20/common_google_signin_btn_text_dark_normal.xml",
+        "source": "/home/marcos/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/831d39e480063b8e09b7bfb69b6844ef/res/drawable-watch-v20/common_google_signin_btn_text_dark_normal.xml"
+    }
+]

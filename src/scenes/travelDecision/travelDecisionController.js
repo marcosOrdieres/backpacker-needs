@@ -118,6 +118,10 @@ class TravelDecisionController extends BaseScene {
     await this.chargeGeojsonCountry(country);
   }
 
+  onClickAmazonTravelDecision(){
+    return true;
+  }
+
   render () {
     return template(this);
   }

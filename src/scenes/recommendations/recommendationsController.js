@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 import { View } from 'react-native';
 import services from '../../services';
+import { Linking } from 'react-native';
 
 class RecommendationsController extends BaseScene {
   // The calls to Firebase that are read, instead of read in Firebase,
@@ -136,6 +137,13 @@ class RecommendationsController extends BaseScene {
       }
     } catch (error) {
       console.warn(error.message);
+    }
+  }
+
+  onClickAmazonItems(item){
+    console.warn('EL ITEM: ', item);
+    if(item === 'Kindle'){
+      Linking.openURL('https://www.amazon.com/gp/product/B07CXG6C9W?ie=UTF8&tag=pack1989-20&camp=1789&linkCode=xm2&creativeASIN=B07CXG6C9W');
     }
   }
 

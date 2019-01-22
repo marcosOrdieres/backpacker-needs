@@ -117,7 +117,7 @@ class TravelDecisionController extends BaseScene {
     await this.checkCountry();
     await this.chargeGeojsonCountry(country);
   }
-
+  
   render () {
     return template(this);
   }

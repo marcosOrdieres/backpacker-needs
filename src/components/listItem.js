@@ -3,6 +3,7 @@ import { View, StyleSheet, TouchableOpacity, ScrollView, Dimensions, Text } from
 import { List, ListItem } from 'react-native-elements';
 import CheckMark from '../assets/svg/CheckMark';
 import Backpack from '../assets/svg/BackpackNoLetters';
+import AmazonLogo from '../assets/svg/AmazonLogo';
 import Palette from '../common/palette';
 import rootStore from '../stores/root';
 import i18n from '../translations';
@@ -12,6 +13,7 @@ const {width, height} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   viewButtonStyle: {
+    //rightIcon={{name: item.selectedInTheBackpack ? 'check': 'shopping-cart', color: item.selectedInTheBackpack ? Palette.green : null}}
     paddingTop: 5,
     paddingBottom: 5
   },
@@ -49,7 +51,17 @@ export default class ListItemComponent extends Component {
                   subtitle={(item.selectedRecommendations) ? i18n.t('components.listItemSelect') : (item.selectedInTheBackpack ? i18n.t('components.listItemBack') : null)}
                   titleStyle={{fontSize: this.props.fontTitle ? this.props.fontTitle : 20, paddingLeft: this.props.noPaddingLeft ? 0 : 30, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? Palette.disabled : Palette.totalBlack)}}
                   subtitleStyle={{paddingLeft: 30, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? Palette.disabled : Palette.totalBlack)}}
-                  rightIcon={{name: 'check', color: item.selectedInTheBackpack ? Palette.green : Palette.transparent}}
+
+                  rightIcon={
+                    item.selectedInTheBackpack ?
+                      (<Icon size={25} name='check' color={Palette.green} />)
+                      :
+                      !this.rootStore.getState().isBackpackScreen && !this.props.noIcon ?
+                      ((<TouchableOpacity onPress={this.props.onClickAmazon ? this.props.onClickAmazon.bind(this, item) : null}><Icon size={25} name='shopping-cart' color={Palette.primaryColor} /></TouchableOpacity>))
+                      :
+                      (<Icon size={25} name='check' color={Palette.transparent} />)
+                    }
+
                   leftIcon={!item.selectedInTheBackpack && !this.rootStore.getState().isBackpackScreen && !this.props.noFirstIcon ?
                     (<CheckMark
                       color={item.selectedRecommendations ? Palette.disabled : Palette.primaryColor}

@@ -30,8 +30,7 @@ export default (controller) => (
           <ListItem
             dataItem={!controller.state.collapsed[section.key] ? item : []}
             onClickAmazon={(item) => controller.onClickAmazonItems(item)}
-            onClickListItem={(item) => controller.onClickListItemRecommendations(item)} />);
-      }}
+            onClickListItem={(item) => controller.onClickListItemRecommendations(item)} />);}}
       renderSectionHeader={(prop) => {
         return (
           <TouchableOpacity

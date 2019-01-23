@@ -148,15 +148,27 @@ class BackpackController extends BaseScene {
     return myArrFinalClean;
   }
 
+
   async onClickListItemBackpack (item) {
     try {
       let countryOrRegion;
+      let isItemInTheBackpack = false;
+
       if (!this.user.getChosenRegion()) {
         countryOrRegion = this.user.getChosenCountry();
       } else {
         countryOrRegion = this.user.getChosenRegion();
       }
       const listInTheBackpack = await this.readValueListInTheBackpack();
+      if(listInTheBackpack){
+        Object.values(listInTheBackpack).forEach((reco)=>{
+          if(reco.includes(item)){
+            isItemInTheBackpack = true;
+            return isItemInTheBackpack;
+          }
+        });
+      };
+
       if (!listInTheBackpack) {
         // Here it comes if there are not items in the selectedInTheBackpack, so it update (first time), the inTheBackpack
         firebase.database().ref('users/' + this.user.getUserId()).child('region').child(countryOrRegion).update({inTheBackpack: {item}});
@@ -170,7 +182,7 @@ class BackpackController extends BaseScene {
         this.setState({externalData: true});
       } else {
         // Here it comes if there are already items in the selectedInTheBackpack, so it push (existing), the inTheBackpack
-        if (!Object.values(listInTheBackpack).includes(item)) {
+        if (!isItemInTheBackpack) {
           firebase.database().ref('users/' + this.user.getUserId()).child('region').child(countryOrRegion).child('inTheBackpack').push(item);
           let userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
           Object.values(userDataStorage.users)[0].region[countryOrRegion].inTheBackpack[item.toString()] = item.toString();
@@ -179,11 +191,19 @@ class BackpackController extends BaseScene {
           this.listInTheBackpackSelected(listInTheBackpack);
           this.setState({externalData: true});
         } else {
+          //If there are isItemInTheBackpack, but are already selected and I want to deselect them.
+          let userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
+          delete Object.values(userDataStorage.users)[0].region[countryOrRegion].inTheBackpack[item.value.toString()];
+          const otherTimesStoreDataAndRegion = await this.storage.setAsyncStorage(this.user.getUserId(), userDataStorage);
+          const listInTheBackpack = await this.readValueListInTheBackpack();
+          this.listInTheBackpackSelected(listInTheBackpack);
           console.warn('THE ITEM IS ALREADY IN THE BACKPACK DATABASE, PLEASE CHOOSE ANOTHER ONE');
+          this.setState({externalData: true});
+
         }
       }
     } catch (error) {
-      console.warn(error);
+      console.warn(error.message);
     }
   }
 

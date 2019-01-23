@@ -43,7 +43,7 @@ export default class ListItemComponent extends Component {
           <List containerStyle={{marginTop: -5, marginBottom: -5}}>
             {this.props.dataItem.map((item, key) => (
               <TouchableOpacity
-                onPress={(item.selectedRecommendations) ? null : (item.selectedInTheBackpack ? null : this.props.onClickListItem.bind(this, item))}>
+                onPress={this.props.onClickListItem ? this.props.onClickListItem.bind(this, item) : null}>
                 <ListItem
                   key={key}
                   keyExtractor={key}

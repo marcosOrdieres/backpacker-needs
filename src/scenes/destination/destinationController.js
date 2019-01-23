@@ -2,7 +2,6 @@ import React from 'react';
 import { BaseScene } from 'components';
 import template from './destinationTemplate';
 import { connect } from 'react-redux';
-import PopupDialog, { SlideAnimation } from 'react-native-popup-dialog';
 import Toast, {DURATION} from 'react-native-easy-toast';
 import { View } from 'react-native';
 import Australia from '../../assets/mapJson/subregion/Australia_and_NewZealand.json';
@@ -37,7 +36,7 @@ class DestinationController extends BaseScene {
       isModalVisible: false,
       externalData: null
     };
-    this.slideAnimation = new SlideAnimation({slideFrom: 'bottom'});
+    //this.slideAnimation = new SlideAnimation({slideFrom: 'bottom'});
   }
 
   toggleModal () {

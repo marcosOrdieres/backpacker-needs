@@ -8,7 +8,6 @@ import Swipper from './swipper';
 import Splash from './splash';
 import ListItem from './listItem';
 import DateTravel from './dateTravel';
-import ControlPanel from './controlPanel';
 import Main from './main';
 
 export {
@@ -22,6 +21,5 @@ export {
 	Splash,
 	ListItem,
 	DateTravel,
-	ControlPanel,
 	Main
 };

@@ -53,12 +53,12 @@ export default (controller) => (
           isVisible={controller.state.isModalVisible}>
           <View style={travelDecisionStyles.modalContent}>
             <View>
-                <Text
-                  style={{color: Palette.primaryColor}}>
-                  {controller.i18n.translate('travelDecision.choose')}
-                </Text>
+              <Text
+                style={{color: Palette.primaryColor}}>
+                {controller.i18n.translate('travelDecision.choose')}
+              </Text>
               <View
-                style={{borderBottomColor: Palette.primaryColor, borderBottomWidth: 1, width:'80%', alignItems:'center', paddingTop:10}}/>
+                style={{borderBottomColor: Palette.primaryColor, borderBottomWidth: 1, width: '80%', alignItems: 'center', paddingTop: 10}} />
             </View>
             <TouchableOpacity onPress={() => { controller.toggleModal(); }}>
               <View style={{width: width}}>
@@ -69,10 +69,6 @@ export default (controller) => (
                   dataItem={Object.keys(controller.user.getRegions()).sort()}
                   onClickListItem={(itemTitle) => controller.onClickListItem(itemTitle)} />
               </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => { controller.toggleModal(); }}>
-              <Text>[Hide me!]</Text>
             </TouchableOpacity>
           </View>
         </Modal>

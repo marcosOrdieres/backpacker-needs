@@ -5,15 +5,14 @@ import Caribbean from '../../assets/mapJson/subregion/Caribbean.json';
 import MapView from 'react-native-maps';
 import Geojson from 'react-native-geojson';
 import { Button, Main, ControlPanel } from 'components';
-import PopupDialog, { DialogTitle } from 'react-native-popup-dialog';
 import Palette from '../../common/palette';
 import markerBackpacker from '../../assets/images/markerBackpack.png';
 import Toast, {DURATION} from 'react-native-easy-toast';
-import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import BackpackSvg from '../../assets/svg/Ruck';
 import drawerBackgroundImage from '../../assets/images/drawerBackpack.png';
 import { ListItem } from 'components';
+import ActionButton from 'react-native-action-button';
 
 import NavigationDrawerLayout from 'react-native-navigation-drawer-layout';
 import Drawer from 'react-native-drawer';

@@ -69,10 +69,12 @@ class HomeController extends BaseScene {
       } else {
         const signUpFacebook = await LoginManager.logInWithReadPermissions(['public_profile', 'email']);
         if (signUpFacebook.isCancelled) {}
+
         const dataUser = await AccessToken.getCurrentAccessToken();
         const credential = firebase.auth.FacebookAuthProvider.credential(dataUser.accessToken);
         const firebaseSignUpFacebookUser = await firebase.auth().signInAndRetrieveDataWithCredential(credential);
-        return this.navigateTo('Menu');
+        this.user.setUserId(firebaseSignUpFacebookUser.user.uid);
+        return this.navigateTo('TravelDecision');
       }
     } catch (error) {
       console.warn(error.message);

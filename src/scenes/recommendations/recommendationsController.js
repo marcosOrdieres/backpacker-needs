@@ -103,6 +103,16 @@ class RecommendationsController extends BaseScene {
       }
       this.setState({spinnerVisible: true});
       const listRecos = await this.readValueListRecommendations();
+      let isItemSelected = false;
+
+      if(listRecos){
+        Object.values(listRecos).forEach((reco)=>{
+          if(reco.includes(item)){
+            isItemSelected = true;
+            return isItemSelected;
+          }
+        });
+      };
       if (!listRecos) {
         // Here the list of Recommendations is empty cause there is none, so we update
         // Write in Firebase in Background, do it for AsyncStorage
@@ -118,10 +128,9 @@ class RecommendationsController extends BaseScene {
         this.setState({externalData: true, spinnerVisible: false});
       } else {
         // Here the list of Recommendations has data, so we push into existing
-        if (!Object.values(listRecos).includes(item)) {
+        if (!isItemSelected) {
           firebase.database().ref('users/' + this.user.getUserId()).child('region').child(chosenRegionOrCountry).child('recommendationSelected').push(item);
           // Here get from asyncstorage, parse, add the item into recommendationSelected and set again the new obj for asyncstorage
-
           let userDataStorage = await this.storage.get(this.user.getUserId());
           const userDataStorageParsed = JSON.parse(userDataStorage);
           Object.values(userDataStorageParsed.users)[0].region[chosenRegionOrCountry].recommendationSelected[item.toString()] = item.toString();
@@ -131,8 +140,16 @@ class RecommendationsController extends BaseScene {
           this.listRecommendationsWhichSelected(listRecos);
           this.setState({externalData: true, spinnerVisible: false});
         } else {
-          this.setState({spinnerVisible: false});
+          //If there are itemsSelected, but are already selected and I want to deselect them.
+          let userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
+          delete Object.values(userDataStorage.users)[0].region[chosenRegionOrCountry].recommendationSelected[item.value.toString()];
+          const otherTimesStoreDataAndRegion = await this.storage.setAsyncStorage(this.user.getUserId(), userDataStorage);
+          const listRecos = await this.readValueListRecommendations();
+          this.listRecommendationsWhichSelected(listRecos);
+
           console.warn('THE ITEM IS ALREADY IN THE RECOMMENDATIONS SELECTED DATABASE, PLEASE CHOOSE ANOTHER ONE');
+
+          this.setState({spinnerVisible: false});
         }
       }
     } catch (error) {

@@ -49,10 +49,17 @@ export default (controller) => (
         </TouchableOpacity>
         <Modal
           style={travelDecisionStyles.modal}
+          onBackdropPress={() => { controller.toggleModal(); }}
           isVisible={controller.state.isModalVisible}>
-
           <View style={travelDecisionStyles.modalContent}>
-            <Text>{controller.i18n.translate('travelDecision.choose')}</Text>
+            <View>
+                <Text
+                  style={{color: Palette.primaryColor}}>
+                  {controller.i18n.translate('travelDecision.choose')}
+                </Text>
+              <View
+                style={{borderBottomColor: Palette.primaryColor, borderBottomWidth: 1, width:'80%', alignItems:'center', paddingTop:10}}/>
+            </View>
             <TouchableOpacity onPress={() => { controller.toggleModal(); }}>
               <View style={{width: width}}>
                 <ListItem

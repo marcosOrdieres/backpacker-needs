@@ -39,6 +39,7 @@ class RecommendationsController extends BaseScene {
     let myArr = [];
     let myArrFinal = [];
     let myArrItem = [];
+    let flag = false;
     const group = Object.keys(this.user.getRecommendations()).map((group, index) => {
       myArrFinal[index] = {key: group};
       return this.user.getRecommendations()[group];
@@ -58,6 +59,17 @@ class RecommendationsController extends BaseScene {
       myArrItem = [];
       return myArrFinal;
     });
+
+    this.user.getRecommendationsSelected().forEach(value => {
+        if (value.key == 'My Traveler Items') {
+            flag = true;
+            return false;
+        }
+    });
+
+    if (!flag) {
+      this.user.getRecommendationsSelected().push({key:'My Traveler Items', data:[[{value:'Backpack', selectedRecommendations:true}]]});
+    }
   }
 
   async checkSelectedRecommendations () {

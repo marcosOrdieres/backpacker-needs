@@ -39,7 +39,7 @@ class BackpackController extends BaseScene {
       await this.setState({externalData: true});
       return listToDosArray;
     } catch (error) {
-      console.warn(error);
+      console.warn(error.message);
     }
   }
 
@@ -81,7 +81,7 @@ class BackpackController extends BaseScene {
         return false;
       }
     } catch (error) {
-      console.warn(error);
+      console.warn(error.message);
     }
   }
 
@@ -98,7 +98,7 @@ class BackpackController extends BaseScene {
         return this.addBackpackIntoUser(userDataStorage, chosenCountryString);
       }
     } catch (error) {
-      console.warn(error);
+      console.warn(error.message);
     }
   }
 
@@ -111,7 +111,7 @@ class BackpackController extends BaseScene {
         return valueListInTheBackpackSelected;
       }
     } catch (error) {
-      console.warn(error);
+      console.warn(error.message);
     }
   }
 
@@ -121,6 +121,13 @@ class BackpackController extends BaseScene {
     let myArrItem = [];
     let itemTitle;
     let indexOfArray;
+    console.warn('88888: ', this.user.getRecommendationsSelected());
+    if(this.rootStore.getState().isFirstTimeBackpack ){
+      console.warn('1111');
+      this.onClickListItemBackpack('Backpack');
+      console.warn('2222');
+      this.rootStore.dispatch({ type: 'FIRST_BACKPACK', isFirstTimeBackpack: false});
+    }
     this.user.getRecommendationsSelected().forEach((item) => {
       indexOfArray = this.user.getRecommendationsSelected().indexOf(item);
       itemTitle = item.key;
@@ -214,7 +221,7 @@ class BackpackController extends BaseScene {
       await this.checkSelectedToDos();
       this.setState({titleAddItem: ''});
     } catch (error) {
-      console.warn(error);
+      console.warn(error.message);
     }
   }
 

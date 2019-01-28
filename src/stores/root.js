@@ -11,7 +11,9 @@ const appReducer = combineReducers({
   isBackpackScreen: userReducer.isBackpackScreen,
   isRegionChanged: userReducer.isRegionChanged,
   isRecosUpdated: userReducer.isRecosUpdated,
-  isSameRegion: userReducer.isSameRegion
+  isSameRegion: userReducer.isSameRegion,
+  isFirstTimeBackpack: userReducer.isFirstTimeBackpack
+
 });
 
 const rootStore = createStore(appReducer, applyMiddleware(thunk), reduxReset());

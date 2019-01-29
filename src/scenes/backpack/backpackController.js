@@ -39,7 +39,7 @@ class BackpackController extends BaseScene {
       await this.setState({externalData: true});
       return listToDosArray;
     } catch (error) {
-      console.warn(error);
+      console.warn(error.message);
     }
   }
 
@@ -81,7 +81,21 @@ class BackpackController extends BaseScene {
         return false;
       }
     } catch (error) {
-      console.warn(error);
+      console.warn(error.message);
+    }
+  }
+
+  async addBackpackFirstTime(userDataStorage, countryOrRegion){
+    if(!Object.values(userDataStorage.users)[0].region[countryOrRegion].inTheBackpack){
+      const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
+      const newRecommendation = {'inTheBackpack': {'item':'Backpack'}};
+      const newObject = Object.assign(Object.values(userDataStorage.users)[0].region[countryOrRegion], newRecommendation);
+      Object.values(userDataStorage.users)[0].region[countryOrRegion] = newObject;
+      await this.storage.setAsyncStorage(this.user.getUserId(), userDataStorage);
+      const userStorage = await this.storage.getAsyncStorage(this.user.getUserId());
+      return userStorage;
+    } else{
+      return null;
     }
   }
 
@@ -91,14 +105,24 @@ class BackpackController extends BaseScene {
       if (this.user.getChosenRegion()) {
         const chosenRegionString = this.user.getChosenRegion();
         const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
-        return this.addBackpackIntoUser(userDataStorage, chosenRegionString);
+        const newUserDataStorage = await this.addBackpackFirstTime(userDataStorage, chosenRegionString);
+        if(newUserDataStorage){
+          return this.addBackpackIntoUser(newUserDataStorage, chosenCountryString);
+        } else{
+          return this.addBackpackIntoUser(userDataStorage, chosenCountryString);
+        }
       } else {
         const chosenCountryString = this.user.getChosenCountry();
         const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
-        return this.addBackpackIntoUser(userDataStorage, chosenCountryString);
+        const newUserDataStorage = await this.addBackpackFirstTime(userDataStorage, chosenCountryString);
+        if(newUserDataStorage){
+          return this.addBackpackIntoUser(newUserDataStorage, chosenCountryString);
+        } else{
+          return this.addBackpackIntoUser(userDataStorage, chosenCountryString);
+        }
       }
     } catch (error) {
-      console.warn(error);
+      console.warn(error.message);
     }
   }
 
@@ -111,7 +135,7 @@ class BackpackController extends BaseScene {
         return valueListInTheBackpackSelected;
       }
     } catch (error) {
-      console.warn(error);
+      console.warn(error.message);
     }
   }
 
@@ -214,7 +238,7 @@ class BackpackController extends BaseScene {
       await this.checkSelectedToDos();
       this.setState({titleAddItem: ''});
     } catch (error) {
-      console.warn(error);
+      console.warn(error.message);
     }
   }
 

@@ -12,7 +12,6 @@ export default (controller) => (
       style={backpackStyles.mainTitle}>Backpack for {controller.user.getChosenRegion() ? controller.user.getChosenRegion() : controller.user.getChosenCountry()} </Text>
     <Text
       style={backpackStyles.howManyDays}>Still {controller.checkHowManyDays()} days to Go!</Text>
-    {controller.user.getRecommendationsOnlyIntemSelected() ?
       <SectionList
         renderItem={({item, index, section}) => {
           return (
@@ -21,7 +20,7 @@ export default (controller) => (
               titleAddItem={controller.titleAddItem(section)}
               titleAddItemChangeText={(title) => { controller.titleAddItemChangeText(title, section); }}
               backpackListItem
-              dataItem={!controller.state.collapsed[section.key] ? item : []}
+              dataItem={item}
               onClickListItem={(item) => controller.onClickListItemBackpack(item)} />);
         }}
         renderSectionHeader={(prop) => {
@@ -44,16 +43,5 @@ export default (controller) => (
         }}
         sections={controller.user.getInTheBackpackSelected()}
         stickySectionHeadersEnabled />
-            :
-      <View>
-        <Text style={backpackStyles.subtitleNoItemsBackpack}>{controller.i18n.t('backpack.noItems')}</Text>
-        <View style={backpackStyles.checkmarkNoItemsBackpack}>
-          <CheckMark
-            color={Palette.primaryColor75}
-            width={150}
-            height={150} />
-        </View>
-      </View>
-      }
   </View>
 );

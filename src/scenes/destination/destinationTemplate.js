@@ -5,7 +5,6 @@ import Caribbean from '../../assets/mapJson/subregion/Caribbean.json';
 import MapView from 'react-native-maps';
 import Geojson from 'react-native-geojson';
 import { Button, Main, ControlPanel } from 'components';
-import PopupDialog, { DialogTitle } from 'react-native-popup-dialog';
 import Palette from '../../common/palette';
 import markerBackpacker from '../../assets/images/markerBackpack.png';
 import Toast, {DURATION} from 'react-native-easy-toast';

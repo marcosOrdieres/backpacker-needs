@@ -145,6 +145,9 @@ class BackpackController extends BaseScene {
     let myArrItem = [];
     let itemTitle;
     let indexOfArray;
+    if(!this.user.getRecommendationsSelected()){
+      this.listRecommendationsWhichSelected();
+    }
     this.user.getRecommendationsSelected().forEach((item) => {
       indexOfArray = this.user.getRecommendationsSelected().indexOf(item);
       itemTitle = item.key;

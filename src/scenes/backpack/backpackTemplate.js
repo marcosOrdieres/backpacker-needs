@@ -20,7 +20,7 @@ export default (controller) => (
               titleAddItem={controller.titleAddItem(section)}
               titleAddItemChangeText={(title) => { controller.titleAddItemChangeText(title, section); }}
               backpackListItem
-              dataItem={!controller.state.collapsed[section.key] ? item : item}
+              dataItem={item}
               onClickListItem={(item) => controller.onClickListItemBackpack(item)} />);
         }}
         renderSectionHeader={(prop) => {

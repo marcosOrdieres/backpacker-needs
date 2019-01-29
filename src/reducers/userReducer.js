@@ -52,21 +52,11 @@ const isSameRegionReducer = (state = false, action) => {
   }
 };
 
-const isFirstTimeBackpackReducer = (state = true, action) => {
-  switch (action.type) {
-    case 'FIRST_BACKPACK':
-      return action.isFirstTimeBackpack;
-    default:
-      return state;
-  }
-};
-
 export default {
   isFromSignup: isFromSignupReducer,
   isFromLogin: isFromLoginReducer,
   isBackpackScreen: isBackpackScreenReducer,
   isRegionChanged: isRegionChangedReducer,
   isRecosUpdated: isRecosUpdatedReducer,
-  isSameRegion: isSameRegionReducer,
-  isFirstTimeBackpack: isFirstTimeBackpackReducer
+  isSameRegion: isSameRegionReducer
 };

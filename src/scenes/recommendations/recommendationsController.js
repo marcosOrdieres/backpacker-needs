@@ -35,43 +35,6 @@ class RecommendationsController extends BaseScene {
     });
   }
 
-  async listRecommendationsWhichSelected (checkListRecos) {
-    let myArr = [];
-    let myArrFinal = [];
-    let myArrItem = [];
-    let flag = false;
-    const group = Object.keys(this.user.getRecommendations()).map((group, index) => {
-      myArrFinal[index] = {key: group};
-      return this.user.getRecommendations()[group];
-    });
-    group.forEach((groupItem, index, array) => {
-      const indexOfArray = group.indexOf(groupItem);
-      Object.values(groupItem).forEach((item, index, array) => {
-        if (checkListRecos && Object.values(checkListRecos).includes(item)) {
-          myArrItem.push({value: item, selectedRecommendations: true});
-          return myArrFinal[indexOfArray].data = [myArrItem];
-        } else {
-          myArrItem.push(item);
-          return myArrFinal[indexOfArray].data = [myArrItem];
-        }
-      });
-      this.user.setRecommendationsSelected(myArrFinal);
-      myArrItem = [];
-      return myArrFinal;
-    });
-
-    this.user.getRecommendationsSelected().forEach(value => {
-        if (value.key == 'My Traveler Items') {
-            flag = true;
-            return false;
-        }
-    });
-
-    if (!flag) {
-      this.user.getRecommendationsSelected().push({key:'My Traveler Items', data:[[{value:'Backpack', selectedRecommendations:true}]]});
-    }
-  }
-
   async checkSelectedRecommendations () {
     const checkListRecos = await this.readValueListRecommendations();
     const listRecommendationsArray = await this.listRecommendationsWhichSelected(checkListRecos);

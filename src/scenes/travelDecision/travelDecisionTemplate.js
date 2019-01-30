@@ -53,12 +53,12 @@ export default (controller) => (
           isVisible={controller.state.isModalVisible}>
           <View style={travelDecisionStyles.modalContent}>
             <View>
-                <Text
-                  style={{color: Palette.primaryColor}}>
-                  {controller.i18n.translate('travelDecision.choose')}
-                </Text>
+              <Text
+                style={{color: Palette.primaryColor}}>
+                {controller.i18n.translate('travelDecision.choose')}
+              </Text>
               <View
-                style={{borderBottomColor: Palette.primaryColor, borderBottomWidth: 1, width:'80%', alignItems:'center', paddingTop:10}}/>
+                style={{borderBottomColor: Palette.primaryColor, borderBottomWidth: 1, width: '80%', alignItems: 'center', paddingTop: 10}} />
             </View>
             <TouchableOpacity onPress={() => { controller.toggleModal(); }}>
               <View style={{width: width}}>
@@ -104,9 +104,9 @@ export default (controller) => (
     <View style={{flex: 1}}>
 
       <TouchableOpacity
-        onPress={() => {
+        onPress={async () => {
           if (controller.state.letsgo) {
-            controller.sendRegionOrCountryAndDate();
+            await controller.sendRegionOrCountryAndDate();
             return controller.navigateTo('Menu');
           } else {
             return false;

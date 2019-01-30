@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 import { AccessToken, LoginManager, LoginButton } from 'react-native-fbsdk';
 import {GoogleSignin } from 'react-native-google-signin';
-import { NetInfo } from 'react-native';
+import { NetInfo, BackHandler } from 'react-native';
 import Toast, {DURATION} from 'react-native-easy-toast';
 import RNFetchBlob from 'react-native-fetch-blob';
 
@@ -15,6 +15,16 @@ class HomeController extends BaseScene {
       noConnectionSplash: false,
       optinsChecked: false
     };
+  }
+
+  componentWillUnmount () {
+    this.backHandler.remove();
+  }
+
+  componentDidMount () {
+    this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+      this.navigateTo('Home');
+    });
   }
 
   downloadTC () {

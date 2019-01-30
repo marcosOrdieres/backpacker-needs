@@ -85,16 +85,18 @@ class BackpackController extends BaseScene {
     }
   }
 
-  async addBackpackFirstTime(userDataStorage, countryOrRegion){
-    if(!Object.values(userDataStorage.users)[0].region[countryOrRegion].inTheBackpack){
+  async addBackpackFirstTime (userDataStorage, countryOrRegion) {
+    // When I dont have stored in the userDataStorage inTheBackpack, first time, add inTheBackpack as item.
+    // We need it to have always the Backpack inside the inTheBackpack.
+    if (!Object.values(userDataStorage.users)[0].region[countryOrRegion].inTheBackpack) {
       const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
-      const newRecommendation = {'inTheBackpack': {'item':'Backpack'}};
+      const newRecommendation = {'inTheBackpack': {'item': 'Backpack'}};
       const newObject = Object.assign(Object.values(userDataStorage.users)[0].region[countryOrRegion], newRecommendation);
       Object.values(userDataStorage.users)[0].region[countryOrRegion] = newObject;
       await this.storage.setAsyncStorage(this.user.getUserId(), userDataStorage);
       const userStorage = await this.storage.getAsyncStorage(this.user.getUserId());
       return userStorage;
-    } else{
+    } else {
       return null;
     }
   }
@@ -106,18 +108,18 @@ class BackpackController extends BaseScene {
         const chosenRegionString = this.user.getChosenRegion();
         const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
         const newUserDataStorage = await this.addBackpackFirstTime(userDataStorage, chosenRegionString);
-        if(newUserDataStorage){
+        if (newUserDataStorage) {
           return this.addBackpackIntoUser(newUserDataStorage, chosenCountryString);
-        } else{
+        } else {
           return this.addBackpackIntoUser(userDataStorage, chosenCountryString);
         }
       } else {
         const chosenCountryString = this.user.getChosenCountry();
         const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
         const newUserDataStorage = await this.addBackpackFirstTime(userDataStorage, chosenCountryString);
-        if(newUserDataStorage){
+        if (newUserDataStorage) {
           return this.addBackpackIntoUser(newUserDataStorage, chosenCountryString);
-        } else{
+        } else {
           return this.addBackpackIntoUser(userDataStorage, chosenCountryString);
         }
       }
@@ -145,7 +147,7 @@ class BackpackController extends BaseScene {
     let myArrItem = [];
     let itemTitle;
     let indexOfArray;
-    if(!this.user.getRecommendationsSelected()){
+    if (!this.user.getRecommendationsSelected()) {
       this.listRecommendationsWhichSelected();
     }
     this.user.getRecommendationsSelected().forEach((item) => {
@@ -175,7 +177,6 @@ class BackpackController extends BaseScene {
     return myArrFinalClean;
   }
 
-
   async onClickListItemBackpack (item) {
     try {
       let countryOrRegion;
@@ -187,20 +188,20 @@ class BackpackController extends BaseScene {
         countryOrRegion = this.user.getChosenRegion();
       }
       const listInTheBackpack = await this.readValueListInTheBackpack();
-      if(listInTheBackpack){
-        Object.values(listInTheBackpack).forEach((reco)=>{
-          if(reco.includes(item)){
+      if (listInTheBackpack) {
+        Object.values(listInTheBackpack).forEach((recommendation) => {
+          if (recommendation === item.value) {
             isItemInTheBackpack = true;
             return isItemInTheBackpack;
           }
         });
-      };
+      }
 
       if (!listInTheBackpack) {
         // Here it comes if there are not items in the selectedInTheBackpack, so it update (first time), the inTheBackpack
-        firebase.database().ref('users/' + this.user.getUserId()).child('region').child(countryOrRegion).update({inTheBackpack: {item}});
+        firebase.database().ref('users/' + this.user.getUserId()).child('region').child(countryOrRegion).update({inTheBackpack: {[item]: item}});
         const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
-        const newRecommendation = {'inTheBackpack': {item}};
+        const newRecommendation = {'inTheBackpack': {[item]: item}};
         const newObject = Object.assign(Object.values(userDataStorage.users)[0].region[countryOrRegion], newRecommendation);
         Object.values(userDataStorage.users)[0].region[countryOrRegion] = newObject;
         await this.storage.setAsyncStorage(this.user.getUserId(), userDataStorage);
@@ -218,15 +219,14 @@ class BackpackController extends BaseScene {
           this.listInTheBackpackSelected(listInTheBackpack);
           this.setState({externalData: true});
         } else {
-          //If there are isItemInTheBackpack, but are already selected and I want to deselect them.
+          // If there are isItemInTheBackpack, but are already selected and I want to deselect them.
+          // first time here does not work.
           let userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
           delete Object.values(userDataStorage.users)[0].region[countryOrRegion].inTheBackpack[item.value.toString()];
           const otherTimesStoreDataAndRegion = await this.storage.setAsyncStorage(this.user.getUserId(), userDataStorage);
           const listInTheBackpack = await this.readValueListInTheBackpack();
           this.listInTheBackpackSelected(listInTheBackpack);
-          console.warn('THE ITEM IS ALREADY IN THE BACKPACK DATABASE, PLEASE CHOOSE ANOTHER ONE');
           this.setState({externalData: true});
-
         }
       }
     } catch (error) {

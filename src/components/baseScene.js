@@ -48,14 +48,14 @@ export default class BaseScene extends Component {
     });
 
     this.user.getRecommendationsSelected().forEach(value => {
-        if (value.key == 'My Traveler Items') {
-            flag = true;
-            return false;
-        }
+      if (value.key == 'My Traveler Items') {
+        flag = true;
+        return false;
+      }
     });
 
     if (!flag) {
-      this.user.getRecommendationsSelected().push({key:'My Traveler Items', data:[[{value:'Backpack', selectedRecommendations:true}]]});
+      this.user.getRecommendationsSelected().push({key: 'My Traveler Items', data: [[{value: 'Backpack', selectedRecommendations: true}]]});
     }
   }
 

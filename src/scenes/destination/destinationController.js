@@ -64,7 +64,6 @@ class DestinationController extends BaseScene {
         }
       });
     });
-
     let mapRegion = {
       latitude: this.user.getChosenRegionCoordinates() ? this.user.getChosenRegionCoordinates().latitude : this.user.getLat(),
       longitude: this.user.getChosenRegionCoordinates() ? this.user.getChosenRegionCoordinates().longitude : this.user.getLong(),
@@ -96,9 +95,10 @@ class DestinationController extends BaseScene {
     return this.setState({externalData: true});
   }
 
-  onClickListItemRegion (item) {
+  async onClickListItemRegion (item) {
     this.user.setChosenCountry(null);
     this.user.setChosenRegion(null);
+    this.user.setChosenRegionCoordinates(null);
     const regions = this.user.getRegions();
     const chooseRegionOrCountry = Object.keys(regions).forEach((region) => {
       if (region === item) {
@@ -110,8 +110,8 @@ class DestinationController extends BaseScene {
       this.rootStore.dispatch({ type: 'SAME_REGION', isSameRegion: false});
       this.user.setChosenRegion(item);
     } else {
-      this.user.setChosenCountry(item);
-      this.chargeGeojsonCountry(item);
+      await this.user.setChosenCountry(item);
+      await this.chargeGeojsonCountry(item);
     }
     this.mapBuilderWithJson();
     this.rootStore.dispatch({ type: 'REGION_CHANGED', isRegionChanged: true});

@@ -80,27 +80,30 @@ class RecommendationsController extends BaseScene {
       const listRecos = await this.readValueListRecommendations();
       let isItemSelected = false;
 
-      if(listRecos){
-        Object.values(listRecos).forEach((reco)=>{
-          if(reco.includes(item)){
+      if (listRecos) {
+        Object.values(listRecos).forEach((recommendation) => {
+          if (recommendation === item.value) {
             isItemSelected = true;
             return isItemSelected;
+          } else {
+            return true;
           }
         });
-      };
+      }
+
       if (!listRecos) {
         // Here the list of Recommendations is empty cause there is none, so we update
         // Write in Firebase in Background, do it for AsyncStorage
-        firebase.database().ref('users/' + this.user.getUserId()).child('region').child(chosenRegionOrCountry).update({recommendationSelected: {item}});
+        firebase.database().ref('users/' + this.user.getUserId()).child('region').child(chosenRegionOrCountry).update({recommendationSelected: {[item]: item}});
         const userDataStorage = await this.storage.get(this.user.getUserId());
-        const newRecommendation = {'recommendationSelected': {item}};
+        const newRecommendation = {'recommendationSelected': {[item]: item}};
         const newObject = Object.assign(Object.values(JSON.parse(userDataStorage).users)[0].region[chosenRegionOrCountry], newRecommendation);
         const newObjParsed = JSON.parse(userDataStorage);
         Object.values(newObjParsed.users)[0].region[chosenRegionOrCountry] = newObject;
         await this.storage.set(this.user.getUserId(), JSON.stringify(newObjParsed));
         const listRecos = await this.readValueListRecommendations();
         this.listRecommendationsWhichSelected(listRecos);
-        this.setState({externalData: true, spinnerVisible: false});
+        this.setState({externalData: true});
       } else {
         // Here the list of Recommendations has data, so we push into existing
         if (!isItemSelected) {
@@ -110,20 +113,18 @@ class RecommendationsController extends BaseScene {
           const userDataStorageParsed = JSON.parse(userDataStorage);
           Object.values(userDataStorageParsed.users)[0].region[chosenRegionOrCountry].recommendationSelected[item.toString()] = item.toString();
           const otherTimesStoreDataAndRegion = await this.storage.set(this.user.getUserId(), JSON.stringify(userDataStorageParsed));
-
           const listRecos = await this.readValueListRecommendations();
           this.listRecommendationsWhichSelected(listRecos);
-          this.setState({externalData: true, spinnerVisible: false});
+          this.setState({externalData: true});
         } else {
-          //If there are itemsSelected, but are already selected and I want to deselect them.
+          // If there are itemsSelected, but are already selected and I want to deselect them.
+          // first time here does not work.
           let userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
           delete Object.values(userDataStorage.users)[0].region[chosenRegionOrCountry].recommendationSelected[item.value.toString()];
           const otherTimesStoreDataAndRegion = await this.storage.setAsyncStorage(this.user.getUserId(), userDataStorage);
+          let userDataStorageSecond = await this.storage.getAsyncStorage(this.user.getUserId());
           const listRecos = await this.readValueListRecommendations();
           this.listRecommendationsWhichSelected(listRecos);
-
-          console.warn('THE ITEM IS ALREADY IN THE RECOMMENDATIONS SELECTED DATABASE, PLEASE CHOOSE ANOTHER ONE');
-
           this.setState({spinnerVisible: false});
         }
       }
@@ -132,9 +133,9 @@ class RecommendationsController extends BaseScene {
     }
   }
 
-  onClickAmazonItems(item){
+  onClickAmazonItems (item) {
     console.warn('EL ITEM: ', item);
-    if(item === 'Kindle'){
+    if (item === 'Kindle') {
       Linking.openURL('https://www.amazon.com/gp/product/B07CXG6C9W?ie=UTF8&tag=pack1989-20&camp=1789&linkCode=xm2&creativeASIN=B07CXG6C9W');
     }
   }

@@ -23,7 +23,7 @@ export default (controller) => (
               dataItem={item}
               onClickListItem={(item) => controller.onClickListItemBackpack(item)} />);
         }}
-        renderSectionHeader={(prop) => {
+        renderSectionHeader={( prop) => {
           return (
             <TouchableOpacity
               onPress={() => {

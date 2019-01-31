@@ -156,6 +156,36 @@ android {
 dependencies {
     compile project(':react-native-vector-icons')
     compile project(':react-native-svg')
+    compile project(':react-native-maps')
+    compile project(':react-native-linear-gradient')
+    compile project(':react-native-i18n')
+    compile project(':react-native-google-signin')
+    compile project(':react-native-firebase')
+    compile project(':react-native-fetch-blob')
+    compile project(':react-native-fbsdk')
+    compile project(':react-native-admob')
+    compile project(':react-native-vector-icons')
+    compile project(':react-native-svg')
+    compile project(':react-native-maps')
+    compile project(':react-native-linear-gradient')
+    compile project(':react-native-i18n')
+    compile project(':react-native-google-signin')
+    compile project(':react-native-firebase')
+    compile project(':react-native-fetch-blob')
+    compile project(':react-native-fbsdk')
+    compile project(':react-native-admob')
+    compile project(':react-native-vector-icons')
+    compile project(':react-native-svg')
+    compile project(':react-native-maps')
+    compile project(':react-native-linear-gradient')
+    compile project(':react-native-i18n')
+    compile project(':react-native-google-signin')
+    compile project(':react-native-firebase')
+    compile project(':react-native-fetch-blob')
+    compile project(':react-native-fbsdk')
+    compile project(':react-native-admob')
+    compile project(':react-native-vector-icons')
+    compile project(':react-native-svg')
     compile project(':react-native-material-letter-icon')
     compile project(':react-native-maps')
     compile project(':react-native-linear-gradient')
@@ -225,7 +255,7 @@ dependencies {
     compile 'com.google.firebase:firebase-invites:16.0.1'
     compile 'com.google.firebase:firebase-perf:16.0.0'
     compile 'com.google.firebase:firebase-config:16.0.0'
-
+    compile 'com.google.android.gms:play-services-ads:15.0.1'
 }
 
 // Run this once to be able to run the application with BUCK

@@ -18,6 +18,7 @@ import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import com.horcrux.svg.SvgPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
+import com.sbugert.rnadmob.RNAdMobPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -46,7 +47,8 @@ public class MainApplication extends Application implements ReactApplication {
           new FBSDKPackage(mCallbackManager),
           new RNGoogleSigninPackage(),
           new SvgPackage(),
-          new MapsPackage()
+          new MapsPackage(),
+          new RNAdMobPackage()
       );
     }
 

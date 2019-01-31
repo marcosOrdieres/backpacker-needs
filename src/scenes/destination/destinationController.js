@@ -23,6 +23,7 @@ import SouthernAsia from '../../assets/mapJson/subregion/SouthernAsia.json';
 import SouthernEurope from '../../assets/mapJson/subregion/SouthernEurope.json';
 import WesternAsia from '../../assets/mapJson/subregion/WesternAsia.json';
 import WesternEurope from '../../assets/mapJson/subregion/WesternEurope.json';
+import firebase from 'react-native-firebase';
 
 class DestinationController extends BaseScene {
   constructor (args) {

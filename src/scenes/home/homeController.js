@@ -4,13 +4,16 @@ import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 import { AccessToken, LoginManager, LoginButton } from 'react-native-fbsdk';
 import {GoogleSignin } from 'react-native-google-signin';
-import { NetInfo, BackHandler } from 'react-native';
+import { NetInfo, BackHandler, Alert } from 'react-native';
 import Toast, {DURATION} from 'react-native-easy-toast';
 import RNFetchBlob from 'react-native-fetch-blob';
+import services from '../../services';
 
 class HomeController extends BaseScene {
   constructor (args) {
     super(args);
+    this.services = services;
+    this.storage = this.services.Storage;
     this.state = {
       noConnectionSplash: false,
       optinsChecked: false
@@ -18,13 +21,94 @@ class HomeController extends BaseScene {
   }
 
   componentWillUnmount () {
+    this.notificationListener();
+    this.notificationOpenedListener();
+
     this.backHandler.remove();
   }
 
   componentDidMount () {
+    this.checkPermission();
+    this.createNotificationListeners();
+
     this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
       this.navigateTo('Home');
     });
+  }
+
+  async createNotificationListeners () {
+  /*
+  * Triggered when a particular notification has been received in foreground
+  * */
+    this.notificationListener = firebase.notifications().onNotification((notification) => {
+      const { title, body } = notification;
+      this.showAlert(title, body);
+    });
+
+  /*
+  * If your app is in background, you can listen for when a notification is clicked / tapped / opened as follows:
+  * */
+    this.notificationOpenedListener = firebase.notifications().onNotificationOpened((notificationOpen) => {
+      const { title, body } = notificationOpen.notification;
+      this.showAlert(title, body);
+    });
+
+  /*
+  * If your app is closed, you can check if it was opened by a notification being clicked / tapped / opened as follows:
+  * */
+    const notificationOpen = await firebase.notifications().getInitialNotification();
+    if (notificationOpen) {
+      const { title, body } = notificationOpen.notification;
+      this.showAlert(title, body);
+    }
+  /*
+  * Triggered for data only payload in foreground
+  * */
+    this.messageListener = firebase.messaging().onMessage((message) => {
+    // process data message
+      console.log(JSON.stringify(message));
+    });
+  }
+
+  showAlert (title, body) {
+    Alert.alert(
+    title, body,
+      [
+        { text: 'OK', onPress: () => console.log('OK Pressed') }
+      ],
+    { cancelable: false },
+  );
+  }
+
+  async checkPermission () {
+    const enabled = await firebase.messaging().hasPermission();
+    if (enabled) {
+      this.getToken();
+    } else {
+      this.requestPermission();
+    }
+  }
+
+  async getToken () {
+    let fcmToken = await this.storage.get('fcmToken');
+    if (!fcmToken) {
+      fcmToken = await firebase.messaging().getToken();
+      if (fcmToken) {
+            // user has a device token
+        await this.storage.set('fcmToken', fcmToken);
+      }
+    }
+  }
+
+  async requestPermission () {
+    try {
+      await firebase.messaging().requestPermission();
+        // User has authorised
+      this.getToken();
+    } catch (error) {
+        // User has rejected permissions
+      console.log('permission rejected');
+    }
   }
 
   downloadTC () {

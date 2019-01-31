@@ -5,6 +5,9 @@ import { View, Text, SectionList, ActivityIndicator, TouchableOpacity, Dimension
 import Palette from '../../common/palette';
 import AirportSvg from '../../assets/svg/Airport';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {
+  AdMobBanner
+} from 'react-native-admob';
 
 const {width, height} = Dimensions.get('window');
 
@@ -30,7 +33,8 @@ export default (controller) => (
           <ListItem
             dataItem={!controller.state.collapsed[section.key] ? item : []}
             onClickAmazon={(item) => controller.onClickAmazonItems(item)}
-            onClickListItem={(item) => controller.onClickListItemRecommendations(item)} />);}}
+            onClickListItem={(item) => controller.onClickListItemRecommendations(item)} />);
+      }}
       renderSectionHeader={(prop) => {
         return (
           <TouchableOpacity
@@ -49,5 +53,13 @@ export default (controller) => (
       }}
       sections={controller.user.getRecommendationsSelected()}
       stickySectionHeadersEnabled />
+    <View>
+      <AdMobBanner
+        adSize='smartBannerPortrait'
+        adUnitID='ca-app-pub-3940256099942544/2934735716' // Poner mi id.
+        testDevices={[AdMobBanner.simulatorId]}
+        onAdFailedToLoad={error => console.warn(error)}
+        />
+    </View>
   </View>
 );

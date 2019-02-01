@@ -20,6 +20,7 @@ export default class BaseScene extends Component {
     this.rootStore = rootStore;
     this.env = env;
     this.palette = palette;
+    this.firebaseAnalytics = firebase.analytics();
   }
 
   async listRecommendationsWhichSelected (checkListRecos) {

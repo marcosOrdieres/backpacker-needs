@@ -5,21 +5,11 @@ import { View, Text, SectionList, ActivityIndicator, TouchableOpacity, Dimension
 import Palette from '../../common/palette';
 import AirportSvg from '../../assets/svg/Airport';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import { AdMobBanner } from 'react-native-admob'
 const {width, height} = Dimensions.get('window');
 
 export default (controller) => (
   <View style={{height: '100%'}}>
-    {  /*
-      <View style={[controller.state.spinnerVisible ? recommendationsStyles.containerSpinner : null ,  controller.state.spinnerVisible ? recommendationsStyles.horizontalSpinner : null]}>
-     {controller.state.spinnerVisible ?
-      <ActivityIndicator
-        animating={controller.state.spinnerVisible}
-         size="large"
-         color={Palette.primaryColor15} />
-       :
-       null
-     } */}
     <Text
       style={recommendationsStyles.mainTitle}>Recommendations for { controller.user.getChosenRegion() ? controller.user.getChosenRegion() : controller.user.getChosenCountry()} </Text>
     <Text
@@ -49,5 +39,13 @@ export default (controller) => (
       }}
       sections={controller.user.getRecommendationsSelected()}
       stickySectionHeadersEnabled />
+    <View>
+      <AdMobBanner
+        adSize="smartBannerPortrait"
+        adUnitID="ca-app-pub-3940256099942544/6300978111"
+        testDevices={[AdMobBanner.simulatorId]}
+        onAdFailedToLoad={error => console.error(error)}
+      />
+    </View>
   </View>
 );

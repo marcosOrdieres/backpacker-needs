@@ -14,6 +14,7 @@ import com.facebook.soloader.SoLoader;
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 import io.invertase.firebase.database.RNFirebaseDatabasePackage;
+import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import com.horcrux.svg.SvgPackage;
 import com.airbnb.android.react.maps.MapsPackage;
@@ -44,6 +45,7 @@ public class MainApplication extends Application implements ReactApplication {
           new RNFirebaseAuthPackage(),
           new RNFetchBlobPackage(),
           new RNFirebaseDatabasePackage(),
+          new RNFirebaseAnalyticsPackage(),
           new FBSDKPackage(mCallbackManager),
           new RNGoogleSigninPackage(),
           new SvgPackage(),

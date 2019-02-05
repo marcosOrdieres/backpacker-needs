@@ -140,6 +140,10 @@ class RecommendationsController extends BaseScene {
     }
   }
 
+  onClickWorldTraveller () {
+      Linking.openURL('https://play.google.com/store/apps/details?id=worldtraveller.enoler.es.worldtraveller');
+  }
+
   render () {
     if (this.state.externalData === null) {
       return <View />;

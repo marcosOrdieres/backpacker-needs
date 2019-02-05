@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, StyleSheet, TouchableOpacity, ScrollView, Dimensions, Text } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, ScrollView, Dimensions, Text, Linking } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 import CheckMark from '../assets/svg/CheckMark';
 import Backpack from '../assets/svg/BackpackNoLetters';
@@ -57,7 +57,11 @@ export default class ListItemComponent extends Component {
                       (<Icon size={25} name='check' color={Palette.green} />)
                       :
                       !this.rootStore.getState().isBackpackScreen && !this.props.noIcon ?
-                      ((<TouchableOpacity onPress={this.props.onClickAmazon ? this.props.onClickAmazon.bind(this, item) : null}><Icon size={25} name='shopping-cart' color={Palette.primaryColor} /></TouchableOpacity>))
+                      item === 'Visa' ?
+                        ((<TouchableOpacity onPress={this.props.onClickWorldTraveller ? this.props.onClickWorldTraveller.bind(this) : null}><Icon size={25} name='globe' color={Palette.primaryColor} /></TouchableOpacity>))
+                        :
+                        ((<TouchableOpacity onPress={this.props.onClickAmazon ? this.props.onClickAmazon.bind(this, item) : null}><Icon size={25} name='shopping-cart' color={Palette.primaryColor} /></TouchableOpacity>))
+
                       :
                       (<Icon size={25} name='check' color={Palette.transparent} />)
                     }

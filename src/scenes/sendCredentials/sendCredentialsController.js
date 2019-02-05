@@ -17,6 +17,7 @@ class SendCredentialsController extends BaseScene {
   async handleSignupEmail () {
     try {
       const signUp = await firebase.auth().createUserAndRetrieveDataWithEmailAndPassword(this.state.userName, this.state.password);
+      this.firebaseAnalytics.setUserProperty('handleSignupEmail', 'SendCredentialsController')
       this.user.setUserId(signUp.user.uid);
       return this.navigateTo('TravelDecision');
 			// should be when everzthing it will be done: return this.navigateTo('WhatDoesThisApp');
@@ -28,6 +29,7 @@ class SendCredentialsController extends BaseScene {
   async handleLogin () {
     try {
       await firebase.auth().signInAndRetrieveDataWithEmailAndPassword(this.state.userName, this.state.password);
+      this.firebaseAnalytics.setUserProperty('handleLogin', 'SendCredentialsController')
       return this.navigateTo('TravelDecision');
     } catch (error) {
       this.setState({errorMessage: error.message});

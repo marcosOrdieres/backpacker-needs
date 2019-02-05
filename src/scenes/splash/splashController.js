@@ -10,6 +10,7 @@ class SplashController extends BaseScene {
   constructor (args) {
     super(args);
     this.services = services;
+    this.firebaseAnalytics.setAnalyticsCollectionEnabled(true);
     this.storage = this.services.Storage;
     this.initializeApplication();
     this.state = {

@@ -15,7 +15,7 @@ class HomeController extends BaseScene {
       noConnectionSplash: false,
       optinsChecked: false
     };
-    this.firebaseAnalytics.setCurrentScreen('home_screen', 'HomeController')
+    this.firebaseAnalytics.setCurrentScreen('home_screen', 'HomeController');
   }
 
   componentWillUnmount () {

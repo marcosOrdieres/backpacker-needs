@@ -1,161 +1,88 @@
-"es" : {
-  "recommendations" : {
-    "APPS PARA EL VIAJERO" : {
-      "item1" : "Netflix","https://play.google.com/store/apps/details?id=com.netflix.mediaclient"
-      "item10" : "Mobile Passport","https://play.google.com/store/apps/details?id=us.mobilepassport"
-      "item11" : "Lonely Planet","https://play.google.com/store/apps/details?id=com.lonelyplanet.guides"
-      "item12" : "Hostel World","https://play.google.com/store/apps/details?id=com.hostelworld.app"
-      "item13" : "Google Translate","https://play.google.com/store/apps/details?id=com.google.android.apps.translate"
-      "item14" : "Google Maps","https://play.google.com/store/search?q=Google+Maps&c=apps"
-      "item15" : "City Mapper","https://play.google.com/store/apps/details?id=com.citymapper.app.release"
-      "item17" : "XE Currency","https://play.google.com/store/apps/details?id=com.xe.currency"
-      "item18" : "World Traveller","https://play.google.com/store/apps/details?id=worldtraveller.enoler.es.worldtraveller"
-      "item19" : "Uber","https://play.google.com/store/apps/details?id=com.ubercab"
-      "item2" : "Tripadvisor","https://play.google.com/store/apps/details?id=com.tripadvisor.tripadvisor"
-      "item3" : "SkyScanner","https://play.google.com/store/apps/details?id=net.skyscanner.android.main"
-      "item4" : "Nord Vpn","https://play.google.com/store/apps/details?id=com.nordvpn.android"
-      "item5" : "Airbnb","https://play.google.com/store/apps/details?id=com.airbnb.android"
-    },
-    "CONSEJOS" : {
-      "item1" : "Rellena bien los Bordes",
-      "item10" : "Asegurate de estar Asegurado",
-      "item11" : "Manten lo importante contigo",
-      "item12" : "Haz listas",
-      "item13" : "Haz un rollo con la Ropa",
-      "item14" : "Lleva lo estrictamente Necesario",
-      "item15" : "Prepara la Vuelta a Casa",
-      "item16" : "Snacks para el viaje",
-      "item17" : "Piensa en la primera Noche",
-      "item18" : "No te estreses, todo va a salir Bien!",
-      "item2" : "Tarjetas de Credito en diferentes Carteras",
-      "item3" : "Compra la mejor mochila que puedas permitirte",
-      "item4" : "Mira que adaptadores necesitas",
-      "item5" : "No te olvides de el candado!",
-      "item6" : "... Puede que un candado de Bici",
-      "item7" : "... Puede que un Padlock (no perderas la llave)",
-      "item8" : "No te estreses, todo va a salir Bien!",
-      "item9" : "Maximo ropa para una Semana"
-    },
-    "DOCUMENTOS IMPORTANTES" : {
-      "item1" : "Tarjeta de embarque",
-      "item10" : "Direcciones importantes",
-      "item11" : "Itinerario",
-      "item12" : "PAsaporte",
-      "item13" : "ID Personal/ID de Estudiante",
-      "item14" : "Reservas",
-      "item15" : "Tickets de Transporte",
-      "item16" : "Seguro de viaje",
-      "item17" : "Visa",
-      "item18" : "Cartera",
-      "item2" : "Copias de papeles importantes",
-      "item4" : "Contactos de emergencia",
-      "item6" : "Mapas y guias de Viaje",
-      "item7" : "Seguro medico",
-      "item8" : "Informacion de Hotel",
-      "item9" : "Llaves de Casa"
-    },
-    "KIT DE BAÑO" : {
-      "item1" : "Peine","https://amzn.to/2BBkcCb"
-      "item10" : "Espejo","https://amzn.to/2DkybMI"
-      "item11" : "Pastillas contra el mareo","https://amzn.to/2Dj6nZ0"
-      "item12" : "Cortauñas","https://amzn.to/2WQP76f"
-      "item13" : "Perfume",
-      "item14" : "Sarong","https://amzn.to/2GgIgOC"
-      "item15" : "Tijeras", "https://amzn.to/2WQP76f"
-      "item16" : "Champu y Gel",
-      "item17" : "Kit de Afeitar (Check in)","https://amzn.to/2Btppvs"
-      "item18" : "Crema de Sol","https://amzn.to/2I1PEiB"
-      "item19" : "Tampones","https://amzn.to/2DlHFat"
-      "item2" : "Acondicionador","https://amzn.to/2GgKk9k"
-      "item20" : "Papel de WC","https://amzn.to/2SoQbzW"
-      "item21" : "Cepillo de Dientes","https://amzn.to/2Sll208"
-      "item22" : "Pasta de Dientes","https://amzn.to/2Bot8KU"
-      "item23" : "Maquillaje",
-      "item3" : "Condones","https://amzn.to/2RMkj2Y"
-      "item4" : "Lentillas",
-      "item5" : "Pildora Anticonceptiva",
-      "item6" : "Desodorante","https://amzn.to/2SnGuBx"
-      "item7" : "Detergente","https://amzn.to/2Ie23jB"
-      "item8" : "Cuchillas (Check in)","https://amzn.to/2taay4L"
-      "item9" : "Gafas"
-    },
-    "MISCELANEA" : {
-      "item1" : "BodyBoard",
-      "item2" : "Dinero suelto",
-      "item3" : "Moneda Local",
-      "item4" : "Gafas de nadar","https://amzn.to/2BrRhQV"
-      "item5" : "Gomas para el Pelo","https://amzn.to/2I0WXqE"
-      "item6" : "Libreta","https://amzn.to/2DjOCsx"
-      "item7" : "Boligrafos","https://amzn.to/2tf9dtw"
-      "item8" : "Snorkel","https://amzn.to/2tenpmi"
-      "item9" : "SurfBoard"
-    },
-    "OBJETOS PARA EL VIAJERO" : {
-      "item1" : "Cubremochila impermeable","https://amzn.to/2tdxEHO"
-      "item10" : "Bolsa para la Ropa Sucia",
-      "item11" : "Toalla de Microfibras","https://amzn.to/2Siq3GF"
-      "item12" : "Cinturon","https://amzn.to/2DnVXaz"
-      "item13" : "Saco de dormir","https://amzn.to/2t9MoY0"
-      "item14" : "Pastillas para dormir","https://amzn.to/2BouIMQ"
-      "item15" : "Mochila para el dia a dia","https://amzn.to/2GheIjW"
-      "item16" : "Navaja Suiza","https://amzn.to/2ULuZk5"
-      "item17" : "Cantimplora","https://amzn.to/2HZIZFn"
-      "item2" : "Libros",
-      "item3" : "Tapones para los Oidos","https://amzn.to/2ROQRJm"
-      "item4" : "Cinta Americana","https://amzn.to/2BBpUE7"
-      "item5" : "Ropa para Salir de Fiesta",
-      "item6" : "Hamaca","https://amzn.to/2I2UEDp"
-      "item7" : "Linterna","https://amzn.to/2BnEAq4"
-      "item8" : "Barra de labios","https://amzn.to/2BrSpUF"
-      "item9" : "Candado","https://amzn.to/2Bs1mND"
-    },
-    "PARA LOS PIES" : {
-      "item1" : "Chanclas","https://amzn.to/2UI7J6y"
-      "item2" : "Zapatos","https://amzn.to/2UQpUau"
-      "item3" : "Zapatos Deportivos",
-      "item4" : "Sandalias","https://amzn.to/2t9Nx1K"
-    },
-    "PRIMEROS AUXILIOS" : {
-      "item1" : "Antibioticos",
-      "item10" : "Vacunas (short reminder depends where)",
-      "item2" : "Vendas","https://amzn.to/2DnGzLd"
-      "item3" : "Pastillas para la Diarrea","https://amzn.to/2IaDsvE"
-      "item4" : "Sanitizador de Manos","https://amzn.to/2BuQr5L"
-      "item5" : "Repelente de Mosquitos","https://amzn.to/2BpNOCn"
-      "item6" : "Mosquitera","https://amzn.to/2tcADQw"
-      "item7" : "Pastillas Potabilizadoras","https://amzn.to/2DipTEY"
-      "item8" : "Probioticos",
-      "item9" : "Termometro","https://amzn.to/2BsEo8Y"
-    },
-    "ROPA BASICOS" : {
-      "item1" : "Antifaz","https://amzn.to/2DiCmZo"
-      "item10" : "Gafas de sol","https://amzn.to/2DlOVTL"
-      "item11" : "Bañador",
-      "item12" : "Camisetas",
-      "item13" : "Almohada de Viaje","https://amzn.to/2I0fCmh"
-      "item14" : "Pantalones",
-      "item15" : "Ropa Interior",
-      "item2" : "Guantes","https://amzn.to/2GkyVFo"
-      "item3" : "Gorro","https://amzn.to/2IaFc8a"
-      "item4" : "Chaqueta","https://amzn.to/2BrCKoh"
-      "item5" : "Sudadera","https://amzn.to/2Br4eKt"
-      "item6" : "Chubasquero","https://amzn.to/2UQrRnk"
-      "item7" : "Bufanda o Braga","https://amzn.to/2GegYsd"
-      "item8" : "Calcetines","https://amzn.to/2Do1Nc5"
-      "item9" : "Gorra para el sol","https://amzn.to/2BtuC6u"
-    },
-    "TECNOLOGIA BASICOS" : {
-      "item1" : "Camara","https://amzn.to/2URPID5"
-      "item2" : "Cargador de Camara","https://amzn.to/2tbEZr1"
-      "item3" : "Auriculares","https://amzn.to/2Bq4VnE"
-      "item4" : "Kindle","https://amzn.to/2HYb5kt"
-      "item5" : "Telefono Movil","https://amzn.to/2I2vJQi"
-      "item6" : "Cargador de Telefono","https://amzn.to/2Dk8pIb"
-      "item7" : "Pen Drive","https://amzn.to/2HXqiSD"
-      "item8" : "Power bank","https://amzn.to/2UQeoeT"
-      "item9" : "Adaptador de Corriente","https://amzn.to/2WOVeb8"
-      "item10" : "GoPro Camara","https://amzn.to/2WL1vEZ"
-
+{
+  "SPAIN" : {
+    "Netflix":"https://play.google.com/store/apps/details?id=com.netflix.mediaclient",
+    "Mobile Passport":"https://play.google.com/store/apps/details?id=us.mobilepassport",
+    "Lonely Planet":"https://play.google.com/store/apps/details?id=com.lonelyplanet.guides",
+    "Hostel World":"https://play.google.com/store/apps/details?id=com.hostelworld.app",
+    "Google Translate":"https://play.google.com/store/apps/details?id=com.google.android.apps.translate",
+    "Google Maps":"https://play.google.com/store/search?q=Google+Maps&c=apps",
+    "City Mapper":"https://play.google.com/store/apps/details?id=com.citymapper.app.release",
+    "XE Currency":"https://play.google.com/store/apps/details?id=com.xe.currency",
+    "World Traveller":"https://play.google.com/store/apps/details?id=worldtraveller.enoler.es.worldtraveller",
+    "Uber":"https://play.google.com/store/apps/details?id=com.ubercab",
+    "Tripadvisor":"https://play.google.com/store/apps/details?id=com.tripadvisor.tripadvisor",
+    "SkyScanner":"https://play.google.com/store/apps/details?id=net.skyscanner.android.main",
+    "Nord Vpn":"https://play.google.com/store/apps/details?id=com.nordvpn.android",
+    "Airbnb":"https://play.google.com/store/apps/details?id=com.airbnb.android",
+    "Peine":"https://amzn.to/2BBkcCb",
+    "Espejo":"https://amzn.to/2DkybMI",
+    "Pastillas contra el mareo":"https://amzn.to/2Dj6nZ0",
+    "Cortauñas":"https://amzn.to/2WQP76f",
+    "Sarong":"https://amzn.to/2GgIgOC",
+    "Tijeras": "https://amzn.to/2WQP76f",
+    "Champu y Gel":"https://amzn.to/2BthCOu",
+    "Kit de Afeitar (Check in)":"https://amzn.to/2Btppvs",
+    "Crema de Sol":"https://amzn.to/2I1PEiB",
+    "Tampones":"https://amzn.to/2DlHFat",
+    "Acondicionador":"https://amzn.to/2GgKk9k",
+    "Papel de WC":"https://amzn.to/2SoQbzW",
+    "Cepillo de Dientes":"https://amzn.to/2Sll208",
+    "Pasta de Dientes":"https://amzn.to/2Bot8KU",
+    "Condones":"https://amzn.to/2RMkj2Y",
+    "Desodorante":"https://amzn.to/2SnGuBx",
+    "Detergente":"https://amzn.to/2Ie23jB",
+    "Cuchillas (Check in)":"https://amzn.to/2taay4L",
+    "Gafas de nadar":"https://amzn.to/2BrRhQV",
+    "Gomas para el Pelo":"https://amzn.to/2I0WXqE",
+    "Libreta":"https://amzn.to/2DjOCsx",
+    "Boligrafos":"https://amzn.to/2tf9dtw",
+    "Snorkel":"https://amzn.to/2tenpmi",
+    "Cubremochila impermeable":"https://amzn.to/2tdxEHO",
+    "Toalla de Microfibras":"https://amzn.to/2Siq3GF",
+    "Cinturon":"https://amzn.to/2DnVXaz",
+    "Saco de dormir":"https://amzn.to/2t9MoY0",
+    "Pastillas para dormir":"https://amzn.to/2BouIMQ",
+    "Mochila para el dia a dia":"https://amzn.to/2GheIjW",
+    "Navaja Suiza":"https://amzn.to/2ULuZk5",
+    "Cantimplora":"https://amzn.to/2HZIZFn",
+    "Tapones para los Oidos":"https://amzn.to/2ROQRJm",
+    "Cinta Americana":"https://amzn.to/2BBpUE7",
+    "Ropa para Salir de Fiesta":,
+    "Hamaca":"https://amzn.to/2I2UEDp",
+    "Linterna":"https://amzn.to/2BnEAq4",
+    "Barra de labios":"https://amzn.to/2BrSpUF",
+    "Candado":"https://amzn.to/2Bs1mND",
+    "Chanclas":"https://amzn.to/2UI7J6y",
+    "Zapatos":"https://amzn.to/2UQpUau",
+    "Zapatos Deportivos":"https://amzn.to/2tagJpt",
+    "Sandalias":"https://amzn.to/2t9Nx1K",
+    "Vendas":"https://amzn.to/2DnGzLd",
+    "Pastillas para la Diarrea":"https://amzn.to/2IaDsvE",
+    "Sanitizador de Manos":"https://amzn.to/2BuQr5L",
+    "Repelente de Mosquitos":"https://amzn.to/2BpNOCn",
+    "Mosquitera":"https://amzn.to/2tcADQw",
+    "Pastillas Potabilizadoras":"https://amzn.to/2DipTEY",
+    "Termometro":"https://amzn.to/2BsEo8Y",
+    "Antifaz":"https://amzn.to/2DiCmZo",
+    "Gafas de sol":"https://amzn.to/2DlOVTL",
+    "Almohada de Viaje":"https://amzn.to/2I0fCmh",
+    "Guantes":"https://amzn.to/2GkyVFo",
+    "Gorro":"https://amzn.to/2IaFc8a",
+    "Chaqueta":"https://amzn.to/2BrCKoh",
+    "Sudadera":"https://amzn.to/2Br4eKt",
+    "Chubasquero":"https://amzn.to/2UQrRnk",
+    "Bufanda o Braga":"https://amzn.to/2GegYsd",
+    "Calcetines":"https://amzn.to/2Do1Nc5",
+    "Gorra para el sol":"https://amzn.to/2BtuC6u",
+    "Camara":"https://amzn.to/2URPID5",
+    "Cargador de Camara":"https://amzn.to/2tbEZr1",
+    "Auriculares":"https://amzn.to/2Bq4VnE",
+    "Kindle":"https://amzn.to/2HYb5kt",
+    "Telefono Movil":"https://amzn.to/2I2vJQi",
+    "Cargador de Telefono":"https://amzn.to/2Dk8pIb",
+    "Pen Drive":"https://amzn.to/2HXqiSD",
+    "Power bank":"https://amzn.to/2UQeoeT",
+    "Adaptador de Corriente":"https://amzn.to/2WOVeb8",
+    "GoPro Camara":"https://amzn.to/2WL1vEZ"
     }
   }
-}

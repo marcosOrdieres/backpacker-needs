@@ -1,0 +1,161 @@
+
+{
+  "USA" : {
+    "BASIC TECHNOLOGY" : {
+      "item1" : "World Travel Adapter", "https://amzn.to/2I8DzZ0"
+      "item2" : "Power bank", "https://amzn.to/2t9gP0s"
+      "item3" : "Pen Drive", "https://amzn.to/2tg9z2J"
+      "item4" : "Mobile Phone Charger", "https://amzn.to/2MX676a"
+      "item5" : "Mobile Phone", "https://amzn.to/2ta4Fo2"
+      "item6" : "Kindle",
+      "item7" : "Headphones", "https://amzn.to/2tdoDOU"
+      "item8" : "Camera Charger", "https://amzn.to/2MT2zlq"
+      "item9" : "Camera", "https://amzn.to/2TyImUF"
+      "item10": "GoPro Camera" "https://amzn.to/2t9MajJ"
+    },
+    "CLOTH BASICS" : {
+      "item1" : "Underwear",
+      "item10" : "Trousers",
+      "item11" : "Travel Pillow", "https://amzn.to/2Gv0dYZ"
+      "item12" : "T-shirts",
+      "item13" : "Swimsuit",
+      "item14" : "Sunglasses", "https://amzn.to/2t9hFdC"
+      "item15" : "Sun hat",
+      "item2" : "Socks", "https://amzn.to/2GwKyrX"
+      "item3" : "Scarf or Travel Wrap",
+      "item4" : "Rain coat", "https://amzn.to/2t9hMpy"
+      "item5" : "Jumper",
+      "item6" : "Jacket",
+      "item7" : "Hat",
+      "item8" : "Gloves","https://amzn.to/2HXDmaM"
+      "item9" : "Eye Mask", "https://amzn.to/2SB8OQb"
+      "item7" : "Clock", "https://amzn.to/2GhS0YV"
+
+    },
+    "FIRST AIDS" : {
+      "item1" : "Vaccinations (short reminder depends where)",
+      "item10" : "Thermometer", "https://amzn.to/2TEDRb0"
+      "item2" : "Probiotics",
+      "item3" : "Portable water purification", "B006QF3TW4"
+      "item4" : "Mosquito net", "https://amzn.to/2I1N6AZ"
+      "item5" : "Mosquito Repellant", "https://amzn.to/2tc22SA"
+      "item6" : "Hand Sanitizer", "https://amzn.to/2GtDYCE"
+      "item7" : "Diarrhea/laxative medicines", "https://amzn.to/2tdFilk"
+      "item8" : "Bandages", "https://amzn.to/2GtE0dK"
+      "item9" : "Anti-biotics"
+    },
+    "FOR YOUR FEET" : {
+      "item1" : "Walking sandals", "https://amzn.to/2GwK1Gy"
+      "item2" : "Trainers", "https://amzn.to/2GxrmL0"
+      "item3" : "Shoes", "https://amzn.to/2GCsGfF"
+      "item4" : "Flip flops", "https://amzn.to/2tkLqbH"
+    },
+    "IMPORTANT DOCUMENTS" : {
+      "item1" : "Wallet", "https://amzn.to/2GgImpg"
+      "item10" : "Visa",
+      "item11" : "Travel insurance",
+      "item12" : "Transportation tickets",
+      "item13" : "Reservations and itineraries",
+      "item14" : "Personal ID/Student ID card",
+      "item15" : "Passport",
+      "item16" : "Itinerary",
+      "item17" : "Important addresses",
+      "item2" : "House Keys",
+      "item3" : "Hotel information",
+      "item4" : "Health insurance",
+      "item5" : "Guide books and maps",
+      "item6" : "Emergency contacts",
+      "item8" : "Copies of Important Papers",
+      "item9" : "Boarding Pass",
+      "item6" : "Cash in Local Currency",
+      "item7" : "Cash"
+    },
+    "MISCELANEA" : {
+      "item1" : "SurfBoard",
+      "item10" : "Snorkel", "https://amzn.to/2TKUjXe"
+      "item2" : "Pens", "https://amzn.to/2GtphQ6"
+      "item3" : "Notebook", "https://amzn.to/2MSG5kL"
+      "item4" : "Hair Bands", "https://amzn.to/2tadjD3"
+      "item5" : "Googles", "https://amzn.to/2SBXdjL"
+    },
+    "TIPS" : {
+      "item1" : "Ensure you’re insured",
+      "item10" : "Don’t pack more than 1 week’s clothing",
+      "item11" : "... Maybe a Padlock (you will not loose the key)",
+      "item12" : "... Maybe a Bike Lock",
+      "item13" : "Do not forget your Lock!",
+      "item14" : "Check the Adaptors for the Country",
+      "item15" : "Buy the best backpack you can afford",
+      "item16" : "Backup Cards in different Wallets",
+      "item17" : "Do not stress, everything will work!",
+      "item2" : "Think about your First Night",
+      "item3" : "Snacks for the Trip",
+      "item4" : "Prepare your come back Home",
+      "item5" : "Pack must-haves, not nice-to-haves",
+      "item6" : "Make a roll for Clothes",
+      "item7" : "Make a list",
+      "item8" : "Keep your important things with you",
+      "item9" : "Always pack to the corners!"
+    },
+    "TOILET KIT" : {
+      "item1" : "Glasses",
+      "item10" : "Extra razors (Check in)", "https://amzn.to/2WQW9rz"
+      "item11" : "Detergent","https://amzn.to/2tdaIsc"
+      "item12" : "Deodorant", "https://amzn.to/2tgessB"
+      "item13" : "Contraceptive Pill",
+      "item14" : "Contact Lenses",
+      "item15" : "Condoms","https://amzn.to/2WS5vDM"
+      "item16" : "Toothpaste","https://amzn.to/2GhTqmd"
+      "item17" : "Toothbrush","https://amzn.to/2TBpLas"
+      "item18" : "Toilet Paper","https://amzn.to/2teoUkB"
+      "item19" : "Tampons","https://amzn.to/2BmJHqn"
+      "item2" : "Conditioner","https://amzn.to/2Bsl2Rp"
+      "item21" : "Sunscreen", "https://amzn.to/2GeZlIB"
+      "item22" : "Shaving kit (Check in)", "https://amzn.to/2WQW9rz"
+      "item23" : "Shampoo and Gel","https://amzn.to/2BrVLqr"
+      "item24" : "Scissors","https://amzn.to/2taei6d"
+      "item25" : "Sarong","https://amzn.to/2GeTHpX"
+      "item26" : "Perfume",
+      "item27" : "Make up",
+      "item28" : "Nail Clippers","https://amzn.to/2MXohol"
+      "item29" : "Motion sickness tablets","https://amzn.to/2Gs8RHL"
+      "item3" : "Mini mirror","https://amzn.to/2GgJPvO"
+      "item31" : "Comb", "https://amzn.to/2GtWVVI"
+    },
+    "TRAVEL APPS" : {
+      "item1" : "Netflix","https://play.google.com/store/apps/details?id=com.netflix.mediaclient"
+      "item10" : "Mobile Passport","https://play.google.com/store/apps/details?id=us.mobilepassport"
+      "item11" : "Lonely Planet","https://play.google.com/store/apps/details?id=com.lonelyplanet.guides"
+      "item12" : "Hostel World","https://play.google.com/store/apps/details?id=com.hostelworld.app"
+      "item13" : "Google Translate","https://play.google.com/store/apps/details?id=com.google.android.apps.translate"
+      "item14" : "Google Maps","https://play.google.com/store/search?q=Google+Maps&c=apps"
+      "item15" : "City Mapper","https://play.google.com/store/apps/details?id=com.citymapper.app.release"
+      "item17" : "XE Currency","https://play.google.com/store/apps/details?id=com.xe.currency"
+      "item18" : "World Traveller","https://play.google.com/store/apps/details?id=worldtraveller.enoler.es.worldtraveller"
+      "item19" : "Uber","https://play.google.com/store/apps/details?id=com.ubercab"
+      "item2" : "Tripadvisor","https://play.google.com/store/apps/details?id=com.tripadvisor.tripadvisor"
+      "item3" : "SkyScanner","https://play.google.com/store/apps/details?id=net.skyscanner.android.main"
+      "item4" : "Nord Vpn","https://play.google.com/store/apps/details?id=com.nordvpn.android"
+      "item5" : "Airbnb","https://play.google.com/store/apps/details?id=com.airbnb.android"
+    },
+    "TRAVELLER ITEMS" : {
+      "item1" : "Lock","https://amzn.to/2Brr7hb"
+      "item10" : "Lip Balm","https://amzn.to/2GeUoQ5"
+      "item11" : "Headtorch","https://amzn.to/2Gyu5DJ"
+      "item12" : "Hammock","https://amzn.to/2TCBmWU"
+      "item13" : "'Going out' clothes",
+      "item14" : "Gaffer tape","https://amzn.to/2BoyRk0"
+      "item15" : "Ear Plugs","https://amzn.to/2MWJoY3"
+      "item16" : "Books",
+      "item17" : "Travel Water Bottle","https://amzn.to/2GhK9KS"
+      "item18" : "Swiss Army Knife","https://amzn.to/2tkODbf"
+      "item19" : "Small day Pack","https://amzn.to/2GAXYTM"
+      "item2" : "Sleeping medicines","https://amzn.to/2TyNVm1"
+      "item21" : "Sleeping Bag","https://amzn.to/2MXpOL7"
+      "item22" : "Security Belt with Hidden Pocket","https://amzn.to/2MZJVIY"
+      "item23" : "Microfibre Towel","https://amzn.to/2MSHs2T"
+      "item24" : "Mesh Stiff Sack Storage Bag",
+      "item25" : "Backpack Waterproof Cover""https://amzn.to/2GtYGlM
+    }
+  }
+}

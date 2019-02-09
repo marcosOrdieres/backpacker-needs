@@ -17,6 +17,15 @@ export default class User {
     static long;
     static dateOfTravel;
     static regionsStoredFirebase;
+    static listRecosForNextClick; // This is for not calling again same function, less timeout
+
+    setListRecosForNextClick(value) {
+      this.listRecosForNextClick = value;
+    }
+
+    getListRecosForNextClick() {
+      return this.listRecosForNextClick;
+    }
 
     setRegionsAsyncStorage(value) {
       this.regionsStoredFirebase = value;
@@ -174,7 +183,8 @@ export default class User {
         lat: this.lat,
         long: this.long,
         dateOfTravel: this.dateOfTravel,
-        regionsStoredFirebase: this.regionsStoredFirebase
+        regionsStoredFirebase: this.regionsStoredFirebase,
+        listRecosForNextClick: this.listRecosForNextClick
       };
 
       return user;

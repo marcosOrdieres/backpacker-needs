@@ -119,12 +119,11 @@ class SplashController extends BaseScene {
       let valueList;
       const recosStored = await this.storage.getAsyncStorage('recommendations');
       if (!recosStored) {
-        //Aqui pillo las recomendaciones de firebase
-        const locale = this.i18n.currentLocale().substring(0,2);
+        // Aqui pillo las recomendaciones de firebase
+        const locale = this.i18n.currentLocale().substring(0, 2);
         const eventref = firebase.database().ref('recommendationsTotal/').child(locale).child('/recommendations');
         const snapshot = await eventref.once('value');
         valueList = snapshot.val();
-        console.warn('VALUE LUSSS: ', valueList);
       } else {
         valueList = await this.storage.getAsyncStorage('recommendations');
       }

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 import { AccessToken, LoginManager, LoginButton } from 'react-native-fbsdk';
 import {GoogleSignin } from 'react-native-google-signin';
-import { NetInfo, BackHandler } from 'react-native';
+import { NetInfo, BackHandler, Linking } from 'react-native';
 import Toast, {DURATION} from 'react-native-easy-toast';
 import RNFetchBlob from 'react-native-fetch-blob';
 
@@ -29,41 +29,11 @@ class HomeController extends BaseScene {
   }
 
   downloadTC () {
-    RNFetchBlob
-      .config({
-        fileCache: true,
-        addAndroidDownloads: {
-          // useDownloadManager: true, this makes it work and seen the PDF but goes to the catch
-          notification: true,
-          title: 'You have downloaded Terms and Conditions',
-          description: 'A pdf file.',
-          mime: 'application/pdf',
-          mediaScannable: true
-        }
-      })
-      .fetch('GET', this.env.TC)
-      .then((res) => {
-        setTimeout(() => { this.refs.toastHome.show('You have downloaded Terms and Conditions', 500); }, 50);
-      });
+    Linking.openURL('https://backpackerneeds2.blogspot.com/2019/02/terms-conditions.html');
   }
 
   downloadDataPrivacy () {
-    RNFetchBlob
-      .config({
-        fileCache: true,
-        addAndroidDownloads: {
-          // useDownloadManager: true, this makes it work and seen the PDF but goes to the catch
-          notification: true,
-          title: 'You have downloaded Data Privacy',
-          description: 'A pdf file.',
-          mime: 'application/pdf',
-          mediaScannable: true
-        }
-      })
-      .fetch('GET', this.env.dataPrivacy)
-      .then((res) => {
-        setTimeout(() => { this.refs.toastHome.show('You have downloaded Data Privacy', 500); }, 50);
-      });
+    Linking.openURL('https://backpackerneeds2.blogspot.com/2019/02/privacy-policy.html');
   }
 
   async componentWillMount () {

@@ -1,0 +1,1073 @@
+{
+  "recommendationsTotal" : {
+    "en" : {
+      "recommendations" : {
+        "BASIC TECHNOLOGY" : {
+          "item1" : "World Travel Adapter",
+          "item2" : "Power bank",
+          "item3" : "Pen Drive",
+          "item4" : "Mobile Phone Charger",
+          "item5" : "Mobile Phone",
+          "item6" : "Kindle",
+          "item7" : "Headphones",
+          "item8" : "Camera Charger",
+          "item9" : "Camera"
+        },
+        "CLOTH BASICS" : {
+          "item1" : "Underwear",
+          "item10" : "Trousers",
+          "item11" : "Travel Pillow",
+          "item12" : "T-shirts",
+          "item13" : "Swimsuit",
+          "item14" : "Sunglasses",
+          "item15" : "Sun hat",
+          "item2" : "Socks",
+          "item3" : "Scarf or Travel Wrap",
+          "item4" : "Rain coat",
+          "item5" : "Jumper",
+          "item6" : "Jacket",
+          "item7" : "Hat",
+          "item8" : "Gloves",
+          "item9" : "Eye Mask"
+        },
+        "FIRST AIDS" : {
+          "item1" : "Vaccinations (short reminder depends where)",
+          "item10" : "Thermometer",
+          "item2" : "Probiotics",
+          "item3" : "Portable water purification",
+          "item4" : "Mosquito net",
+          "item5" : "Mosquito Repellant",
+          "item6" : "Hand Sanitizer",
+          "item7" : "Diarrhea/laxative medicines",
+          "item8" : "Bandages",
+          "item9" : "Anti-biotics"
+        },
+        "FOR YOUR FEET" : {
+          "item1" : "Walking sandals",
+          "item2" : "Trainers",
+          "item3" : "Shoes",
+          "item4" : "Flip flops"
+        },
+        "IMPORTANT DOCUMENTS" : {
+          "item1" : "Wallet",
+          "item10" : "Visa",
+          "item11" : "Travel insurance",
+          "item12" : "Transportation tickets",
+          "item13" : "Reservations and itineraries",
+          "item14" : "Personal ID/Student ID card",
+          "item15" : "Passport",
+          "item16" : "Itinerary",
+          "item17" : "Important addresses",
+          "item2" : "House Keys",
+          "item3" : "Hotel information",
+          "item4" : "Health insurance",
+          "item5" : "Guide books and maps",
+          "item6" : "Emergency contacts",
+          "item7" : "Clock",
+          "item8" : "Copies of Important Papers",
+          "item9" : "Boarding Pass"
+        },
+        "MISCELANEA" : {
+          "item1" : "SurfBoard",
+          "item10" : "Snorkel",
+          "item2" : "Pens",
+          "item3" : "Notebook",
+          "item4" : "Hair Bands",
+          "item5" : "Googles",
+          "item6" : "Cash in Local Currency",
+          "item7" : "Cash",
+          "item8" : "Underwater Camera",
+          "item9" : "BodyBoard"
+        },
+        "TIPS" : {
+          "item1" : "Ensure you’re insured",
+          "item10" : "Don’t pack more than 1 week’s clothing",
+          "item11" : "... Maybe a Padlock (you will not loose the key)",
+          "item12" : "... Maybe a Bike Lock",
+          "item13" : "Do not forget your Lock!",
+          "item14" : "Check the Adaptors for the Country",
+          "item15" : "Buy the best backpack you can afford",
+          "item16" : "Backup Cards in different Wallets",
+          "item17" : "Do not stress, everything will work!",
+          "item2" : "Think about your First Night",
+          "item3" : "Snacks for the Trip",
+          "item4" : "Prepare your come back Home",
+          "item5" : "Pack must-haves, not nice-to-haves",
+          "item6" : "Make a roll for Clothes",
+          "item7" : "Make a list",
+          "item8" : "Keep your important things with you",
+          "item9" : "Always pack to the corners!"
+        },
+        "TOILET KIT" : {
+          "item1" : "Glasses",
+          "item10" : "Extra razors (Check in)",
+          "item11" : "Detergent",
+          "item12" : "Deodorant",
+          "item13" : "Contraceptive Pill",
+          "item14" : "Contact Lenses",
+          "item15" : "Condoms",
+          "item16" : "Toothpaste",
+          "item17" : "Toothbrush",
+          "item18" : "Toilet Paper",
+          "item19" : "Tampons",
+          "item2" : "Conditioner",
+          "item21" : "Sunscreen",
+          "item22" : "Shaving kit (Check in)",
+          "item23" : "Shampoo and Gel",
+          "item24" : "Scissors",
+          "item25" : "Sarong",
+          "item26" : "Perfume",
+          "item27" : "Make up",
+          "item28" : "Nail Clippers",
+          "item29" : "Motion sickness tablets",
+          "item3" : "Mini mirror",
+          "item31" : "Comb"
+        },
+        "TRAVEL APPS" : {
+          "item1" : "Netflix",
+          "item10" : "Mobile Passport",
+          "item11" : "Lonely Planet",
+          "item12" : "Hostel World",
+          "item13" : "Google Translate",
+          "item14" : "Google Maps",
+          "item15" : "City Mapper",
+          "item16" : "Circa",
+          "item17" : "XE Currency",
+          "item18" : "World Traveller",
+          "item19" : "Uber",
+          "item2" : "Tripadvisor",
+          "item3" : "SkyScanner",
+          "item4" : "Nord Vpn",
+          "item5" : "Airbnb"
+        },
+        "TRAVELLER ITEMS" : {
+          "item1" : "Lock",
+          "item10" : "Lip Balm",
+          "item11" : "Headtorch",
+          "item12" : "Hammock",
+          "item13" : "'Going out' clothes",
+          "item14" : "Gaffer tape",
+          "item15" : "Ear Plugs",
+          "item16" : "Books",
+          "item17" : "Travel Water Bottle",
+          "item18" : "Swiss Army Knife",
+          "item19" : "Small day Pack",
+          "item2" : "Sleeping medicines",
+          "item21" : "Sleeping Bag",
+          "item22" : "Security Belt with Hidden Pocket",
+          "item23" : "Microfibre Towel",
+          "item24" : "Mesh Stiff Sack Storage Bag",
+          "item25" : "Backpack Waterproof Cover"
+        }
+      }
+    },
+    "es" : {
+      "recommendations" : {
+        "APPS PARA EL VIAJERO" : {
+          "item1" : "Airbnb",
+          "item10" : "Nord Vpn",
+          "item11" : "SkyScanner",
+          "item12" : "Tripadvisor",
+          "item13" : "Uber",
+          "item14" : "World Traveller",
+          "item15" : "XE Currency",
+          "item2" : "Circa",
+          "item3" : "City Mapper",
+          "item4" : "Google Maps",
+          "item5" : "Google Translate",
+          "item6" : "Hostel World",
+          "item7" : "Lonely Planet",
+          "item8" : "Mobile Passport",
+          "item9" : "Netflix"
+        },
+        "CONSEJOS" : {
+          "item1" : "Rellena bien los Bordes",
+          "item10" : "Asegurate de estar Asegurado",
+          "item11" : "Manten lo importante contigo",
+          "item12" : "Haz listas",
+          "item13" : "Haz un rollo con la Ropa",
+          "item14" : "Lleva lo estrictamente Necesario",
+          "item15" : "Prepara la Vuelta a Casa",
+          "item16" : "Snacks para el viaje",
+          "item17" : "Piensa en la primera Noche",
+          "item18" : "No te estreses, todo va a salir Bien!",
+          "item2" : "Tarjetas de Credito en diferentes Carteras",
+          "item3" : "Compra la mejor mochila que puedas permitirte",
+          "item4" : "Mira que adaptadores necesitas",
+          "item5" : "No te olvides de el candado!",
+          "item6" : "... Puede que un candado de Bici",
+          "item7" : "... Puede que un Padlock (no perderas la llave)",
+          "item8" : "No te estreses, todo va a salir Bien!",
+          "item9" : "Maximo ropa para una Semana"
+        },
+        "DOCUMENTOS IMPORTANTES" : {
+          "item1" : "Tarjeta de embarque",
+          "item10" : "Direcciones importantes",
+          "item11" : "Itinerario",
+          "item12" : "PAsaporte",
+          "item13" : "ID Personal/ID de Estudiante",
+          "item14" : "Reservas",
+          "item15" : "Tickets de Transporte",
+          "item16" : "Seguro de viaje",
+          "item17" : "Visa",
+          "item18" : "Cartera",
+          "item2" : "Copias de papeles importantes",
+          "item3" : "Reloj",
+          "item4" : "Contactos de emergencia",
+          "item6" : "Mapas y guias de Viaje",
+          "item7" : "Seguro medico",
+          "item8" : "Informacion de Hotel",
+          "item9" : "Llaves de Casa"
+        },
+        "KIT DE BAÑO" : {
+          "item1" : "Peine",
+          "item10" : "Espejo",
+          "item11" : "Pastillas contra el mareo",
+          "item12" : "Cortauñas",
+          "item13" : "Perfume",
+          "item14" : "Sarong",
+          "item15" : "Tijeras",
+          "item16" : "Champu y Gel",
+          "item17" : "Kit de Afeitar (Check in)",
+          "item18" : "Crema de Sol",
+          "item19" : "Tampones",
+          "item2" : "Acondicionador",
+          "item20" : "Papel de WC",
+          "item21" : "Cepillo de Dientes",
+          "item22" : "Pasta de Dientes",
+          "item23" : "Maquillaje",
+          "item3" : "Condones",
+          "item4" : "Lentillas",
+          "item5" : "Pildora Anticonceptiva",
+          "item6" : "Desodorante",
+          "item7" : "Detergente",
+          "item8" : "Cuchillas (Check in)",
+          "item9" : "Gafas"
+        },
+        "MISCELANEA" : {
+          "item1" : "BodyBoard",
+          "item10" : "Underwater Camera",
+          "item2" : "Dinero suelto",
+          "item3" : "Moneda Local",
+          "item4" : "Gafas de nadar",
+          "item5" : "Gomas para el Pelo",
+          "item6" : "Libreta",
+          "item7" : "Boligrafos",
+          "item8" : "Snorkel",
+          "item9" : "SurfBoard"
+        },
+        "OBJETOS PARA EL VIAJERO" : {
+          "item1" : "Backpack Waterproof Cover",
+          "item10" : "Bolsa para la Ropa Sucia",
+          "item11" : "Toalla de Microfibras",
+          "item12" : "Cinturon",
+          "item13" : "Saco de dormir",
+          "item14" : "Pastillas para dormir",
+          "item15" : "Mochila para el dia a dia",
+          "item16" : "Navaja Suiza",
+          "item17" : "Cantimplora",
+          "item2" : "Libros",
+          "item3" : "Tapones para los Oidos",
+          "item4" : "Cinta Americana",
+          "item5" : "Ropa para Salir de Fiesta",
+          "item6" : "Hamaca",
+          "item7" : "Linterna",
+          "item8" : "Barra de labios",
+          "item9" : "Candado"
+        },
+        "PARA LOS PIES" : {
+          "item1" : "Chanclas",
+          "item2" : "Zapatos",
+          "item3" : "Zapatos Deportivos",
+          "item4" : "Sandalias"
+        },
+        "PRIMEROS AUXILIOS" : {
+          "item1" : "Antibioticos",
+          "item10" : "Vacunas (short reminder depends where)",
+          "item2" : "Vendas",
+          "item3" : "Pastillas para la Diarrea",
+          "item4" : "Sanitizador de Manos",
+          "item5" : "Repelente de Mosquitos",
+          "item6" : "Mosquitera",
+          "item7" : "Pastillas Potabilizadoras",
+          "item8" : "Probioticos",
+          "item9" : "Termometro"
+        },
+        "ROPA BASICOS" : {
+          "item1" : "Antifaz",
+          "item10" : "Gafas de sol",
+          "item11" : "Bañador",
+          "item12" : "Camisetas",
+          "item13" : "Almohada de Viaje",
+          "item14" : "Pantalones",
+          "item15" : "Ropa Interior",
+          "item2" : "Guantes",
+          "item3" : "Gorro",
+          "item4" : "Chaqueta",
+          "item5" : "Sudadera",
+          "item6" : "Chubasquero",
+          "item7" : "Bufanda o Braga",
+          "item8" : "Calcetines",
+          "item9" : "Gorra para el sol"
+        },
+        "TECNOLOGIA BASICOS" : {
+          "item1" : "Camara",
+          "item2" : "Cargador de Camara",
+          "item3" : "Auriculares",
+          "item4" : "Kindle",
+          "item5" : "Telefono Movil",
+          "item6" : "Cargador de Telefono",
+          "item7" : "Pen Drive",
+          "item8" : "Power bank",
+          "item9" : "Adaptador de Corriente"
+        }
+      }
+    }
+  },
+  "amazonLinks":{
+    "USA" : {
+      "World Travel Adapter": "https://amzn.to/2I8DzZ0",
+      "Power bank": "https://amzn.to/2t9gP0s",
+      "Pen Drive": "https://amzn.to/2tg9z2J",
+      "Mobile Phone Charger": "https://amzn.to/2MX676a",
+      "Mobile Phone": "https://amzn.to/2ta4Fo2",
+      "Headphones": "https://amzn.to/2tdoDOU",
+      "Camera Charger": "https://amzn.to/2MT2zlq",
+      "Camera": "https://amzn.to/2TyImUF",
+      "GoPro Camera": "https://amzn.to/2t9MajJ",
+      "Travel Pillow": "https://amzn.to/2Gv0dYZ",
+      "Sunglasses": "https://amzn.to/2t9hFdC",
+      "Socks": "https://amzn.to/2GwKyrX",
+      "Rain coat": "https://amzn.to/2t9hMpy",
+      "Gloves":"https://amzn.to/2HXDmaM",
+      "Eye Mask": "https://amzn.to/2SB8OQb",
+      "Clock": "https://amzn.to/2GhS0YV",
+      "Thermometer": "https://amzn.to/2TEDRb0",
+      "Portable Water Purification": "B006QF3TW4",
+      "Mosquito Net": "https://amzn.to/2I1N6AZ",
+      "Mosquito Repellant": "https://amzn.to/2tc22SA",
+      "Hand Sanitizer": "https://amzn.to/2GtDYCE",
+      "Diarrhea laxative medicines": "https://amzn.to/2tdFilk",
+      "Bandages": "https://amzn.to/2GtE0dK",
+      "Walking sandals": "https://amzn.to/2GwK1Gy",
+      "Trainers": "https://amzn.to/2GxrmL0",
+      "Shoes": "https://amzn.to/2GCsGfF",
+      "Flip flops": "https://amzn.to/2tkLqbH",
+      "Wallet": "https://amzn.to/2GgImpg",
+      "Snorkel": "https://amzn.to/2TKUjXe",
+      "Pens": "https://amzn.to/2GtphQ6",
+      "Notebook": "https://amzn.to/2MSG5kL",
+      "Hair Bands": "https://amzn.to/2tadjD3",
+      "Googles": "https://amzn.to/2SBXdjL",
+      "Extra razors": "https://amzn.to/2WQW9rz",
+      "Detergent":"https://amzn.to/2tdaIsc",
+      "Deodorant": "https://amzn.to/2tgessB",
+      "Condoms":"https://amzn.to/2WS5vDM",
+      "Toothpaste":"https://amzn.to/2GhTqmd",
+      "Toothbrush":"https://amzn.to/2TBpLas",
+      "Toilet Paper":"https://amzn.to/2teoUkB",
+      "Tampons":"https://amzn.to/2BmJHqn",
+      "Conditioner":"https://amzn.to/2Bsl2Rp",
+      "Sunscreen": "https://amzn.to/2GeZlIB",
+      "Shaving kit": "https://amzn.to/2WQW9rz",
+      "Shampoo and Gel":"https://amzn.to/2BrVLqr",
+      "Scissors":"https://amzn.to/2taei6d",
+      "Sarong":"https://amzn.to/2GeTHpX",
+      "Nail Clippers":"https://amzn.to/2MXohol",
+      "Motion sickness tablets":"https://amzn.to/2Gs8RHL",
+      "Mini mirror":"https://amzn.to/2GgJPvO",
+      "Comb": "https://amzn.to/2GtWVVI",
+      "Netflix":"https://play.google.com/store/apps/details?id=com.netflix.mediaclient",
+      "Mobile Passport":"https://play.google.com/store/apps/details?id=us.mobilepassport",
+      "Lonely Planet":"https://play.google.com/store/apps/details?id=com.lonelyplanet.guides",
+      "Hostel World":"https://play.google.com/store/apps/details?id=com.hostelworld.app",
+      "Google Translate":"https://play.google.com/store/apps/details?id=com.google.android.apps.translate",
+      "Google Maps":"https://play.google.com/store/search?q=Google+Maps&c=apps",
+      "City Mapper":"https://play.google.com/store/apps/details?id=com.citymapper.app.release",
+      "XE Currency":"https://play.google.com/store/apps/details?id=com.xe.currency",
+      "World Traveller":"https://play.google.com/store/apps/details?id=worldtraveller.enoler.es.worldtraveller",
+      "Uber":"https://play.google.com/store/apps/details?id=com.ubercab",
+      "Tripadvisor":"https://play.google.com/store/apps/details?id=com.tripadvisor.tripadvisor",
+      "SkyScanner":"https://play.google.com/store/apps/details?id=net.skyscanner.android.main",
+      "Nord Vpn":"https://play.google.com/store/apps/details?id=com.nordvpn.android",
+      "Airbnb":"https://play.google.com/store/apps/details?id=com.airbnb.android",
+      "Lock":"https://amzn.to/2Brr7hb",
+      "Lip Balm":"https://amzn.to/2GeUoQ5",
+      "Headtorch":"https://amzn.to/2Gyu5DJ",
+      "Hammock":"https://amzn.to/2TCBmWU",
+      "Gaffer tape":"https://amzn.to/2BoyRk0",
+      "Ear Plugs":"https://amzn.to/2MWJoY3",
+      "Travel Water Bottle":"https://amzn.to/2GhK9KS",
+      "Swiss Army Knife":"https://amzn.to/2tkODbf",
+      "Small day Pack":"https://amzn.to/2GAXYTM",
+      "Sleeping medicines":"https://amzn.to/2TyNVm1",
+      "Sleeping Bag":"https://amzn.to/2MXpOL7",
+      "Security Belt with Hidden Pocket":"https://amzn.to/2MZJVIY",
+      "Microfibre Towel":"https://amzn.to/2MSHs2T",
+      "Backpack Waterproof Cover":"https://amzn.to/2GtYGlM"
+    },
+    "SPAIN" : {
+      "Netflix":"https://play.google.com/store/apps/details?id=com.netflix.mediaclient",
+      "Mobile Passport":"https://play.google.com/store/apps/details?id=us.mobilepassport",
+      "Lonely Planet":"https://play.google.com/store/apps/details?id=com.lonelyplanet.guides",
+      "Hostel World":"https://play.google.com/store/apps/details?id=com.hostelworld.app",
+      "Google Translate":"https://play.google.com/store/apps/details?id=com.google.android.apps.translate",
+      "Google Maps":"https://play.google.com/store/search?q=Google+Maps&c=apps",
+      "City Mapper":"https://play.google.com/store/apps/details?id=com.citymapper.app.release",
+      "XE Currency":"https://play.google.com/store/apps/details?id=com.xe.currency",
+      "World Traveller":"https://play.google.com/store/apps/details?id=worldtraveller.enoler.es.worldtraveller",
+      "Uber":"https://play.google.com/store/apps/details?id=com.ubercab",
+      "Tripadvisor":"https://play.google.com/store/apps/details?id=com.tripadvisor.tripadvisor",
+      "SkyScanner":"https://play.google.com/store/apps/details?id=net.skyscanner.android.main",
+      "Nord Vpn":"https://play.google.com/store/apps/details?id=com.nordvpn.android",
+      "Airbnb":"https://play.google.com/store/apps/details?id=com.airbnb.android",
+      "Peine":"https://amzn.to/2BBkcCb",
+      "Espejo":"https://amzn.to/2DkybMI",
+      "Pastillas contra el mareo":"https://amzn.to/2Dj6nZ0",
+      "Cortauñas":"https://amzn.to/2WQP76f",
+      "Sarong":"https://amzn.to/2GgIgOC",
+      "Tijeras": "https://amzn.to/2WQP76f",
+      "Champu y Gel":"https://amzn.to/2BthCOu",
+      "Kit de Afeitar":"https://amzn.to/2Btppvs",
+      "Crema de Sol":"https://amzn.to/2I1PEiB",
+      "Tampones":"https://amzn.to/2DlHFat",
+      "Acondicionador":"https://amzn.to/2GgKk9k",
+      "Papel de WC":"https://amzn.to/2SoQbzW",
+      "Cepillo de Dientes":"https://amzn.to/2Sll208",
+      "Pasta de Dientes":"https://amzn.to/2Bot8KU",
+      "Condones":"https://amzn.to/2RMkj2Y",
+      "Desodorante":"https://amzn.to/2SnGuBx",
+      "Detergente":"https://amzn.to/2Ie23jB",
+      "Cuchillas":"https://amzn.to/2taay4L",
+      "Gafas de nadar":"https://amzn.to/2BrRhQV",
+      "Gomas para el Pelo":"https://amzn.to/2I0WXqE",
+      "Libreta":"https://amzn.to/2DjOCsx",
+      "Boligrafos":"https://amzn.to/2tf9dtw",
+      "Snorkel":"https://amzn.to/2tenpmi",
+      "Cubremochila impermeable":"https://amzn.to/2tdxEHO",
+      "Toalla de Microfibras":"https://amzn.to/2Siq3GF",
+      "Cinturon":"https://amzn.to/2DnVXaz",
+      "Saco de dormir":"https://amzn.to/2t9MoY0",
+      "Pastillas para dormir":"https://amzn.to/2BouIMQ",
+      "Mochila para el dia a dia":"https://amzn.to/2GheIjW",
+      "Navaja Suiza":"https://amzn.to/2ULuZk5",
+      "Cantimplora":"https://amzn.to/2HZIZFn",
+      "Tapones para los Oidos":"https://amzn.to/2ROQRJm",
+      "Cinta Americana":"https://amzn.to/2BBpUE7",
+      "Hamaca":"https://amzn.to/2I2UEDp",
+      "Linterna":"https://amzn.to/2BnEAq4",
+      "Barra de labios":"https://amzn.to/2BrSpUF",
+      "Candado":"https://amzn.to/2Bs1mND",
+      "Chanclas":"https://amzn.to/2UI7J6y",
+      "Zapatos":"https://amzn.to/2UQpUau",
+      "Zapatos Deportivos":"https://amzn.to/2tagJpt",
+      "Sandalias":"https://amzn.to/2t9Nx1K",
+      "Vendas":"https://amzn.to/2DnGzLd",
+      "Pastillas para la Diarrea":"https://amzn.to/2IaDsvE",
+      "Sanitizador de Manos":"https://amzn.to/2BuQr5L",
+      "Repelente de Mosquitos":"https://amzn.to/2BpNOCn",
+      "Mosquitera":"https://amzn.to/2tcADQw",
+      "Pastillas Potabilizadoras":"https://amzn.to/2DipTEY",
+      "Termometro":"https://amzn.to/2BsEo8Y",
+      "Antifaz":"https://amzn.to/2DiCmZo",
+      "Gafas de sol":"https://amzn.to/2DlOVTL",
+      "Almohada de Viaje":"https://amzn.to/2I0fCmh",
+      "Guantes":"https://amzn.to/2GkyVFo",
+      "Gorro":"https://amzn.to/2IaFc8a",
+      "Chaqueta":"https://amzn.to/2BrCKoh",
+      "Sudadera":"https://amzn.to/2Br4eKt",
+      "Chubasquero":"https://amzn.to/2UQrRnk",
+      "Bufanda o Braga":"https://amzn.to/2GegYsd",
+      "Calcetines":"https://amzn.to/2Do1Nc5",
+      "Gorra para el sol":"https://amzn.to/2BtuC6u",
+      "Camara":"https://amzn.to/2URPID5",
+      "Cargador de Camara":"https://amzn.to/2tbEZr1",
+      "Auriculares":"https://amzn.to/2Bq4VnE",
+      "Kindle":"https://amzn.to/2HYb5kt",
+      "Telefono Movil":"https://amzn.to/2I2vJQi",
+      "Cargador de Telefono":"https://amzn.to/2Dk8pIb",
+      "Pen Drive":"https://amzn.to/2HXqiSD",
+      "Power bank":"https://amzn.to/2UQeoeT",
+      "Adaptador de Corriente":"https://amzn.to/2WOVeb8",
+      "GoPro Camara":"https://amzn.to/2WL1vEZ"
+    }
+  },
+  "region" : {
+    "Australia and New Zealand" : {
+      "latitude" : -26.38,
+      "longitude" : 126.01
+    },
+    "Caribbean" : {
+      "latitude" : 20.15,
+      "longitude" : -74.91
+    },
+    "Central America" : {
+      "latitude" : 21.81,
+      "longitude" : -99.25
+    },
+    "East Africa" : {
+      "latitude" : -4.37,
+      "longitude" : 36.49
+    },
+    "East Asia" : {
+      "latitude" : 38.2,
+      "longitude" : 105.3
+    },
+    "East Europe" : {
+      "latitude" : 56.7,
+      "longitude" : 40.51
+    },
+    "Melanesia" : {
+      "latitude" : -7.8,
+      "longitude" : 147.2
+    },
+    "North Africa" : {
+      "latitude" : 25.13,
+      "longitude" : 14.88
+    },
+    "North America" : {
+      "latitude" : 58.9,
+      "longitude" : -92
+    },
+    "South Africa" : {
+      "latitude" : -25.49,
+      "longitude" : 22.53
+    },
+    "South America" : {
+      "latitude" : -15.2,
+      "longitude" : -60.8
+    },
+    "South Asia" : {
+      "latitude" : 27.45,
+      "longitude" : 70.78
+    },
+    "South East Asia" : {
+      "latitude" : 7.95,
+      "longitude" : 109.88
+    },
+    "South Europe" : {
+      "latitude" : 41.5,
+      "longitude" : 7.3
+    },
+    "West Asia" : {
+      "latitude" : 28.5,
+      "longitude" : 43.2
+    },
+    "West Europe" : {
+      "latitude" : 48.6,
+      "longitude" : 6.5
+    }
+  },
+  "users" : {
+    "0NHxT1qfa3NDFEeRBSqaCssYffF3" : {
+      "region" : {
+        "Spain" : {
+          "date" : "2019-01-17",
+          "recommendationSelected" : {
+            "-LWSzlL1TANvWTEiBB9i" : "Lock",
+            "item" : "Travel Water Bottle"
+          }
+        }
+      }
+    },
+    "0Qi1MRy8GHc438bSp4TpOibq4lr2" : {
+      "region" : {
+        "Caribbean" : {
+          "date" : "2019-01-31"
+        }
+      }
+    },
+    "19i02KmMA9ePURcy3hdPSXNBrGG2" : {
+      "inTheBackpack" : {
+        "-LTiJ8uxs_Rv5MgQzeVU" : "No",
+        "-LTiJA_95abwonSkq0Uu" : "Adios",
+        "-LTiJA_H0N57VpeCil7y" : "Toilet paper",
+        "item" : "Passport"
+      },
+      "recommendationSelected" : {
+        "-LTiJ1t2UXO1OBuGO5bb" : "Passport",
+        "-LTiJ2yXpKBkb6GImmQ5" : "No",
+        "-LTiJ3D4M1ISBrFUcQ5K" : "Adios",
+        "-LTiJ3MelJOPahc_cBL6" : "Toilet paper",
+        "item" : "Travel insurance"
+      }
+    },
+    "1AwiML2XspSZyywXeZcvRBGMGUg2" : {
+      "recommendationSelected" : {
+        "-LTDoFNW3H1v3hovuwyC" : "Travel insurance",
+        "item" : "Visa"
+      }
+    },
+    "1pzDyVetTtaBtqPB9CjuV33QECq1" : {
+      "region" : {
+        "Spain" : {
+          "date" : "2019-01-23"
+        },
+        "Thailand" : {
+          "date" : "2019-01-23",
+          "recommendationSelected" : {
+            "-LWtcXsDiWxNKpVC-DxO" : "Lock",
+            "-LWtcfneskwhQQxQLddL" : "Kindle",
+            "-LWtdEzCXQ3ESMfwT4hY" : "Microfibre Towel",
+            "-LWtdb-0ot8nmJR35cUx" : "Hammock",
+            "-LWtdxDktreT3N2QpJyg" : {
+              "selectedRecommendations" : true,
+              "value" : "Travel Water Bottle"
+            },
+            "-LWtdz3T3XW1_khQcaLk" : {
+              "selectedRecommendations" : true,
+              "value" : "Travel Water Bottle"
+            },
+            "-LWtfTugVJ0WsCBtSyvm" : "Alcohol",
+            "-LWtfVE4sEh5gGVyUIHE" : "Anti-biotics",
+            "-LWtfiPOtzkb64WFMjso" : "Travel insurance",
+            "-LWtfkK_TRb-h2hDOV6N" : {
+              "selectedRecommendations" : true,
+              "value" : "Hammock"
+            },
+            "-LWtfuWAmG0E72K9gdVr" : "Scissors",
+            "-LWtg20qMWiS-gYbQSoe" : "Rain coat",
+            "-LWtgAMyhf4WErmbaq5H" : {
+              "selectedRecommendations" : true,
+              "value" : "Rain coat"
+            },
+            "-LWthTzXmu3gZveUdgYJ" : "Tape",
+            "-LWthklMa1nZNEW7qDbB" : "Betadine",
+            "-LWthlV0Jh8yMxuzhzka" : {
+              "selectedRecommendations" : true,
+              "value" : "Betadine"
+            },
+            "-LWti11tpKMBpMt-TREf" : "Band Aids",
+            "-LWtiMNwEJ5mSZOmHYAC" : {
+              "selectedRecommendations" : true,
+              "value" : "Lock"
+            },
+            "-LWtjAm-Mwgg839niGRL" : {
+              "selectedRecommendations" : true,
+              "value" : "Travel Water Bottle"
+            },
+            "-LWtjckm8ZUbzjEMGDce" : {
+              "selectedRecommendations" : true,
+              "value" : "Microfibre Towel"
+            },
+            "-LWtjgCzYCToyghczLr2" : {
+              "selectedRecommendations" : true,
+              "value" : "Kindle"
+            },
+            "-LWtjyJrWcbWUpRl_-78" : {
+              "selectedRecommendations" : true,
+              "value" : "Lock"
+            },
+            "-LWtkqf7Ri2RcoXrq_Ya" : {
+              "selectedRecommendations" : true,
+              "value" : "Hammock"
+            },
+            "-LWtlCBd_jjKDA5iTfvU" : "Passport",
+            "-LWtlGNVNiiCa0ZFscvK" : "Travel insurance",
+            "-LWtlGss7H2Oxpjwrw2_" : "Visa",
+            "-LWtlHMh7fAy8-nsFkIH" : "Passport",
+            "-LWu7qi2hHP8TxUIGAoQ" : "World Travel Adapter",
+            "-LWu7st6C4dLXqieHZna" : "Lock",
+            "-LWu7tG68kBoH4-0Dris" : "Lock",
+            "-LWu7w98rFNsim_P1Xln" : "Band Aids",
+            "item" : "Travel Water Bottle"
+          }
+        }
+      }
+    },
+    "22aE9JGeYpUnJZGIQYZ8cZ5PTnc2" : {
+      "region" : {
+        "Spain" : {
+          "date" : "2019-01-19",
+          "inTheBackpack" : {
+            "item" : "Lock"
+          },
+          "recommendationSelected" : {
+            "-LWa_92UEI9GC-0wrc2W" : "Lock",
+            "item" : "World Travel Adapter"
+          }
+        },
+        "Thailand" : {
+          "date" : "2019-01-19"
+        }
+      }
+    },
+    "2Q8jSUCBxOWAWPJKItZ3OkU5kg22" : {
+      "region" : {
+        "Caribbean" : {
+          "date" : "2019-01-15"
+        }
+      }
+    },
+    "2zhghMv87gX9GrJlMYrFU83zH8w1" : {
+      "region" : {
+        "Caribbean" : {
+          "date" : "2018-12-30"
+        }
+      }
+    },
+    "3C3ApIAEr1fNJOeTSdswequ242V2" : {
+      "-LURwDVMQfkwYWLe4ATr" : {
+        "region" : {
+          "Caribbean" : {
+            "date" : "2018-12-30"
+          }
+        }
+      },
+      "-LURwPijJMo7e-Z158od" : {
+        "region" : {
+          "Caribbean" : {
+            "date" : "2018-12-30"
+          }
+        }
+      },
+      "-LURwZAsERTI9DHRewA0" : {
+        "region" : {
+          "Australia and New Zealand" : {
+            "date" : "2018-12-30"
+          }
+        }
+      },
+      "region" : {
+        "-LURxGcWHDw18nbovrey" : {
+          "Caribbean" : {
+            "date" : "2018-12-30"
+          }
+        },
+        "Australia and New Zealand" : {
+          "date" : "2018-12-30"
+        }
+      }
+    },
+    "3HkJZ49ue5UDxdSGMkDHNw1rdho2" : {
+      "region" : {
+        "Caribbean" : {
+          "date" : "2019-01-31"
+        }
+      }
+    },
+    "4SGEeSaLQcOnV69weGeMUMe4Sjx2" : {
+      "region" : {
+        "Spain" : {
+          "date" : "2019-01-17"
+        }
+      }
+    },
+    "4dDiAuUPaHUVKqMogIXFjzaPDyC3" : {
+      "region" : {
+        "Australia and New Zealand" : {
+          "date" : "2018-12-30"
+        },
+        "Caribbean" : {
+          "date" : "2018-12-30"
+        },
+        "Central America" : {
+          "date" : "2018-12-30"
+        },
+        "East Africa" : {
+          "date" : "2018-12-30"
+        },
+        "East Europe" : {
+          "date" : "2018-12-30"
+        },
+        "North Africa" : {
+          "date" : "2018-12-30"
+        },
+        "South America" : {
+          "date" : "2018-12-30"
+        }
+      }
+    },
+    "4fiJLPNIYUZNm2GbNFegrY7mMhf1" : {
+      "region" : {
+        "Caribbean" : {
+          "date" : "2019-01-14"
+        }
+      }
+    },
+    "4nFmzoAv3nVaIES8dCoHJVdKVFk1" : {
+      "region" : {
+        "Australia and New Zealand" : {
+          "date" : "2019-01-21"
+        },
+        "Caribbean" : {
+          "date" : "2019-01-21"
+        },
+        "Chad" : {
+          "date" : "2019-01-21"
+        },
+        "France" : {
+          "date" : "2019-01-21"
+        },
+        "Spain" : {
+          "date" : "2019-01-21",
+          "inTheBackpack" : {
+            "-LWmQmkI9_Vmck3TqZpR" : "Lock",
+            "-LWmQn10wLWZySKYHFNm" : "Probiotics",
+            "-LWmR7yiQdjEt3lLqqws" : "Example",
+            "-LWmSC7QNq6_cOdhjyut" : "Kindle",
+            "-LWmSDFnfBnBd_pUxFyi" : "Tape",
+            "-LWmXIK2INIRMw4B-DZm" : "Microfibre Towel",
+            "-LWmXPNL-howrg8fkO7T" : "World Travel Adapter",
+            "-LWmXYylp4ykm0BqZNHk" : "Hammock",
+            "-LWmXgw9xLJ2UVnk52A5" : "Hand Sanitizer",
+            "-LWmY3y5vFXykFK1Mx-R" : "Needles",
+            "-LWmY4s6BO4E5uuySyT0" : "Scissors",
+            "item" : "Travel Water Bottle"
+          },
+          "recommendationSelected" : {
+            "-LWmGczyL5I9qP6dED1b" : "Travel Water Bottle",
+            "-LWmGyYbWbUAXCO39rE6" : "Lock",
+            "-LWmGzhQAkTNjfBaCKj7" : "Hammock",
+            "-LWmH004pn9gXXJHc_C2" : "Probiotics",
+            "-LWmPRphxMGFNb4zoi_W" : "",
+            "-LWmPSyehm_4hC6UxITZ" : "rrrrr",
+            "-LWmRA6vpfMdxpVGsWPY" : "",
+            "-LWmRB6gnFwxFWKFCvvj" : "iij",
+            "-LWmRC1bVtV1LB9MziJU" : "",
+            "-LWmRDrjYs9NrrE-R6OK" : "kkkk",
+            "-LWmS9hN0X6-bkIgxwm4" : "Microfibre Towel",
+            "-LWmSA492Km6SFEMhUKp" : "World Travel Adapter",
+            "-LWmSAvg3_n6yYolXj_q" : "Hand Sanitizer",
+            "-LWmSBBYglulXknc8pQY" : "Betadine",
+            "-LWmSBTdPwrNRo1AQt0i" : "Tape",
+            "-LWmUg-eQoUNr7h2hNzT" : "Scissors",
+            "-LWmY2ekpjR045XkGpZz" : "Shirts",
+            "-LWmY2z_o-A2SK-9QWUf" : "Rain coat",
+            "-LWmY3BGbzFTmDoTpTGT" : "Needles",
+            "item" : "Kindle"
+          }
+        },
+        "Thailand" : {
+          "date" : "2019-01-21"
+        }
+      }
+    },
+    "4uHDSj39LSbuGflKnvwhmBXSRK62" : {
+      "region" : {
+        "Australia and New Zealand" : {
+          "date" : "2019-01-14"
+        },
+        "Caribbean" : {
+          "date" : "2019-01-14"
+        },
+        "East Africa" : {
+          "date" : "2019-01-14"
+        }
+      }
+    },
+    "59RQNKEYjFUhV0PFSJZYL7rTGLN2" : {
+      "region" : {
+        "Spain" : {
+          "date" : "2019-01-29"
+        },
+        "Thailand" : {
+          "date" : "2019-01-29",
+          "inTheBackpack" : {
+            "-LXPVzgy0yKYJtrghv2g" : "Hammock",
+            "-LXPVzqBTbjpL4J9rR9k" : "Kindle"
+          },
+          "recommendationSelected" : {
+            "-LXPVynv-o_ODKRkFArA" : "Kindle",
+            "item" : "Hammock"
+          }
+        }
+      }
+    },
+    "5OZ47yYSi9UbyVjEGJpZ1bFHyK72" : {
+      "region" : {
+        "France" : {
+          "date" : "2019-01-30",
+          "recommendationSelected" : {
+            "-LXUp0lX3Hiw3Hm6YaIP" : "H2O2",
+            "-LXUp1FI45eY6_Wg82tp" : "Anti-biotics",
+            "-LXUp1m7eOqjGYk_A-6c" : {
+              "selectedRecommendations" : true,
+              "value" : "Anti-biotics"
+            },
+            "-LXUp9yaLHyv_tvm9J6z" : "Mosquito net",
+            "-LXUpB4S7dK4BU_X_57Z" : "Alcohol",
+            "-LXUpBB1ILRf1_FujHLw" : "Mosquito net",
+            "-LXUpBITwWhI-CwPOeb4" : "H2O2",
+            "-LXUpBg7ZQQNzND62mwQ" : "Anti-biotics",
+            "-LXUpEL_NAba_RRsuZDE" : "Alcohol",
+            "Mosquito net" : "Mosquito net"
+          }
+        },
+        "Gabon" : {
+          "date" : "2019-01-30",
+          "inTheBackpack" : {
+            "-LXUuI6JUWRyzgI8FetD" : "Anti-biotics",
+            "-LXUuIIY6fm8yXka0JhT" : {
+              "selectedInTheBackpack" : true,
+              "value" : "Anti-biotics"
+            },
+            "-LXUuIkD7-NjyrRzpLOp" : "Mosquito net"
+          },
+          "recommendationSelected" : {
+            "-LXUu1i65iwlu7BLQQur" : "Anti-biotics",
+            "-LXUu3s4JECLY0wvOvbl" : "Anti-biotics",
+            "-LXUu41znZu9ZVt5I_7F" : "Mosquito net",
+            "-LXUu4Dwni7-vB5w3QgJ" : "Alcohol",
+            "-LXUu4R_NaK6d9mUtizU" : "H2O2",
+            "-LXUu4qUR0on6Qco_3Yc" : "Passport",
+            "-LXUuAPAHELkoUK0uO8b" : "Anti-biotics",
+            "-LXUuBlj7olx2_0B_JAi" : "Alcohol",
+            "-LXUuD5lK6ARKlO-dZfh" : "Alcohol",
+            "-LXUuDEMJMl2U_XUcYuC" : "Anti-biotics",
+            "-LXUuDV0aYsrJU7H5iBg" : "Mosquito net",
+            "-LXUuFhmYVQvxiY0zUUZ" : "Alcohol",
+            "-LXUuFrVmvh46gzkiMlG" : "Anti-biotics",
+            "-LXUuGZUj--nwKtVcX77" : "Mosquito net",
+            "-LXUuGx8hgWif8bPAQye" : "H2O2",
+            "-LXUuH8OzSYWQXMVHSIk" : "Travel insurance",
+            "Mosquito net" : "Mosquito net"
+          }
+        },
+        "Ireland" : {
+          "date" : "2019-01-30",
+          "recommendationSelected" : {
+            "-LXUshhGz6tHDJwcHfZJ" : {
+              "selectedRecommendations" : true,
+              "value" : "Mosquito net"
+            },
+            "-LXUskW3RM2Ynlb6tjdg" : "Anti-biotics",
+            "Mosquito net" : "Mosquito net"
+          }
+        },
+        "Spain" : {
+          "date" : "2019-01-30",
+          "inTheBackpack" : {
+            "-LXUvdH3HaEcsmTNQP1R" : "Mosquito net",
+            "-LXUvfAiH8pmdg5oEydz" : {
+              "selectedInTheBackpack" : true,
+              "value" : "Mosquito net"
+            },
+            "-LXUw-TQFcj2zxWFWFSF" : "Passport",
+            "-LXUw-rKgLCf4CReyD8b" : "Travel insurance",
+            "-LXUw084W8xzISt_13uv" : "Visa",
+            "-LXUw0F5t2ZE2MObbC7H" : "Travel insurance",
+            "-LXUw0Q3vnzw8a1xhTse" : "Passport",
+            "-LXUw2ERjhBmsV-Y1-oh" : "Mosquito net",
+            "-LXUw2JvNlN9Ih0VpVWP" : "H2O2",
+            "-LXUzFn8OQuRWLtuluPG" : "fxvbcxvh",
+            "-LXUzGFInSK_Br2mSCwy" : "yfxvbcvh",
+            "-LXUzHmZILhpmcB8VofM" : "yfxvbcvhvcvbxghv",
+            "-LXUzIVOGT2ZTWaROZpE" : "cvcvcv",
+            "-LXUzIcbi5Zls8-av4Lt" : "Passport",
+            "-LXUzIirFjk99OYozoCC" : "Travel insurance",
+            "-LXUzIqBYx-EYQaFt0VP" : "Visa",
+            "-LXUzJHXzki1Qv5mPyBo" : "cvcvcvfgfgfg"
+          },
+          "recommendationSelected" : {
+            "-LXUbFS4rSabamj0smCf" : "H2O2",
+            "-LXUbGKcOxTsZeeOrbf_" : "Mosquito net",
+            "-LXUbHM8t6Ia9OAo4uyk" : {
+              "selectedRecommendations" : true,
+              "value" : "Visa"
+            },
+            "-LXUbJ9dNB7wKR01WMpF" : "Mosquito net",
+            "-LXUbK4eI81KDxW467WW" : "H2O2",
+            "-LXUbL5nM0RUxWedXQR2" : "Travel insurance",
+            "-LXUbNefkZrqQ0yogPvr" : "Passport",
+            "-LXUbOZ6W5-YWUHBR5zx" : "Travel insurance",
+            "-LXUbPUm5dMDael8Xn4z" : "Mosquito net",
+            "-LXUbPfYfMYh6cJn63bq" : "Alcohol",
+            "-LXUbPvLXOtBl7jA0D98" : "Anti-biotics",
+            "-LXUbQC-f7NuuHy7xmxd" : "H2O2",
+            "-LXUbRo27T7ThbXMIdWt" : "Travel insurance",
+            "-LXUk0uzD816FiwEulpO" : "Passport",
+            "-LXUr65RAlr04Lye5rm-" : "Passport",
+            "-LXUr6HG2SRL9C3fDxrn" : "Travel insurance",
+            "-LXUvbtblCthWLKvVyrP" : "Mosquito net",
+            "-LXUvcAkbT2xN--90b0N" : "Travel insurance",
+            "-LXUvcQcFTLpage9tRSr" : "Passport",
+            "-LXUvzz-uVIX7p6GBYB-" : "H2O2",
+            "-LXUzBWwuoF97MzjQtnM" : "cvcvcv",
+            "-LXUzCcAfuh68iwQ_v-V" : "cvcvcvfgfgfg",
+            "-LXUzDmOkNDkOCNrFsRS" : "fxvbcxvh",
+            "-LXUzEuL-c-Z23-I4T1p" : "yfxvbcvh",
+            "-LXUzHQr8zTcHFMlkFYf" : "yfxvbcvhvcvbxghv",
+            "item" : "Visa"
+          }
+        },
+        "Thailand" : {
+          "date" : "2019-01-30",
+          "recommendationSelected" : {
+            "Mosquito net" : "Mosquito net"
+          }
+        },
+        "Zimbabwe" : {
+          "date" : "2019-01-30",
+          "recommendationSelected" : {
+            "-LXUmkZBRZHbtkO6dD9k" : {
+              "selectedRecommendations" : true,
+              "value" : "Shirts"
+            },
+            "-LXUmlrshVYz0XcoKAiW" : "Trousers",
+            "Shirts" : "Shirts"
+          }
+        }
+      }
+    },
+    "5oReDsan4kWEBWqh0TRvORseH7t2" : {
+      "region" : {
+        "East Africa" : {
+          "date" : "2019-01-19",
+          "inTheBackpack" : {
+            "-LWbk_Hu7Mt2sx-MQaK2" : "Probiotics",
+            "-LWbkaUSRY5sb70Kdg9_" : "Betadine",
+            "item" : "Anti-biotics"
+          },
+          "recommendationSelected" : {
+            "-LWbkWbNuQ7RNNd3zopx" : "Band Aids",
+            "-LWbkWo4dt_IGvrQVxMw" : "Tape",
+            "-LWbkWyQHXjk-oTClHuR" : "Betadine",
+            "-LWbkX7NE4dKSa-cib0R" : "Probiotics",
+            "-LWbkXIpAwPtarF7dW7o" : "Alcohol",
+            "-LWbkXXYVoDC43m1hDTo" : "Anti-biotics",
+            "item" : "Lock"
+          }
+        },
+        "France" : {
+          "date" : "2019-01-19"
+        },
+        "Indonesia" : {
+          "date" : "2019-01-31",
+          "recommendationSelected" : {
+            "-LWbjvRQgkFxEM5i7VF-" : "Travel Water Bottle",
+            "item" : "Lock"
+          }
+        },
+        "Spain" : {
+          "date" : "2019-01-19",
+          "inTheBackpack" : {
+            "-LWbjYV_CEx22NDfKEpa" : "Travel Water Bottle",
+            "-LWbjYhViiLMeZu1uE6y" : "World Travel Adapter",
+            "-LWbjboWukSgp4sJIYZK" : "Shirts",
+            "item" : "Kindle"
+          },
+          "recommendationSelected" : {
+            "-LWbjTIY0gPFOeN-tUeL" : "World Travel Adapter",
+            "-LWbjTTsLX-4ZYLgBXWl" : "Kindle",
+            "-LWbjTdScgrq0YHIG8S8" : "Lock",
+            "-LWbjXHCAUajKMcVgLyx" : "Shirts",
+            "-LWbjXTet7rCwVcLQvL5" : "Rain coat",
+            "-LWbjXdctXb7VtRDDFLN" : "Trousers",
+            "item" : "Travel Water Bottle"
+          }
+        },
+        "Thailand" : {
+          "date" : "2019-01-19",
+          "inTheBackpack" : {
+            "item" : "Travel Water Bottle"
+          },
+          "recommendationSelected" : {
+            "-LWbjN9q0DaQUg1X9d1R" : "Kindle",
+            "item" : "Travel Water Bottle"
+          }
+        }
+      }
+    }
+  }
+}

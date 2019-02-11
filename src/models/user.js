@@ -17,6 +17,7 @@ export default class User {
     static long;
     static dateOfTravel;
     static regionsStoredFirebase;
+    static listRecosForNextClick; // This is for not calling again same function, less timeout
     static amazonLinksRecommendations;
 
     setAmazonLinksRecommendations(value) {
@@ -25,6 +26,14 @@ export default class User {
 
     getAmazonLinksRecommendations() {
       return this.amazonLinksRecommendations;
+    }
+
+    setListRecosForNextClick(value) {
+      this.listRecosForNextClick = value;
+    }
+
+    getListRecosForNextClick() {
+      return this.listRecosForNextClick;
     }
 
     setRegionsAsyncStorage(value) {
@@ -184,7 +193,8 @@ export default class User {
         long: this.long,
         dateOfTravel: this.dateOfTravel,
         regionsStoredFirebase: this.regionsStoredFirebase,
-        amazonLinksRecommendations: this.amazonLinksRecommendations
+        amazonLinksRecommendations: this.amazonLinksRecommendations,
+        listRecosForNextClick: this.listRecosForNextClick
       };
 
       return user;

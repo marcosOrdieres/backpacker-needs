@@ -109,9 +109,9 @@ class BackpackController extends BaseScene {
         const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
         const newUserDataStorage = await this.addBackpackFirstTime(userDataStorage, chosenRegionString);
         if (newUserDataStorage) {
-          return this.addBackpackIntoUser(newUserDataStorage, chosenCountryString);
+          return this.addBackpackIntoUser(newUserDataStorage, chosenRegionString);
         } else {
-          return this.addBackpackIntoUser(userDataStorage, chosenCountryString);
+          return this.addBackpackIntoUser(userDataStorage, chosenRegionString);
         }
       } else {
         const chosenCountryString = this.user.getChosenCountry();

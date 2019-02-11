@@ -12,17 +12,21 @@ const {width, height} = Dimensions.get('window');
 export default (controller) => (
   <View style={{height: '100%'}}>
     <Text
-      style={recommendationsStyles.mainTitle}>Recommendations for { controller.user.getChosenRegion() ? controller.user.getChosenRegion() : controller.user.getChosenCountry()} </Text>
+      recommendations
+      recommendationsFor
+      style={recommendationsStyles.mainTitle}>{controller.i18n.t('recommendations.recommendationsFor')}{ controller.user.getChosenRegion() ? controller.user.getChosenRegion() : controller.user.getChosenCountry()} </Text>
     <Text
-      style={recommendationsStyles.howManyDays}>Still {controller.checkHowManyDays()} days to Go!</Text>
+      style={recommendationsStyles.howManyDays}>{controller.i18n.t('recommendations.still')} {controller.checkHowManyDays()} {controller.i18n.t('recommendations.daysToGo')}</Text>
     <SectionList
       renderItem={({item, index, section}) => {
         return (
           <ListItem
+            noFirstIcon={section.key === 'TIPS' ? true : false}
+            isTip
+            noIcon={section.key === 'TIPS' ? false : true}
             dataItem={!controller.state.collapsed[section.key] ? item : []}
             onClickAmazon={(item) => controller.onClickAmazonItems(item)}
-            onClickWorldTraveller={() => controller.onClickWorldTraveller()}
-            onClickListItem={(item) => controller.onClickListItemRecommendations(item)} />);
+            onClickListItem={section.key === 'TIPS' ? null : (item) => controller.onClickListItemRecommendations(item)} />);
       }}
       renderSectionHeader={(prop) => {
         return (

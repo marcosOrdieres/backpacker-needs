@@ -34,7 +34,10 @@
     "toast":"To Help you with the Backpack, Press Recommendations!"
   },
   "recommendations":{
-    "recommendations":"Recommends"
+    "recommendations":"Recommends",
+    "recommendationsFor": "Recommendations for ",
+    "still":"Still ",
+    "daysToGo":" days to Go!"
   },
   "backpack":{
     "backpack":"Backpack",

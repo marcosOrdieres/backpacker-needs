@@ -8,6 +8,7 @@ import Palette from '../common/palette';
 import rootStore from '../stores/root';
 import i18n from '../translations';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import User from '../models/user';
 
 const {width, height} = Dimensions.get('window');
 
@@ -33,6 +34,7 @@ export default class ListItemComponent extends Component {
   constructor (args) {
     super(args);
     this.rootStore = rootStore;
+    this.user = User.instance;
   }
 
   applicationComparison (item) {
@@ -71,14 +73,14 @@ export default class ListItemComponent extends Component {
                     item.selectedInTheBackpack ?
                       (<Icon size={25} name='check' color={Palette.green} />)
                       :
-                      !this.rootStore.getState().isBackpackScreen && !this.props.noIcon ?
+                      !this.rootStore.getState().isBackpackScreen && this.props.noIcon ?
                       this.applicationComparison(item) ?
                         ((<TouchableOpacity onPress={this.props.onClickAmazon ? this.props.onClickAmazon.bind(this, item) : null}><Icon size={30} name='mobile' color={Palette.primaryColor} /></TouchableOpacity>))
                         :
                         ((<TouchableOpacity onPress={this.props.onClickAmazon ? this.props.onClickAmazon.bind(this, item) : null}><Icon size={25} name='shopping-cart' color={Palette.primaryColor} /></TouchableOpacity>))
 
                       :
-                      (<Icon size={25} name='check' color={Palette.transparent} />)
+                      (<Icon size={5} name='check' color={Palette.transparent} />)
                     }
 
                   leftIcon={!item.selectedInTheBackpack && !this.rootStore.getState().isBackpackScreen && !this.props.noFirstIcon ?
@@ -87,8 +89,9 @@ export default class ListItemComponent extends Component {
                       width={25}
                       height={25} />)
                     :
-                    ((item.selectedInTheBackpack && this.rootStore.getState().isBackpackScreen) || this.props.noIcon ?
-                      null
+                    ((item.selectedInTheBackpack && this.rootStore.getState().isBackpackScreen) || this.props.noIcon || this.props.isTip ?
+                      (<Icon size={1} name='check' color={Palette.transparent} />)
+
                       :
                       (<Backpack
                         color={item.selectedRecommendations ? Palette.disabled : Palette.primaryColor}

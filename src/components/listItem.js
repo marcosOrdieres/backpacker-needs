@@ -13,7 +13,6 @@ const {width, height} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   viewButtonStyle: {
-    //rightIcon={{name: item.selectedInTheBackpack ? 'check': 'shopping-cart', color: item.selectedInTheBackpack ? Palette.green : null}}
     paddingTop: 5,
     paddingBottom: 5
   },
@@ -34,6 +33,22 @@ export default class ListItemComponent extends Component {
   constructor (args) {
     super(args);
     this.rootStore = rootStore;
+  }
+
+  applicationComparison (item) {
+    if (item === 'Uber' || item.value === 'Uber' || item === 'Airbnb' || item.value === 'Airbnb' ||
+      item === 'Nord Vpn' || item === 'Mobile Passport' || item.value === 'Nord Vpn' || item.value === 'Mobile Passport' ||
+      item === 'Lonely Planet' || item === 'Hostel World' || item.value === 'Lonely Planet' || item.value === 'Hostel World' ||
+      item === 'Google Translate' || item === 'SkyScanner' || item.value === 'Google Translate' || item.value === 'SkyScanner' ||
+      item === 'Google Maps' || item === 'Tripadvisor' || item.value === 'Google Maps' || item.value === 'Tripadvisor' ||
+      item === 'City Mapper' || item === 'World Traveller' || item.value === 'City Mapper' || item.value === 'World Traveller' ||
+      item === 'Netflix' || item === 'Circa' || item.value === 'Netflix' || item.value === 'Circa' ||
+      item === 'XE Currency' || item.value === 'XE Currency'
+      ) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   render () {
@@ -57,8 +72,8 @@ export default class ListItemComponent extends Component {
                       (<Icon size={25} name='check' color={Palette.green} />)
                       :
                       !this.rootStore.getState().isBackpackScreen && !this.props.noIcon ?
-                      item === 'Visa' ?
-                        ((<TouchableOpacity onPress={this.props.onClickWorldTraveller ? this.props.onClickWorldTraveller.bind(this) : null}><Icon size={25} name='globe' color={Palette.primaryColor} /></TouchableOpacity>))
+                      this.applicationComparison(item) ?
+                        ((<TouchableOpacity onPress={this.props.onClickAmazon ? this.props.onClickAmazon.bind(this, item) : null}><Icon size={30} name='mobile' color={Palette.primaryColor} /></TouchableOpacity>))
                         :
                         ((<TouchableOpacity onPress={this.props.onClickAmazon ? this.props.onClickAmazon.bind(this, item) : null}><Icon size={25} name='shopping-cart' color={Palette.primaryColor} /></TouchableOpacity>))
 

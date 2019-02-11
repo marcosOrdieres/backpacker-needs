@@ -50,6 +50,7 @@ class SplashController extends BaseScene {
       // Also  do setChosenCountry and setChosenRegion here from AsyncStorage
       await this.getDataItem();
       await this.getDataItemRecommendations();
+      await this.getDataItemRecosAmazonLinks();
 
       const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
       const countryOrRegion = Object.keys(Object.values(userDataStorage.users)[0].region)[0];
@@ -76,6 +77,7 @@ class SplashController extends BaseScene {
       // TODO: fix this
       const getDataItemDidMount = await this.getDataItem();
       const getDataItemRecommendationsDidMount = await this.getDataItemRecommendations();
+      const getItemREcosAmazonLinksDidMount = await this.getDataItemRecosAmazonLinks();
       await this.setState({externalData: 'yes'});
       return await this.navigateTo('Home');
     }
@@ -119,18 +121,50 @@ class SplashController extends BaseScene {
       let valueList;
       const recosStored = await this.storage.getAsyncStorage('recommendations');
       if (!recosStored) {
-        //Aqui pillo las recomendaciones de firebase
-        const locale = this.i18n.currentLocale().substring(0,2);
+        // Aqui pillo las recomendaciones de firebase
+        const locale = this.i18n.currentLocale().substring(0, 2);
+        console.warn('localeee: ', this.i18n.currentLocale());
         const eventref = firebase.database().ref('recommendationsTotal/').child(locale).child('/recommendations');
         const snapshot = await eventref.once('value');
         valueList = snapshot.val();
-        console.warn('VALUE LUSSS: ', valueList);
+        if (!valueList) {
+          const eventref = firebase.database().ref('recommendationsTotal/').child('en').child('/recommendations');
+          const snapshot = await eventref.once('value');
+          valueList = snapshot.val();
+          console.warn('VALUE LUSSS: ', valueList);
+        }
       } else {
         valueList = await this.storage.getAsyncStorage('recommendations');
       }
       await this.storage.setAsyncStorage('recommendations', valueList);
       this.user.setRecommendations(valueList);
       return valueList;
+    } catch (error) {
+      console.warn(error.message);
+    }
+  }
+
+  async getDataItemRecosAmazonLinks () {
+    try {
+      let valueListLinks;
+      const recosAmazonLinksStored = await this.storage.getAsyncStorage('amazonLinks');
+      if (!recosAmazonLinksStored) {
+        // Aqui pillo las recomendaciones de firebase
+        const locale = this.i18n.currentLocale().substring(0, 2);
+        const eventref = firebase.database().ref('amazonLinks/').child(locale);
+        const snapshot = await eventref.once('value');
+        valueListLinks = snapshot.val();
+        if (!valueListLinks) {
+          const eventref = firebase.database().ref('amazonLinks/').child('en');
+          const snapshot = await eventref.once('value');
+          valueListLinks = snapshot.val();
+        }
+      } else {
+        valueListLinks = await this.storage.getAsyncStorage('amazonLinks');
+      }
+      await this.storage.setAsyncStorage('amazonLinks', valueListLinks);
+      this.user.setAmazonLinksRecommendations(valueListLinks);
+      return valueListLinks;
     } catch (error) {
       console.warn(error.message);
     }

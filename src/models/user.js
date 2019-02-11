@@ -17,6 +17,15 @@ export default class User {
     static long;
     static dateOfTravel;
     static regionsStoredFirebase;
+    static amazonLinksRecommendations;
+
+    setAmazonLinksRecommendations(value) {
+      this.amazonLinksRecommendations = value;
+    }
+
+    getAmazonLinksRecommendations() {
+      return this.amazonLinksRecommendations;
+    }
 
     setRegionsAsyncStorage(value) {
       this.regionsStoredFirebase = value;
@@ -174,7 +183,8 @@ export default class User {
         lat: this.lat,
         long: this.long,
         dateOfTravel: this.dateOfTravel,
-        regionsStoredFirebase: this.regionsStoredFirebase
+        regionsStoredFirebase: this.regionsStoredFirebase,
+        amazonLinksRecommendations: this.amazonLinksRecommendations
       };
 
       return user;

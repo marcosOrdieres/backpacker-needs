@@ -18,6 +18,15 @@ export default class User {
     static dateOfTravel;
     static regionsStoredFirebase;
     static listRecosForNextClick; // This is for not calling again same function, less timeout
+    static amazonLinksRecommendations;
+
+    setAmazonLinksRecommendations(value) {
+      this.amazonLinksRecommendations = value;
+    }
+
+    getAmazonLinksRecommendations() {
+      return this.amazonLinksRecommendations;
+    }
 
     setListRecosForNextClick(value) {
       this.listRecosForNextClick = value;
@@ -184,6 +193,7 @@ export default class User {
         long: this.long,
         dateOfTravel: this.dateOfTravel,
         regionsStoredFirebase: this.regionsStoredFirebase,
+        amazonLinksRecommendations: this.amazonLinksRecommendations,
         listRecosForNextClick: this.listRecosForNextClick
       };
 

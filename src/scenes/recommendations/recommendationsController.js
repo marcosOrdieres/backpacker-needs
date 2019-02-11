@@ -133,10 +133,11 @@ class RecommendationsController extends BaseScene {
   }
 
   onClickAmazonItems (item) {
-    console.warn('EL ITEM: ', item);
-    if (item === 'Kindle') {
-      Linking.openURL('https://www.amazon.com/gp/product/B07CXG6C9W?ie=UTF8&tag=pack1989-20&camp=1789&linkCode=xm2&creativeASIN=B07CXG6C9W');
-    }
+    Object.entries(this.user.getAmazonLinksRecommendations()).forEach((value) => {
+      if (value[0] === item) {
+        Linking.openURL(value[1]);
+      }
+    });
   }
 
   onClickWorldTraveller () {

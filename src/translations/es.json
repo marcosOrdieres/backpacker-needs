@@ -30,7 +30,10 @@
     "toast":"¡Para ayudarte con la Mochila, Presiona Recomendaciones!"
   },
   "recommendations":{
-    "recommendations":"Recomendaciones"
+    "recommendations":"Recomendaciones",
+    "recommendationsFor": "Recomendaciones para ",
+    "still":"Todavia ",
+    "daysToGo":" dias para irte!"
   },
   "backpack":{
     "backpack":"Mochila",

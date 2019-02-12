@@ -19,7 +19,8 @@ class RecommendationsController extends BaseScene {
       externalData: null,
       index: 0,
       spinnerVisible: false,
-      collapsed: {}
+      collapsed: {},
+      noLinkNoIcon: false
     };
   }
 
@@ -46,9 +47,7 @@ class RecommendationsController extends BaseScene {
 
     if (this.user.getChosenRegion()) {
       const chosenRegionString = this.user.getChosenRegion();
-      console.time('readValueListRecommendations');
       const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
-      console.timeEnd('readValueListRecommendations');
       if (!Object.values(userDataStorage.users)[0].region[chosenRegionString]) {
         return null;
       } else {
@@ -138,10 +137,6 @@ class RecommendationsController extends BaseScene {
         Linking.openURL(value[1]);
       }
     });
-  }
-
-  onClickWorldTraveller () {
-    Linking.openURL('https://play.google.com/store/apps/details?id=worldtraveller.enoler.es.worldtraveller');
   }
 
   render () {

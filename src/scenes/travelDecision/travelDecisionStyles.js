@@ -6,7 +6,7 @@ const {width, height} = Dimensions.get('window');
 
 export default StyleSheet.create({
   topBar: {
-    flex: 1,
+    flex: 0.,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Palette.primaryColor,
@@ -24,41 +24,28 @@ export default StyleSheet.create({
     fontSize: 25,
     fontFamily: 'Calibri'
   },
-  destinyView: {
+  destinationView: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    height: 70,
-    elevation: 3
+    height: 50,
   },
   aboutTheTripView: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between'
+    marginTop:'5%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderColor:'red',
+    borderWidth:1
   },
   destinyText: {
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 18,
     fontFamily: 'Calibri'
   },
-  dividerStatic: {
-    height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: Palette.primaryColor75
-  },
-  dividerDynamicLoco: {
-    height: 50,
-    backgroundColor: Palette.white
-  },
-  dividerDynamic: {
-    height: 50,
-    backgroundColor: Palette.white
-  },
   textDividerStatic: {
-    color: Palette.white,
-    textAlign: 'center',
+    color: 'black',
     fontFamily: 'Calibri',
-    fontSize: 18
+    fontSize: 14
   },
   modal: {
     justifyContent: 'flex-end',
@@ -100,12 +87,5 @@ export default StyleSheet.create({
     fontSize: 16,
     alignItems: 'center',
     justifyContent: 'flex-start'
-  },
-  textChoseRegion: {
-    paddingTop: '2.5%',
-    paddingLeft: 5,
-    height: '100%',
-    fontFamily: 'Calibri',
-    fontSize: 16
   }
 });

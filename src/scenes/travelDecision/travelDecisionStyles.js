@@ -6,7 +6,7 @@ const {width, height} = Dimensions.get('window');
 
 export default StyleSheet.create({
   topBar: {
-    flex: 0.,
+    flex: 0.1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Palette.primaryColor,
@@ -23,19 +23,6 @@ export default StyleSheet.create({
     color: Palette.white,
     fontSize: 25,
     fontFamily: 'Calibri'
-  },
-  destinationView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 50,
-  },
-  aboutTheTripView: {
-    marginTop:'5%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderColor:'red',
-    borderWidth:1
   },
   destinyText: {
     textAlign: 'center',
@@ -82,7 +69,7 @@ export default StyleSheet.create({
     borderWidth: 1
   },
   textInputCountry: {
-    height: '100%',
+    // height: '100%',
     fontFamily: 'Calibri',
     fontSize: 16,
     alignItems: 'center',

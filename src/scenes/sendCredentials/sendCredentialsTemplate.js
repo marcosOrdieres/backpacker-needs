@@ -26,6 +26,7 @@ export default (controller) => (
           onChangeText={(password) => { controller.setState({password: password}); }}
           secureTextEntry
           placeholder={controller.i18n.t('password')} />
+        <Text style={sendCredentialsStyles.textErrorUserAlreadyUsed}>{controller.state.theUserIsUsed !== '' ? controller.state.theUserIsUsed : null }</Text>
       </View>
       {controller.user.getSendCredentialsLogin() ?
         (

@@ -21,10 +21,10 @@ export default StyleSheet.create({
     textDecorationColor: Palette.blueFacebook
   },
   mainTitleView: {
-    flex: 1,
+    flex: 2,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingBottom: '60%'
+    paddingBottom: '30%'
   },
   mainTitleText: {
     color: Palette.primaryColor15,

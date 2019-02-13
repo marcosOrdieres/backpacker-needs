@@ -193,6 +193,7 @@ class DestinationController extends BaseScene {
   onPressAddBackpack () {
     this.user.setChosenCountry(null);
     this.user.setChosenRegion(null);
+    this.user.setDateOfTravel(null);
     this.rootStore.dispatch({ type: 'RECOS_UPDATED', isRecosUpdated: true});
     this.navigateTo('TravelDecision');
   }

@@ -62,27 +62,28 @@ export default (controller) => (
             isVisible={controller.state.isModalVisible}>
             <View style={travelDecisionStyles.modalContent}>
               <View>
-                <Text
-                  style={{color: Palette.primaryColor}}>
-                  {controller.i18n.translate('travelDecision.choose')}
-                </Text>
                 <View
                   style={{borderBottomColor: Palette.primaryColor, borderBottomWidth: 1, width: '80%', alignItems: 'center', paddingTop: 10}} />
               </View>
               <TouchableOpacity onPress={() => { controller.toggleModal(); }}>
                 <View style={{width: width}}>
                   <ListItem
+                    // lo mismo que TIPS
+                    isTip
                     noFirstIcon
                     noPaddingLeft
-                    noIcon
+                    noIcon={false}
                     dataItem={Object.keys(controller.user.getRegions()).sort()}
                     onClickListItem={(itemTitle) => controller.onClickListItem(itemTitle)} />
                 </View>
               </TouchableOpacity>
-
-              <TouchableOpacity onPress={() => { controller.toggleModal(); }}>
-                <Text>[Hide me!]</Text>
+              {/*
+              <TouchableOpacity
+                style={{borderColor: 'red', borderWidth: 1}}
+                onPress={() => { controller.toggleModal(); }}>
+                <Text>Hide me</Text>
               </TouchableOpacity>
+              */}
             </View>
           </Modal>
 
@@ -128,10 +129,10 @@ export default (controller) => (
 
       <ScrollView
         contentContainerStyle={{ justifyContent: 'center', alignItems: 'center'}}>
-        <Text style={[{paddingTop: '5%', paddingBottom: '5%'}, travelDecisionStyles.destinyText]}>{controller.state.date === moment().format() ? 'Click the Backpack to choose the Date! ' : 'Your day of Travel is ' + controller.state.date}</Text>
+        <Text style={[{paddingTop: '5%', paddingBottom: '5%'}, travelDecisionStyles.destinyText]}>{controller.user.getDateOfTravel() ? 'Your day of Travel is ' + controller.state.date : 'Click the Backpack to choose the Date!'}</Text>
         <DateTravel
           date={controller.state.date}
-          logo={controller.state.date === moment().format() ? logoEmpty : logoNoLetters}
+          logo={controller.user.getDateOfTravel() ? logoNoLetters : logoEmpty}
           onDateChange={(date) => {
             controller.user.setDateOfTravel(date);
             controller.setState({date: date});

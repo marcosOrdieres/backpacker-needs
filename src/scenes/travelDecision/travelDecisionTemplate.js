@@ -52,6 +52,7 @@ export default (controller) => (
           <View
             style={{flex: 0.8, justifyContent: 'center'}}>
             <Text style={{paddingLeft: 5, fontFamily: 'Calibri', fontSize: 15, textAlign: 'left'}}>
+              {/* aqui tengo que pillar el idioma */}
               {controller.user.getChosenRegion() ? controller.user.getChosenRegion() : controller.i18n.translate('travelDecision.chooseRegion') }
             </Text>
           </View>
@@ -67,8 +68,10 @@ export default (controller) => (
               </View>
               <TouchableOpacity onPress={() => { controller.toggleModal(); }}>
                 <View style={{width: width}}>
+
+                  {/* aqui tengo que pillar el idioma */}
+
                   <ListItem
-                    // lo mismo que TIPS
                     isTip
                     noFirstIcon
                     noPaddingLeft

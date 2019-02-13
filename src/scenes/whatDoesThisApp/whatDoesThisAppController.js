@@ -1,6 +1,4 @@
-import {
-	BaseScene
-} from 'components';
+import { BaseScene } from 'components';
 import template from './whatDoesThisAppTemplate';
 import { connect } from 'react-redux';
 

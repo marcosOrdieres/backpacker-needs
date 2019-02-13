@@ -21,24 +21,24 @@ export default StyleSheet.create({
     textDecorationColor: Palette.blueFacebook
   },
   mainTitleView: {
-    flex: 1,
+    flex: 2,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingBottom: '60%'
+    paddingBottom: '30%'
   },
   mainTitleText: {
     color: Palette.primaryColor15,
     textAlign: 'center',
     fontSize: 35,
     fontFamily: 'Calibri',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    paddingRight:'2%',
+    paddingLeft:'2%'
   },
   areYouUserText: {
     color: Palette.white,
     textAlign: 'center',
     fontSize: 12,
-    paddingTop: '5%',
-    paddingBottom: '5%',
     fontFamily: 'Calibri'
   }
 });

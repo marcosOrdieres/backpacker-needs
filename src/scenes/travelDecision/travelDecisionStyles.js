@@ -69,7 +69,6 @@ export default StyleSheet.create({
     borderWidth: 1
   },
   textInputCountry: {
-    // height: '100%',
     fontFamily: 'Calibri',
     fontSize: 16,
     alignItems: 'center',

@@ -15,6 +15,11 @@ export default StyleSheet.create({
     fontFamily: 'Calibri',
     marginTop: '15%'
   },
+  textErrorUserAlreadyUsed: {
+    color: '#660000',
+    fontSize: 14,
+    fontFamily: 'Calibri',
+  },
   textInputUserName: {
     width: '100%',
     color: Palette.white,

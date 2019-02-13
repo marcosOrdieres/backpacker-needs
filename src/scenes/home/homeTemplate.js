@@ -11,7 +11,7 @@ import Palette from '../../common/palette';
 export default(controller) => (!controller.state.noConnectionSplash ? (
   <View style={homeStyles.homeContainer}>
     <ImageBackground
-      style={{width: '100%', flex: 1}}
+      style={{width: '100%', flex:1}}
       source={loginBackgroundImage}>
       <View style={homeStyles.mainTitleView}>
         <Text style={homeStyles.mainTitleText}>{controller.i18n.t('home.mainTitleText')}</Text>

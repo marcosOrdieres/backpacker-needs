@@ -16,11 +16,9 @@ export default StyleSheet.create({
     marginTop: '15%'
   },
   textErrorUserAlreadyUsed: {
-    width: '100%',
-    color: 'red',
-    fontSize: 18,
+    color: '#660000',
+    fontSize: 14,
     fontFamily: 'Calibri',
-    marginTop: '15%'
   },
   textInputUserName: {
     width: '100%',

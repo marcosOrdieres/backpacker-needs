@@ -31,14 +31,14 @@ export default StyleSheet.create({
     textAlign: 'center',
     fontSize: 35,
     fontFamily: 'Calibri',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    paddingRight:'2%',
+    paddingLeft:'2%'
   },
   areYouUserText: {
     color: Palette.white,
     textAlign: 'center',
     fontSize: 12,
-    paddingTop: '5%',
-    paddingBottom: '5%',
     fontFamily: 'Calibri'
   }
 });

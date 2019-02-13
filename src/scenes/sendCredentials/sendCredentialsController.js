@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 import { AccessToken, LoginManager, LoginButton } from 'react-native-fbsdk';
 import { GoogleSignin } from 'react-native-google-signin';
+import { BackHandler} from 'react-native';
 
 class SendCredentialsController extends BaseScene {
   constructor (args) {
@@ -15,6 +16,18 @@ class SendCredentialsController extends BaseScene {
     };
   }
 
+  async componentDidMount () {
+    this.setState({externalData: true});
+    this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+      this.user.setSendCredentialsLogin(undefined);
+      this.navigateTo('Home');
+    });
+  }
+
+  componentWillUnmount () {
+    this.backHandler.remove();
+  }
+
   async handleSignupEmail () {
     try {
       const signUp = await firebase.auth().createUserAndRetrieveDataWithEmailAndPassword(this.state.userName, this.state.password);
@@ -23,9 +36,12 @@ class SendCredentialsController extends BaseScene {
       return this.navigateTo('TravelDecision');
 			// should be when everzthing it will be done: return this.navigateTo('WhatDoesThisApp');
     } catch (error) {
-      if (error.message == 'The email address is already in use by another account.') {
-        console.warn('erererer');
+      console.warn(typeof error.message);
+
+      if (typeof error.message === 'string') {
         this.setState({theUserIsUsed: error.message});
+      } else{
+        console.warn(error.message);
       }
     }
   }

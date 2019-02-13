@@ -105,7 +105,6 @@ class TravelDecisionController extends BaseScene {
       this.user.setChosenRegion(item);
       this.user.setChosenCountry(undefined);
       this.setState({ text: '', country: '', countryInput: ''});
-      // cuando hago esto, borra el item de Country
       return this.toggleModal();
     } catch (error) {
       console.warn(error.message);

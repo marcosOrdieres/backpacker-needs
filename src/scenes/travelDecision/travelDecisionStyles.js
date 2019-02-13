@@ -61,7 +61,7 @@ export default StyleSheet.create({
   countryTextOverlay: {
     zIndex: 100,
     position: 'absolute',
-    top: 260,
+    top: 200,
     backgroundColor: Palette.white,
     width: width,
     borderColor: Palette.black,

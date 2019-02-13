@@ -81,8 +81,8 @@ class TravelDecisionController extends BaseScene {
     if (this.state.text.length >= 2) {
       this.user.getCountriesInTheWorld().find((country) => {
         if (country.includes(this.state.text)) {
-          // set Coutrny
           this.user.setChosenCountry(country);
+          this.user.setChosenRegion(undefined);
           this.setState({ country: country });
         } else {
           return false;
@@ -101,9 +101,11 @@ class TravelDecisionController extends BaseScene {
   }
 
   async onClickListItem (item) {
-    // set Region
     try {
       this.user.setChosenRegion(item);
+      this.user.setChosenCountry(undefined);
+      this.setState({ text: '', country: '', countryInput: ''});
+      // cuando hago esto, borra el item de Country
       return this.toggleModal();
     } catch (error) {
       console.warn(error.message);

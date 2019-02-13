@@ -52,11 +52,21 @@ const isSameRegionReducer = (state = false, action) => {
   }
 };
 
+const isDestinationToWhatScreenReducer = (state = false, action) => {
+  switch (action.type) {
+    case 'FROM_DESTINATION_TO_WHAT':
+      return action.isDestinationToWhatScreen;
+    default:
+      return state;
+  }
+};
+
 export default {
   isFromSignup: isFromSignupReducer,
   isFromLogin: isFromLoginReducer,
   isBackpackScreen: isBackpackScreenReducer,
   isRegionChanged: isRegionChangedReducer,
   isRecosUpdated: isRecosUpdatedReducer,
-  isSameRegion: isSameRegionReducer
+  isSameRegion: isSameRegionReducer,
+  isDestinationToWhatScreen: isDestinationToWhatScreenReducer
 };

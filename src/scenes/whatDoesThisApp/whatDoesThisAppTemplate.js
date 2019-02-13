@@ -4,5 +4,13 @@ import whatDoesThisAppStyles from './whatDoesThisAppStyles';
 import { Swipper } from 'components';
 
 export default (controller) => (
-  <Swipper />
+  <Swipper
+    onPressTravel={()=>{
+      if(controller.rootStore.getState().isDestinationToWhatScreen){
+        controller.rootStore.dispatch({ type: 'FROM_DESTINATION_TO_WHAT', isDestinationToWhatScreen: false});
+        controller.navigateTo('Menu');
+      } else{
+        controller.navigateTo('TravelDecision');
+      }
+    }}/>
 );

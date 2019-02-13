@@ -33,7 +33,7 @@ class SendCredentialsController extends BaseScene {
       const signUp = await firebase.auth().createUserAndRetrieveDataWithEmailAndPassword(this.state.userName, this.state.password);
       this.firebaseAnalytics.setUserProperty('handleSignupEmail', 'SendCredentialsController');
       this.user.setUserId(signUp.user.uid);
-      return this.navigateTo('TravelDecision');
+      return this.navigateTo('WhatDoesThisApp');
 			// should be when everzthing it will be done: return this.navigateTo('WhatDoesThisApp');
     } catch (error) {
       console.warn(typeof error.message);

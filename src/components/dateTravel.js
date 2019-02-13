@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
     backgroundColor: Palette.transparent,
     alignItems: 'center',
     justifyContent: 'center'
-
   },
   datePickerView: {
     position: 'absolute',
@@ -21,8 +20,8 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   image: {
-    height: 150,
-    width: 150,
+    height: height / 4,
+    width: width / 3,
     resizeMode: 'contain',
     justifyContent: 'center',
     alignItems: 'center'

@@ -1,10 +1,6 @@
-import {
-	BaseScene
-} from 'components';
+import { BaseScene } from 'components';
 import template from './whatDoesThisAppTemplate';
-import {
-	connect
-} from 'react-redux';
+import { connect } from 'react-redux';
 
 class WhatDoesThisAppController extends BaseScene {
   constructor (args) {

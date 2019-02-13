@@ -41,5 +41,15 @@ export default StyleSheet.create({
     marginLeft: 5,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  questionView:{
+    width: 30,
+    height: 30,
+    backgroundColor: Palette.primaryColor,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position:'absolute',
+    marginLeft: width - 35,
+    marginTop: 5
   }
 });

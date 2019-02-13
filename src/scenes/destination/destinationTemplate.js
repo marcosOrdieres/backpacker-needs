@@ -109,6 +109,15 @@ export default (controller) => (
       <Icon size={20} name='bars' color={Palette.white} />
     </TouchableOpacity>
 
+    <TouchableOpacity
+      style={destinationStyles.questionView}
+      onPress={() => {
+        controller.rootStore.dispatch({ type: 'FROM_DESTINATION_TO_WHAT', isDestinationToWhatScreen: true});
+        controller.navigateTo('WhatDoesThisApp');
+       }}>
+      <Icon size={20} name='question' color={Palette.white} />
+    </TouchableOpacity>
+
     <ActionButton buttonColor={Palette.primaryColor}>
       <ActionButton.Item buttonColor={Palette.green}
         title='Add Backpack'

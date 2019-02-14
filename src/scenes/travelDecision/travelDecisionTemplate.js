@@ -21,6 +21,7 @@ export default (controller) => (
 
     <View
       style={{flex: 0.75}}>
+      {/*
       {controller.state.show && controller.state.country ?
         <TouchableOpacity
           style={travelDecisionStyles.countryTextOverlay}
@@ -30,10 +31,12 @@ export default (controller) => (
           </Text>
         </TouchableOpacity> : null}
 
+        */}
+
       <View style={[{flex: 0.2, justifyContent: 'center', alignItems: 'center'}]}>
         <Text style={travelDecisionStyles.destinyText}>{controller.i18n.translate('travelDecision.destination')}</Text>
       </View>
-
+      {/**/}
       <View style={{flex: 0.3, opacity: controller.state.text ? 0.5 : null}}>
 
         <View style={{flex: 0.5, justifyContent: 'center', paddingLeft: '5%',
@@ -68,7 +71,6 @@ export default (controller) => (
               <TouchableOpacity onPress={() => { controller.toggleModal(); }}>
                 <View style={{width: width}}>
                   <ListItem
-                    // lo mismo que TIPS
                     isTip
                     noFirstIcon
                     noPaddingLeft
@@ -106,14 +108,16 @@ export default (controller) => (
             <Icon size={20} name='pencil' color={'white'} />
           </View>
 
-          <View style={{ flex: 0.5, backgroundColor: Palette.white}}>
+          <View style={{ flex: 0.8, backgroundColor: Palette.white}}>
             <TextInput
               ref='countryInput'
               style={travelDecisionStyles.textInputCountry}
               placeholder={controller.i18n.t('travelDecision.placeholderCountry')}
               value={controller.state.countryInput}
               underlineColorAndroid={Palette.transparent}
-              onBlur={() => { controller.setState({show: false}); }}
+              autoCapitalize={'characters'}
+              onFocus={() => { controller.setState({focusOnCountry: true}); }}
+              onBlur={() => { controller.setState({show: false, focusOnCountry: false}); }}
               onChangeText={(text) => {
                 controller.setState({text, countryInput: text, show: true});
                 if (text.length > 0) {
@@ -126,22 +130,33 @@ export default (controller) => (
         </View>
 
       </View>
-
-      <ScrollView
-        contentContainerStyle={{ justifyContent: 'center', alignItems: 'center'}}>
-        <Text style={[{paddingTop: '5%', paddingBottom: '5%'}, travelDecisionStyles.destinyText]}>{controller.user.getDateOfTravel() ? 'Your day of Travel is ' + controller.state.date : 'Click the Backpack to choose the Date!'}</Text>
-        <DateTravel
-          date={controller.state.date}
-          logo={controller.user.getDateOfTravel() ? logoNoLetters : logoEmpty}
-          onDateChange={(date) => {
-            controller.user.setDateOfTravel(date);
-            controller.setState({date: date});
-            controller.checkLetsGo();
-          }} />
-      </ScrollView>
+      {!controller.state.focusOnCountry ?
+        <ScrollView
+          contentContainerStyle={{ justifyContent: 'center', alignItems: 'center'}}>
+          <Text style={[{paddingTop: '5%', paddingBottom: '5%'}, travelDecisionStyles.destinyText]}>{controller.user.getDateOfTravel() ? 'Your day of Travel is ' + controller.state.date : 'Click the Backpack to choose the Date!'}</Text>
+          <DateTravel
+            date={controller.state.date}
+            logo={controller.user.getDateOfTravel() ? logoNoLetters : logoEmpty}
+            onDateChange={(date) => {
+              controller.user.setDateOfTravel(date);
+              controller.setState({date: date});
+              controller.checkLetsGo();
+            }} />
+        </ScrollView>
+        :
+        controller.state.focusOnCountry && controller.state.show && controller.state.country  ?
+          <TouchableOpacity
+            style={{backgroundColor: Palette.white, width: width, borderColor: Palette.black, borderRadius: 5, borderWidth: 1}}
+            onPress={() => { controller.onPressCountryOverlay(); }}>
+            <Text style={{fontSize: 18, margin: 5}}>
+              {controller.state.country}
+            </Text>
+          </TouchableOpacity>
+        :
+        null
+      }
 
     </View>
-
     <TouchableOpacity
       onPress={async () => {
         if (controller.state.letsgo) {

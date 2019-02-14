@@ -20,7 +20,8 @@ class TravelDecisionController extends BaseScene {
       region: '',
       date: now,
       letsgo: false,
-      isModalVisible: false
+      isModalVisible: false,
+      focusOnCountry:false
     };
   }
 
@@ -73,14 +74,14 @@ class TravelDecisionController extends BaseScene {
   }
 
   async componentDidMount () {
-    const countriesInTheWorld = await this.getRegions();
+    const countriesInTheWorld = await this.getCountriesList();
     this.user.setCountriesInTheWorld(countriesInTheWorld);
   }
 
   checkCountry () {
     if (this.state.text.length >= 2) {
       this.user.getCountriesInTheWorld().find((country) => {
-        if (country.includes(this.state.text)) {
+        if (country.toLowerCase().startsWith(this.state.text.toLowerCase())) {
           this.user.setChosenCountry(country);
           this.user.setChosenRegion(undefined);
           this.setState({ country: country });
@@ -91,11 +92,18 @@ class TravelDecisionController extends BaseScene {
     }
   }
 
-  getRegions () {
+  getCountriesList () {
     let countriesArr = [];
+    const locale = this.i18n.currentLocale().substring(0, 2);
+    console.warn('EL LOCALTEEE: ', locale);
     GeojsonCountries.features.forEach((objEachCountry) => {
-      const countryName = objEachCountry.properties.name;
-      countriesArr.push(countryName);
+      if(locale === 'es'){
+        const countryName = objEachCountry.properties.nameEs;
+        countriesArr.push(countryName);
+      }else{
+        const countryName = objEachCountry.properties.name;
+        countriesArr.push(countryName);
+      }
     });
     return countriesArr;
   }

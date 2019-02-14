@@ -62,13 +62,24 @@ export default class BaseScene extends Component {
 
   async chargeGeojsonCountry (country) {
     const features = GeojsonCountries.features;
+    const locale = this.i18n.currentLocale().substring(0, 2);
     for (let objEachCountry of features) {
-      if (objEachCountry.properties.name === country) {
-        const coordinatesLatAndLong = await this.calculateLongAndLat(objEachCountry.geometry.coordinates);
-        this.user.setLat(coordinatesLatAndLong.latitude);
-        this.user.setLong(coordinatesLatAndLong.longitude);
-        const completeGeojsonCountry = {'type': 'FeatureCollection', 'features': [objEachCountry]};
-        return this.user.setCountryGeojson(completeGeojsonCountry);
+      if(locale === 'es'){
+        if (objEachCountry.properties.nameEs === country) {
+          const coordinatesLatAndLong = await this.calculateLongAndLat(objEachCountry.geometry.coordinates);
+          this.user.setLat(coordinatesLatAndLong.latitude);
+          this.user.setLong(coordinatesLatAndLong.longitude);
+          const completeGeojsonCountry = {'type': 'FeatureCollection', 'features': [objEachCountry]};
+          return this.user.setCountryGeojson(completeGeojsonCountry);
+        }
+      } else{
+        if (objEachCountry.properties.name === country) {
+          const coordinatesLatAndLong = await this.calculateLongAndLat(objEachCountry.geometry.coordinates);
+          this.user.setLat(coordinatesLatAndLong.latitude);
+          this.user.setLong(coordinatesLatAndLong.longitude);
+          const completeGeojsonCountry = {'type': 'FeatureCollection', 'features': [objEachCountry]};
+          return this.user.setCountryGeojson(completeGeojsonCountry);
+        }
       }
     }
   }

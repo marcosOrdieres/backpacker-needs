@@ -1,4 +1,172 @@
 {
+  "amazonLinks" : {
+    "en" : {
+      "Airbnb" : "https://play.google.com/store/apps/details?id=com.airbnb.android",
+      "Backpack Waterproof Cover" : "https://amzn.to/2GtYGlM",
+      "Bandages" : "https://amzn.to/2GtE0dK",
+      "Camera" : "https://amzn.to/2TyImUF",
+      "Camera Charger" : "https://amzn.to/2MT2zlq",
+      "City Mapper" : "https://play.google.com/store/apps/details?id=com.citymapper.app.release",
+      "Clock" : "https://amzn.to/2GhS0YV",
+      "Comb" : "https://amzn.to/2GtWVVI",
+      "Conditioner" : "https://amzn.to/2Bsl2Rp",
+      "Condoms" : "https://amzn.to/2WS5vDM",
+      "Deodorant" : "https://amzn.to/2tgessB",
+      "Detergent" : "https://amzn.to/2tdaIsc",
+      "Diarrhea laxative medicines" : "https://amzn.to/2tdFilk",
+      "Ear Plugs" : "https://amzn.to/2MWJoY3",
+      "Extra razors" : "https://amzn.to/2WQW9rz",
+      "Eye Mask" : "https://amzn.to/2SB8OQb",
+      "Flip flops" : "https://amzn.to/2tkLqbH",
+      "Gaffer tape" : "https://amzn.to/2BoyRk0",
+      "Gloves" : "https://amzn.to/2HXDmaM",
+      "GoPro Camera" : "https://amzn.to/2t9MajJ",
+      "Google Maps" : "https://play.google.com/store/search?q=Google+Maps&c=apps",
+      "Google Translate" : "https://play.google.com/store/apps/details?id=com.google.android.apps.translate",
+      "Googles" : "https://amzn.to/2SBXdjL",
+      "Hair Bands" : "https://amzn.to/2tadjD3",
+      "Hammock" : "https://amzn.to/2TCBmWU",
+      "Hand Sanitizer" : "https://amzn.to/2GtDYCE",
+      "Headphones" : "https://amzn.to/2tdoDOU",
+      "Headtorch" : "https://amzn.to/2Gyu5DJ",
+      "Hostel World" : "https://play.google.com/store/apps/details?id=com.hostelworld.app",
+      "Lip Balm" : "https://amzn.to/2GeUoQ5",
+      "Lock" : "https://amzn.to/2Brr7hb",
+      "Lonely Planet" : "https://play.google.com/store/apps/details?id=com.lonelyplanet.guides",
+      "Microfibre Towel" : "https://amzn.to/2MSHs2T",
+      "Mini mirror" : "https://amzn.to/2GgJPvO",
+      "Mobile Passport" : "https://play.google.com/store/apps/details?id=us.mobilepassport",
+      "Mobile Phone" : "https://amzn.to/2ta4Fo2",
+      "Mobile Phone Charger" : "https://amzn.to/2MX676a",
+      "Mosquito Net" : "https://amzn.to/2I1N6AZ",
+      "Mosquito Repellant" : "https://amzn.to/2tc22SA",
+      "Motion sickness tablets" : "https://amzn.to/2Gs8RHL",
+      "Nail Clippers" : "https://amzn.to/2MXohol",
+      "Netflix" : "https://play.google.com/store/apps/details?id=com.netflix.mediaclient",
+      "Nord Vpn" : "https://play.google.com/store/apps/details?id=com.nordvpn.android",
+      "Notebook" : "https://amzn.to/2MSG5kL",
+      "Pen Drive" : "https://amzn.to/2tg9z2J",
+      "Pens" : "https://amzn.to/2GtphQ6",
+      "Portable Water Purification" : "B006QF3TW4",
+      "Power bank" : "https://amzn.to/2t9gP0s",
+      "Rain coat" : "https://amzn.to/2t9hMpy",
+      "Sarong" : "https://amzn.to/2GeTHpX",
+      "Scissors" : "https://amzn.to/2taei6d",
+      "Security Belt with Hidden Pocket" : "https://amzn.to/2MZJVIY",
+      "Shampoo and Gel" : "https://amzn.to/2BrVLqr",
+      "Shaving kit" : "https://amzn.to/2WQW9rz",
+      "Shoes" : "https://amzn.to/2GCsGfF",
+      "SkyScanner" : "https://play.google.com/store/apps/details?id=net.skyscanner.android.main",
+      "Sleeping Bag" : "https://amzn.to/2MXpOL7",
+      "Sleeping medicines" : "https://amzn.to/2TyNVm1",
+      "Small day Pack" : "https://amzn.to/2GAXYTM",
+      "Snorkel" : "https://amzn.to/2TKUjXe",
+      "Socks" : "https://amzn.to/2GwKyrX",
+      "Sunglasses" : "https://amzn.to/2t9hFdC",
+      "Sunscreen" : "https://amzn.to/2GeZlIB",
+      "Swiss Army Knife" : "https://amzn.to/2tkODbf",
+      "Tampons" : "https://amzn.to/2BmJHqn",
+      "Thermometer" : "https://amzn.to/2TEDRb0",
+      "Toilet Paper" : "https://amzn.to/2teoUkB",
+      "Toothbrush" : "https://amzn.to/2TBpLas",
+      "Toothpaste" : "https://amzn.to/2GhTqmd",
+      "Trainers" : "https://amzn.to/2GxrmL0",
+      "Travel Pillow" : "https://amzn.to/2Gv0dYZ",
+      "Travel Water Bottle" : "https://amzn.to/2GhK9KS",
+      "Tripadvisor" : "https://play.google.com/store/apps/details?id=com.tripadvisor.tripadvisor",
+      "Uber" : "https://play.google.com/store/apps/details?id=com.ubercab",
+      "Walking sandals" : "https://amzn.to/2GwK1Gy",
+      "Wallet" : "https://amzn.to/2GgImpg",
+      "World Travel Adapter" : "https://amzn.to/2I8DzZ0",
+      "World Traveller" : "https://play.google.com/store/apps/details?id=worldtraveller.enoler.es.worldtraveller",
+      "XE Currency" : "https://play.google.com/store/apps/details?id=com.xe.currency"
+    },
+    "es" : {
+      "Acondicionador" : "https://amzn.to/2GgKk9k",
+      "Adaptador de Corriente" : "https://amzn.to/2WOVeb8",
+      "Airbnb" : "https://play.google.com/store/apps/details?id=com.airbnb.android",
+      "Almohada de Viaje" : "https://amzn.to/2I0fCmh",
+      "Antifaz" : "https://amzn.to/2DiCmZo",
+      "Auriculares" : "https://amzn.to/2Bq4VnE",
+      "Barra de labios" : "https://amzn.to/2BrSpUF",
+      "Boligrafos" : "https://amzn.to/2tf9dtw",
+      "Bufanda o Braga" : "https://amzn.to/2GegYsd",
+      "Calcetines" : "https://amzn.to/2Do1Nc5",
+      "Camara" : "https://amzn.to/2URPID5",
+      "Candado" : "https://amzn.to/2Bs1mND",
+      "Cantimplora" : "https://amzn.to/2HZIZFn",
+      "Cargador de Camara" : "https://amzn.to/2tbEZr1",
+      "Cargador de Telefono" : "https://amzn.to/2Dk8pIb",
+      "Cepillo de Dientes" : "https://amzn.to/2Sll208",
+      "Champu y Gel" : "https://amzn.to/2BthCOu",
+      "Chanclas" : "https://amzn.to/2UI7J6y",
+      "Chaqueta" : "https://amzn.to/2BrCKoh",
+      "Chubasquero" : "https://amzn.to/2UQrRnk",
+      "Cinta Americana" : "https://amzn.to/2BBpUE7",
+      "Cinturon" : "https://amzn.to/2DnVXaz",
+      "City Mapper" : "https://play.google.com/store/apps/details?id=com.citymapper.app.release",
+      "Condones" : "https://amzn.to/2RMkj2Y",
+      "Cortauñas" : "https://amzn.to/2WQP76f",
+      "Crema de Sol" : "https://amzn.to/2I1PEiB",
+      "Cubremochila impermeable" : "https://amzn.to/2tdxEHO",
+      "Cuchillas" : "https://amzn.to/2taay4L",
+      "Desodorante" : "https://amzn.to/2SnGuBx",
+      "Detergente" : "https://amzn.to/2Ie23jB",
+      "Espejo" : "https://amzn.to/2DkybMI",
+      "Gafas de nadar" : "https://amzn.to/2BrRhQV",
+      "Gafas de sol" : "https://amzn.to/2DlOVTL",
+      "GoPro Camara" : "https://amzn.to/2WL1vEZ",
+      "Gomas para el Pelo" : "https://amzn.to/2I0WXqE",
+      "Google Maps" : "https://play.google.com/store/search?q=Google+Maps&c=apps",
+      "Google Translate" : "https://play.google.com/store/apps/details?id=com.google.android.apps.translate",
+      "Gorra para el sol" : "https://amzn.to/2BtuC6u",
+      "Gorro" : "https://amzn.to/2IaFc8a",
+      "Guantes" : "https://amzn.to/2GkyVFo",
+      "Hamaca" : "https://amzn.to/2I2UEDp",
+      "Hostel World" : "https://play.google.com/store/apps/details?id=com.hostelworld.app",
+      "Kindle" : "https://amzn.to/2HYb5kt",
+      "Kit de Afeitar" : "https://amzn.to/2Btppvs",
+      "Libreta" : "https://amzn.to/2DjOCsx",
+      "Linterna" : "https://amzn.to/2BnEAq4",
+      "Lonely Planet" : "https://play.google.com/store/apps/details?id=com.lonelyplanet.guides",
+      "Mobile Passport" : "https://play.google.com/store/apps/details?id=us.mobilepassport",
+      "Mochila para el dia a dia" : "https://amzn.to/2GheIjW",
+      "Mosquitera" : "https://amzn.to/2tcADQw",
+      "Navaja Suiza" : "https://amzn.to/2ULuZk5",
+      "Netflix" : "https://play.google.com/store/apps/details?id=com.netflix.mediaclient",
+      "Nord Vpn" : "https://play.google.com/store/apps/details?id=com.nordvpn.android",
+      "Papel de WC" : "https://amzn.to/2SoQbzW",
+      "Pasta de Dientes" : "https://amzn.to/2Bot8KU",
+      "Pastillas Potabilizadoras" : "https://amzn.to/2DipTEY",
+      "Pastillas contra el mareo" : "https://amzn.to/2Dj6nZ0",
+      "Pastillas para dormir" : "https://amzn.to/2BouIMQ",
+      "Pastillas para la Diarrea" : "https://amzn.to/2IaDsvE",
+      "Peine" : "https://amzn.to/2BBkcCb",
+      "Pen Drive" : "https://amzn.to/2HXqiSD",
+      "Power bank" : "https://amzn.to/2UQeoeT",
+      "Repelente de Mosquitos" : "https://amzn.to/2BpNOCn",
+      "Saco de dormir" : "https://amzn.to/2t9MoY0",
+      "Sandalias" : "https://amzn.to/2t9Nx1K",
+      "Sanitizador de Manos" : "https://amzn.to/2BuQr5L",
+      "Sarong" : "https://amzn.to/2GgIgOC",
+      "SkyScanner" : "https://play.google.com/store/apps/details?id=net.skyscanner.android.main",
+      "Snorkel" : "https://amzn.to/2tenpmi",
+      "Sudadera" : "https://amzn.to/2Br4eKt",
+      "Tampones" : "https://amzn.to/2DlHFat",
+      "Tapones para los Oidos" : "https://amzn.to/2ROQRJm",
+      "Telefono Movil" : "https://amzn.to/2I2vJQi",
+      "Termometro" : "https://amzn.to/2BsEo8Y",
+      "Tijeras" : "https://amzn.to/2WQP76f",
+      "Toalla de Microfibras" : "https://amzn.to/2Siq3GF",
+      "Tripadvisor" : "https://play.google.com/store/apps/details?id=com.tripadvisor.tripadvisor",
+      "Uber" : "https://play.google.com/store/apps/details?id=com.ubercab",
+      "Vendas" : "https://amzn.to/2DnGzLd",
+      "World Traveller" : "https://play.google.com/store/apps/details?id=worldtraveller.enoler.es.worldtraveller",
+      "XE Currency" : "https://play.google.com/store/apps/details?id=com.xe.currency",
+      "Zapatos" : "https://amzn.to/2UQpUau",
+      "Zapatos Deportivos" : "https://amzn.to/2tagJpt"
+    }
+  },
   "recommendationsTotal" : {
     "en" : {
       "recommendations" : {
@@ -11,9 +179,7 @@
           "item6" : "Kindle",
           "item7" : "Headphones",
           "item8" : "Camera Charger",
-          "item9" : "Camera",
-          "item8" : "GoPro Camera",
-
+          "item9" : "Camera"
         },
         "CLOTH BASICS" : {
           "item1" : "Underwear",
@@ -67,9 +233,7 @@
           "item6" : "Emergency contacts",
           "item7" : "Clock",
           "item8" : "Copies of Important Papers",
-          "item9" : "Boarding Pass",
-          "item6" : "Cash in Local Currency",
-          "item7" : "Cash",
+          "item9" : "Boarding Pass"
         },
         "MISCELANEA" : {
           "item1" : "SurfBoard",
@@ -78,6 +242,9 @@
           "item3" : "Notebook",
           "item4" : "Hair Bands",
           "item5" : "Googles",
+          "item6" : "Cash in Local Currency",
+          "item7" : "Cash",
+          "item8" : "Underwater Camera",
           "item9" : "BodyBoard"
         },
         "TIPS" : {
@@ -132,6 +299,7 @@
           "item13" : "Google Translate",
           "item14" : "Google Maps",
           "item15" : "City Mapper",
+          "item16" : "Circa",
           "item17" : "XE Currency",
           "item18" : "World Traveller",
           "item19" : "Uber",
@@ -171,6 +339,7 @@
           "item13" : "Uber",
           "item14" : "World Traveller",
           "item15" : "XE Currency",
+          "item2" : "Circa",
           "item3" : "City Mapper",
           "item4" : "Google Maps",
           "item5" : "Google Translate",
@@ -324,69 +493,137 @@
     }
   },
   "region" : {
-    "Australia and New Zealand" : {
-      "latitude" : -26.38,
-      "longitude" : 126.01
+    "en":{
+      "Australia and New Zealand" : {
+        "latitude" : -26.38,
+        "longitude" : 126.01
+      },
+      "Caribbean" : {
+        "latitude" : 20.15,
+        "longitude" : -74.91
+      },
+      "Central America" : {
+        "latitude" : 21.81,
+        "longitude" : -99.25
+      },
+      "East Africa" : {
+        "latitude" : -4.37,
+        "longitude" : 36.49
+      },
+      "East Asia" : {
+        "latitude" : 38.2,
+        "longitude" : 105.3
+      },
+      "East Europe" : {
+        "latitude" : 56.7,
+        "longitude" : 40.51
+      },
+      "Melanesia" : {
+        "latitude" : -7.8,
+        "longitude" : 147.2
+      },
+      "North Africa" : {
+        "latitude" : 25.13,
+        "longitude" : 14.88
+      },
+      "North America" : {
+        "latitude" : 58.9,
+        "longitude" : -92
+      },
+      "South Africa" : {
+        "latitude" : -25.49,
+        "longitude" : 22.53
+      },
+      "South America" : {
+        "latitude" : -15.2,
+        "longitude" : -60.8
+      },
+      "South Asia" : {
+        "latitude" : 27.45,
+        "longitude" : 70.78
+      },
+      "South East Asia" : {
+        "latitude" : 7.95,
+        "longitude" : 109.88
+      },
+      "South Europe" : {
+        "latitude" : 41.5,
+        "longitude" : 7.3
+      },
+      "West Asia" : {
+        "latitude" : 28.5,
+        "longitude" : 43.2
+      },
+      "West Europe" : {
+        "latitude" : 48.6,
+        "longitude" : 6.5
+      }
     },
-    "Caribbean" : {
-      "latitude" : 20.15,
-      "longitude" : -74.91
-    },
-    "Central America" : {
-      "latitude" : 21.81,
-      "longitude" : -99.25
-    },
-    "East Africa" : {
-      "latitude" : -4.37,
-      "longitude" : 36.49
-    },
-    "East Asia" : {
-      "latitude" : 38.2,
-      "longitude" : 105.3
-    },
-    "East Europe" : {
-      "latitude" : 56.7,
-      "longitude" : 40.51
-    },
-    "Melanesia" : {
-      "latitude" : -7.8,
-      "longitude" : 147.2
-    },
-    "North Africa" : {
-      "latitude" : 25.13,
-      "longitude" : 14.88
-    },
-    "North America" : {
-      "latitude" : 58.9,
-      "longitude" : -92
-    },
-    "South Africa" : {
-      "latitude" : -25.49,
-      "longitude" : 22.53
-    },
-    "South America" : {
-      "latitude" : -15.2,
-      "longitude" : -60.8
-    },
-    "South Asia" : {
-      "latitude" : 27.45,
-      "longitude" : 70.78
-    },
-    "South East Asia" : {
-      "latitude" : 7.95,
-      "longitude" : 109.88
-    },
-    "South Europe" : {
-      "latitude" : 41.5,
-      "longitude" : 7.3
-    },
-    "West Asia" : {
-      "latitude" : 28.5,
-      "longitude" : 43.2
-    },
-    "West Europe" : {
-      "latitude" : 48.6,
-      "longitude" : 6.5
+    "es":{
+      "Australia y Nueva Zelanda" : {
+        "latitude" : -26.38,
+        "longitude" : 126.01
+      },
+      "Caribe" : {
+        "latitude" : 20.15,
+        "longitude" : -74.91
+      },
+      "America Central" : {
+        "latitude" : 21.81,
+        "longitude" : -99.25
+      },
+      "America del Este" : {
+        "latitude" : -4.37,
+        "longitude" : 36.49
+      },
+      "Este de Asia" : {
+        "latitude" : 38.2,
+        "longitude" : 105.3
+      },
+      "Melanesia" : {
+        "latitude" : 56.7,
+        "longitude" : 40.51
+      },
+      "Norte de Africa":{
+        "latitude" : -7.8,
+        "longitude" : 147.2
+      },
+      "Norte de Africa" : {
+        "latitude" : 25.13,
+        "longitude" : 14.88
+      },
+      "Norte de America" : {
+        "latitude" : 58.9,
+        "longitude" : -92
+      },
+      "Sur de Africa" : {
+        "latitude" : -25.49,
+        "longitude" : 22.53
+      },
+      "Sur de America" : {
+        "latitude" : -15.2,
+        "longitude" : -60.8
+      },
+      "Sur de Asia" : {
+        "latitude" : 27.45,
+        "longitude" : 70.78
+      },
+      "Sudeste Asiatico" : {
+        "latitude" : 7.95,
+        "longitude" : 109.88
+      },
+      "Sur de Europa" : {
+        "latitude" : 41.5,
+        "longitude" : 7.3
+      },
+      "Oeste de Asia" : {
+        "latitude" : 28.5,
+        "longitude" : 43.2
+      },
+      "Este de Europa" : {
+        "latitude" : 48.6,
+        "longitude" : 6.5
+      }
     }
   },
   "users" : {
@@ -574,6 +811,13 @@
       "region" : {
         "Caribbean" : {
           "date" : "2019-01-31"
+        }
+      }
+    },
+    "4MsJrrI7WMMe7nEI6OY7gcnoRJB2" : {
+      "region" : {
+        "Caribbean" : {
+          "date" : "2019-02-13"
         }
       }
     },
@@ -900,2959 +1144,216 @@
         }
       }
     },
-    "72MSbBjjv4h0TzwhTCA04WmgO6C3" : {
+    "80ql7fovvwVilieQVlTvEDC5u5G2" : {
       "region" : {
-        "Spain" : {
-          "date" : "2019-01-16"
+        "Caribbean" : {
+          "date" : "2019-02-23"
         },
-        "Thailand" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "7FnEBchxKbRafDmy88TbuacNETC3" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-17"
-        }
-      }
-    },
-    "7XzpiHjsbggrOssSXX9JVZpGAPW2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-23",
+        "South Europe" : {
+          "date" : "2019-02-14",
+          "inTheBackpack" : {
+            "-LYbZmVoMJH38570cHKB" : "Nord Vpn",
+            "-LYba_26xmWMIrIM9mCX" : "Airbnb"
+          },
           "recommendationSelected" : {
-            "-LWuEYP-UvM5v_jSK4AD" : "World Travel Adapter",
-            "-LWuEYa5W6eUDEv2Avym" : {
-              "selectedRecommendations" : true,
-              "value" : "World Travel Adapter"
-            },
-            "-LWuEZk0ZsEz0VEOo8XV" : "Microfibre Towel",
-            "-LWuE_sXvEhlQAbpYeuO" : "Kindle",
-            "-LWuEb_-3vd2SKU4foWL" : "Hammock",
-            "-LWuEcdttIL1O2JNqebA" : "Needles",
-            "item" : "Travel Water Bottle"
+            "-LYbZlnG45qHUUn-9UHJ" : "Airbnb",
+            "Nord Vpn" : "Nord Vpn"
           }
         }
       }
     },
-    "7gcBuniCtCZzo4FwJheM63SHinp2" : {
+    "9ABjqLWvkJPWi34ySQo8JZUuZmy1" : {
       "region" : {
-        "Spain" : {
-          "date" : "2019-01-18",
+        "Caribbean" : {
+          "date" : "2019-02-23",
           "inTheBackpack" : {
-            "-LWVemix1HA6OAUhPkpw" : "Microfibre Towel",
-            "item" : "Travel Water Bottle"
+            "-LYbdubu4JQi4Z-sSkuI" : "Mobile Passport"
           },
           "recommendationSelected" : {
-            "-LWVelPHlED-bFLRpV-H" : "Kindle",
-            "-LWVelZlwPHHPbwLkglo" : "Microfibre Towel",
-            "item" : "Travel Water Bottle"
-          }
-        }
-      }
-    },
-    "7yhpbtaoa8RYYjLeXMyTcy2bRFA3" : {
-      "region" : "EasternEurope"
-    },
-    "8Rkzc5AiifPtPp8DQ0LCHQOErOc2" : {
-      "region" : "EasternAfrica"
-    },
-    "8fMYNLra96cazzk4LCMezpmL53K3" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-02-02"
-        }
-      }
-    },
-    "9TbCKv4ApobHtdvuQ03pjMErmEi2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-31"
-        }
-      }
-    },
-    "9lTnFCef5XPNWmicthYbZOrVTii2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "9ve20Z5WHfestrmq0JVohXndNAP2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-02-07",
-          "inTheBackpack" : {
-            "-LY92rT_Q2v9DZCsxLu_" : "World Traveller",
-            "-LY92rejsG9gdQXGETCA" : "Lonely Planet",
-            "-LY92rrLO51DzLz8tX6D" : "Mobile Passport",
-            "-LY92sQtM4vyHQrY3GfH" : "Hammock",
-            "-LY9FwwX49ZWdi9g-uYE" : "Nord Vpn",
-            "-LY9FxDKA5-EnbplFhnR" : "Google Translate",
-            "-LY9Isfyszrkq5q3YYty" : "Uber",
-            "-LY9IsyapXCvlMvO4cIz" : "Airbnb",
-            "-LY9ItO-rSfFO-9UEWZP" : "Hostel World"
-          },
-          "recommendationSelected" : {
-            "-LY92dhEs2gOHbUwMHez" : "Mobile Passport",
-            "-LY92e1fjxIn6R7lrKKN" : "Nord Vpn",
-            "-LY92eL9hO-m2ECn93Ps" : "Airbnb",
-            "-LY92f9nL-ZSTOpbeVcJ" : "Always pack to the corners!",
-            "-LY92f_q0LLclo4weVBr" : "XE Currency",
-            "-LY92fsSZlndE9QN8lIz" : "Circa",
-            "-LY92gBsepenD-MmI5Hz" : "Netflix",
-            "-LY92gX8EUYFb4Ujyj2n" : "World Traveller",
-            "-LY92hSqWI8O35Y9ryWZ" : "Prepare your come back Home",
-            "-LY92hwBbjSyeWbXuK7F" : "Pack must-haves, not nice-to-haves",
-            "-LY92j1zqj-Mmn7qCp8W" : "Hammock",
-            "-LY92jWJ8ZxINHJwaFfc" : "'Going out' clothes",
-            "-LY92jyFZHuFFj_qTu3Q" : "Headtorch",
-            "-LY92m0tCKrTsfyZueji" : "Hammock",
-            "-LY92naWG5qIhLWt1mmZ" : "Hammock",
-            "-LY92o6dN1eJ_5hg-blv" : "Headtorch",
-            "-LY92ooQAzM1E61LG4qz" : "Lip Balm",
-            "-LY92uOQdek3I6D1VZux" : "Pen Drive",
-            "-LY935RQqsohRscgXfLz" : "Uber",
-            "-LY937O24MXrDb_smvAC" : "Don’t pack more than 1 week’s clothing",
-            "-LY937qBFzvP9WhMRki5" : "Make a roll for Clothes",
-            "-LY93R6T6VA2l7F6FFHz" : "Hostel World",
-            "-LY93S5Rp33N2y2_E5Yy" : "Lonely Planet",
-            "-LY93SnSKN8i0-fLM3A4" : "Mobile Passport",
-            "-LY95-M8CTRmn2_X5nDZ" : "SkyScanner",
-            "-LY95EvvmlHKqhJsw1C3" : "Google Translate",
-            "-LY96y7rUtI0XjSDfqbk" : "Hostel World",
-            "-LY97SuVmeLhTrbXhtrZ" : "Googles",
-            "-LY97Unln8J8ZAf7G6ZN" : "Hair Bands",
-            "-LY9Ac_Sie4VjCzXnaxY" : "... Maybe a Bike Lock",
-            "-LY9AdKq0ttAdBUEUPNP" : "Do not forget your Lock!",
-            "-LY9Ae6DoVrLOAQkCJs7" : "Snacks for the Trip",
-            "-LY9AfOFVKCjwb4G9K_T" : "Check the Adaptors for the Country",
-            "-LY9Ag2xiMvNLfb3tV1O" : "... Maybe a Padlock (you will not loose the key)",
-            "-LY9B2LnsZzjMQebbGJc" : "Make a list",
-            "-LY9CIPdRFTzQu7vUtxw" : "Buy the best backpack you can afford",
-            "-LY9CJGOTlkvR6jz0PeN" : "Do not stress, everything will work!",
-            "-LY9ClLTFdg5oXbPBcwJ" : "Notebook",
-            "-LY9CyD6IbPePOlSqSLb" : "Pens",
-            "-LY9CyZ1-QR8H0R3rQrA" : "Underwater Camera",
-            "-LY9Cz5N-pQxeMvfAW1n" : "Cash in Local Currency",
-            "-LY9D6BAtKq5KrUZ9opZ" : "BodyBoard",
-            "-LY9D9ZjgsRL1DmhSW_E" : "Sleeping Bag",
-            "-LY9G0HB7tXX0HDH-Be2" : "Underwear",
-            "-LY9G0WVUinidNmhrifw" : "Trousers",
-            "-LY9G0X57ZB5MzGxCRIx" : "Jacket",
-            "-LY9G13QNDCVqQ9JQQV4" : "Jumper",
-            "-LY9IicTagIaZVDOj7mr" : "Mosquito net",
-            "-LY9IigEArZyVIeAn0YQ" : "Mosquito net",
-            "-LY9IjY7QA6s3G-LJluC" : "Anti-biotics",
-            "-LY9Ik45a6Ex9B5gBeSV" : "Mosquito Repellant",
-            "-LY9IkTDniFf2bO8c9S8" : "Bandages",
-            "-LY9Ikt7qbeGgHxU9W4z" : "Portable water purification",
-            "-LY9IpHEG6LVUNdoPzXv" : "Diarrhea/laxative medicines",
+            "-LYbdsaRu_OeB_pqw6lf" : "Mobile Passport",
             "Lonely Planet" : "Lonely Planet"
           }
-        }
-      }
-    },
-    "AkGwkKa24Wezlh0d8MVdWhBuctc2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-30",
-          "inTheBackpack" : {
-            "-LXSifEfvC1VQMAFAxyu" : "Passport"
-          },
-          "recommendationSelected" : {
-            "-LXSiaBFqXzqCpyoszfk" : "Passport",
-            "-LXSifwjv1Vv5ajwOtFT" : "Anti-biotics",
-            "item" : "Travel insurance"
-          }
-        }
-      }
-    },
-    "BWoUmOBNebeP33FdRG6TM0RiSQ62" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-26"
-        },
-        "South East Asia" : {
-          "date" : "2019-01-26"
-        }
-      }
-    },
-    "BXLOZTfMtUYR4EYYJPHK2sxIaSk2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-31"
-        }
-      }
-    },
-    "CeigzhlMONdeJN54uHORxGL9ME23" : {
-      "region" : {
-        "France" : {
-          "date" : "2019-01-14"
-        },
-        "Spain" : {
-          "date" : "2019-01-14"
         },
         "Thailand" : {
-          "date" : "2019-01-14"
+          "date" : "2019-02-23"
         }
       }
     },
-    "Ck3ocCajiIYFLf66icIEnrekZXF3" : {
+    "9GUTbAgodCey1Tjms9hH0XtOoqw2" : {
       "region" : {
-        "Spain" : {
-          "date" : "2019-01-22",
+        "Caribbean" : {
+          "date" : "2019-02-10",
           "recommendationSelected" : {
-            "-LWpgSvKCe6prQ_5dZi-" : "Travel insurance",
-            "-LWpgTEYLVfWN5vA41Sk" : "Mosquito net",
-            "-LWpgeloynufJEZ_TEvd" : "Travel Water Bottle",
-            "-LWpgeyvlYWV8ZJl8CAX" : "Lock",
-            "item" : "Microfibre Towel"
+            "-LYNnUuUfhlH1Tzk6enl" : "Trainers",
+            "Flip flops" : "Flip flops"
           }
         }
       }
     },
-    "CxMQzCzXO7b7283tEJnxDXSiIdj2" : {
+    "9pnWAKSfqxO4RgNmpkBM0OHioeg2" : {
       "region" : {
         "Australia and New Zealand" : {
-          "date" : "2019-01-18"
-        },
-        "Spain" : {
-          "date" : "2019-01-18",
-          "inTheBackpack" : {
-            "-LWTAFNwshu3zbIThOo9" : "Probiotics",
-            "-LWTAFnQ6k7C36wUyfjT" : "Rain coat",
-            "-LWTAHXh_ENY8OQmD1Md" : "Trousers",
-            "-LWTAHpte08q_WlAwCPL" : "Shirts",
-            "-LWTAI7vex_TswjrBbvN" : "Underwear",
-            "-LWTAYQqStyhZ36oOy9j" : "Lock",
-            "-LWTAYQst03BOt3yH0IY" : "Travel Water Bottle",
-            "-LWTAYQuYxN5sM1NYN8h" : "Scissors",
-            "-LWTAYQv8ZXrtRtLgLX5" : "Mosquito net",
-            "-LWTAYQwitjuODd-14oz" : "Anti-biotics",
-            "-LWTAYQyLqEeanGAtHN1" : "H2O2",
-            "-LWTAYQzJf5jcntf04od" : "Lock",
-            "-LWTAYR-yN9ATP03rahO" : "Travel Water Bottle",
-            "-LWTAYR64L3SzlHJsit-" : "Microfibre Towel",
-            "-LWTAYR9jq5NDNEh_7_R" : "Lock",
-            "-LWTAYRAM4wEIgKtVKML" : "Kindle",
-            "item" : "Needles"
-          },
-          "recommendationSelected" : {
-            "-LWTA85bRdhZJnonQVxD" : "Travel Water Bottle",
-            "-LWTA8FvRi3QUHr0QBKv" : "Microfibre Towel",
-            "-LWTA8SyhbotajBDPJpj" : "Kindle",
-            "-LWTA9FDFRKELRbc8uXl" : "Alcohol",
-            "-LWTA9ZsnjX40UIlAHO7" : "Probiotics",
-            "-LWTA9xMvph_SU9qL1ZH" : "Anti-biotics",
-            "-LWTAAAPixeaBbKirB6q" : "Mosquito net",
-            "-LWTAAKRXY1DEjpskSed" : "H2O2",
-            "-LWTAAsUQtbbDh_KO7GB" : "Needles",
-            "-LWTAB0a6USK5yPoAPvu" : "Rain coat",
-            "-LWTABTJDhFMT0901k2s" : "Trousers",
-            "-LWTABZfrUdEvBAVzJRM" : "Underwear",
-            "-LWTABq6TEGj83aeqGmL" : "Shirts",
-            "-LWTAGSJJ20kBW-oPi0v" : "Scissors",
-            "-LWTAKfKeFC71aC6eTtv" : "World Travel Adapter",
-            "-LWTAOITlybtaSpeq8Yk" : "Hammock",
-            "-LWTAOrKuPzbZrW-Fp4I" : "Passport",
-            "-LWTAP9wa8Ec6EYsYemx" : "Travel insurance",
-            "-LWTAPiFftPa3V15JPYP" : "Visa",
-            "-LWTAZ9c87iZzsAcDZSL" : "Socks",
-            "-LWTAZGH4xJZVeGe1HxZ" : "Socks",
-            "-LWTAZror6fDRtSVFWiL" : "Hand Sanitizer",
-            "-LWTA_-KSpxkwRN-yYe3" : "Betadine",
-            "-LWTA_Mx7VA-aWUAoFfW" : "Band Aids",
-            "-LWTA_VBNqqaZaL0RcS1" : "Tape",
-            "item" : "Lock"
-          }
-        },
-        "Thailand" : {
-          "date" : "2019-01-18",
-          "recommendationSelected" : {
-            "-LWT8dB-Rf5p7U-8ht7_" : "Travel Water Bottle",
-            "-LWT8dU0rHX9JzBK62OZ" : "Microfibre Towel",
-            "item" : "Kindle"
-          }
-        }
-      }
-    },
-    "DLkjxZyj8wTJGJ4sNYij66MK2IH2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-15"
-        },
-        "Thailand" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "DxmJXxH9zCMr9oS0ybwgHzJzEe93" : {
-      "region" : {
-        "Afghanistan" : {
-          "date" : "2019-01-13"
-        },
-        "Australia and New Zealand" : {
-          "date" : "2019-01-13"
+          "date" : "2019-02-23"
         },
         "Caribbean" : {
-          "date" : "2019-01-13"
-        },
-        "Egypt" : {
-          "date" : "2019-01-31"
-        },
-        "France" : {
-          "date" : "2019-01-27"
-        },
-        "Madagascar" : {
-          "date" : "2019-01-13"
-        },
-        "Portugal" : {
-          "date" : "2019-01-27"
-        },
-        "South Africa" : {
-          "date" : "2019-01-13"
-        },
-        "Spain" : {
-          "date" : "2019-01-13"
-        },
-        "Thailand" : {
-          "date" : "2019-01-27"
-        },
-        "Tunisia" : {
-          "date" : "2019-01-27"
-        },
-        "United Republic of Tanzania" : {
-          "date" : "2019-01-27"
-        },
-        "United States of America" : {
-          "date" : "2019-01-26"
-        }
-      }
-    },
-    "E69JlzTmWWSBnHwhVnTdjBv8qKe2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-02-07",
-          "inTheBackpack" : {
-            "-LY8JNuW5YGkC_SOESlb" : "Hostel World",
-            "-LY8JO3tRrgs7N2i5S8l" : "Lonely Planet",
-            "-LY8JOD3o7dKv_Uh7zbv" : "Mobile Passport",
-            "-LY8JOQX1794d9dv4O8A" : "Google Translate",
-            "-LY8JgmbLDjox7gGjtT1" : "... Maybe a Padlock (you will not loose the key)",
-            "-LY8Ww5g1T2pHyQ3KC7I" : "Lonely Planet",
-            "-LY8WwHPjzGtYyikPxnE" : "Mobile Passport",
-            "-LY8Wx-D1oT_KS73JEyc" : "Hostel World",
-            "-LY8Wx4AR9zD2jJAJsVt" : "Lonely Planet",
-            "-LY8WxFheo0Bi2iSFG8i" : "Hostel World",
-            "-LY8WxKP8OpY3Lv1iJwQ" : "Hostel World",
-            "-LY8WxPAvsoCYnxYFE4c" : "Hostel World",
-            "-LY8WxTM2OEKrLM1DO93" : "Hostel World",
-            "-LY8WxYTDkLkfXvTlJxl" : "Hostel World",
-            "-LY8WxbiMZXVdXkbkC6u" : "Hostel World",
-            "-LY8WxgYbhIlNImHZ6xb" : "Hostel World",
-            "-LY8WxlAx8S4bRCOeSHr" : "Hostel World",
-            "-LY8WxpxIWjdbXkpc0FZ" : "Hostel World",
-            "-LY8Wxuf46LTef6_FkAV" : "Hostel World",
-            "-LY8WxzKHzExRMRmWC7e" : "Hostel World",
-            "-LY8Wy31MOGp5mOsqj3E" : "Hostel World",
-            "-LY8Wy7f5HPqfdEWleW6" : "Hostel World"
-          },
-          "recommendationSelected" : {
-            "-LY8JK4qcJkPLwfao-2C" : "Mobile Passport",
-            "-LY8JKc0R2XFlIsKs4rk" : "Lonely Planet",
-            "-LY8JM-B9joVEZLfn1ky" : "Google Translate",
-            "-LY8JMgTKw_mpmcFQQ_Q" : "Hostel World",
-            "-LY8K4TR2RfOfcOh3zhQ" : "",
-            "-LY8KJEIkUbQaOXC2rPA" : "hola",
-            "-LY8WypDITIHaPY2Mcpl" : "Think about your First Night",
-            "-LY8WzBnfLf3EiiJrmer" : "Think about your First Night",
-            "-LY8WzBolxRETDSPHFlA" : "Think about your First Night",
-            "-LY8WzBp9oCEr8fnkOOe" : "Think about your First Night",
-            "-LY8X-RePGtcfKw1HV14" : "Think about your First Night",
-            "-LY8X-RgS0_RRGTd1V6V" : "Think about your First Night",
-            "-LY8X-RjhZDI7h273UVZ" : "Think about your First Night",
-            "-LY8X-Rkp4CV1HGdEmME" : "Think about your First Night",
-            "-LY8X-RlZbcjQrIVp1wV" : "Think about your First Night",
-            "-LY8X-RmxSrf8HDOSU06" : "Think about your First Night",
-            "-LY8X-RoqWMEgqC7sZYp" : "Think about your First Night",
-            "-LY8X-RpSmc8XEg6QE5v" : "Think about your First Night",
-            "-LY8X-RqNnHtUX9xkMP-" : "Think about your First Night",
-            "-LY8a7HCo12SjpnF0fot" : "Netflix",
-            "-LY8agKrVuZd6rGqNMhO" : "SkyScanner",
-            "-LY8cBeB-v8s7MprEi2c" : "Nord Vpn",
-            "-LY8cDA0gLF8hcIPuDv3" : "Tripadvisor",
-            "-LY8cIzP75debQI0q3qg" : "Google Maps",
-            "-LY8cKgFsZZ2lKtjOhvO" : "Uber",
-            "-LY8ciF6Xz5SXbWZUBn6" : "Airbnb",
-            "-LY8cjpq7T_3RDIzYIMW" : "City Mapper",
-            "-LY8ckHxV7ONIC_t36_V" : "World Traveller",
-            "-LY8ckrztmufUSYMiAWU" : "XE Currency",
-            "-LY8clOJLN57262SUO4o" : "Circa",
-            "-LY8cmCneVcJUq0wgwk6" : "Ensure you’re insured",
-            "-LY8cmjYBtXhWjh0EXiU" : "Don’t pack more than 1 week’s clothing",
-            "-LY8d4IpxCHemCz94HPQ" : "Prepare your come back Home",
-            "-LY8d50nQgndVvKX7WmC" : "Buy the best backpack you can afford",
-            "-LY8dEArLD8wToDuGHG8" : "Keep your important things with you",
-            "-LY8dExfL7eMgduuqd84" : "Make a roll for Clothes",
-            "-LY8fQOg6R_Hhu-9yASX" : "Do not stress, everything will work!",
-            "-LY8fRii4Kr2FDQBativ" : "Snacks for the Trip",
-            "-LY8fecRkgE4bAsNTqte" : "Shampoo and Gel",
-            "-LY8fgeT9kDCXWJtUoe_" : "Comb",
-            "-LY8fkWiGe_S9GegQ4Sn" : "Scissors",
-            "-LY8fl1nAoeqfUAqxoSb" : "Shaving kit (Check in)",
-            "-LY8gDubKei4qmc_CE8p" : "Detergent",
-            "-LY8gHQGKWN5PEvxLATi" : "Contact Lenses",
-            "-LY8gI0Q8hB40EdqG0wg" : "Toothbrush",
-            "-LY8l-UCqPsJNTx8Hp7J" : "Toilet Paper",
-            "-LY8mNwz1HWaYzE6lbOW" : "Do not forget your Lock!",
-            "-LY8mxjwM_cC8TO1Nc5y" : "... Maybe a Bike Lock"
-          }
-        },
-        "Spain" : {
-          "date" : "2019-02-07",
-          "inTheBackpack" : {
-            "-LY8JoY0yV2ih4mCynfV" : "Nord Vpn",
-            "-LY8JodmLN54bM_2LTI8" : "Hostel World",
-            "-LY8Josq1aIRiZUFAUP3" : "Mobile Passport",
-            "-LY8Jp6wEQFJsVwpNaZY" : "Netflix"
-          },
-          "recommendationSelected" : {
-            "-LY8Jl92MXRsV-CfYmKY" : "Hostel World",
-            "-LY8JlIyDJoQrsqRKBj9" : "Mobile Passport",
-            "-LY8JlWeKYfVCW869WWH" : "Netflix",
-            "-LY8JmTviWoYS2YhTjfC" : "Google Maps",
-            "-LY8Jmbep46hAQqUiAMz" : "Tripadvisor",
-            "-LY8JmlkDMA9axsbUJQO" : "Nord Vpn",
-            "-LY8Jn-L9unZBMXDhUv-" : "World Traveller",
-            "Google Translate" : "Google Translate"
-          }
-        },
-        "Thailand" : {
-          "date" : "2019-02-07",
-          "recommendationSelected" : {
-            "-LY8K1F17bET1sicc1h4" : "yxyxyx"
-          }
-        }
-      }
-    },
-    "EDZc8rORb8dfAT5WxskyKIpR1x72" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-18",
-          "recommendationSelected" : {
-            "-LWT6pRrSj__DhLeQz0J" : "Lock",
-            "item" : "Kindle"
-          }
-        }
-      }
-    },
-    "ENe8qSKRppSZ8whmfsZYSQRiAm93" : {
-      "region" : {
-        "Australia and New Zealand" : {
-          "date" : "2019-01-01"
-        },
-        "Caribbean" : {
-          "date" : "2019-01-01"
+          "date" : "2019-02-20"
         },
         "Central America" : {
-          "date" : "2019-01-27"
-        },
-        "East Africa" : {
-          "date" : "2018-12-30"
-        },
-        "East Europe" : {
-          "date" : "2018-12-30"
-        },
-        "North Africa" : {
-          "date" : "2018-12-31",
-          "inTheBackpack" : {
-            "-LUlt6GtOyZ7GgyKxpui" : "Kindle",
-            "-LUlt6w4s9ZmRB4dmZCe" : "H2O2",
-            "-LUlt6zl5p0X2OP59A8n" : "Anti-biotics",
-            "item" : "Travel Water Bottle"
-          },
-          "recommendationSelected" : {
-            "-LUlt4BgP5jd3l1ZoS6j" : "Kindle",
-            "-LUlt4_YKCiNxIalfm-j" : "Travel insurance",
-            "-LUlt4uU5mTOu3LbNlie" : "Anti-biotics",
-            "-LUlt50W3jSpqFJd5s4S" : "Probiotics",
-            "-LUlt57qITVkztF70yCa" : "H2O2",
-            "item" : "Travel Water Bottle"
-          }
+          "date" : "2019-02-23"
         },
         "North America" : {
-          "date" : "2018-12-30"
-        }
-      }
-    },
-    "EYU9a3oXvjWvYBlPJ3hjkin7LPr2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-30"
+          "date" : "2019-02-13"
         },
-        "East Africa" : {
-          "date" : "2019-01-30"
-        },
-        "Gabon" : {
-          "date" : "2019-01-30"
-        },
-        "South Europe" : {
-          "date" : "2019-01-30",
-          "inTheBackpack" : {
-            "Backpack" : "Backpack"
-          },
-          "recommendationSelected" : {
-            "-LXVJsCWzBuX-o6V2EuM" : "H2O2",
-            "-LXVJsQ6FKjqlNC-QbOu" : "Travel insurance",
-            "-LXVJsaDaVnNfUySaXQO" : "Visa",
-            "-LXVJu7PnfxZpQ-eZisp" : "World Travel Adapter",
-            "-LXVJuFoqq3pGKuuYwAj" : "Lock",
-            "-LXVKFi4gDLRz82DTFBI" : "",
-            "Passport" : "Passport"
-          }
-        },
-        "Spain" : {
-          "date" : "2019-01-30"
-        },
-        "Thailand" : {
-          "date" : "2019-01-30",
-          "inTheBackpack" : {
-            "-LXVKMjmgY5x6xfVCvkH" : "Passport",
-            "-LXVKMxJEWXO9uvzXFJR" : "Travel insurance",
-            "-LXVKNXqoYD2EtxjVn9w" : "Travel insurance",
-            "-LXVKNfTDZp50fH9TXdA" : "Passport",
-            "-LXVKO-GBTamZ90E7umN" : "Visa",
-            "-LXVKOATQxYqGNYNMb8M" : "Travel insurance",
-            "-LXVKOFN8nBTrOGbgnCc" : "Travel insurance",
-            "-LXVKOMAyPe3RepYnXTE" : "Travel insurance",
-            "-LXVKORjFvwgKHi3ovr5" : "Passport",
-            "-LXVKOWMjqpSLBdl4wcJ" : "Passport",
-            "-LXVKOa2Wpms0hoxy5MA" : "Passport",
-            "-LXVKOeSNORy8BqU8btv" : "Passport",
-            "-LXVKOiPwmL6mp6VnGmE" : "Passport",
-            "-LXVKOn1qNEMqBk3SK_S" : "Passport",
-            "-LXVKOrisJIw8UtjSJJ9" : "Passport",
-            "-LXVKOymU71z2Fy-dpKb" : "Passport",
-            "-LXVKP3FPweaw_zuTieP" : "Travel insurance",
-            "-LXVKP8Ch-hnlIyDAMUh" : "Travel insurance",
-            "-LXVKPD9nTZwwFttGtq3" : "Travel insurance",
-            "-LXVKPJoBlCEzZ1fTK_3" : "Passport",
-            "-LXVKPM1ICNM8x1LWuSP" : "Travel insurance",
-            "-LXVKPTQuQcnMClYpIPa" : "Passport",
-            "-LXVKPXWPLK2wHXSbHuz" : "Travel insurance",
-            "-LXVKPbdHcYkOo99sVGw" : "Travel insurance",
-            "-LXVKRgBnNVAEmZcTfZu" : "Visa"
-          },
-          "recommendationSelected" : {
-            "-LXVKLaaNj21s2ZMXwxL" : "Travel insurance",
-            "-LXVKLkbBfQc3Dp8hwAa" : "Visa",
-            "-LXVKUPJ33psxbdgWL4u" : "Mosquito net",
-            "Passport" : "Passport"
-          }
-        }
-      }
-    },
-    "FILJCuRQsqanOtHaEC8oWUc94RQ2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-14"
-        }
-      }
-    },
-    "FfoeIRvjDsVTcTwMfPyYRzTWexV2" : {
-      "region" : {
-        "getChosenRegion" : {
-          "date" : "2018-12-30"
-        }
-      }
-    },
-    "GSCqBc0cUJSybFctA0bVx8BNpex1" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-14"
-        },
-        "France" : {
-          "date" : "2019-01-14"
-        },
-        "Spain" : {
-          "date" : "2019-01-14",
-          "inTheBackpack" : {
-            "-LWCWTsHyjlpVhRS_kl9" : "Kindle",
-            "item" : "Fabio"
-          },
-          "recommendationSelected" : {
-            "-LWCWQ2BaZM-NKZUziSB" : "Visa",
-            "-LWCWQD_utvMn7Ia1sUo" : "Travel Water Bottle",
-            "-LWCWT1dr-0TfEzLeo_v" : "Fabio",
-            "item" : "Kindle"
-          }
-        }
-      }
-    },
-    "Gb6BuBENZSeV93QzdQbHyih2kq92" : {
-      "region" : {
-        "Gabon" : {
-          "date" : "2019-01-29"
-        },
-        "Spain" : {
-          "date" : "2019-01-29",
-          "inTheBackpack" : {
-            "-LXPS8MsZWcSQbsGc_mP" : "Travel insurance"
-          },
-          "recommendationSelected" : {
-            "-LXPS9igjidKg9ZjaC8W" : "Passport",
-            "-LXPS9xhlR_xyHvq0vsY" : "H2O2",
-            "-LXPSA8_iRMBWDJlC3Pp" : "Mosquito net",
-            "item" : "Travel insurance"
-          }
-        },
-        "Taiwan" : {
-          "date" : "2019-01-29"
-        },
-        "Tunisia" : {
-          "date" : "2019-01-29",
-          "inTheBackpack" : {
-            "-LXPTUtGf5TW76WzIGiS" : "H2O2",
-            "-LXPTV7qSGUiKQknQBct" : "Travel insurance"
-          },
-          "recommendationSelected" : {
-            "-LXPTTwprMFqjKduo_gG" : "H2O2",
-            "item" : "Travel insurance"
-          }
-        }
-      }
-    },
-    "H1zxK8ANEBgoMKjIfCofTFx0Pf12" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-18",
-          "inTheBackpack" : {
-            "item" : "Travel Water Bottle"
-          },
-          "recommendationSelected" : {
-            "-LWViSKeVkw7gGdXMpmQ" : "Microfibre Towel",
-            "-LWViSZ-3EhN-ebp9Ygc" : "Travel Water Bottle",
-            "item" : "Lock"
-          }
-        }
-      }
-    },
-    "HBdnWxBQyyYbI9NRkvIBuSlF1tK2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-19"
-        }
-      }
-    },
-    "HVacCjeGdLTo0VkmwFewKo6BNqZ2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-31"
-        }
-      }
-    },
-    "HgyNhk3wGMZxoxMYOYKcZlS17rT2" : {
-      "region" : {
-        "France" : {
-          "date" : "2019-01-29"
-        },
-        "Gabon" : {
-          "date" : "2019-01-29",
-          "inTheBackpack" : {
-            "item" : "Visa"
-          },
-          "recommendationSelected" : {
-            "-LXPEy_ilr2ErSmIoDcV" : "Passport",
-            "item" : "Visa"
-          }
-        },
-        "Italy" : {
-          "date" : "2019-01-29"
-        },
-        "Malta" : {
-          "date" : "2019-01-29",
-          "inTheBackpack" : {
-            "-LXPIHAzIjDdjL3PRl0F" : "Passport"
-          },
-          "recommendationSelected" : {
-            "-LXPICd8noUiZv2-aC2N" : "Travel insurance",
-            "item" : "Passport"
-          }
-        },
-        "Spain" : {
-          "date" : "2019-01-29"
-        },
-        "Thailand" : {
-          "date" : "2019-01-29",
-          "inTheBackpack" : {
-            "-LXPFeIeuMy6jzVgzraW" : "Backpack",
-            "-LXPFeyZXFwT4Gok6qLM" : "Visa"
-          },
-          "recommendationSelected" : {
-            "item" : "Visa"
-          }
-        }
-      }
-    },
-    "HsPtMB1Gi4fjemrhWOnFQUwYc1z2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-26"
-        },
-        "Thailand" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "I3WitlbPioPiciacfzyIbMBbT8s1" : {
-      "region" : {
-        "Australia and New Zealand" : {
-          "date" : "2019-01-22"
-        },
-        "Spain" : {
-          "date" : "2019-01-22",
-          "recommendationSelected" : {
-            "-LWqILkPfbPQuB_J3M9j" : "Kindle",
-            "item" : "Lock"
-          }
-        },
-        "Thailand" : {
-          "date" : "2019-01-22",
-          "inTheBackpack" : {
-            "-LWqHo9s5_FYNvfkUFkz" : "Travel Water Bottle",
-            "-LWqHoMpeSahlBeDIOty" : "Lock",
-            "-LWqHofUkhUH0wd-CSoV" : "World Travel Adapter",
-            "-LWqHozdrlIdzBoLWZr4" : "Hammock",
-            "-LWqKCfPCeU7rmnAcBIV" : "Kindle",
-            "item" : "Travel insurance"
-          },
-          "recommendationSelected" : {
-            "-LWqHl3sHjBZVeAJw3-F" : "Travel Water Bottle",
-            "-LWqHlJ6lNhOVkOkoxED" : "Lock",
-            "-LWqHl_61xXP78xW0n3J" : "World Travel Adapter",
-            "-LWqHm0IT_L1NIKh_oSu" : "Hammock",
-            "-LWqHmSVE6MVymXLBOp8" : "Travel insurance",
-            "item" : "Kindle"
-          }
-        }
-      }
-    },
-    "IIJhAKEuI8PB9T4mvEaIT4UeNk72" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-31"
-        },
-        "East Africa" : {
-          "date" : "2019-01-31"
-        }
-      }
-    },
-    "IUcuWCx32gcSNFrqKHYvPqGUJu32" : {
-      "region" : {
-        "Australia and New Zealand" : {
-          "date" : "2018-12-30"
-        },
-        "Caribbean" : {
-          "date" : "2018-12-30"
-        }
-      }
-    },
-    "IV74xhDqBAcTijFNt93hdiskYSb2" : {
-      "region" : {
-        "Australia and New Zealand" : {
-          "date" : "2019-01-28",
-          "recommendationSelected" : {
-            "item" : "Travel insurance"
-          }
-        },
-        "Caribbean" : {
-          "date" : "2019-01-28",
-          "inTheBackpack" : {
-            "-LXJsmh5EHWgunbu5DMX" : "Visa",
-            "-LXJtM8i8lmtpqtDKiMq" : "Lock",
-            "-LXJtn75gLTuCTwqoI-M" : "Passport",
-            "-LXJtpmIaassJRxiSBsk" : "Kindle",
-            "-LXJvYkeHosHAvRwj8vj" : "Backpack",
-            "-LXJveoHcc1lL_oa5XRa" : "Hammock",
-            "-LXJviYG-b9kKL4MnJEh" : "Travel insurance",
-            "-LXJvjDoJylEx_jXfCTS" : "Band Aids",
-            "-LXJvvjdkPtXQfDakUhR" : "Betadine",
-            "-LXJvwCIPN6w3bTpmIey" : "Tape",
-            "-LXJvwsG4P611FvsGsr8" : {
-              "selectedInTheBackpack" : true,
-              "value" : "Kindle"
-            },
-            "-LXJvxPNVk11-aKY1QqX" : "Kindle",
-            "-LXJvy39oOrA9l6zDSIM" : "Hammock",
-            "-LXJylFDkyvcYSmIVzbm" : "World Travel Adapter",
-            "-LXJym2CpjShp3n-KlrU" : "Kindle",
-            "item" : "Travel Water Bottle"
-          },
-          "recommendationSelected" : {
-            "-LXJsXK6hfYq3KybwG-x" : "Visa",
-            "-LXJt3o_hfsb9kBj3O5m" : "Hammock",
-            "-LXJt40C8Ph8kZPam37J" : "Kindle",
-            "-LXJt4AO_9NApEScSGwe" : "Lock",
-            "-LXJtm1OkpnBQNeq1eXt" : "Travel insurance",
-            "-LXJtmEbe_47mBEtF3y2" : "Passport",
-            "-LXJvfzG5CmyAOv77ewd" : "Band Aids",
-            "-LXJvg4oY3EJzYr6iP5p" : "Tape",
-            "-LXJvgDhtJ08myGhtsfy" : "Betadine",
-            "-LXJvl-4fYkR41kC_EXT" : "fgfgfg",
-            "-LXJvszZuehUQSIUXVjr" : "World Travel Adapter",
-            "-LXJvtU0kRTyLu75VNwh" : "Microfibre Towel",
-            "-LXJyoJQAFMqvhjmPY8s" : "Underwear",
-            "item" : "Travel Water Bottle"
-          }
-        },
-        "East Africa" : {
-          "date" : "2019-01-28",
-          "inTheBackpack" : {
-            "-LXJz8iFZaI3jkx7rvot" : "Kindle",
-            "item" : "Backpack"
-          },
-          "recommendationSelected" : {
-            "-LXJzbjv5ZNVqdPUJarY" : "Passport",
-            "item" : "Kindle"
-          }
-        },
-        "West Asia" : {
-          "date" : "2019-01-28",
-          "inTheBackpack" : {
-            "item" : "Backpack"
-          },
-          "recommendationSelected" : {
-            "item" : "Kindle"
-          }
-        },
-        "West Europe" : {
-          "date" : "2019-01-28"
-        }
-      }
-    },
-    "J4HBxWtIYSboowulhq4JLvhUpwa2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-18",
-          "inTheBackpack" : {
-            "item" : "Travel Water Bottle"
-          },
-          "recommendationSelected" : {
-            "-LWXQ4uz-d5sw_nTFbWB" : "Travel Water Bottle",
-            "-LWXQ57BEwCjfzcyfYpH" : "Microfibre Towel",
-            "item" : "Kindle"
-          }
-        }
-      }
-    },
-    "JbuRs0butigMNVjiVznO8ocb05k2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-24",
-          "recommendationSelected" : {
-            "-LX-1rUizw313zjqG1Nk" : "Lock",
-            "-LX-1reU18LdIgxmBAVs" : "Travel Water Bottle",
-            "-LX-2LPWTXZ_-cwRf8a2" : {
-              "selectedRecommendations" : true,
-              "value" : "Microfibre Towel"
-            },
-            "item" : "Microfibre Towel"
-          }
-        }
-      }
-    },
-    "JlkfrAKM4oMhG90W74MrvT3QwSY2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "JnM7r11LtFUz23aodz8CJsCZ2cs2" : {
-      "inTheBackpack" : {
-        "-LTy2OW2EYv-L5H6i6Kd" : "Passport",
-        "-LTy2Oq06xUXtsGB5876" : "Travel insurance",
-        "-LTy2PD0qv51os322o3l" : "No",
-        "-LTy2PW1IXmiklAb61h6" : "Adios",
-        "-LTy2PnCOqfVipps4rD1" : "What",
-        "-LTy2QDcoa5xBInrdelg" : "Fork",
-        "item" : "Visa"
-      },
-      "recommendationSelected" : {
-        "-LTy2Jox-QitXUHT_opB" : "Adios",
-        "-LTy2KANCQWa9Dldxc7J" : "Visa",
-        "-LTy2KP5ZhcZXsMK0DVd" : "Travel insurance",
-        "-LTy2KeSbkOinyS1_Hm6" : "Passport",
-        "-LTy2LRf6qcolFiMXswO" : "What",
-        "-LTy2LicWt9IUaTPWW9P" : "Fork",
-        "-LTy2MJvgg03WUHhUlVO" : "Rain coat",
-        "-LTy2MW7-cCJNmXLb5LF" : "Shirts",
-        "item" : "No"
-      }
-    },
-    "K3yRUjkuhKN2UkBih3TOqgDTbdi1" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-15"
-        },
-        "Thailand" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "KUJveBXdf3ebsjDvCxBpsZO5Jcv1" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "KdYpKlHRSFRi4Vr9WTYNhS5Xdy42" : {
-      "region" : {
-        "Australia and New Zealand" : {
-          "date" : "2019-01-25",
-          "recommendationSelected" : {
-            "-LX3e8HAOjzeZ02g7OpY" : "Travel Water Bottle",
-            "item" : "Kindle"
-          }
-        },
-        "Caribbean" : {
-          "date" : "2019-01-25",
-          "inTheBackpack" : {
-            "item" : "Backpack"
-          },
-          "recommendationSelected" : {
-            "-LX3jV88rwISrRX_hRzl" : {
-              "selectedRecommendations" : true,
-              "value" : "Travel Water Bottle"
-            },
-            "-LX4JVjzyW1CdQN8FDAh" : "Microfibre Towel",
-            "-LX4JYPA6A8XPxdPCGHJ" : "Lock",
-            "item" : "Travel Water Bottle"
-          }
-        },
-        "Central America" : {
-          "date" : "2019-01-25",
-          "recommendationSelected" : {
-            "item" : "Travel Water Bottle"
-          }
-        },
-        "East Africa" : {
-          "date" : "2019-01-25"
-        },
-        "Thailand" : {
-          "date" : "2019-01-25"
-        }
-      }
-    },
-    "LA7VZoGoX3TLLU0R34MxhW1NWom2" : {
-      "region" : {
-        "Australia and New Zealand" : {
-          "date" : "2019-02-02",
-          "inTheBackpack" : {
-            "Visa" : "Visa"
-          },
-          "recommendationSelected" : {
-            "-LXiiRlB5MHzVo1gWk7s" : "Visa",
-            "Mosquito net" : "Mosquito net"
-          }
-        },
-        "Belarus" : {
-          "date" : "2019-02-02"
-        },
-        "Caribbean" : {
-          "date" : "2019-02-02",
-          "recommendationSelected" : {
-            "-LXiiE7EUK3py_nNvVIC" : "H2O2",
-            "-LXip6iLFwx4mxEaYrpG" : "Passport",
-            "-LXipTjy_LaG9xPisUIg" : "Travel insurance",
-            "Mosquito net" : "Mosquito net"
-          }
-        },
-        "Spain" : {
-          "date" : "2019-02-02"
-        }
-      }
-    },
-    "LEK9XaTjsmNc7DOanUAil47bQQG3" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-02-02"
-        }
-      }
-    },
-    "LTfbqu4eysV7Q4h8oyiWQEqDFfs2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-18",
-          "inTheBackpack" : {
-            "item" : "Travel Water Bottle"
-          },
-          "recommendationSelected" : {
-            "-LWVisq1dvfQWJYdnTiW" : "Kindle",
-            "-LWVit1pmbi1YCqgLrpj" : "Lock",
-            "item" : "Travel Water Bottle"
-          }
-        }
-      }
-    },
-    "LUuF9CWQnSWD4naX0Uo6gF6PA7j1" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-16",
-          "recommendationSelected" : {
-            "item" : "Microfibre Towel"
-          }
-        }
-      }
-    },
-    "LpcRsjHfGJX7zT11ekXLqd4cwWy2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-18",
-          "recommendationSelected" : {
-            "-LWT53FhzUN8kF3TV0I9" : "Lock",
-            "item" : "Kindle"
-          }
-        }
-      }
-    },
-    "LrKOu3ApjKTRZiCiNXYriIYmZZJ2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-28",
-          "recommendationSelected" : {
-            "-LXJDbAyghBzf2N0S5LA" : "Travel Water Bottle",
-            "-LXJDjTGkpweubKL13oK" : "Kindle",
-            "-LXJEQnuTOejbJd5PPrS" : "Passport",
-            "-LXJITLJXKNo2KuKwKlT" : "Travel insurance",
-            "-LXJJpJSb6KjMeSow3Hp" : "Visa",
-            "item" : "Lock"
-          }
-        }
-      }
-    },
-    "LwFOhSMx9Egz6wIwUUnFSYvCNnE2" : {
-      "region" : {
-        "Gabon" : {
-          "date" : "2019-01-29"
-        }
-      }
-    },
-    "MgZnTl1Teea02K0VqfNyq0DIwJI2" : {
-      "region" : "SouthernAmerica"
-    },
-    "NLcyBtxhvPeBhFmzmjD00K2Zv453" : {
-      "region" : {
-        "Australia and New Zealand" : {
-          "date" : "2019-01-27"
-        },
-        "Caribbean" : {
-          "date" : "2019-01-03",
-          "inTheBackpack" : {
-            "-LVJQRFB3JcSOG_Bs1e-" : "Passport",
-            "-LVJQRaloz8yJ1NmEqUi" : "Alcohol",
-            "item" : "Travel Water Bottle"
-          },
-          "recommendationSelected" : {
-            "-LVJQOAtocUsedJtzF_U" : "World Travel Adapter",
-            "-LVJQO_JeGiDra40XVRA" : "Travel insurance",
-            "-LVJQOeCthECZpUWWNNs" : "Passport",
-            "-LVJQPGe5Ot3u2DxxYe0" : "Alcohol",
-            "-LVJQPV5wvXTO-PKU4df" : "Probiotics",
-            "item" : "Travel Water Bottle"
-          }
-        },
-        "East Africa" : {
-          "date" : "2019-01-27"
-        },
-        "South Asia" : {
-          "date" : "2019-01-27",
-          "recommendationSelected" : {
-            "-LVJRQ4htbEbQ0oub4TM" : "World Travel Adapter",
-            "-LVJRQL6RpkxMsImoD95" : "Travel insurance",
-            "-LVJRQkSGgvBqcXjx8kP" : "Mosquito net",
-            "-LVJRQyK3eKeOY2QnOM5" : "Anti-biotics",
-            "item" : "Microfibre Towel"
-          }
+        "Sierra Leone" : {
+          "date" : "2019-02-13"
         },
         "South East Asia" : {
-          "date" : "2019-01-13",
-          "inTheBackpack" : {
-            "-LVJQxwfsxDOuwSa1Nct" : "World Travel Adapter",
-            "item" : "Travel Water Bottle"
-          },
-          "recommendationSelected" : {
-            "-LVJQw28bhBgNja7ekL-" : "Travel Water Bottle",
-            "-LVJQwUQ4NdDH_cQytRZ" : "Passport",
-            "-LVJQwkx5hqdk2Vz5S3i" : "Anti-biotics",
-            "-LVJQwpVrZIUnikk6PWL" : "Probiotics",
-            "item" : "World Travel Adapter"
-          }
-        },
-        "South Europe" : {
-          "date" : "2019-01-03"
-        },
-        "West Asia" : {
-          "date" : "2019-02-24"
-        }
-      }
-    },
-    "NPZp54XrjnOrr9UJCSV4E6dkFOF2" : {
-      "region" : {
-        "Thailand" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "NQE9AjNBKUeDkMMxtLlihNhIY3q1" : {
-      "region" : "EasternAsia"
-    },
-    "NUUIcznWizWga5PwvtmQb4M1iAF3" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-14"
-        }
-      }
-    },
-    "NjphgwiYAtOAO28JeBmi0a9FnQ73" : {
-      "region" : {
-        "Indonesia" : {
-          "date" : "2019-01-29"
+          "date" : "2019-02-21"
         },
         "Spain" : {
-          "date" : "2019-01-29",
-          "inTheBackpack" : {
-            "-LXPY6HI85LEr6k9-7xZ" : "Travel insurance",
-            "-LXPYC_4jlBnoGB69DLU" : "World Travel Adapter",
-            "-LXPYClTc_poBEZyvqGd" : "Kindle",
-            "-LXPYD5--MQDuT8Wb6hl" : "Travel Water Bottle"
-          },
-          "recommendationSelected" : {
-            "-LXPY6wy72cgtHk2DV2I" : "H2O2",
-            "-LXPY77MCLDhha3mRrbn" : "Mosquito net",
-            "-LXPY7_n1NQG6876t5cV" : {
-              "selectedRecommendations" : true,
-              "value" : "Mosquito net"
-            },
-            "-LXPY8rEqiuJwgEI1RJ8" : "Passport",
-            "-LXPYAzqmWm6ovnt9G_3" : "World Travel Adapter",
-            "-LXPYBCH9ZCqpud0AG6I" : "Kindle",
-            "-LXPYBQOWEqyOAOFtCzo" : "Travel Water Bottle",
-            "item" : "Travel insurance"
-          }
+          "date" : "2019-02-22"
         },
-        "Thailand" : {
-          "date" : "2019-01-29",
-          "inTheBackpack" : {
-            "-LXPYRxtJcjEmZBiwl-X" : "Passport",
-            "-LXPYSF5XHVbswRnr3Y5" : "Travel insurance"
-          },
+        "West Asia" : {
+          "date" : "2019-02-28"
+        },
+        "null" : {
           "recommendationSelected" : {
-            "-LXPXvClMbqM-qVsGFzX" : "Passport",
-            "-LXPXvOsuKVjdgsr2aNT" : {
-              "selectedRecommendations" : true,
-              "value" : "Travel insurance"
-            },
-            "-LXPXvb-_idftzZD3Ric" : "Visa",
-            "-LXPXvnTU4LnSnZj81mS" : "H2O2",
-            "-LXPXvz1ZKVLkHfj427v" : "Mosquito net",
-            "item" : "Travel insurance"
+            "Google Maps" : "Google Maps"
           }
         }
       }
     },
-    "Nno2EAtxaFQ6HWDTSbEb0ztLK0K3" : {
+    "ASzlwV6aKoRG8LEdU30PM7uMqH32" : {
+      "region" : {
+        "Caribbean" : {
+          "date" : "2019-02-23",
+          "inTheBackpack" : {
+            "-LYaKJKoDgf-rmChUEIA" : "Googles"
+          },
+          "recommendationSelected" : {
+            "-LYaKGOR0fC9fTjLwgyJ" : "BodyBoard",
+            "Googles" : "Googles"
+          }
+        }
+      }
+    },
+    "EB3oatyPndgQQml6VeF5I8sNSun1" : {
       "region" : {
         "Australia and New Zealand" : {
-          "date" : "2019-01-27"
-        },
-        "Caribbean" : {
-          "date" : "2019-01-27",
-          "recommendationSelected" : {
-            "-LVc8tEz_NAiAXOJ9S78" : "Lock",
-            "-LVc8tT8PM4amXgCQEzY" : "Kindle",
-            "item" : "Travel Water Bottle"
-          }
-        },
-        "Central America" : {
-          "date" : "2019-01-07"
-        },
-        "East Africa" : {
-          "date" : "2019-01-07"
-        },
-        "East Europe" : {
-          "date" : "2019-01-07"
-        },
-        "North Africa" : {
-          "date" : "2019-01-27"
-        },
-        "South Asia" : {
-          "date" : "2019-01-27"
-        },
-        "West Asia" : {
-          "date" : "2019-01-07"
+          "date" : "2019-02-23"
         }
       }
     },
     "OTkAJumyKRbSycxBYKfgqueqvX93" : {
       "region" : {
         "Caribbean" : {
-          "date" : "2019-02-07",
+          "inTheBackpack" : {
+            "Travel insurance" : "Travel insurance"
+          },
           "recommendationSelected" : {
-            "-LY8FJixg1_aF4zk6LX_" : "Google Maps",
-            "-LY8FKhHABcA_iPUrsMZ" : "Uber",
-            "-LY8FMqHKlGhmGXU_2-B" : "Lonely Planet",
-            "SkyScanner" : "SkyScanner"
+            "-LYEMYP802TneJBH_PWy" : "Kindle",
+            "-LYEM_l84kM1aHcWEMMN" : "Mobile Phone",
+            "-LYEMaY8vDjkIg4OEIm9" : "Power bank",
+            "-LYEMcEcurCZp3q3Qt-X" : "Travel insurance",
+            "-LYEMezGnSMzklD2lCfZ" : "Visa",
+            "-LYEMfZE_Vn5ZsQzV15F" : "Wallet",
+            "-LYEMgTg8gsNeSyY-sNQ" : "Jacket",
+            "-LYEMhaeo4PBAN0lQkE_" : "Travel Pillow",
+            "-LYEMhahYhEKjDF9AxBh" : "Swimsuit",
+            "-LYEMhalXXLNxXpA8sZY" : "Hat",
+            "-LYEMhanpRiRZxwAWfhv" : "Sunglasses",
+            "-LYEMhtLjQOhXf2oHFas" : "Trousers"
           }
         }
       }
     },
-    "OVxjEmQX5xPPjI0OoAGDMuH0TmD3" : {
+    "PRRlNlWZjLgXhVAL73nXoXheYKW2" : {
       "region" : {
         "Caribbean" : {
-          "date" : "2019-01-30"
-        }
-      }
-    },
-    "Onb52myxmYUCc42iFH3FtaU9nYP2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-19",
-          "recommendationSelected" : {
-            "item" : "Travel Water Bottle"
-          }
-        }
-      }
-    },
-    "P1w5TRtkJFSwfmuzDXMmucJIcSE2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-02-07",
-          "inTheBackpack" : {
-            "-LY8GyCSbSIjlhJLoINJ" : "Always pack to the corners!",
-            "-LY8Gyc6LvQYO1FfFU69" : "Hostel World",
-            "-LY8Gym8Yx-BOwCOTDsJ" : "Mobile Passport",
-            "-LY8GyvIc1VzzzW80_XV" : "Netflix",
-            "-LY8Gz5QCqGdIZIYS8Ry" : "Lonely Planet",
-            "-LY8H-eKe0_uXE7a4Vfe" : "Lonely Planet"
-          },
-          "recommendationSelected" : {
-            "-LY8802l0ucNojN4Wnq0" : "Mobile Passport",
-            "-LY880SZTv3ZixacY4-I" : "Lonely Planet",
-            "-LY880uFZPOUU8V68LDe" : "Google Translate",
-            "-LY882-qQd9Yp-aEz1JQ" : "World Traveller",
-            "-LY882WBeiPaILhlYolG" : "City Mapper",
-            "-LY88erDhIH3XeBnn3Tu" : "Nord Vpn",
-            "-LY88fagsucxzhbJzSqM" : "SkyScanner",
-            "-LY88fziwS6_-UtdwYvp" : "Tripadvisor",
-            "-LY88gdMMfsYZ_OC4SZx" : "Google Maps",
-            "-LY88kB9HZ4-u1U1UtYY" : "Lonely Planet",
-            "-LY88kU1HEZV8Bpx65-Q" : "Mobile Passport",
-            "-LY88kjKZ7znWrHJB3L9" : "Hostel World",
-            "-LY88kywdRqy6DTy8ukv" : "Google Translate",
-            "-LY88lSLlhOti6rbKq4g" : "SkyScanner",
-            "-LY88luU9D7EEBi64kHn" : "Nord Vpn",
-            "-LY8GNaXIfbxt9fN1o36" : "Hostel World",
-            "-LY8GOeff34pd-SLeh_E" : "Mobile Passport",
-            "-LY8GwLr_LpQ4lpEzLoT" : "Netflix",
-            "-LY8Gwy9h6CaBgDz5e_8" : "Lonely Planet",
-            "-LY8H0SadjOjwT0Wyl8q" : "Google Translate",
-            "Always pack to the corners!" : "Always pack to the corners!"
-          }
-        }
-      }
-    },
-    "PKdFf3lAowMbQkf6krFUyGfut5Y2" : {
-      "region" : "Caribbean"
-    },
-    "PKyhmnikXYTToLO8NMqpx2GVY3L2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-22",
-          "inTheBackpack" : {
-            "-LWrXacwVw8RyDElqrZm" : "Travel Water Bottle",
-            "-LWrXascYYYEjheJaoVd" : "Lock",
-            "-LWrXb3K0y4yjn7bCWN7" : "World Travel Adapter",
-            "-LWrXbjuXZjJTzg90DCH" : "Visa",
-            "-LWrXdPtahksTSM0_zVu" : "ztredasfhndgtr",
-            "-LXLH_6KvwHreRHMOLkW" : "Backpack",
-            "item" : "example"
-          },
-          "recommendationSelected" : {
-            "-LWrK0tgs1GHAIPewJVq" : "Visa",
-            "-LWrK12m9Ox84LoBhx7Q" : "Lock",
-            "-LWrK1952emSAQ1x3hmn" : "Travel Water Bottle",
-            "-LWrVJNM8CXKZ0XRR5jZ" : "",
-            "-LWrVuSbEZj37Qt63X_g" : "sdssd",
-            "-LWrVvlA2V3I1cuxqMti" : "",
-            "-LWrWau_9AC8mRLcMIDu" : "",
-            "-LWrWc-uenbafSDj20c5" : "",
-            "-LWrWdDyWVt8PtyUe9b6" : "",
-            "-LWrXQuK9YUTU5S39cJ9" : "",
-            "-LWrXSRkZmRQN5qml6PV" : "",
-            "-LWrXcLQ4GR3XItfyOAE" : "ztredasfhndgtr",
-            "-LWrXf6pi83HPlKUovbX" : "Scissors",
-            "item" : "World Travel Adapter"
-          }
-        },
-        "Thailand" : {
-          "date" : "2019-01-28"
-        }
-      }
-    },
-    "QBGc3LXfTeVX2RPIhjJTinRXXUf2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-30"
-        }
-      }
-    },
-    "QKGKEEifXrdx2uyLYK868JIaOmP2" : {
-      "inTheBackpack" : {
-        "-LTx6ELqUrSnauhhTFsV" : "No",
-        "-LTx6ExZKI4HbkeQqWKW" : "Toilet paper",
-        "-LTx6GLyut9dDWJuqX5y" : "Passport",
-        "-LTx6GM1OzvvLk00r9-p" : "Travel insurance",
-        "item" : "Adios"
-      },
-      "recommendationSelected" : {
-        "-LTx69GNQ8EGVreIyZQL" : "Visa",
-        "-LTx69jSuKHg7DQR7aXX" : "Passport",
-        "-LTx6APySk3dIuXORSE3" : "No",
-        "-LTx6AQV7GnBvotUYjBy" : "Adios",
-        "-LTx6BqZP2BmpemD0ZWX" : "Toilet paper",
-        "item" : "Travel insurance"
-      }
-    },
-    "QgvxIxnS9wh3tGOejafNo2yq1Co2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-30",
-          "recommendationSelected" : {
-            "-LXVfdrZCH8fubW5VI0C" : "Travel insurance",
-            "Visa" : "Visa"
-          }
-        }
-      }
-    },
-    "QxWK7uUhSsPIlFNEu6LQW1Ubkop2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-31"
-        },
-        "Central America" : {
-          "date" : "2019-01-31"
-        }
-      }
-    },
-    "RYrtxthZNkboZcZLgFfJr7IItij1" : {
-      "region" : "NorthernAfrica"
-    },
-    "RpNofaJ9XkQ1LUrhb6TFArLudz73" : {
-      "region" : {
-        "France" : {
-          "date" : "2019-01-23"
-        },
-        "Spain" : {
-          "date" : "2019-01-23"
-        },
-        "Thailand" : {
-          "date" : "2019-01-23",
-          "recommendationSelected" : {
-            "-LWuKAJQFnWqVDE5hJBT" : "Travel Water Bottle",
-            "-LWuKA_NO2Gc-aRYhtlW" : {
-              "selectedRecommendations" : true,
-              "value" : "Travel Water Bottle"
-            },
-            "item" : "Microfibre Towel"
-          }
-        }
-      }
-    },
-    "SiPZkyHtCOSU3ayKdFtR7nOYmgU2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-21",
-          "inTheBackpack" : {
-            "-LWmG69DG6fbQbfbanrT" : "World Travel Adapter",
-            "item" : "Travel Water Bottle"
-          },
-          "recommendationSelected" : {
-            "-LWmFhZ9hxsSyjzCMbvM" : "Kindle",
-            "-LWmFhj4pwVrrqXiUXmG" : "Hammock",
-            "-LWmG3HSRdgmCjU3WdNd" : "World Travel Adapter",
-            "-LWmG3lFeZM5mhdxHgbn" : "Travel insurance",
-            "item" : "Travel Water Bottle"
-          }
-        },
-        "Thailand" : {
-          "date" : "2019-01-21"
-        }
-      }
-    },
-    "T69TCkQEkpdFaWQcqUX7glFzOdI3" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-18",
-          "inTheBackpack" : {
-            "item" : "Travel Water Bottle"
-          },
-          "recommendationSelected" : {
-            "-LWXOsn4MKxig1a_8gkF" : "Microfibre Towel",
-            "-LWXOt3BVQRjGOituwus" : "Travel Water Bottle",
-            "item" : "Kindle"
-          }
-        }
-      }
-    },
-    "TfZvFuWQyfZcCqhbqlR3QRG3vL63" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-31"
-        }
-      }
-    },
-    "Tu9H8iQv8uT4EqLZHrhYcbm4kWg1" : {
-      "region" : {
-        "Australia and New Zealand" : {
-          "date" : "2019-01-15"
-        },
-        "Caribbean" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "TzBOQ5QUeYZlSd8NIgWUm1gDMLg2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-02-07"
-        }
-      }
-    },
-    "U5LIM1plybh8i2e0X8QizjoWvCv2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-15"
-        },
-        "Thailand" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "UGbXM4ncvdUDCL6RZRAK4SbG35p1" : {
-      "region" : {
-        "Australia and New Zealand" : {
-          "date" : "2018-12-30",
-          "inTheBackpack" : {
-            "-LUS0Q8MoIjW4cwExqxd" : "Travel Water Bottle",
-            "-LUS0Qtiwlu3yaGQeO-v" : "Tape",
-            "item" : "World Travel Adapter"
-          },
-          "recommendationSelected" : {
-            "-LUS0IzVB9WdurvtzKSi" : "Kindle",
-            "-LUS0Jvjurg6_QPJmlUP" : "World Travel Adapter",
-            "-LUS0KFJQFPRRpXC-Amq" : "Hammock",
-            "-LUS0LaJfj2SskVTjIXE" : "Travel insurance",
-            "-LUS0M-nSK1RSkmPH3Kz" : "Tape",
-            "-LUS0MMP7wjpMSnuhvZz" : "Hand Sanitizer",
-            "-LUS0Miv47sy2dOWdsuF" : "Scissors",
-            "item" : "Travel Water Bottle"
-          }
-        },
-        "Caribbean" : {
-          "date" : "2018-12-30"
-        }
-      }
-    },
-    "VcVJbZISVCQ2SWeBLSGFJZkM0ag2" : {
-      "region" : {
-        "Australia and New Zealand" : {
-          "date" : "2019-01-19"
-        },
-        "Caribbean" : {
-          "date" : "2019-01-18",
-          "inTheBackpack" : {
-            "-LWYB5eiAuqlrM9cAqkj" : "Travel Water Bottle",
-            "-LWYB7QuSiVWXKA7r1UD" : "Shirts",
-            "-LWYB7pnCELSYNFDx0yA" : "Scissors",
-            "-LWYB7xdhLuMgDzGLrpH" : "Band Aids",
-            "item" : "Lock"
-          },
-          "recommendationSelected" : {
-            "-LWYB4VTGsoV42jBV-rd" : "Travel Water Bottle",
-            "-LWYB6Mr7fZj0NYnp82t" : "Shirts",
-            "-LWYB6SPw80eDz0KVwbw" : "Band Aids",
-            "-LWYB6d3X1IvEeMuSz7a" : "Scissors",
-            "-LWYBBF1IWPmA2VJpPzM" : "Trousers",
-            "-LWYBBT-WQOauSGU95Ab" : "Needles",
-            "item" : "Lock"
-          }
-        },
-        "Chad" : {
-          "date" : "2019-01-19"
-        },
-        "China" : {
-          "date" : "2019-01-18",
-          "inTheBackpack" : {
-            "item" : "Kindle"
-          },
-          "recommendationSelected" : {
-            "-LWY9Mu4c0q7X5NFCPt7" : "Kindle",
-            "-LWY9PiAFFqEBcH4PReb" : "Microfibre Towel",
-            "item" : "Travel Water Bottle"
-          }
-        },
-        "Denmark" : {
-          "date" : "2019-01-18",
-          "inTheBackpack" : {
-            "-LWXuCOkCHDTssCrylc5" : "Travel Water Bottle",
-            "-LWY8z8DQtccEfPj_y64" : "Microfibre Towel",
-            "item" : "Kindle"
-          },
-          "recommendationSelected" : {
-            "-LWXuBhXUR-PFENfKk2y" : "Kindle",
-            "-LWXuBrCYxF1zHNh4lnQ" : "Microfibre Towel",
-            "-LWY90-4by-uL_URR2UJ" : "hola",
-            "item" : "Travel Water Bottle"
-          }
-        },
-        "North America" : {
-          "date" : "2019-01-18"
-        },
-        "South Africa" : {
-          "date" : "2019-01-18",
-          "recommendationSelected" : {
-            "item" : "Lock"
-          }
-        },
-        "South East Asia" : {
-          "date" : "2019-01-19",
-          "inTheBackpack" : {
-            "-LWYa64oXyOA4yhvhbAM" : "Alcohol",
-            "item" : "World Travel Adapter"
-          },
-          "recommendationSelected" : {
-            "-LWYa3XooQkTZmFx4htH" : "World Travel Adapter",
-            "-LWYa4hGcNbCpq5NMz9L" : "Betadine",
-            "-LWYa4nTHmjN0Bid2zFY" : "Alcohol",
-            "-LWYa7YlPmNfOZ7ii1ci" : "dfwgsfg",
-            "item" : "Lock"
-          }
-        },
-        "Spain" : {
-          "date" : "2019-01-19"
-        },
-        "Thailand" : {
-          "date" : "2019-01-19"
-        },
-        "West Asia" : {
-          "date" : "2019-01-18"
-        }
-      }
-    },
-    "W0s3sMdBKMWvWTYEjd7EXygCcKz2" : {
-      "recommendationSelected" : {
-        "-LSyac5hz-4q6iwBcnoo" : "Underwear",
-        "-LSyadgnr757mhIcy6Zb" : "Jacket",
-        "-LSyamlbnzJ4Bt6Str-5" : "Jumper",
-        "item" : "Rain coat"
-      }
-    },
-    "WCE1LStgotdDbnbUlcKEiaiiCkJ2" : {
-      "recommendationSelected" : {
-        "-LU-O7LJ_ijSkt6iVU8n" : "Travel insurance",
-        "-LU-O8RQIzbf9NIN2pha" : "Passport",
-        "-LU-O9Efc8Eq-71_w3Kq" : "No",
-        "-LU-OA1RAZLAjFn9Rwt3" : "Adios",
-        "-LU-OBcU6Q6-uqke_eLu" : "Toilet paper",
-        "item" : "Visa"
-      }
-    },
-    "WLGiLovfftUmagfHLWfUhsDpa1p1" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "X2LuKY3kaWOXzJPfJIGDNfKdJzL2" : {
-      "region" : "Caribbean"
-    },
-    "YSDtrb1fz6U7u1VzV8uRFyhpIWg1" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-31"
-        }
-      }
-    },
-    "YSjWS83vobRjKR3BO1dKl85UYx63" : {
-      "region" : "South Asia"
-    },
-    "YpM7C6HgsPNf495jba72QtYqIfA2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-18",
-          "inTheBackpack" : {
-            "item" : "Lock"
-          },
-          "recommendationSelected" : {
-            "-LWXSA21vPSPItEfOM5S" : "Travel Water Bottle",
-            "-LWXSABR3obvPp6iVPMA" : "Lock",
-            "item" : "Kindle"
-          }
-        }
-      }
-    },
-    "Z55xcQhv8AgSDyZqCSqgyhphHui2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-02-01",
-          "recommendationSelected" : {
-            "-LXchmCbS3MC2uR9W_w7" : "dfdfdf"
-          }
-        }
-      }
-    },
-    "ZsDo7LcQTYb3z5vzs4gVP1NwCQu1" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-18",
-          "inTheBackpack" : {
-            "item" : "World Travel Adapter"
-          },
-          "recommendationSelected" : {
-            "-LWXO7raFl7phnXBF8w1" : "Lock",
-            "-LWXO8_QJNPx69oVJGyw" : "World Travel Adapter",
-            "item" : "Travel Water Bottle"
-          }
-        }
-      }
-    },
-    "a4V2sAt5V8WafkHpHdFYHfxlNmi1" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-15"
-        },
-        "Thailand" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "a98JZRaZ7AbxN3wVwBkss5lUmU12" : {
-      "recommendationSelected" : {
-        "-LU51eitqhQKRcyT7kff" : "Travel insurance",
-        "-LU51esOGSK5kX00iI1p" : "No",
-        "-LU51ezAHqxYtq_WVBl0" : "Adios",
-        "item" : "Visa"
-      }
-    },
-    "aSPsePZghhdG6TTeH1tbykKGa2n2" : {
-      "region" : {
-        "item" : {
-          "date" : "2018-12-30"
-        }
-      }
-    },
-    "as0hdOOnMcWgzgJIZ54gqFBGVog2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-18",
-          "inTheBackpack" : {
-            "item" : "Kindle"
-          },
-          "recommendationSelected" : {
-            "-LWXMM6YogIxMfz7YXEN" : "Kindle",
-            "item" : "Travel Water Bottle"
-          }
-        }
-      }
-    },
-    "b4RwtRAXRQRc7P3gUta0FNTk6SF3" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "b6KEjT64RjRYGp3Ot04PRJPjkyn1" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-15"
-        },
-        "Thailand" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "bmVIhU36XSNMTuKrGAzgWPYdLXM2" : {
-      "region" : {
-        "Australia and New Zealand" : {
-          "date" : "2019-01-27",
-          "recommendationSelected" : {
-            "-LViRtowOOxRU5y4jnpU" : "World Travel Adapter",
-            "-LViRu9qb6Sm7KqwdN_n" : "Travel insurance",
-            "-LViRuEdMFuwr4m3_gdN" : "Rain coat",
-            "-LViRuMOoWU8sc3hIZyK" : "Shirts",
-            "-LViRuToZs86oYbJ7s7t" : "Trousers",
-            "-LViRw7iDW61-AiO5wNq" : "Hammock",
-            "-LViRwRKWhxU8xMmFtax" : "Visa",
-            "-LVsV_OZIzY54ujBlujq" : "Hand Sanitizer",
-            "-LVsV_VP8SPqM_xAz78O" : "Band Aids",
-            "item" : "Travel Water Bottle"
-          }
-        },
-        "Caribbean" : {
-          "date" : "2019-01-08"
-        },
-        "Central America" : {
-          "date" : "2019-01-08",
-          "inTheBackpack" : {
-            "-LVgzbxhpogguyTqu8ay" : "Lock",
-            "-LVgzbxmiwCXMMUgw2T_" : "Microfibre Towel",
-            "item" : "Band Aids"
-          },
-          "recommendationSelected" : {
-            "-LVgzZBGdHzKS4JOw2ql" : "Needles",
-            "-LVgzZoRLR1twRBRHty3" : "Rain coat",
-            "-LVgzZsnsFBK5GJa0tcP" : "Trousers",
-            "-LVgza8xyH3qazZxjsxi" : "Lock",
-            "-LVgzaL_w_-5B-Ee71f0" : "Microfibre Towel",
-            "item" : "Band Aids"
-          }
+          "date" : "2019-02-12"
         },
         "East Africa" : {
-          "date" : "2019-01-27",
-          "recommendationSelected" : {
-            "-LVhc9LK5DO95J4KWEoo" : "Kindle",
-            "-LVhc9_Nra-Ir7LYlqKl" : "Travel Water Bottle",
-            "-LVhcA0R7P3U4ATiCrq6" : "Travel insurance",
-            "-LVhcAQRPSCilzNhW91K" : "Mosquito net",
-            "-LVhcAasRrTlN48LASjZ" : "Alcohol",
-            "-LVhcApiIUc-UAppvjMA" : "Anti-biotics",
-            "-LVhcB8F1cR-QSzgLnka" : "Shirts",
-            "-LVhcBEXpsXQBJMVU24g" : "Trousers",
-            "-LVhcBR3tPeJKUy5pXRa" : "Needles",
-            "-LVhcB_9lwjAMOpaTpWE" : "Band Aids",
-            "item" : "Hammock"
-          }
-        },
-        "undefined" : {
-          "date" : "2019-01-27",
-          "recommendationSelected" : {
-            "-LVsVOWP8VVKvBsNR30P" : "Kindle",
-            "-LVsVOxgtLs4v28anBFS" : "Travel Water Bottle",
-            "item" : "Lock"
-          }
-        }
-      }
-    },
-    "cmsMFQaEBYap8EyJcnaDvYxAUCk1" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-18",
+          "date" : "2019-02-10",
           "inTheBackpack" : {
-            "item" : "Lock"
+            "Backpack" : "Backpack"
           },
           "recommendationSelected" : {
-            "-LWVlIg8HOSiyDz0eoFE" : "Travel Water Bottle",
-            "item" : "Lock"
+            "-LYNoPDCfnNPZ36YILTq" : "Tapones para los Oidos",
+            "-LYTk_Mi4QGnasNSZ-lN" : "Auriculares",
+            "Saco de dormir" : "Saco de dormir"
+          }
+        },
+        "Thailand" : {
+          "date" : "2019-02-28",
+          "inTheBackpack" : {
+            "-LYTm6dt1I_cAw_mg9Y9" : "Direcciones importantes",
+            "-LYTm6w_M1EHkhBPRqQg" : "No te olvides de el candado!"
+          },
+          "recommendationSelected" : {
+            "-LYTm4GhCZevkSQkXTB4" : "Direcciones importantes",
+            "-LYTm8nBAc2eO71d_Uuf" : "Kindle",
+            "-LYTm9YS_yeEdS3s1oUG" : "Adaptador de Corriente",
+            "-LYTmF_M2Cazl5i1Zm5w" : "Pantalones",
+            "-LYTmHNMTfSlsx3OOBqQ" : "Zapatos",
+            "-LYTmIW_C0SlsLcVImpp" : "Ropa para Salir de Fiesta",
+            "No te olvides de el candado!" : "No te olvides de el candado!"
           }
         }
       }
     },
-    "d1x0GEtXcyTftjWXznnI2ghXfpn1" : {
+    "UgjeQ1uvmsNoC8rA97b7LW2w0GP2" : {
       "region" : {
         "Caribbean" : {
-          "date" : "2018-12-30"
-        }
-      }
-    },
-    "dDiGNpVTX9cjBcprij8zGMtnPfq2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-18",
+          "date" : "2019-02-23"
+        },
+        "Central America" : {
+          "date" : "2019-02-23",
           "inTheBackpack" : {
-            "-LWVfnJbatFaSQKle6F5" : "Lock",
-            "item" : "Microfibre Towel"
+            "-LYcDxoKkDMYRaJ5hV-A" : "Lonely Planet"
           },
           "recommendationSelected" : {
-            "-LWVflBHL1LJYZKqmUEj" : "Microfibre Towel",
-            "-LWVflrX5A7Y_ZVjsstu" : "Visa",
-            "-LWVflxf3bJBf6MtwViQ" : "Travel insurance",
-            "item" : "Lock"
-          }
-        }
-      }
-    },
-    "dR9d0AbChoSgfqCC51vxjyty7ig1" : {
-      "region" : {
-        "Australia and New Zealand" : {
-          "date" : "2019-02-07",
-          "recommendationSelected" : {
-            "-LY8qS-ZhCrgejBUFNMZ" : "Google Translate",
-            "-LY8qS9TnGFyrrDdn3Av" : "Mobile Passport",
-            "-LY8qVdMdfViuNqyoZtX" : "SkyScanner",
-            "-LY8qW29_F5TtwZKAg0C" : "Tripadvisor",
-            "-LY8qZXshrtVkhPo1ZF5" : "Nord Vpn"
-          }
-        },
-        "Caribbean" : {
-          "date" : "2019-02-07",
-          "inTheBackpack" : {
-            "-LY8qCwCw-YMsaYiic0r" : "Lonely Planet"
-          },
-          "recommendationSelected" : {
-            "-LY8qIxsuLId5Gcn-1fB" : "Uber",
-            "-LY8qJJrcYOjRuTAVq6D" : "City Mapper",
-            "-LY8qJ_YkdvS9yjmLnKX" : "World Traveller",
-            "-LY8qN4E5aUyMHDb6adu" : "Tripadvisor",
-            "-LY8qpmWbwKq4gqr65Or" : "Mobile Passport",
-            "-LY8qq9c55RqvlEcNmhe" : "Netflix",
-            "-LY8qq_QpJLVINrPP3Kk" : "Hostel World",
-            "-LY8qqqEE86fW4BYXDg3" : "Lonely Planet",
-            "Google Maps" : "Google Maps"
-          }
-        },
-        "East Asia" : {
-          "date" : "2019-02-07",
-          "recommendationSelected" : {
-            "-LY8qwBw4qO_lcCZT-0a" : "Mobile Passport",
-            "-LY8qwMryihmy_FK3lHL" : "Netflix",
-            "-LY8qwnLLeWkG0BwMaR4" : "Google Translate",
-            "-LY8qxjW6zUBo9fNTrCI" : "Hostel World",
-            "-LY8qy2sDEq_NBD8K_s4" : "Google Translate",
-            "-LY8qyjaIRIbwUl9aWmw" : "Tripadvisor",
+            "-LYcE2FONTPdlo2tYCT1" : "Googles",
             "Lonely Planet" : "Lonely Planet"
           }
-        }
-      }
-    },
-    "ddGFVH9ygtVnKbKnkxZnDtAcNvO2" : {
-      "inTheBackpack" : {
-        "item" : "Travel insurance"
-      },
-      "recommendationSelected" : {
-        "item" : "Travel insurance"
-      }
-    },
-    "e8oKHSUrjhb691xhSok8wXDVUdH3" : {
-      "region" : {
-        "France" : {
-          "date" : "2019-01-29"
-        },
-        "Gabon" : {
-          "date" : "2019-01-29"
-        },
-        "Spain" : {
-          "date" : "2019-01-29",
-          "recommendationSelected" : {
-            "-LXPamE53aQZsZvl3gt9" : "Travel insurance",
-            "item" : "Mosquito net"
-          }
-        }
-      }
-    },
-    "ehs83jAudtUjRLC9ATQIODzSUL73" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-15"
-        },
-        "East Africa" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "fFjz7Yaa0ibATVxx8BrHYl9tJeG2" : {
-      "region" : {
-        "Belize" : {
-          "date" : "2019-01-23",
-          "recommendationSelected" : {
-            "-LWwwfo0UNdifbc1g-Wi" : "Travel Water Bottle",
-            "-LWwwg6Lyi2mUEyxu4dS" : "World Travel Adapter",
-            "-LWwwlqn67KOOrmA-kTl" : "Scissors",
-            "-LWwwlzkACCbaLZcjIGI" : "Tape",
-            "item" : "Kindle"
-          }
-        },
-        "Caribbean" : {
-          "date" : "2019-01-23",
-          "recommendationSelected" : {
-            "-LWwwpt_gUO_rPHkAHO6" : "Travel Water Bottle",
-            "-LWwwq6RqYo-JAZ5dJhf" : "Microfibre Towel",
-            "item" : "Kindle"
-          }
-        },
-        "Chile" : {
-          "date" : "2019-01-24"
-        },
-        "Gabon" : {
-          "date" : "2019-01-23"
-        },
-        "Panama" : {
-          "date" : "2019-01-24"
-        },
-        "Paraguay" : {
-          "date" : "2019-01-24"
-        },
-        "Peru" : {
-          "date" : "2019-01-24"
-        },
-        "Spain" : {
-          "date" : "2019-01-23",
-          "inTheBackpack" : {
-            "-LWwKXRJm2-zaT8vu3n6" : "Kindle",
-            "-LWwKXcjnJTPPmYRu12j" : "Lock",
-            "-LWwKXokcCZ5tPHC3SXp" : {
-              "selectedInTheBackpack" : true,
-              "value" : "Kindle"
-            },
-            "-LWwKZfIqIWIsuwXMrFC" : "Rain coat",
-            "-LWwKZr3jfIt4g2s01NG" : "Trousers",
-            "-LWwKbEjPBgH5MG2mo2D" : "Holadkdkf",
-            "-LWwKhKo5WbD5-tZgEc0" : "Dkee",
-            "-LWwKiC6NQ8bVKhSXfsr" : "Dkee",
-            "-LWwKnN20OfL_KZRxjkK" : "Rain coat",
-            "-LWwKwGzXLrh4oQqXYJQ" : "Kindle",
-            "-LWwvxmxPvGQQnKVpw_K" : "Tanja",
-            "item" : "Hola"
-          },
-          "recommendationSelected" : {
-            "-LWwKRABnGz5is5PLnR4" : "Rain coat",
-            "-LWwKRLzjbWpGAkiZkew" : {
-              "selectedRecommendations" : true,
-              "value" : "Rain coat"
-            },
-            "-LWwKRejovzW2aCOoH4F" : "Band Aids",
-            "-LWwKRqX-O8cGJJQPy9K" : "Hand Sanitizer",
-            "-LWwKS5CIpwyhsLKFBdp" : "Tape",
-            "-LWwKTPfFPtdJzaN52jx" : "Tape",
-            "-LWwKUWvcCl8VCnhWY2D" : "Lock",
-            "-LWwKUiQ7JTuhRHJFwea" : "Kindle",
-            "-LWwKUx3nz06DU1MblVp" : "Travel Water Bottle",
-            "-LWwKWq516Hfd5Pgy6Zg" : "Hola",
-            "-LWwK_eru2J_AL-BFn1R" : "Dkee",
-            "-LWwKaiBHWPvioeejT2w" : "Holadkdkf",
-            "-LWwKdZjudUPmZZOYRsW" : "Bueno",
-            "-LWwvo9SO2FSNdnxT4o1" : "Travel insurance",
-            "-LWwvoy8zGqcRR0VX0UK" : "Travel insurance",
-            "-LWwvphEJI5CCIH0p-kO" : "Travel insurance",
-            "-LWwvs-r8qvGlF2Bt7Tv" : "Travel insurance",
-            "-LWwvx9p5DfnogPkAIbv" : "Tanja",
-            "item" : "Trousers"
-          }
-        },
-        "Thailand" : {
-          "date" : "2019-01-24",
-          "inTheBackpack" : {
-            "item" : "Lock"
-          },
-          "recommendationSelected" : {
-            "-LX-nsnZU4JOuvWqsthF" : "Kindle",
-            "-LX-nt1s-gy3vE2iAbYj" : "Lock",
-            "-LX-ntMTFJXSqDyyNrN7" : "Hammock",
-            "-LX-ntlg-hyuF2bezmS9" : "Travel insurance",
-            "-LX-nwHTx4Kltdhs-Y9s" : {
-              "selectedRecommendations" : true,
-              "value" : "Kindle"
-            },
-            "item" : "Travel Water Bottle"
-          }
-        }
-      }
-    },
-    "fcmPcPAA9efP86ZjcP1kPg8YnHk2" : {
-      "region" : {
-        "Australia and New Zealand" : {
-          "date" : "2019-01-14"
-        },
-        "Caribbean" : {
-          "date" : "2019-01-14"
-        },
-        "Central America" : {
-          "date" : "2019-01-14"
-        },
-        "China" : {
-          "date" : "2019-01-27"
-        },
-        "France" : {
-          "date" : "2019-01-27"
-        },
-        "Ireland" : {
-          "date" : "2019-01-14",
-          "recommendationSelected" : {
-            "-LWCs40etBT5VwWKPYn6" : "Visa",
-            "item" : "World Travel Adapter"
-          }
-        },
-        "South Africa" : {
-          "date" : "2019-01-27"
         },
         "South East Asia" : {
-          "date" : "2019-01-27"
-        },
-        "Spain" : {
-          "date" : "2019-01-26"
+          "date" : "2019-02-13"
         },
         "Thailand" : {
-          "date" : "2019-01-26",
-          "recommendationSelected" : {
-            "-LWCqY0jSGxExWeQbOV1" : "Travel insurance",
-            "-LWCqYAfT7ZzPg7_xV6b" : "Travel Water Bottle",
-            "item" : "Kindle"
-          }
-        },
-        "West Europe" : {
-          "date" : "2019-01-14"
+          "date" : "2019-02-13"
         }
       }
     },
-    "fvFBAoTAnkXBtneJN48L1qIAWio1" : {
+    "W8xpm2DEtidam82g9GOXR5YXOfK2" : {
       "region" : {
         "Australia and New Zealand" : {
-          "date" : "2018-12-30"
-        },
-        "Caribbean" : {
-          "date" : "2018-12-30",
-          "inTheBackpack" : {
-            "-LUaHZFvrpVyZ9VL8g9_" : "Travel Water Bottle",
-            "item" : "Microfibre Towel"
-          },
-          "recommendationSelected" : {
-            "-LUaHVkVIzN9q82EMmaY" : "Travel Water Bottle",
-            "-LUaHWDFClvWyDtTgo77" : "Lock",
-            "item" : "Microfibre Towel"
-          }
-        },
-        "undefined" : {
-          "date" : "2018-12-30"
+          "date" : "2019-02-27"
         }
       }
     },
-    "g7j5MysbIjg5aK0xLZgTjkCO1sz1" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-18",
-          "inTheBackpack" : {
-            "item" : "Travel Water Bottle"
-          },
-          "recommendationSelected" : {
-            "-LWVjPBNDqlR-zoiRzzo" : "Travel Water Bottle",
-            "item" : "Lock"
-          }
-        }
-      }
-    },
-    "gK2M27lSSAgxq3bdA0VH6Gsa5b83" : {
-      "region" : {
-        "Chad" : {
-          "date" : "2019-01-20"
-        },
-        "South Europe" : {
-          "date" : "2019-01-20",
-          "inTheBackpack" : {
-            "-LWgn2W0wOjfdULKxaAM" : "Microfibre Towel",
-            "item" : "World Travel Adapter"
-          },
-          "recommendationSelected" : {
-            "-LWgn09jLNgIgsVH_MbU" : "Lock",
-            "-LWgn0KwwSeqRL11nN0O" : "Microfibre Towel",
-            "-LWgn0su_TJ54sOrZjyN" : "Shirts",
-            "-LWgn0zhgOjkgQsaX3Ja" : "Needles",
-            "item" : "World Travel Adapter"
-          }
-        },
-        "Spain" : {
-          "date" : "2019-01-20",
-          "inTheBackpack" : {
-            "-LWgldyH_Uh83uoXza9R" : "Travel Water Bottle",
-            "-LWgmDro6HX15T2cYfol" : "Band AIds",
-            "-LWgmEywzjGEbwi4rhnR" : "sdfdwafdsagf",
-            "item" : "Microfibre Towel"
-          },
-          "recommendationSelected" : {
-            "-LWglcxhGzQl5DToUkO9" : "Travel Water Bottle",
-            "-LWgldDPP8RdMmCQrVnN" : "Microfibre Towel",
-            "-LWgll3D14XGIQlU4kYE" : "Lock",
-            "-LWglofasUNXsb8XK09R" : "Shirts",
-            "-LWglopmambIPJ1dDDxM" : "Needles",
-            "-LWgmDA-L_X1gBBozHkz" : "Band AIds",
-            "-LWgmEd7sCTG7yQlzkxL" : "sdfdwafdsagf",
-            "-LWgmGlynzQZqozOnqC5" : "sdsdsd",
-            "item" : "World Travel Adapter"
-          }
-        },
-        "Thailand" : {
-          "date" : "2019-01-20",
-          "inTheBackpack" : {
-            "-LWgmgNW_0__4RxspEfB" : "Lock",
-            "-LWgmgZF3aUA6XxArW39" : "Travel Water Bottle",
-            "item" : "World Travel Adapter"
-          },
-          "recommendationSelected" : {
-            "-LWgmedy6XATNG9ZdoJ5" : "Travel Water Bottle",
-            "-LWgmf0KShaS4SDru30x" : "World Travel Adapter",
-            "-LWgmfHXWDR1skjx-QSV" : "Kindle",
-            "-LWgmfVTnDwzQ7ARP5S9" : "Microfibre Towel",
-            "item" : "Lock"
-          }
-        },
-        "West Asia" : {
-          "date" : "2019-01-20"
-        }
-      }
-    },
-    "gmpgKiNdEWcExHchh6bsS4msyDE2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-15"
-        },
-        "Thailand" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "h8FDwjvxx8g6s62sr3IwZteG9eD3" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-15"
-        },
-        "Thailand" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "hPSyzdbeBPNxE7LX7ijqVnzvn9q1" : {
-      "region" : {
-        "France" : {
-          "date" : "2019-01-23",
-          "inTheBackpack" : {
-            "-LWulYZOODcufwZz33eI" : {
-              "selectedInTheBackpack" : true,
-              "value" : "World Travel Adapter"
-            },
-            "-LWulYyK9SOBqTMXwt04" : "Visa",
-            "-LWulZKeOBSVeQ6KrcND" : "Travel insurance",
-            "-LWulZfzMeQDenCIc2tR" : "Visa",
-            "-LWulZyvbPoGOYFs1WUC" : "Travel insurance",
-            "-LWul_DaKE2-j32Yfzrh" : "Visa",
-            "-LWulaDPtjgUH0wd0GcL" : "Visa",
-            "-LWulaN-xnIBDXLXGG_W" : "Visa",
-            "-LWulaSG2hB6W0TwpWCW" : "Visa",
-            "-LWulaVgDTOD-0-8Xiyk" : "Visa",
-            "-LWula_HESY7AfQSMu4I" : "Visa",
-            "-LWuladlWwd0lexKtKuA" : "Visa",
-            "-LWulaiWCpGL7i5Ia0j0" : "Visa",
-            "-LWulamtP6vWUf5vZxKG" : "Visa",
-            "-LWular_jO9IbcD67Kyh" : "Visa",
-            "-LWulb25Nm_saKOEhdOT" : "Travel insurance",
-            "-LWulb6j6rXq7kTEAkTW" : "Travel insurance",
-            "-LWulbCCMf1xgTx0u9ox" : "Travel insurance",
-            "-LWulbGVxW6uDSRrSmVa" : "Travel insurance",
-            "-LWulbVtjwri9fdyiMyL" : "Travel insurance",
-            "-LWulb_oUIzRgl43CDDp" : "Travel insurance",
-            "-LWulbq4Q-I99WZ_j_XS" : "Travel insurance",
-            "-LWulc2YnMdNeY3h9wyO" : "Travel insurance",
-            "-LWulcB9vYaG6yei4oCy" : "Travel insurance",
-            "-LWulcJ5gGFmZdZxODLt" : "Travel insurance",
-            "-LWulcQEUlAJd3sI5n8G" : "Travel insurance",
-            "-LWulcX_AOdKj31la2v6" : "Travel insurance",
-            "-LWumtZZ8T6rJt2jKs3j" : "Visa",
-            "-LWumtxrIjdTmA2Z_gx6" : "Travel insurance",
-            "-LWumu24lYcOLWra6S7W" : "Travel insurance",
-            "-LWumu7AvIUjpQCcsbiy" : "Travel insurance",
-            "-LWumuBULcFQ1w2kzYmC" : "Travel insurance",
-            "-LWumuGVNrgc5-5p6lAw" : "Travel insurance",
-            "-LWumuKcr0lETfYSIPN4" : "Travel insurance",
-            "-LWumuPPhCuiQuscS6g6" : "Travel insurance",
-            "-LWun3S1jl-vu_iHjBh4" : "Rain coat",
-            "-LWun3mQYggflJLYIA-T" : "Shirts",
-            "item" : "World Travel Adapter"
-          },
-          "recommendationSelected" : {
-            "-LWulP_x32XzJGgIxkF9" : "Kindle",
-            "-LWulPoPHsdXgjRjpxJR" : "Lock",
-            "-LWulQ2pky2GgngG1izz" : {
-              "selectedRecommendations" : true,
-              "value" : "Lock"
-            },
-            "-LWulSOTZ-J9DlP0Z673" : "Travel Water Bottle",
-            "-LWulT5vCWQlxDtksfO_" : "Kindle",
-            "-LWulTTdfnPVqpB3utr1" : "Lock",
-            "-LWulTwbcZBrM1Uzl9sV" : "Hammock",
-            "-LWulV1zlzUx9k9z80mq" : "Microfibre Towel",
-            "-LWulVTE6L87WjI3OX4-" : "Travel Water Bottle",
-            "-LWulVot7oyAIXpJ0xxG" : "Lock",
-            "-LWulW8EHM1jQmQAJejX" : "Kindle",
-            "-LWulWxdwJ3-5_4PINtF" : "Travel insurance",
-            "-LWulXFxrDikCO9n54_e" : "Visa",
-            "-LWumvModyNSNKeL8Wc0" : "Passport",
-            "-LWumx_kFDhfQRopNoIq" : "Mosquito net",
-            "-LWumxweBQkEy4ivMGqm" : "H2O2",
-            "-LWumyXdRypLMjyJDiZv" : "Alcohol",
-            "-LWumyvBn-JbFYWYkukL" : "Probiotics",
-            "-LWumzwQ2Y63r_gM3K6g" : "Trousers",
-            "-LWun-M7qPmvMXxP4gdl" : "Shirts",
-            "-LWun-VNmFlW0EbDagAb" : "Rain coat",
-            "-LWun0hZ97ynAVoDcgEo" : "Shirts",
-            "-LWun0qIn-Bx2wsWa1Aw" : "Rain coat",
-            "-LWun2iClsXtwu__hrjV" : "Shirts",
-            "-LWun2s3m-MPICWHPwWg" : "Rain coat",
-            "item" : "World Travel Adapter"
-          }
-        }
-      }
-    },
-    "i73wVMAxjBZksv6UUTf4pToOt9n1" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-02-02"
-        }
-      }
-    },
-    "iMgKfvjoX0cmlnvdsEGDroK6esJ2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-14"
-        }
-      }
-    },
-    "iS3jHlbX7qOfok2K6vZBFr2oe4B3" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-19",
-          "inTheBackpack" : {
-            "item" : "Lock"
-          },
-          "recommendationSelected" : {
-            "-LW__UMuMCLUrUiAQE1g" : "Travel Water Bottle",
-            "item" : "Lock"
-          }
-        },
-        "Chad" : {
-          "date" : "2019-01-19",
-          "inTheBackpack" : {
-            "-LW_iCHh2XaBxagGkOUY" : "Travel Water Bottle",
-            "-LW_iCU-dMsg4oW9XPDk" : "Kindle",
-            "-LW_iChV40Xf7UiqMve-" : "Visa",
-            "item" : "Microfibre Towel"
-          },
-          "recommendationSelected" : {
-            "-LW_iB6_60JLWRn9txau" : "Kindle",
-            "-LW_iBIMoHVPMYl6OCDZ" : "Microfibre Towel",
-            "-LW_iBXu_Pvt_B5_C4dU" : "Visa",
-            "item" : "Travel Water Bottle"
-          }
-        },
-        "Spain" : {
-          "date" : "2019-01-19",
-          "inTheBackpack" : {
-            "item" : "Kindle"
-          },
-          "recommendationSelected" : {
-            "-LW_gUiBhh9q9UvkP0Hz" : "Travel Water Bottle",
-            "-LW_iGaHUZR5R7QZ87PW" : "Microfibre Towel",
-            "item" : "Kindle"
-          }
-        },
-        "Thailand" : {
-          "date" : "2019-01-19"
-        }
-      }
-    },
-    "iWQfW3C7CxX4Jv80eMBkXzWwE283" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-18",
-          "inTheBackpack" : {
-            "-LWVks9DyY2fQ8yHLhCI" : "Lock",
-            "item" : "Kindle"
-          },
-          "recommendationSelected" : {
-            "-LWVkqWtRgO_C-ZRHdQb" : "Kindle",
-            "-LWVkqmdBgOk_z4yEohu" : "Lock",
-            "item" : "Travel Water Bottle"
-          }
-        }
-      }
-    },
-    "ibkiTNzK5JMmyOmZVH2v4kL66Kn1" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-15"
-        },
-        "Thailand" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "j0H5wcnzCgh85cQhX2d6JkZg6lv1" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-14"
-        }
-      }
-    },
-    "j55uAJq5oPRXaz3qEIEIvL7rhRp1" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-18",
-          "inTheBackpack" : {
-            "item" : "World Travel Adapter"
-          },
-          "recommendationSelected" : {
-            "-LWXLeLd4kWfgSvcVhzS" : "Travel Water Bottle",
-            "-LWXLe_dw7kBDvOXKqkI" : "Lock",
-            "item" : "World Travel Adapter"
-          }
-        }
-      }
-    },
-    "jAMGGYU96CXN5XN4IhEU1sefcJ23" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-19",
-          "recommendationSelected" : {
-            "item" : "Travel Water Bottle"
-          }
-        }
-      }
-    },
-    "jUt868PhJjMci32lHAqypktj4G33" : {
-      "inTheBackpack" : {
-        "-LUHSWcIB1ZZh0MYkcZO" : "Travel Water Bottle",
-        "-LUHSXDMMlkO8byCnD5I" : "Visa",
-        "item" : "Microfibre Towel"
-      },
-      "recommendationSelected" : {
-        "-LUHSRe7Vgpnnn33ERvy" : "Travel Water Bottle",
-        "-LUHSS3BVe6RZO5VUc8F" : "Lock",
-        "-LUHSSp0nkELy77XR2u7" : "Visa",
-        "-LUHSSwa7Mieua-2v7gY" : "Travel insurance",
-        "item" : "Microfibre Towel"
-      }
-    },
-    "jeEgb6KQa6aLvUbNl4TRe0lWJr32" : {
+    "chKnRbho0kexIJstoOP3rVWa14g2" : {
       "region" : {
         "Australia and New Zealand" : {
-          "date" : "2019-01-03",
-          "inTheBackpack" : {
-            "item" : "Shirts"
-          },
-          "recommendationSelected" : {
-            "-LVJIGUVN9FmR2_4tC_z" : "Shirts",
-            "item" : "Trousers"
-          }
+          "date" : "2019-02-21"
         },
         "Caribbean" : {
-          "date" : "2019-01-03"
+          "date" : "2019-02-23",
+          "inTheBackpack" : {
+            "-LYYaLoBNGmJjebHjXvv" : "Uber"
+          },
+          "recommendationSelected" : {
+            "Uber" : "Uber"
+          }
         },
         "Central America" : {
-          "date" : "2019-01-03",
-          "inTheBackpack" : {
-            "-LVJI0QUSG27J0t1hya3" : "Travel Water Bottle",
-            "item" : "Microfibre Towel"
-          },
-          "recommendationSelected" : {
-            "-LVJHzdERxhf6xop7L4u" : "Lock",
-            "-LVJI-8NndTDzz-H7ddd" : "Travel Water Bottle",
-            "item" : "Microfibre Towel"
-          }
-        },
-        "East Asia" : {
-          "date" : "2019-01-03"
-        },
-        "East Europe" : {
-          "date" : "2019-01-03",
-          "inTheBackpack" : {
-            "-LVJDS17A-4vbUMfFkEu" : "Mosquito net",
-            "-LVJDSpJd4ro7QZXfO3F" : "Lock",
-            "item" : "Travel Water Bottle"
-          },
-          "recommendationSelected" : {
-            "-LVIKpsXok_1fDOZHrrs" : "Lock",
-            "-LVIKqEtWXes0eSf1qQj" : "World Travel Adapter",
-            "-LVJDOeTQzx5wZCKWCpz" : "Mosquito net",
-            "-LVJDP2qXjBUQ_GxGHd6" : "Anti-biotics",
-            "-LVJDPcxGjVQxFp4FKDW" : "Travel insurance",
-            "item" : "Travel Water Bottle"
-          }
-        }
-      }
-    },
-    "k1cYwqWtbfXmeDBNJ74yoYwTpYj1" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-14"
-        }
-      }
-    },
-    "kKLJjCiqhqRVKL6fzGMcH32tVms1" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-14"
-        }
-      }
-    },
-    "kfAU813YS8UjMwu961pfMPpkaE72" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-15"
-        },
-        "Thailand" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "liaZGDOHGDfQ2grz8kukDm65mh93" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-15"
-        },
-        "Thailand" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "lzHkQC7OGPbCCksTgWxVgGenc5n1" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-14"
-        }
-      }
-    },
-    "m31rvIVFW9gkFkngm5ltcicqG2l2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-31"
-        },
-        "East Asia" : {
-          "date" : "2019-01-31"
-        },
-        "France" : {
-          "date" : "2019-01-31"
-        },
-        "Spain" : {
-          "date" : "2019-01-31"
-        }
-      }
-    },
-    "mLvnfgFqkqaQiDE1bh03uDSyfdb2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-14"
-        }
-      }
-    },
-    "mWDI51pZAZd3QUuWL1aQ2RpvcXe2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-15"
-        },
-        "Thailand" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "n4rm2oOSVBO7LpdTwIGeg96Ay652" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-02-07"
-        }
-      }
-    },
-    "n8ZLrUmDpZaZkHkA4jjmLgSS6G93" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-15"
-        },
-        "Thailand" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "nAi48pteNjR4BxNoBELFCVCTP732" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-15"
-        },
-        "Thailand" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "nDDxivzlo9eAhXuuGlGTm46REZy2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "nPFeejbP1bWq4zcWeK1zVs7phbr2" : {
-      "region" : {
-        "East Africa" : {
-          "date" : "2019-01-30"
-        },
-        "East Asia" : {
-          "date" : "2019-01-19"
-        }
-      }
-    },
-    "nPM2yxm71aYYcxaHFMFA8HjvwaA2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-18",
-          "inTheBackpack" : {
-            "item" : "Kindle"
-          },
-          "recommendationSelected" : {
-            "-LWXV_RxdcyGMWJFQF6K" : "Lock",
-            "-LWXV_ZyokRc9eLHQ4-P" : "Microfibre Towel",
-            "item" : "Kindle"
-          }
-        }
-      }
-    },
-    "oDn0rSXaDtgOAr1UffZgfex3hHj1" : {
-      "region" : {
-        "Thailand" : {
-          "date" : "2019-01-28",
-          "inTheBackpack" : {
-            "item" : "Backpack"
-          },
-          "recommendationSelected" : {
-            "item" : "Trousers"
-          }
-        }
-      }
-    },
-    "oLYyM9XGErhyc6QWq7I9vp8Yyqt2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-02-05",
-          "inTheBackpack" : {
-            "Travel insurance" : "Travel insurance"
-          },
-          "recommendationSelected" : {
-            "-LXy-PqxVuLDWbo_AyyD" : "Passport",
-            "-LXyN-InEm-r2NfIV5ys" : "Anti-biotics",
-            "-LXyN-Zhu6xYzToQFYS4" : "Mosquito net",
-            "-LXyN0h13fpD4frT0_D_" : "H2O2",
-            "-LXyRwFAO6nbCUvN-V9W" : "Visa",
-            "-LXyS-LrYqrJVCXnfUoF" : "Hand Sanitizer",
-            "Travel insurance" : "Travel insurance"
-          }
-        },
-        "Spain" : {
           "date" : "2019-02-23"
         }
       }
     },
-    "pAnsVxn9wcYmxcDZXu8upJF3LBA2" : {
-      "region" : {
-        "Australia and New Zealand" : {
-          "date" : "2018-12-30"
-        },
-        "Caribbean" : {
-          "date" : "2018-12-27"
-        },
-        "Central America" : {
-          "date" : "2018-12-30"
-        },
-        "East Africa" : {
-          "date" : "2018-12-30",
-          "inTheBackpack" : {
-            "-LUkOjXC8S8L9m4-L-1Q" : "Kindle",
-            "-LUkOjrrxS7gQlXh4wcD" : "Visa",
-            "item" : "Microfibre Towel"
-          },
-          "recommendationSelected" : {
-            "-LUkOfwZ0k4EFrIKy7Ew" : "Lock",
-            "-LUkOgJQkpQfWzTYId17" : "Kindle",
-            "-LUkOghrQt2pnTsLb4hg" : "Visa",
-            "-LUkOgyh4vmqI0F9AhDZ" : "Travel insurance",
-            "item" : "Microfibre Towel"
-          }
-        },
-        "North Africa" : {
-          "date" : "2018-12-30",
-          "recommendationSelected" : {
-            "-LUee5qWVIns1Adp5lkL" : "Kindle",
-            "item" : "Lock"
-          }
-        },
-        "North America" : {
-          "date" : "2018-12-30"
-        },
-        "South Asia" : {
-          "date" : "2018-12-30",
-          "inTheBackpack" : {
-            "-LUblLuKVWhUGhn-RszP" : "Travel insurance",
-            "-LUblMF0L5VODnGcHYLk" : "World Travel Adapter",
-            "item" : "Passport"
-          },
-          "recommendationSelected" : {
-            "-LUblIeK4k6er2MFfFqV" : "Travel Water Bottle",
-            "-LUblJGJfjjvf9V7K5fp" : "Travel insurance",
-            "-LUblJUxR-fg9CdHxupz" : "Passport",
-            "-LUblJhxZYKYfvtz5Zsd" : "H2O2",
-            "-LUblJmJqHCuE67_-5Ka" : "Mosquito net",
-            "item" : "World Travel Adapter"
-          }
-        },
-        "South East Asia" : {
-          "date" : "2018-12-30",
-          "inTheBackpack" : {
-            "-LUl2nYBd-0az8QrrBqw" : "Kindle",
-            "item" : "Lock"
-          },
-          "recommendationSelected" : {
-            "-LUl2iZqDip3Xy1BEH36" : "Lock",
-            "-LUl2j4gxaLp0UXUOXU3" : "Kindle",
-            "-LUl2jbl6m97aU2d1Zwd" : "World Travel Adapter",
-            "-LUl2kC3dM8pooK1LRvk" : "Travel insurance",
-            "-LUl2lF8h6k1LuHiYKYp" : "Mosquito net",
-            "-LUl2lcPWrjAGvGwM1Og" : "Anti-biotics",
-            "item" : "Travel Water Bottle"
-          }
-        }
-      }
-    },
-    "pewB9r7ofWZZIZRKeMGCaJC1P4D2" : {
-      "region" : {
-        "Australia and New Zealand" : {
-          "date" : "2019-01-15"
-        },
-        "Caribbean" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "qHVHaQwP4BYjd6JBAkRu0OxtzLZ2" : {
+    "y2xs17sBHTcRUYwWd7O1KwI9y8f2" : {
       "region" : {
         "Caribbean" : {
-          "date" : "2019-01-31",
-          "inTheBackpack" : {
-            "Travel Water Bottle" : "Travel Water Bottle"
-          },
-          "recommendationSelected" : {
-            "-LX_48AH8gVMhOEg-qCy" : "Kindle",
-            "-LX_4ATAv9aeRkyPb4aL" : "Hammock",
-            "-LX_4AZz32vkAeZek_Ll" : "Lock",
-            "-LX_4AjFaxr8h_nApn9h" : "Travel Water Bottle",
-            "World Travel Adapter" : "World Travel Adapter"
-          }
-        }
-      }
-    },
-    "qMjXWKQENWdkFHzD9RrMNQWaOUC2" : {
-      "region" : {
-        "Egypt" : {
-          "date" : "2019-01-14",
-          "recommendationSelected" : {
-            "-LWCABbxafLvvuLhth2y" : "Travel Water Bottle",
-            "item" : "Lock"
-          }
-        },
-        "France" : {
-          "date" : "2019-01-25",
-          "recommendationSelected" : {
-            "-LWC9rJZv6qbZrML8clD" : "Travel Water Bottle",
-            "item" : "Lock"
-          }
-        },
-        "Spain" : {
-          "date" : "2019-01-14"
-        },
-        "Thailand" : {
-          "date" : "2019-01-14",
-          "recommendationSelected" : {
-            "-LWC9NJMvNLKRTEzgnQs" : "Kindle",
-            "item" : "Travel Water Bottle"
-          }
-        }
-      }
-    },
-    "qypdqEdL6xc3ZjDrQYITTDfp4A53" : {
-      "region" : {
-        "Australia and New Zealand" : {
-          "date" : "2019-01-15"
-        },
-        "Caribbean" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "rTfb353BOogSGvl7hfjOOhsl8I63" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-28",
-          "inTheBackpack" : {
-            "item" : "Travel insurance"
-          },
-          "recommendationSelected" : {
-            "-LXK3UZP8gdcMyAgd6HD" : "drftgetyy",
-            "-LXKM26BcKJNWcVUhxC1" : "Travel insurance",
-            "-LXKM2VtJi1QQ4FKprZJ" : "Visa",
-            "item" : "Passport"
-          }
-        },
-        "Gabon" : {
-          "date" : "2019-01-28"
-        },
-        "South Europe" : {
-          "date" : "2019-01-28"
-        },
-        "Spain" : {
-          "date" : "2019-01-28",
-          "inTheBackpack" : {
-            "item" : "Backpack"
-          }
-        },
-        "Thailand" : {
-          "date" : "2019-01-28"
-        }
-      }
-    },
-    "rgIMF66KVPacQ5CKCAPdOrmdC492" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-17",
-          "recommendationSelected" : {
-            "-LWRS53eE08XraqOjfVs" : "Travel Water Bottle",
-            "item" : "Lock"
-          }
-        }
-      }
-    },
-    "rmFfijQ1y7OYC53XwpXLUBYdw4I2" : {
-      "region" : {
-        "Gabon" : {
-          "date" : "2019-01-29"
-        },
-        "Madagascar" : {
-          "date" : "2019-01-29",
-          "recommendationSelected" : {
-            "item" : "Travel insurance"
-          }
-        },
-        "Spain" : {
-          "date" : "2019-01-29"
-        }
-      }
-    },
-    "tPA1L5eKnAYYx4G1gpgH0JFXF5q2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-02-07",
-          "inTheBackpack" : {
-            "World Traveller" : "World Traveller"
-          },
-          "recommendationSelected" : {
-            "-LY7lHv5vr59WFEIWxst" : "Lonely Planet",
-            "-LY7lJcFZlQ9Q5EzQOW2" : "XE Currency",
-            "-LY7lKv3GHiXevLo1tBp" : "World Traveller",
-            "-LY7lLuH-1gSewZYHHlA" : "Circa",
-            "-LY7lNKD6fkvCD9TABRJ" : "Hostel World",
-            "-LY7lQYFiCVFohMvz9DJ" : "Google Translate",
-            "-LY7lTgsFo2arJ_DN-yO" : "Camera",
-            "-LY7lW4B0vpuJnDl7YVr" : "Airbnb",
-            "Mobile Passport" : "Mobile Passport"
-          }
-        },
-        "Central America" : {
-          "date" : "2019-02-07",
-          "recommendationSelected" : {
-            "-LY7leVgkXXvllSsLb7r" : "Google Translate",
-            "-LY7n3UEARcgCuF_wQu5" : "City Mapper",
-            "-LY7n7r3iBLS5WEduj8A" : "Hostel World",
-            "-LY7n847hmnZ0ZqEJQ4d" : "Hostel World",
-            "-LY7nEignZexUJXC5xfr" : "Lonely Planet",
-            "-LY7nPcxZFJCueodj1Rp" : "Mobile Passport",
-            "-LY7nXKwIyXHrTHF5Ycu" : "Netflix",
-            "-LY7n_GbnjMVFXjJCxJG" : "Do not forget your Lock!",
-            "-LY7namYRGWctvF4_VNv" : "Pack must-haves, not nice-to-haves",
-            "-LY7ngJ46Qu2iJxS1Cif" : "Make a list",
-            "Airbnb" : "Airbnb"
-          }
-        }
-      }
-    },
-    "u1x8gJMjivRUDEFDF7B41segBv62" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-18",
-          "inTheBackpack" : {
-            "item" : "Lock"
-          },
-          "recommendationSelected" : {
-            "-LWXX2wtDPR0GhZMqH4l" : "Microfibre Towel",
-            "-LWXX393u1hzAwNzOOSk" : "Visa",
-            "item" : "Lock"
-          }
-        }
-      }
-    },
-    "uMAdo26tBlStGDHigx58b9Ugwwt2" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-28",
-          "recommendationSelected" : {
-            "item" : "Kindle"
-          }
-        }
-      }
-    },
-    "uQWl4KwOSpcK13LuNc9iE8d2zbn1" : {
-      "region" : {
-        "Caribbean" : {
-          "date" : "2019-01-31"
-        }
-      }
-    },
-    "uYqwo9M3mDYuRfZbiyn9gPxJKrR2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-16",
-          "recommendationSelected" : {
-            "item" : "World Travel Adapter"
-          }
-        }
-      }
-    },
-    "vlWsS5UTS4N9QrASx391CGKxj5l1" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-18",
-          "recommendationSelected" : {
-            "-LWT5inUCrxF_UgP9SEg" : "Lock",
-            "item" : "Kindle"
-          }
-        }
-      }
-    },
-    "vv0RW9YesZVlyDqglAo16gNiPcB3" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-22",
-          "inTheBackpack" : {
-            "-LWqAg5RsJrHnweSkG_T" : "Travel Water Bottle",
-            "-LWqAgV3Jy_EZNwiqgkw" : "Lock",
-            "-LWqAq5Gps8JtCcQIqJY" : "Scissors",
-            "-LWqAqFynluGbc-A4MrO" : "Shirts",
-            "item" : "Microfibre Towel"
-          },
-          "recommendationSelected" : {
-            "-LWq3kRA8w2eik_GYzMd" : "Lock",
-            "-LWq8nhoM9Q6Et16nf5s" : "Travel Water Bottle",
-            "-LWqAeg8JnhFZs0Yx2DK" : "Kindle",
-            "-LWqAlUu-MHzNLYO_N_O" : "World Travel Adapter",
-            "-LWqAp--ddOlESzuzeqM" : "Scissors",
-            "-LWqAp6gZ7tROZ6OT4C1" : "Shirts",
-            "item" : "Microfibre Towel"
-          }
-        },
-        "Thailand" : {
-          "date" : "2019-01-22"
-        }
-      }
-    },
-    "w1D4sY4RnKfsW4DpY2O4sF8bRdh1" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-18",
-          "inTheBackpack" : {
-            "-LWXev4OOu29Z7S5wd-x" : "dfsdfsdf",
-            "-LWXevKF7XJIEOIFxN0j" : "Travel Water Bottle",
-            "item" : "Kindle"
-          },
-          "recommendationSelected" : {
-            "-LWXesyri8-hkviRthYv" : "Travel Water Bottle",
-            "item" : "Kindle"
-          }
-        },
-        "Thailand" : {
-          "date" : "2019-01-18",
-          "inTheBackpack" : {
-            "-LWX_wu1y4xU39VenJD5" : "Kindle",
-            "-LWX_x0X9zvikD64fjlQ" : "Lock",
-            "item" : "World Travel Adapter"
-          },
-          "recommendationSelected" : {
-            "-LWX_vx0CzFU2X4G6aHc" : "World Travel Adapter",
-            "-LWX_w7FI-e0IKh7qSbL" : "Lock",
-            "item" : "Kindle"
-          }
-        }
-      }
-    },
-    "x6vfxBgFkPgSqpAY5wC28KbWL2l2" : {
-      "region" : "CentralAmerica"
-    },
-    "xJJTuiNO9LZb5t0GwowNccd5B1j2" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-19"
-        },
-        "Thailand" : {
-          "date" : "2019-01-19"
-        }
-      }
-    },
-    "xMhIgNYr3HhAgVkFfTthZYVQ5Cm2" : {
-      "recommendationSelected" : {
-        "-LTE3TUoVrB5aa_ROhLu" : "Travel insurance",
-        "item" : "Visa"
-      }
-    },
-    "xdWd9iKJ57Vk03RtuvFsqGPCt2h2" : {
-      "region" : {
-        "Australia and New Zealand" : {
-          "date" : "2019-01-14"
-        },
-        "Caribbean" : {
-          "date" : "2019-01-27"
-        },
-        "Central America" : {
-          "date" : "2019-01-14"
-        },
-        "France" : {
-          "date" : "2019-01-14"
-        },
-        "South Africa" : {
-          "date" : "2019-01-27"
-        },
-        "Spain" : {
-          "date" : "2019-01-14"
-        }
-      }
-    },
-    "xeD5m2A0LrQZ4Id98iXlQH9LFZz1" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-15"
-        },
-        "Thailand" : {
-          "date" : "2019-01-15"
-        }
-      }
-    },
-    "zllEtEwHbqdSL9tEesjK4KXrt083" : {
-      "region" : {
-        "Spain" : {
-          "date" : "2019-01-14",
-          "inTheBackpack" : {
-            "item" : "Cable for mobile"
-          },
-          "recommendationSelected" : {
-            "-LWA_bzi8SqIuXaIDIX8" : "Travel Water Bottle",
-            "-LWA_da34q6LPD38K-kW" : "",
-            "-LWA_fzm7R4F-_rx3Eix" : "Cable for mobile",
-            "-LWA_nk9FvnrOMLKwSgp" : "",
-            "item" : "Lock"
-          }
+          "date" : "2019-02-20"
         }
       }
     }

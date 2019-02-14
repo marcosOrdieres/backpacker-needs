@@ -108,13 +108,14 @@ export default (controller) => (
             <Icon size={20} name='pencil' color={'white'} />
           </View>
 
-          <View style={{ flex: 1, backgroundColor: Palette.white}}>
+          <View style={{ flex: 0.8, backgroundColor: Palette.white}}>
             <TextInput
               ref='countryInput'
               style={travelDecisionStyles.textInputCountry}
               placeholder={controller.i18n.t('travelDecision.placeholderCountry')}
               value={controller.state.countryInput}
               underlineColorAndroid={Palette.transparent}
+              autoCapitalize={'characters'}
               onFocus={() => { controller.setState({focusOnCountry: true}); }}
               onBlur={() => { controller.setState({show: false, focusOnCountry: false}); }}
               onChangeText={(text) => {
@@ -143,11 +144,19 @@ export default (controller) => (
             }} />
         </ScrollView>
         :
+        controller.state.focusOnCountry && controller.state.show && controller.state.country  ?
+          <TouchableOpacity
+            style={{backgroundColor: Palette.white, width: width, borderColor: Palette.black, borderRadius: 5, borderWidth: 1}}
+            onPress={() => { controller.onPressCountryOverlay(); }}>
+            <Text style={{fontSize: 18, margin: 5}}>
+              {controller.state.country}
+            </Text>
+          </TouchableOpacity>
+        :
         null
       }
 
     </View>
-
     <TouchableOpacity
       onPress={async () => {
         if (controller.state.letsgo) {

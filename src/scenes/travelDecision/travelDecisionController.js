@@ -79,9 +79,10 @@ class TravelDecisionController extends BaseScene {
   }
 
   checkCountry () {
+
     if (this.state.text.length >= 2) {
       this.user.getCountriesInTheWorld().find((country) => {
-        if (country.includes(this.state.text)) {
+        if (country.toLowerCase().startsWith(this.state.text.toLowerCase())) {
           this.user.setChosenCountry(country);
           this.user.setChosenRegion(undefined);
           this.setState({ country: country });

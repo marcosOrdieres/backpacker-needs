@@ -18,6 +18,15 @@
     "noInternet":"'We are sorry, you need Internet Conection'",
     "toast": "Please, accept our Terms and Conditions and Data Privacy"
   },
+  "whatThisAppDoes":{
+    "click": "Click in Region or Country",
+    "or": "or",
+    "selectDay": "Select the Day you Go",
+    "check": "Check your Destination and Add to your Backpack",
+    "recos": "Select from Recommendations and Buy if you like",
+    "pack": "Pack items to your Backpack",
+    "button":"Go to my Travel Destination"
+  },
   "travelDecision":{
     "BN": "Backpacker Needs",
     "destination": "Destination",

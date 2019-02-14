@@ -101,14 +101,14 @@ export default class SwipperComponent extends Component {
           loop={false}>
           <View style={localStyles.firstSlide}>
             {/*VIEW OF THE FIRST SLIDE*/}
-            <View style={{flex:0.2, alignItems:'center', justifyContent:'center'}}><Text style={localStyles.textTitle}>Click in Region or Country</Text></View>
+            <View style={{flex:0.2, alignItems:'center', justifyContent:'center'}}><Text style={localStyles.textTitle}>{this.props.firstSwipperText}</Text></View>
               <View style={{flex: 0.8, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
                 <Image
                   style={localStyles.imageTwo}
                   source={region}
                   resizeMode='cover'
                 />
-              <View><Text style={localStyles.textTitle}>or</Text></View>
+              <View><Text style={localStyles.textTitle}>{this.props.firstSwipperTextOr}</Text></View>
                 <Image
                   style={localStyles.imageTwo}
                   source={country}
@@ -118,7 +118,7 @@ export default class SwipperComponent extends Component {
           </View>
           <View style={localStyles.secondSlide}>
             {/*VIEW OF THE SECONS SLIDE*/}
-              <View style={{flex:0.2, alignItems:'center', justifyContent:'center'}}><Text style={localStyles.textTitle}>Select the Day that you Go</Text></View>
+              <View style={{flex:0.2, alignItems:'center', justifyContent:'center'}}><Text style={localStyles.textTitle}>{this.props.secondSwipperText}</Text></View>
                 <View style={{flex: 0.8, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
                   <Image
                     style={localStyles.imageOne}
@@ -129,7 +129,7 @@ export default class SwipperComponent extends Component {
           </View>
           <View style={localStyles.thirdSlide}>
             {/*VIEW OF THE THIRD SLIDE*/}
-              <View style={{flex:0.2, alignItems:'center', justifyContent:'center'}}><Text style={localStyles.textTitle}>Check your Destination and Add Backpack</Text></View>
+              <View style={{flex:0.2, alignItems:'center', justifyContent:'center'}}><Text style={localStyles.textTitle}>{this.props.thirdSwipperText}</Text></View>
                 <View style={{flex: 0.8, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
                   <Image
                     style={localStyles.imageOne}
@@ -140,7 +140,7 @@ export default class SwipperComponent extends Component {
           </View>
           <View style={localStyles.fourthSlide}>
             {/*VIEW OF THE FOURTH SLIDE*/}
-              <View style={{flex:0.2, alignItems:'center', justifyContent:'center'}}><Text style={localStyles.textTitle}>Select from Recommendations and Buy if you like</Text></View>
+              <View style={{flex:0.2, alignItems:'center', justifyContent:'center'}}><Text style={localStyles.textTitle}>{this.props.fourthSwipperText}</Text></View>
                 <View style={{flex: 0.8, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
                   <Image
                     style={localStyles.imageOne}
@@ -151,7 +151,7 @@ export default class SwipperComponent extends Component {
           </View>
           <View style={localStyles.fifthSlide}>
             {/*VIEW OF THE FIFTH TITLE*/}
-            <View style={{flex:0.2, alignItems:'center', justifyContent:'center'}}><Text style={localStyles.textTitle}>Pack items to your Backpack</Text></View>
+            <View style={{flex:0.2, alignItems:'center', justifyContent:'center'}}><Text style={localStyles.textTitle}>{this.props.fifthSwipperText}</Text></View>
               {/*VIEW OF THE Image and the Button*/}
               <View style={{flex: 0.7, flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
                 <View style={{flex: 0.8, width:'100%', alignItems:'center', justifyContent:'center'}}>
@@ -165,7 +165,7 @@ export default class SwipperComponent extends Component {
                 {/*VIEW OF THE BUTTON*/}
                 <View style={{flex: 0.2,width:'100%', alignItems:'center', justifyContent:'center'}}>
                   <Button
-                    title={'Go to my Travel Destination'}
+                    title={this.props.fifthSwipperButton}
                     color={Palette.primaryColor}
                     buttonBorderColor={Palette.black}
                     textColor={Palette.white}

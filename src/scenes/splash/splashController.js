@@ -95,14 +95,23 @@ class SplashController extends BaseScene {
     });
   }
 
+//Aqui
   async getDataItem () {
     try {
       let valueList;
       const regionStored = await this.storage.getAsyncStorage('region');
       if (!regionStored) {
-        const eventref = firebase.database().ref('region/');
+        // Aqui pillo las recomendaciones de firebase
+        const locale = this.i18n.currentLocale().substring(0, 2);
+        const eventref = firebase.database().ref('region/').child(locale);
         const snapshot = await eventref.once('value');
         valueList = snapshot.val();
+        console.warn('LAS REGIONES ESPANYA: ',valueList );
+        if (!valueList) {
+          const eventref = firebase.database().ref('region/').child('en');
+          const snapshot = await eventref.once('value');
+          valueList = snapshot.val();
+        }
       } else {
         valueList = await this.storage.getAsyncStorage('region');
       }

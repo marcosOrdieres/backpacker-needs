@@ -20,7 +20,8 @@ class TravelDecisionController extends BaseScene {
       region: '',
       date: now,
       letsgo: false,
-      isModalVisible: false
+      isModalVisible: false,
+      focusOnCountry:false
     };
   }
 

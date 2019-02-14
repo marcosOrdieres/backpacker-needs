@@ -24,7 +24,7 @@
     "region":"Region (eg. South East Asia)",
     "chooseRegion":"Please Choose a Region!",
     "choose":"Choose a Region!",
-    "placeholderCountry":"Type here the country!",
+    "placeholderCountry":"Type the Country! (min 3 letters)",
     "letsgo": "Let´s Go!",
     "aboutTrip": "About the trip",
     "country":"Country (eg. Thailand)"

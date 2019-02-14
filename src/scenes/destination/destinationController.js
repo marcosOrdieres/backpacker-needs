@@ -132,57 +132,75 @@ class DestinationController extends BaseScene {
     } else {
       switch (this.user.getChosenRegion()) {
         case 'Australia and New Zealand':
+        case 'Australia y Nueva Zelanda':
           return Australia;
           break;
         case 'Caribbean':
+        case 'Caribe':
           return Caribbean;
           break;
         case 'Central America':
+        case 'America Central':
           return CentralAmerica;
           break;
         case 'Central Asia':
+        case 'America del Este':
           return CentralAsia;
           break;
         case 'East Africa':
+        case 'America del Este':
           return EasternAfrica;
           break;
         case 'East Asia':
+        case 'Este de Asia':
           return EasternAsia;
           break;
         case 'East Europe':
+        case 'Europa del Este':
           return EasternEurope;
           break;
+        case 'Melanesia':
         case 'Melanesia':
           return Melanesia;
           break;
         case 'North Africa':
+        case 'Norte de Africa':
           return NorthernAfrica;
           break;
         case 'North America':
+        case 'Norte de America':
           return NorthernAmerica;
           break;
         case 'North Europe':
+        case 'Norte de Europa':
           return NorthernEurope;
           break;
         case 'Polynesia':
+        case 'Polinesia':
           return Polynesia;
           break;
         case 'South America':
+        case 'America del Sur':
           return SouthAmerica;
           break;
         case 'South East Asia':
+        case 'Sudeste Asiatico':
           return SouthEasternAsia;
           break;
         case 'South Africa':
+        case 'Sur de Africa':
           return SouthernAfrica;
           break;
         case 'South Asia':
+        case 'Sur de Asia':
           return SouthernAsia;
           break;
         case 'South Europe':
+        case 'Sur de Europa':
           return SouthernEurope;
           break;
         case 'West Asia':
+        case 'Oeste de Asia':
           return WesternAsia;
           break;
         default: WesternEurope;

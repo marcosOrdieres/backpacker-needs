@@ -18,9 +18,9 @@
     "BN": "Backpacker Needs",
     "destination": "Destino",
     "region":"Region (eg. Sudeste Asiatico)",
-    "chooseRegion":"¡Escoge una Region, por favor!",
+    "chooseRegion":"¡Escoge una Region!",
     "choose":"¡Escoge una Region!",
-    "placeholderCountry":"¡Escribe aqui el Pais!",
+    "placeholderCountry":"¡Escribe el Pais! (min 3 letras)",
     "letsgo": "¡Vamos",
     "aboutTrip": "¡Sobre el viaje!",
     "country":"Pais (eg. Tailandia)"

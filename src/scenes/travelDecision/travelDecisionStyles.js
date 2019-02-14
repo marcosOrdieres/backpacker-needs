@@ -72,6 +72,6 @@ export default StyleSheet.create({
     fontFamily: 'Calibri',
     fontSize: 16,
     alignItems: 'center',
-    justifyContent: 'flex-start'
+    height:40
   }
 });

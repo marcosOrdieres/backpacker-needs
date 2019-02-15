@@ -143,8 +143,6 @@ class SplashController extends BaseScene {
       } else {
         valueList = await this.storage.getAsyncStorage('recommendations');
       }
-      console.warn('LAS PUTAS RECOS: ', valueList);
-
       Object.entries(valueList).forEach((pair) => {
         sortedObj[pair[0]] = Object.assign({}, Object.values(pair[1]).sort());
       });

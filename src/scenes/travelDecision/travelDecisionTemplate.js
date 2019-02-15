@@ -32,7 +32,6 @@ export default (controller) => (
         </TouchableOpacity> : null}
 
         */}
-
       <View style={[{flex: 0.2, justifyContent: 'center', alignItems: 'center'}]}>
         <Text style={travelDecisionStyles.destinyText}>{controller.i18n.translate('travelDecision.destination')}</Text>
       </View>
@@ -133,7 +132,7 @@ export default (controller) => (
       {!controller.state.focusOnCountry ?
         <ScrollView
           contentContainerStyle={{ justifyContent: 'center', alignItems: 'center'}}>
-          <Text style={[{paddingTop: '5%', paddingBottom: '5%'}, travelDecisionStyles.destinyText]}>{controller.user.getDateOfTravel() ? 'Your day of Travel is ' + controller.state.date : 'Click the Backpack to choose the Date!'}</Text>
+          <Text style={[{paddingTop: '5%', paddingBottom: '5%'}, travelDecisionStyles.destinyText]}>{controller.user.getDateOfTravel() ? controller.i18n.t('travelDecision.travelDay') + controller.state.date : controller.i18n.t('travelDecision.chooseDate')}</Text>
           <DateTravel
             date={controller.state.date}
             logo={controller.user.getDateOfTravel() ? logoNoLetters : logoEmpty}
@@ -144,7 +143,7 @@ export default (controller) => (
             }} />
         </ScrollView>
         :
-        controller.state.focusOnCountry && controller.state.show && controller.state.country  ?
+        controller.state.focusOnCountry && controller.state.show && controller.state.country ?
           <TouchableOpacity
             style={{backgroundColor: Palette.white, width: width, borderColor: Palette.black, borderRadius: 5, borderWidth: 1}}
             onPress={() => { controller.onPressCountryOverlay(); }}>

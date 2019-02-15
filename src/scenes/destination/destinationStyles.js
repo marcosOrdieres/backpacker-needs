@@ -33,7 +33,7 @@ export default StyleSheet.create({
     backgroundColor: Palette.transparent,
     flex: 1
   },
-  hamburguerView:{
+  hamburguerView: {
     width: 30,
     height: 30,
     backgroundColor: Palette.primaryColor,
@@ -42,13 +42,23 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
-  questionView:{
+  questionView: {
     width: 30,
     height: 30,
     backgroundColor: Palette.primaryColor,
     justifyContent: 'center',
     alignItems: 'center',
-    position:'absolute',
+    position: 'absolute',
+    marginLeft: width - 35,
+    marginTop: 50
+  },
+  logoutView: {
+    width: 30,
+    height: 30,
+    backgroundColor: Palette.primaryColor,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
     marginLeft: width - 35,
     marginTop: 5
   }

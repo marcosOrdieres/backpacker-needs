@@ -9,39 +9,40 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 export default (controller) => (
   <View style={{height: '100%'}}>
     <Text
-      style={backpackStyles.mainTitle}>Backpack for {controller.user.getChosenRegion() ? controller.user.getChosenRegion() : controller.user.getChosenCountry()} </Text>
+      style={backpackStyles.mainTitle}>{controller.i18n.t('backpack.backpackFor')} {controller.user.getChosenRegion() ? controller.user.getChosenRegion() : controller.user.getChosenCountry()} </Text>
     <Text
-      style={backpackStyles.howManyDays}>Still {controller.checkHowManyDays()} days to Go!</Text>
-      <SectionList
-        renderItem={({item, index, section}) => {
-          return (
-            <ListItem
-              onBlurAddItem={() => { controller.onBlurAddItem(section); }}
-              titleAddItem={controller.titleAddItem(section)}
-              titleAddItemChangeText={(title) => { controller.titleAddItemChangeText(title, section); }}
-              backpackListItem
-              dataItem={item}
-              onClickListItem={(item) => controller.onClickListItemBackpack(item)} />);
-        }}
-        renderSectionHeader={( prop) => {
-          return (
-            <TouchableOpacity
-              onPress={() => {
-                const state = controller.state;
-                state.collapsed[prop.section.key] = !state.collapsed[prop.section.key];
-                controller.setState(state);
-              }}
-              style={backpackStyles.sectionContainer}>
+      style={backpackStyles.howManyDays}>{controller.i18n.t('backpack.still')} {controller.checkHowManyDays()} {controller.i18n.t('backpack.daysToGo')}</Text>
+    <SectionList
+      renderItem={({item, index, section}) => {
+        return (
+          <ListItem
+            onBlurAddItem={() => { controller.onBlurAddItem(section); }}
+            titleAddItem={controller.titleAddItem(section)}
+            titleAddItemChangeText={(title) => { controller.titleAddItemChangeText(title, section); }}
+            backpackListItem
+            dataItem={item}
+            textInputPlaceholderBackpack={controller.i18n.t('backpack.textInputPlaceholderBackpack')}
+            onClickListItem={(item) => controller.onClickListItemBackpack(item)} />);
+      }}
+      renderSectionHeader={(prop) => {
+        return (
+          <TouchableOpacity
+            onPress={() => {
+              const state = controller.state;
+              state.collapsed[prop.section.key] = !state.collapsed[prop.section.key];
+              controller.setState(state);
+            }}
+            style={backpackStyles.sectionContainer}>
 
-              <View style={[backpackStyles.iconChevronView, {transform: [{ rotate: controller.state.collapsed[prop.section.key] ? '0deg' : '90deg'}]}]}>
-                <Icon name='chevron-right' size={20} color={Palette.white} />
-              </View>
+            <View style={[backpackStyles.iconChevronView, {transform: [{ rotate: controller.state.collapsed[prop.section.key] ? '0deg' : '90deg'}]}]}>
+              <Icon name='chevron-right' size={20} color={Palette.white} />
+            </View>
 
-              <Text style={backpackStyles.sectionTitle}>{prop.section.key}</Text>
-            </TouchableOpacity>
-          );
-        }}
-        sections={controller.user.getInTheBackpackSelected()}
-        stickySectionHeadersEnabled />
+            <Text style={backpackStyles.sectionTitle}>{prop.section.key}</Text>
+          </TouchableOpacity>
+        );
+      }}
+      sections={controller.user.getInTheBackpackSelected()}
+      stickySectionHeadersEnabled />
   </View>
 );

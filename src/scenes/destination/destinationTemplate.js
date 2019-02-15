@@ -82,7 +82,7 @@ export default (controller) => (
                 <BackpackSvg width={25} height={25} color={Palette.black} colorFillCorner={Palette.white} colorFillRest={Palette.white} />
               </View>
               <View style={{flex: 5}}>
-                <Text>My Backpacks</Text>
+                <Text>{controller.i18n.t('destination.myBackpacks')}</Text>
               </View>
             </View>
             <View style={{borderBottomColor: 'black', borderBottomWidth: 0.5, opacity: 0.6, paddingTop: '10%'}} />
@@ -110,17 +110,25 @@ export default (controller) => (
     </TouchableOpacity>
 
     <TouchableOpacity
+      style={destinationStyles.logoutView}
+      onPress={() => {
+        controller.logoutAndRedirect();
+      }}>
+      <Icon size={20} name='sign-out' color={Palette.white} />
+    </TouchableOpacity>
+
+    <TouchableOpacity
       style={destinationStyles.questionView}
       onPress={() => {
         controller.rootStore.dispatch({ type: 'FROM_DESTINATION_TO_WHAT', isDestinationToWhatScreen: true});
         controller.navigateTo('WhatDoesThisApp');
-       }}>
+      }}>
       <Icon size={20} name='question' color={Palette.white} />
     </TouchableOpacity>
 
     <ActionButton buttonColor={Palette.primaryColor}>
       <ActionButton.Item buttonColor={Palette.green}
-        title='Add Backpack'
+        title={controller.i18n.t('destination.addBackpack')}
         onPress={() => { controller.onPressAddBackpack(); }}>
         <BackpackSvg width={25} height={25} colorFillCorner={Palette.green} colorFillRest={Palette.green} />
       </ActionButton.Item>

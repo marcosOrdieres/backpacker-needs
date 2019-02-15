@@ -49,14 +49,14 @@ export default class BaseScene extends Component {
     });
 
     this.user.getRecommendationsSelected().forEach(value => {
-      if (value.key == 'My Traveler Items') {
+      if (value.key == this.i18n.t('recommendations.myTravelerItems')) {
         flag = true;
         return false;
       }
     });
 
     if (!flag) {
-      this.user.getRecommendationsSelected().push({key: 'My Traveler Items', data: [[{value: 'Backpack', selectedRecommendations: true}]]});
+      this.user.getRecommendationsSelected().push({key: this.i18n.t('recommendations.myTravelerItems'), data: [[{value: 'Backpack', selectedRecommendations: true}]]});
     }
   }
 
@@ -64,7 +64,7 @@ export default class BaseScene extends Component {
     const features = GeojsonCountries.features;
     const locale = this.i18n.currentLocale().substring(0, 2);
     for (let objEachCountry of features) {
-      if(locale === 'es'){
+      if (locale === 'es') {
         if (objEachCountry.properties.nameEs === country) {
           const coordinatesLatAndLong = await this.calculateLongAndLat(objEachCountry.geometry.coordinates);
           this.user.setLat(coordinatesLatAndLong.latitude);
@@ -72,7 +72,7 @@ export default class BaseScene extends Component {
           const completeGeojsonCountry = {'type': 'FeatureCollection', 'features': [objEachCountry]};
           return this.user.setCountryGeojson(completeGeojsonCountry);
         }
-      } else{
+      } else {
         if (objEachCountry.properties.name === country) {
           const coordinatesLatAndLong = await this.calculateLongAndLat(objEachCountry.geometry.coordinates);
           this.user.setLat(coordinatesLatAndLong.latitude);
@@ -136,12 +136,19 @@ export default class BaseScene extends Component {
     this.props.navigation.navigate(destination);
   }
 
-  resetNavigation (route) {
+  resetActionNavigation () {
     const resetAction = StackActions.reset({
       index: 0,
-      actions: [NavigationActions.navigate({ routeName: route })]
+      actions: [NavigationActions.navigate({ routeName: 'Home' })]
     });
-    this.props.navigation.dispatch(resetAction);
+    return this.props.navigation.dispatch(resetAction);
+  }
+
+  pushNavigatorStack (route) {
+    const pushAction = StackActions.push({
+      routeName: route
+    });
+    return this.props.navigation.dispatch(pushAction);
   }
 
   setState (args) {

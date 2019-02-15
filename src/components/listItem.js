@@ -108,7 +108,7 @@ export default class ListItemComponent extends Component {
                 ref='addItemsBackpack'
                 hideTitle
                 hideChevron
-                textInputPlaceholder='Add item in Backpack...'
+                textInputPlaceholder={this.props.textInputPlaceholderBackpack}
                 textInputStyle={{ textAlign: 'left', paddingTop: 0, paddingBottom: 0, marginVertical: 3.5}}
                 textInputValue={this.props.titleAddItem}
                 textInputOnChangeText={this.props.titleAddItemChangeText}

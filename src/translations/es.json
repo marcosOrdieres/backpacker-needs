@@ -33,23 +33,32 @@
     "chooseRegion":"¡Escoge una Region!",
     "choose":"¡Escoge una Region!",
     "placeholderCountry":"¡Escribe el Pais! (min 3 letras)",
-    "letsgo": "¡Vamos",
-    "aboutTrip": "¡Sobre el viaje!",
-    "country":"Pais (eg. Tailandia)"
+    "letsgo": "¡Vamos!",
+    "aboutTrip": "Sobre el viaje",
+    "country":"Pais (eg. Tailandia)",
+    "travelDay":"El día en el que Viajas es ",
+    "chooseDate":"Haz Click en la Mochila para Seleccionar el día"
   },
   "destination":{
     "destination":"Destino",
-    "toast":"¡Para ayudarte con la Mochila, Presiona Recomendaciones!"
+    "toast":"¡Para ayudarte con la Mochila, Presiona Recomendaciones!",
+    "myBackpacks":"Mis Mochilas",
+    "addBackpack":"Añade una Mochila Más"
   },
   "recommendations":{
     "recommendations":"Recomendaciones",
     "recommendationsFor": "Recomendaciones para ",
-    "still":"Todavia ",
-    "daysToGo":" dias para irte!"
+    "still":"¡Solo ",
+    "daysToGo":" dias para irte!",
+    "myTravelerItems":"MIS OBJETOS VIAJEROS"
   },
   "backpack":{
     "backpack":"Mochila",
-    "noItems":"¡No hay objetos en la Mochila! Por favor, escoge algunos en Recommendaciones."
+    "noItems":"¡No hay objetos en la Mochila! Por favor, escoge algunos en Recommendaciones.",
+    "backpackFor": "Mochila para",
+    "still":"¡Solo ",
+    "daysToGo":" Días para irte!",
+    "textInputPlaceholderBackpack":"Añade un Objeto a la Mochila..."
   },
   "email":"email",
   "password":"contraseña",

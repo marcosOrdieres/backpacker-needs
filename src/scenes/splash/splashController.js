@@ -74,6 +74,7 @@ class SplashController extends BaseScene {
       await this.setState({externalData: 'yes'});
       return await this.navigateTo('Menu');
     } catch (error) {
+      console.warn('errorrr: ', error.message);
       // TODO: fix this
       const getDataItemDidMount = await this.getDataItem();
       const getDataItemRecommendationsDidMount = await this.getDataItemRecommendations();
@@ -95,7 +96,6 @@ class SplashController extends BaseScene {
     });
   }
 
-//Aqui
   async getDataItem () {
     try {
       let valueList;
@@ -106,7 +106,6 @@ class SplashController extends BaseScene {
         const eventref = firebase.database().ref('region/').child(locale);
         const snapshot = await eventref.once('value');
         valueList = snapshot.val();
-        console.warn('LAS REGIONES ESPANYA: ',valueList );
         if (!valueList) {
           const eventref = firebase.database().ref('region/').child('en');
           const snapshot = await eventref.once('value');

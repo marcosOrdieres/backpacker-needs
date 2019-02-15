@@ -493,69 +493,157 @@
     }
   },
   "region" : {
-    "Australia and New Zealand" : {
-      "latitude" : -26.38,
-      "longitude" : 126.01
+    "en" : {
+      "Australia and New Zealand" : {
+        "latitude" : -26.38,
+        "longitude" : 126.01
+      },
+      "Caribbean" : {
+        "latitude" : 20.15,
+        "longitude" : -74.91
+      },
+      "Central Asia" : {
+        "latitude" : 41.38,
+        "longitude" : -64.57
+      },
+      "Central America" : {
+        "latitude" : 21.81,
+        "longitude" : -99.25
+      },
+      "East Africa" : {
+        "latitude" : -4.37,
+        "longitude" : 36.49
+      },
+      "East Asia" : {
+        "latitude" : 38.2,
+        "longitude" : 105.3
+      },
+      "East Europe" : {
+        "latitude" : 56.7,
+        "longitude" : 40.51
+      },
+      "Melanesia" : {
+        "latitude" : -7.8,
+        "longitude" : 147.2
+      },
+      "North Africa" : {
+        "latitude" : 25.13,
+        "longitude" : 14.88
+      },
+      "North America" : {
+        "latitude" : 58.9,
+        "longitude" : -92
+      },
+      "North Europe" : {
+        "latitude" : 55.93,
+        "longitude" : 9.51
+      },
+      "Polynesia" : {
+        "latitude" : -21.17,
+        "longitude" : -175.19
+      },
+      "South Africa" : {
+        "latitude" : -25.49,
+        "longitude" : 22.53
+      },
+      "South America" : {
+        "latitude" : -15.2,
+        "longitude" : -60.8
+      },
+      "South Asia" : {
+        "latitude" : 27.45,
+        "longitude" : 70.78
+      },
+      "South East Asia" : {
+        "latitude" : 7.95,
+        "longitude" : 109.88
+      },
+      "South Europe" : {
+        "latitude" : 41.5,
+        "longitude" : 7.3
+      },
+      "West Asia" : {
+        "latitude" : 28.5,
+        "longitude" : 43.2
+      },
+      "West Europe" : {
+        "latitude" : 48.6,
+        "longitude" : 6.5
+      }
     },
-    "Caribbean" : {
-      "latitude" : 20.15,
-      "longitude" : -74.91
-    },
-    "Central America" : {
-      "latitude" : 21.81,
-      "longitude" : -99.25
-    },
-    "East Africa" : {
-      "latitude" : -4.37,
-      "longitude" : 36.49
-    },
-    "East Asia" : {
-      "latitude" : 38.2,
-      "longitude" : 105.3
-    },
-    "East Europe" : {
-      "latitude" : 56.7,
-      "longitude" : 40.51
-    },
-    "Melanesia" : {
-      "latitude" : -7.8,
-      "longitude" : 147.2
-    },
-    "North Africa" : {
-      "latitude" : 25.13,
-      "longitude" : 14.88
-    },
-    "North America" : {
-      "latitude" : 58.9,
-      "longitude" : -92
-    },
-    "South Africa" : {
-      "latitude" : -25.49,
-      "longitude" : 22.53
-    },
-    "South America" : {
-      "latitude" : -15.2,
-      "longitude" : -60.8
-    },
-    "South Asia" : {
-      "latitude" : 27.45,
-      "longitude" : 70.78
-    },
-    "South East Asia" : {
-      "latitude" : 7.95,
-      "longitude" : 109.88
-    },
-    "South Europe" : {
-      "latitude" : 41.5,
-      "longitude" : 7.3
-    },
-    "West Asia" : {
-      "latitude" : 28.5,
-      "longitude" : 43.2
-    },
-    "West Europe" : {
-      "latitude" : 48.6,
-      "longitude" : 6.5
+    "es" : {
+      "America Central" : {
+        "latitude" : 21.81,
+        "longitude" : -99.25
+      },
+      "Este de Africa" : {
+        "latitude" : -4.37,
+        "longitude" : 36.49
+      },
+      "Asia Central" : {
+        "latitude" : 41.38,
+        "longitude" : -64.57
+      },
+      "Australia y Nueva Zelanda" : {
+        "latitude" : -26.38,
+        "longitude" : 126.01
+      },
+      "Caribe" : {
+        "latitude" : 20.15,
+        "longitude" : -74.91
+      },
+      "Este de Asia" : {
+        "latitude" : 38.2,
+        "longitude" : 105.3
+      },
+      "Este de Europa" : {
+        "latitude" : 48.6,
+        "longitude" : 6.5
+      },
+      "Melanesia" : {
+        "latitude" : 56.7,
+        "longitude" : 40.51
+      },
+      "Norte de Africa" : {
+        "latitude" : 25.13,
+        "longitude" : 14.88
+      },
+      "Norte de America" : {
+        "latitude" : 58.9,
+        "longitude" : -92
+      },
+      "Norte de Europa" : {
+        "latitude" : 55.93,
+        "longitude" : 9.51
+      },
+      "Oeste de Asia" : {
+        "latitude" : 28.5,
+        "longitude" : 43.2
+      },
+      "Polinesia" : {
+        "latitude" : -21.17,
+        "longitude" : -175.19
+      },
+      "Sudeste Asiatico" : {
+        "latitude" : 7.95,
+        "longitude" : 109.88
+      },
+      "Sur de Africa" : {
+        "latitude" : -25.49,
+        "longitude" : 22.53
+      },
+      "Sur de America" : {
+        "latitude" : -15.2,
+        "longitude" : -60.8
+      },
+      "Sur de Asia" : {
+        "latitude" : 27.45,
+        "longitude" : 70.78
+      },
+      "Sur de Europa" : {
+        "latitude" : 41.5,
+        "longitude" : 7.3
+      }
     }
   },
   "users" : {
@@ -596,6 +684,16 @@
       "recommendationSelected" : {
         "-LTDoFNW3H1v3hovuwyC" : "Travel insurance",
         "item" : "Visa"
+      }
+    },
+    "1WBizhda3CUoBdI4pCkHe12xxWl2" : {
+      "region" : {
+        "Caribe" : {
+          "date" : "2019-02-24"
+        },
+        "Norte de Africa" : {
+          "date" : "2019-02-24"
+        }
       }
     },
     "1pzDyVetTtaBtqPB9CjuV33QECq1" : {
@@ -881,6 +979,13 @@
         }
       }
     },
+    "5KCJ9itXyCVFU8zFyha6yDEdpIk2" : {
+      "region" : {
+        "Australia y Nueva Zelanda" : {
+          "date" : "2019-02-23"
+        }
+      }
+    },
     "5OZ47yYSi9UbyVjEGJpZ1bFHyK72" : {
       "region" : {
         "France" : {
@@ -1076,6 +1181,13 @@
         }
       }
     },
+    "5y6svmQyLIMpg10KOmK99nXNaQE3" : {
+      "region" : {
+        "America del Este" : {
+          "date" : "2019-02-24"
+        }
+      }
+    },
     "80ql7fovvwVilieQVlTvEDC5u5G2" : {
       "region" : {
         "Caribbean" : {
@@ -1176,6 +1288,13 @@
         }
       }
     },
+    "IAG2mD5jtmXZDukx8Dmc8xunfjk1" : {
+      "region" : {
+        "America del Este" : {
+          "date" : "2019-02-24"
+        }
+      }
+    },
     "OTkAJumyKRbSycxBYKfgqueqvX93" : {
       "region" : {
         "Caribbean" : {
@@ -1241,10 +1360,13 @@
         "Central America" : {
           "date" : "2019-02-23",
           "inTheBackpack" : {
-            "-LYcDxoKkDMYRaJ5hV-A" : "Lonely Planet"
+            "-LYhwfQh7OXbA9QUWweG" : "World Traveller",
+            "-LYhwfapjjr-ef_yQJbb" : "Google Maps",
+            "-LYhwfkuOrdmsjNITyDL" : "Lonely Planet"
           },
           "recommendationSelected" : {
-            "-LYcE2FONTPdlo2tYCT1" : "Googles",
+            "-LYhwW8cJ7HT6ZFYQ6Je" : "Google Maps",
+            "-LYhwXA5szLHyMKXOhs8" : "World Traveller",
             "Lonely Planet" : "Lonely Planet"
           }
         },
@@ -1260,6 +1382,20 @@
       "region" : {
         "Australia and New Zealand" : {
           "date" : "2019-02-27"
+        }
+      }
+    },
+    "WqsPOoBu7wMlTGyFpF4akOA09gu2" : {
+      "region" : {
+        "España" : {
+          "date" : "2019-02-24"
+        }
+      }
+    },
+    "bnF7kFfkhyeHKX1mW8eNJRnOr6l2" : {
+      "region" : {
+        "Tailandia" : {
+          "date" : "2019-02-24"
         }
       }
     },
@@ -1279,6 +1415,60 @@
         },
         "Central America" : {
           "date" : "2019-02-23"
+        }
+      }
+    },
+    "fhtHsjjzSIPTo2Uhoatwaep2f6A3" : {
+      "region" : {
+        "Australia y Nueva Zelanda" : {
+          "date" : "2019-02-23"
+        }
+      }
+    },
+    "iIkIDX30lFMJG6c2MdxPI9GhuwC2" : {
+      "region" : {
+        "America Central" : {
+          "date" : "2019-02-24"
+        },
+        "America del Este" : {
+          "date" : "2019-02-24"
+        },
+        "Tailandia" : {
+          "date" : "2019-02-24"
+        }
+      }
+    },
+    "m0fgGqCj3cUmvgNdyggA6D6a1m13" : {
+      "region" : {
+        "España" : {
+          "date" : "2019-02-24"
+        }
+      }
+    },
+    "tfqP2GDRptQGGLciG5v7waobyRH2" : {
+      "region" : {
+        "Australia y Nueva Zelanda" : {
+          "date" : "2019-02-17"
+        },
+        "Caribe" : {
+          "date" : "2019-02-17"
+        }
+      }
+    },
+    "wSkowguG5EZk3hAmXEXRn4WzJYg1" : {
+      "region" : {
+        "Spain" : {
+          "date" : "2019-02-23"
+        }
+      }
+    },
+    "wdDfrVQlFrfi3B4C1USNtCXTh9M2" : {
+      "region" : {
+        "Central America" : {
+          "date" : "2019-02-23"
+        },
+        "Spain" : {
+          "date" : "2019-02-22"
         }
       }
     },

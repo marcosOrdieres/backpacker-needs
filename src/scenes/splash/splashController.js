@@ -182,12 +182,6 @@ class SplashController extends BaseScene {
     }
   }
 
-  hola () {
-    Object.entries(valueList).forEach((pair) => {
-      we[pair[0]] = Object.assign({}, Object.values(pair[1]).sort());
-    });
-  }
-
   render () {
     if (this.state.externalData === null) {
       return <View />;

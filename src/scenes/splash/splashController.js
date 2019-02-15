@@ -127,6 +127,7 @@ class SplashController extends BaseScene {
   async getDataItemRecommendations () {
     try {
       let valueList;
+      const sortedObj = {};
       const recosStored = await this.storage.getAsyncStorage('recommendations');
       if (!recosStored) {
         // Aqui pillo las recomendaciones de firebase
@@ -142,8 +143,11 @@ class SplashController extends BaseScene {
       } else {
         valueList = await this.storage.getAsyncStorage('recommendations');
       }
-      await this.storage.setAsyncStorage('recommendations', valueList);
-      this.user.setRecommendations(valueList);
+      Object.entries(valueList).forEach((pair) => {
+        sortedObj[pair[0]] = Object.assign({}, Object.values(pair[1]).sort());
+      });
+      await this.storage.setAsyncStorage('recommendations', sortedObj);
+      this.user.setRecommendations(sortedObj);
       return valueList;
     } catch (error) {
       console.warn(error.message);

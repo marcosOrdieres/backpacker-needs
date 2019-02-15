@@ -47,9 +47,19 @@ export default class ListItemComponent extends Component {
       item === 'Netflix' || item === 'Circa' || item.value === 'Netflix' || item.value === 'Circa' ||
       item === 'XE Currency' || item.value === 'XE Currency'
       ) {
-      return true;
-    } else {
+      return 'TIP';
+    } else if (
+      item === 'Ropa para Salir de Fiesta' || item.value === 'Ropa para Salir de Fiesta' ||
+      item === 'Bolsa para la Ropa Sucia' || item.value === 'Bolsa para la Ropa Sucia' ||
+      item === 'Moneda Local' || item.value === 'Moneda Local' || item === 'Cash in Local Currency' || item.value === 'Cash in Local Currency' ||
+      item === 'Dinero suelto' || item.value === 'Dinero suelto' || item === 'Cash' || item.value === 'Cash' ||
+      item === 'Lentillas' || item.value === 'Lentillas' || item === 'Contact Lenses' || item.value === 'Contact Lenses' ||
+      item === 'Maquillaje' || item.value === 'Maquillaje' || item === 'Make up' || item.value === 'Make up' ||
+      item === 'Pildora Anticonceptiva' || item.value === 'Pildora Anticonceptiva' || item === 'Contraceptive Pill' || item.value === 'Contraceptive Pill'
+    ) {
       return false;
+    } else {
+      return true;
     }
   }
 
@@ -73,12 +83,11 @@ export default class ListItemComponent extends Component {
                     item.selectedInTheBackpack ?
                       (<Icon size={25} name='check' color={Palette.green} />)
                       :
-                      !this.rootStore.getState().isBackpackScreen && this.props.noIcon ?
-                      this.applicationComparison(item) ?
+                      !this.rootStore.getState().isBackpackScreen && this.props.noIcon && this.applicationComparison(item) ?
+                      this.applicationComparison(item) === 'TIP' ?
                         ((<TouchableOpacity onPress={this.props.onClickAmazon ? this.props.onClickAmazon.bind(this, item) : null}><Icon size={30} name='mobile' color={Palette.primaryColor} /></TouchableOpacity>))
                         :
                         ((<TouchableOpacity onPress={this.props.onClickAmazon ? this.props.onClickAmazon.bind(this, item) : null}><Icon size={25} name='shopping-cart' color={Palette.primaryColor} /></TouchableOpacity>))
-
                       :
                       (<Icon size={5} name='check' color={Palette.transparent} />)
                     }

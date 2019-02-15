@@ -51,11 +51,11 @@ class SplashController extends BaseScene {
       await this.getDataItem();
       await this.getDataItemRecommendations();
       await this.getDataItemRecosAmazonLinks();
-
       const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
       const countryOrRegion = Object.keys(Object.values(userDataStorage.users)[0].region)[0];
-
-      // Check if it is region or country to store it.
+      if (!this.user.getDateOfTravel()) {
+        this.user.setDateOfTravel(Object.values(Object.values(userDataStorage.users)[0].region)[0].date);
+      }
       const regions = this.user.getRegions();
       const chooseRegionOrCountry = Object.keys(regions).forEach((region) => {
         if (region === countryOrRegion) {

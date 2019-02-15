@@ -21,7 +21,7 @@ class TravelDecisionController extends BaseScene {
       date: now,
       letsgo: false,
       isModalVisible: false,
-      focusOnCountry:false
+      focusOnCountry: false
     };
   }
 
@@ -95,12 +95,11 @@ class TravelDecisionController extends BaseScene {
   getCountriesList () {
     let countriesArr = [];
     const locale = this.i18n.currentLocale().substring(0, 2);
-    console.warn('EL LOCALTEEE: ', locale);
     GeojsonCountries.features.forEach((objEachCountry) => {
-      if(locale === 'es'){
+      if (locale === 'es') {
         const countryName = objEachCountry.properties.nameEs;
         countriesArr.push(countryName);
-      }else{
+      } else {
         const countryName = objEachCountry.properties.name;
         countriesArr.push(countryName);
       }

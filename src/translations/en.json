@@ -36,21 +36,30 @@
     "placeholderCountry":"Type the Country! (min 3 letters)",
     "letsgo": "Let´s Go!",
     "aboutTrip": "About the trip",
-    "country":"Country (eg. Thailand)"
+    "country":"Country (eg. Thailand)",
+    "travelDay":"Your day of Travel is ",
+    "chooseDate":"Click the Backpack to choose the Date!"
   },
   "destination":{
     "destination":"Destination",
-    "toast":"To Help you with the Backpack, Press Recommendations!"
+    "toast":"To Help you with the Backpack, Press Recommendations!",
+    "myBackpacks":"My Backpacks",
+    "addBackpack":"Add Backpack"
   },
   "recommendations":{
     "recommendations":"Recommends",
     "recommendationsFor": "Recommendations for ",
     "still":"Still ",
-    "daysToGo":" days to Go!"
+    "daysToGo":" days to Go!",
+    "myTravelerItems":"MY TRAVELER ITEMS"
   },
   "backpack":{
     "backpack":"Backpack",
-    "noItems":"There are not items in the Backpack! Please choose some in Recommendations"
+    "noItems":"There are not items in the Backpack! Please choose some in Recommendations",
+    "backpackFor": "Backpack for",
+    "still":"Still ",
+    "daysToGo":" days to Go!",
+    "textInputPlaceholderBackpack":"Add item in Backpack..."
   },
   "email":"email",
   "password":"password",

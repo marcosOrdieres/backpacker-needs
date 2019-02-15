@@ -199,4 +199,26 @@ export default class User {
 
       return user;
     }
+
+    reset(){
+      this.sendCredentialSignup = undefined;
+      this.sendCredentialLogin = undefined;
+      this.userId = undefined;
+      this.country = undefined;
+      this.chosenCountry = undefined;
+      this.chosenRegion = undefined;
+      this.chosenRegionCoordinates = undefined;
+      this.recommendations = undefined;
+      this.recommendationsSelected = undefined;
+      this.inTheBackpackSelected = undefined;
+      this.recommendationsOnlyItemSelected = undefined;
+      this.countriesInTheWorld = undefined;
+      this.countryGeojson = undefined;
+      this.lat = undefined;
+      this.long = undefined;
+      this.dateOfTravel = undefined;
+      this.regionsStoredFirebase = undefined;
+      this.amazonLinksRecommendations = undefined;
+      this.listRecosForNextClick = undefined;
+    }
 }

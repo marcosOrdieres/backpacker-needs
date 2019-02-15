@@ -21,12 +21,12 @@ export default (controller) => (
       renderItem={({item, index, section}) => {
         return (
           <ListItem
-            noFirstIcon={section.key === 'TIPS' ? true : false}
+            noFirstIcon={section.key === 'TIPS' || section.key === 'CONSEJOS' ? true : false}
             isTip
-            noIcon={section.key === 'TIPS' ? false : true}
+            noIcon={section.key === 'TIPS' || section.key === 'CONSEJOS' || section.key === 'IMPORTANT DOCUMENTS' || section.key === 'DOCUMENTOS IMPORTANTES' ? false : true}
             dataItem={!controller.state.collapsed[section.key] ? item : []}
             onClickAmazon={(item) => controller.onClickAmazonItems(item)}
-            onClickListItem={section.key === 'TIPS' ? null : (item) => controller.onClickListItemRecommendations(item)} />);
+            onClickListItem={section.key === 'TIPS' || section.key === 'CONSEJOS' ? null : (item) => controller.onClickListItemRecommendations(item)} />);
       }}
       renderSectionHeader={(prop) => {
         return (

@@ -4,6 +4,7 @@ import template from './destinationTemplate';
 import { connect } from 'react-redux';
 import Toast, {DURATION} from 'react-native-easy-toast';
 import { View, BackHandler } from 'react-native';
+
 import Australia from '../../assets/mapJson/subregion/Australia_and_NewZealand.json';
 import Caribbean from '../../assets/mapJson/subregion/Caribbean.json';
 import CentralAmerica from '../../assets/mapJson/subregion/CentralAmerica.json';
@@ -144,11 +145,11 @@ class DestinationController extends BaseScene {
           return CentralAmerica;
           break;
         case 'Central Asia':
-        case 'America del Este':
+        case 'Asia Central':
           return CentralAsia;
           break;
         case 'East Africa':
-        case 'America del Este':
+        case 'Este de Africa':
           return EasternAfrica;
           break;
         case 'East Asia':
@@ -214,6 +215,14 @@ class DestinationController extends BaseScene {
     this.user.setDateOfTravel(null);
     this.rootStore.dispatch({ type: 'RECOS_UPDATED', isRecosUpdated: true});
     this.navigateTo('TravelDecision');
+  }
+
+  async logoutAndRedirect () {
+    await this.storage.clear();
+    this.user.reset();
+    this.rootStore.dispatch({type: 'RESET_USER'});
+    // this.pushNavigatorStack(this.route.home);
+    this.navigateTo('Splash');
   }
 
   render () {

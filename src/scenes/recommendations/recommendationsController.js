@@ -20,7 +20,8 @@ class RecommendationsController extends BaseScene {
       index: 0,
       spinnerVisible: false,
       collapsed: {},
-      noLinkNoIcon: false
+      noLinkNoIcon: false,
+      howManyDays: ''
     };
   }
 

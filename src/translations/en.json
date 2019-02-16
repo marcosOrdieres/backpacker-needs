@@ -59,7 +59,8 @@
     "backpackFor": "Backpack for",
     "still":"Still ",
     "daysToGo":" days to Go!",
-    "textInputPlaceholderBackpack":"Add item in Backpack..."
+    "textInputPlaceholderBackpack":"Add item in Backpack...",
+    "toastNoItem":"Sorry, you add No item"
   },
   "email":"email",
   "password":"password",

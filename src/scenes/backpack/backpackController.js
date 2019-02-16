@@ -255,17 +255,26 @@ class BackpackController extends BaseScene {
     });
   }
 
+  showToastNoItem () {
+    return this.refs.toastBackpack.show(this.i18n.t('backpack.toastNoItem'), 1500);
+  }
+
   async storeAddItem (addItem) {
     try {
+      console.warn('add item:', addItem);
       if (this.user.getChosenRegion()) {
         // store the items that are Added manually by the user.
         firebase.database().ref('users/' + this.user.getUserId()).child('region').child(this.user.getChosenRegion()).child('recommendationSelected').push(addItem);
+
+        const chosenRegionString = this.user.getChosenRegion();
+        const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
+
         Object.values(userDataStorage.users)[0].region[this.user.getChosenRegion()].recommendationSelected[addItem.toString()] = addItem.toString();
         await this.storage.setAsyncStorage(this.user.getUserId(), userDataStorage);
         return addItem;
       } else {
         firebase.database().ref('users/' + this.user.getUserId()).child('region').child(this.user.getChosenCountry()).child('recommendationSelected').push(addItem);
-        const chosenRegionString = this.user.getChosenRegion();
+        const chosenCountryString = this.user.getChosenCountry();
         const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
         Object.values(userDataStorage.users)[0].region[this.user.getChosenCountry()].recommendationSelected[addItem.toString()] = addItem.toString();
         await this.storage.setAsyncStorage(this.user.getUserId(), userDataStorage);

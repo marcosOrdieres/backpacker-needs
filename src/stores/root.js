@@ -12,8 +12,8 @@ const appReducer = combineReducers({
   isRegionChanged: userReducer.isRegionChanged,
   isRecosUpdated: userReducer.isRecosUpdated,
   isSameRegion: userReducer.isSameRegion,
-  isDestinationToWhatScreen: userReducer.isDestinationToWhatScreen
-
+  isDestinationToWhatScreen: userReducer.isDestinationToWhatScreen,
+  isComingFromLogin: userReducer.isComingFromLogin
 });
 
 const rootStore = createStore(appReducer, applyMiddleware(thunk), reduxReset());

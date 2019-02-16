@@ -48,6 +48,16 @@ class RecommendationsController extends BaseScene {
 
     if (this.user.getChosenRegion()) {
       const chosenRegionString = this.user.getChosenRegion();
+
+      // aqui tengo que controlar si viene del login, que hay que leerlo de la BD xq n hay na en localStorage
+      // y despues guardarlo ya en el storage
+
+      // if (this.rootStore.getState().isComingFromLogin) {
+      //   const eventref = firebase.database().ref(this.user.getUserId());
+      //   const snapshot = await eventref.once('value');
+      //   valueListUserData = snapshot.val();
+      //   await this.storage.setAsyncStorage(this.user.getUserId(), valueListUserData);
+      // }
       const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
       if (!Object.values(userDataStorage.users)[0].region[chosenRegionString]) {
         return null;

@@ -58,7 +58,8 @@
     "backpackFor": "Mochila para",
     "still":"¡Solo ",
     "daysToGo":" Días para irte!",
-    "textInputPlaceholderBackpack":"Añade un Objeto a la Mochila..."
+    "textInputPlaceholderBackpack":"Añade un Objeto a la Mochila...",
+    "toastNoItem":"Lo siento, no has añadido ningún objecto"
   },
   "email":"email",
   "password":"contraseña",

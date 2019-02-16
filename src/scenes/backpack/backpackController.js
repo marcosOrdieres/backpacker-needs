@@ -261,7 +261,6 @@ class BackpackController extends BaseScene {
 
   async storeAddItem (addItem) {
     try {
-      console.warn('add item:', addItem);
       if (this.user.getChosenRegion()) {
         // store the items that are Added manually by the user.
         firebase.database().ref('users/' + this.user.getUserId()).child('region').child(this.user.getChosenRegion()).child('recommendationSelected').push(addItem);

@@ -48,6 +48,8 @@ class SendCredentialsController extends BaseScene {
       const login = await firebase.auth().signInAndRetrieveDataWithEmailAndPassword(this.state.userName, this.state.password);
       this.firebaseAnalytics.setUserProperty('handleLogin', 'SendCredentialsController');
       this.user.setUserId(login.user.uid);
+      // coming from login
+      this.rootStore.dispatch({ type: 'FROM_LOGIN', isComingFromLogin: true});
       return this.loginDataWithFirebase();
     } catch (error) {
       if (typeof error.message === 'string') {
@@ -61,6 +63,7 @@ class SendCredentialsController extends BaseScene {
   async getUserDataForLogin () {
     try {
       const eventref = firebase.database().ref('users/' + this.user.getUserId());
+      // Esto tiene que tener la misma forma que cuando hago el sign up
       const snapshot = await eventref.once('value');
       valueList = snapshot.val();
       return valueList;
@@ -87,8 +90,9 @@ class SendCredentialsController extends BaseScene {
         this.user.setChosenCountry(countryOrRegion);
         this.chargeGeojsonCountry(countryOrRegion);
       }
+      const userDataForLocalStorage = {'users': {[this.user.getUserId()]: userDataFirebase}};
       // In The login, I create the object with all the things in the USer from Firebase
-      await this.storage.setAsyncStorage(this.user.getUserId(), userDataFirebase);
+      await this.storage.setAsyncStorage(this.user.getUserId(), userDataForLocalStorage);
       await this.setState({externalData: 'yes'});
       return await this.navigateTo('Menu');
     } catch (error) {

@@ -75,6 +75,16 @@ const isDestinationToWhatScreenReducer = (state = false, action) => {
   }
 };
 
+const isComingFromLoginReducer = (state = false, action) => {
+  switch (action.type) {
+    case 'FROM_LOGIN':
+      return action.isComingFromLogin;
+    case 'RESET_USER':
+      return false;
+    default:
+      return state;
+  }
+};
 export default {
   isFromSignup: isFromSignupReducer,
   isFromLogin: isFromLoginReducer,
@@ -82,5 +92,6 @@ export default {
   isRegionChanged: isRegionChangedReducer,
   isRecosUpdated: isRecosUpdatedReducer,
   isSameRegion: isSameRegionReducer,
-  isDestinationToWhatScreen: isDestinationToWhatScreenReducer
+  isDestinationToWhatScreen: isDestinationToWhatScreenReducer,
+  isComingFromLogin: isComingFromLoginReducer
 };

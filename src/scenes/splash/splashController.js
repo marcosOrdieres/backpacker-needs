@@ -74,7 +74,6 @@ class SplashController extends BaseScene {
       await this.setState({externalData: 'yes'});
       return await this.navigateTo('Menu');
     } catch (error) {
-      console.warn('errorrr: ', error.message);
       // TODO: fix this
       const getDataItemDidMount = await this.getDataItem();
       const getDataItemRecommendationsDidMount = await this.getDataItemRecommendations();
@@ -128,6 +127,7 @@ class SplashController extends BaseScene {
     try {
       let valueList;
       const sortedObj = {};
+      const sortedKeysAnValues = {};
       const recosStored = await this.storage.getAsyncStorage('recommendations');
       if (!recosStored) {
         // Aqui pillo las recomendaciones de firebase
@@ -146,8 +146,12 @@ class SplashController extends BaseScene {
       Object.entries(valueList).forEach((pair) => {
         sortedObj[pair[0]] = Object.assign({}, Object.values(pair[1]).sort());
       });
-      await this.storage.setAsyncStorage('recommendations', sortedObj);
-      this.user.setRecommendations(sortedObj);
+
+      Object.keys(sortedObj).sort().forEach(function (key) {
+        sortedKeysAnValues[key] = sortedObj[key];
+      });
+      await this.storage.setAsyncStorage('recommendations', sortedKeysAnValues);
+      this.user.setRecommendations(sortedKeysAnValues);
       return valueList;
     } catch (error) {
       console.warn(error.message);

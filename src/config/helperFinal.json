@@ -170,6 +170,83 @@
   "recommendationsTotal" : {
     "en" : {
       "recommendations" : {
+        "6 - BASIC TECHNOLOGY" : {
+          "item1" : "World Travel Adapter",
+          "item2" : "Power bank",
+          "item3" : "Pen Drive",
+          "item4" : "Mobile Phone Charger",
+          "item5" : "Mobile Phone",
+          "item6" : "Kindle",
+          "item7" : "Headphones",
+          "item8" : "Camera Charger",
+          "item9" : "Camera"
+        },
+        "2 - CLOTH BASICS" : {
+          "item1" : "Underwear",
+          "item10" : "Trousers",
+          "item11" : "Travel Pillow",
+          "item12" : "T-shirts",
+          "item13" : "Swimsuit",
+          "item14" : "Sunglasses",
+          "item15" : "Sun hat",
+          "item2" : "Socks",
+          "item3" : "Scarf or Travel Wrap",
+          "item4" : "Rain coat",
+          "item5" : "Jumper",
+          "item6" : "Jacket",
+          "item7" : "Hat",
+          "item8" : "Gloves",
+          "item9" : "Eye Mask"
+        },
+        "4 - FIRST AIDS" : {
+          "item1" : "Vaccinations (short reminder depends where)",
+          "item10" : "Thermometer",
+          "item2" : "Probiotics",
+          "item3" : "Portable water purification",
+          "item4" : "Mosquito net",
+          "item5" : "Mosquito Repellant",
+          "item6" : "Hand Sanitizer",
+          "item7" : "Diarrhea/laxative medicines",
+          "item8" : "Bandages",
+          "item9" : "Anti-biotics"
+        },
+        "7 - FOR YOUR FEET" : {
+          "item1" : "Walking sandals",
+          "item2" : "Trainers",
+          "item3" : "Shoes",
+          "item4" : "Flip flops"
+        },
+        "1 - IMPORTANT DOCUMENTS" : {
+          "item1" : "Wallet",
+          "item10" : "Visa",
+          "item11" : "Travel insurance",
+          "item12" : "Transportation tickets",
+          "item13" : "Reservations and itineraries",
+          "item14" : "Personal ID/Student ID card",
+          "item15" : "Passport",
+          "item16" : "Itinerary",
+          "item17" : "Important addresses",
+          "item2" : "House Keys",
+          "item3" : "Hotel information",
+          "item4" : "Health insurance",
+          "item5" : "Guide books and maps",
+          "item6" : "Emergency contacts",
+          "item7" : "Clock",
+          "item8" : "Copies of Important Papers",
+          "item9" : "Boarding Pass"
+        },
+        "8 - MISCELANEA" : {
+          "item1" : "SurfBoard",
+          "item10" : "Snorkel",
+          "item2" : "Pens",
+          "item3" : "Notebook",
+          "item4" : "Hair Bands",
+          "item5" : "Googles",
+          "item6" : "Cash in Local Currency",
+          "item7" : "Cash",
+          "item8" : "Underwater Camera",
+          "item9" : "BodyBoard"
+        },
         "TIPS" : {
           "item1" : "Ensure you’re insured",
           "item10" : "Don’t pack more than 1 week’s clothing",
@@ -189,84 +266,7 @@
           "item8" : "Keep your important things with you",
           "item9" : "Always pack to the corners!"
         },
-        "MISCELANEA" : {
-          "item1" : "SurfBoard",
-          "item10" : "Snorkel",
-          "item2" : "Pens",
-          "item3" : "Notebook",
-          "item4" : "Hair Bands",
-          "item5" : "Googles",
-          "item6" : "Cash in Local Currency",
-          "item7" : "Cash",
-          "item8" : "Underwater Camera",
-          "item9" : "BodyBoard"
-        },
-        "BASIC TECHNOLOGY" : {
-          "item1" : "World Travel Adapter",
-          "item2" : "Power bank",
-          "item3" : "Pen Drive",
-          "item4" : "Mobile Phone Charger",
-          "item5" : "Mobile Phone",
-          "item6" : "Kindle",
-          "item7" : "Headphones",
-          "item8" : "Camera Charger",
-          "item9" : "Camera"
-        },
-        "FOR YOUR FEET" : {
-          "item1" : "Walking sandals",
-          "item2" : "Trainers",
-          "item3" : "Shoes",
-          "item4" : "Flip flops"
-        },
-        "TRAVEL APPS" : {
-          "item1" : "Netflix",
-          "item10" : "Mobile Passport",
-          "item11" : "Lonely Planet",
-          "item12" : "Hostel World",
-          "item13" : "Google Translate",
-          "item14" : "Google Maps",
-          "item15" : "City Mapper",
-          "item16" : "Circa",
-          "item17" : "XE Currency",
-          "item18" : "World Traveller",
-          "item19" : "Uber",
-          "item2" : "Tripadvisor",
-          "item3" : "SkyScanner",
-          "item4" : "Nord Vpn",
-          "item5" : "Airbnb"
-        },
-        "TRAVELLER ITEMS" : {
-          "item1" : "Lock",
-          "item10" : "Lip Balm",
-          "item11" : "Headtorch",
-          "item12" : "Hammock",
-          "item13" : "'Going out' clothes",
-          "item14" : "Gaffer tape",
-          "item15" : "Ear Plugs",
-          "item16" : "Books",
-          "item17" : "Travel Water Bottle",
-          "item18" : "Swiss Army Knife",
-          "item19" : "Small day Pack",
-          "item2" : "Sleeping medicines",
-          "item21" : "Sleeping Bag",
-          "item22" : "Security Belt with Hidden Pocket",
-          "item23" : "Microfibre Towel",
-          "item24" : "Mesh Stiff Sack Storage Bag",
-          "item25" : "Backpack Waterproof Cover"
-        },
-        "FIRST AIDS" : {
-          "item1" : "Vaccinations (short reminder depends where)",
-          "item10" : "Thermometer",
-          "item2" : "Probiotics",
-          "item3" : "Portable water purification",
-          "item4" : "Mosquito net",
-          "item5" : "Mosquito Repellant",
-          "item6" : "Hand Sanitizer",
-          "item7" : "Diarrhea/laxative medicines",
-          "item8" : "Bandages",
-          "item9" : "Anti-biotics"
-        },
-        "TOILET KIT" : {
+        "3 - TOILET KIT" : {
           "item1" : "Glasses",
           "item10" : "Extra razors (Check in)",
           "item11" : "Detergent",
@@ -291,46 +291,63 @@
           "item3" : "Mini mirror",
           "item31" : "Comb"
         },
-        "CLOTH BASICS" : {
-          "item1" : "Underwear",
-          "item10" : "Trousers",
-          "item11" : "Travel Pillow",
-          "item12" : "T-shirts",
-          "item13" : "Swimsuit",
-          "item14" : "Sunglasses",
-          "item15" : "Sun hat",
-          "item2" : "Socks",
-          "item3" : "Scarf or Travel Wrap",
-          "item4" : "Rain coat",
-          "item5" : "Jumper",
-          "item6" : "Jacket",
-          "item7" : "Hat",
-          "item8" : "Gloves",
-          "item9" : "Eye Mask"
+        "9 - TRAVEL APPS" : {
+          "item1" : "Netflix",
+          "item10" : "Mobile Passport",
+          "item11" : "Lonely Planet",
+          "item12" : "Hostel World",
+          "item13" : "Google Translate",
+          "item14" : "Google Maps",
+          "item15" : "City Mapper",
+          "item16" : "Circa",
+          "item17" : "XE Currency",
+          "item18" : "World Traveller",
+          "item19" : "Uber",
+          "item2" : "Tripadvisor",
+          "item3" : "SkyScanner",
+          "item4" : "Nord Vpn",
+          "item5" : "Airbnb"
         },
-        "IMPORTANT DOCUMENTS" : {
-          "item1" : "Wallet",
-          "item10" : "Visa",
-          "item11" : "Travel insurance",
-          "item12" : "Transportation tickets",
-          "item13" : "Reservations and itineraries",
-          "item14" : "Personal ID/Student ID card",
-          "item15" : "Passport",
-          "item16" : "Itinerary",
-          "item17" : "Important addresses",
-          "item2" : "House Keys",
-          "item3" : "Hotel information",
-          "item4" : "Health insurance",
-          "item5" : "Guide books and maps",
-          "item6" : "Emergency contacts",
-          "item7" : "Clock",
-          "item8" : "Copies of Important Papers",
-          "item9" : "Boarding Pass"
+        "5 - TRAVELLER ITEMS" : {
+          "item1" : "Lock",
+          "item10" : "Lip Balm",
+          "item11" : "Headtorch",
+          "item12" : "Hammock",
+          "item13" : "'Going out' clothes",
+          "item14" : "Gaffer tape",
+          "item15" : "Ear Plugs",
+          "item16" : "Books",
+          "item17" : "Travel Water Bottle",
+          "item18" : "Swiss Army Knife",
+          "item19" : "Small day Pack",
+          "item2" : "Sleeping medicines",
+          "item21" : "Sleeping Bag",
+          "item22" : "Security Belt with Hidden Pocket",
+          "item23" : "Microfibre Towel",
+          "item24" : "Mesh Stiff Sack Storage Bag",
+          "item25" : "Backpack Waterproof Cover"
         }
       }
     },
     "es" : {
       "recommendations" : {
+        "9 - APPS PARA EL VIAJERO" : {
+          "item1" : "Airbnb",
+          "item10" : "Nord Vpn",
+          "item11" : "SkyScanner",
+          "item12" : "Tripadvisor",
+          "item13" : "Uber",
+          "item14" : "World Traveller",
+          "item15" : "XE Currency",
+          "item2" : "Circa",
+          "item3" : "City Mapper",
+          "item4" : "Google Maps",
+          "item5" : "Google Translate",
+          "item6" : "Hostel World",
+          "item7" : "Lonely Planet",
+          "item8" : "Mobile Passport",
+          "item9" : "Netflix"
+        },
         "CONSEJOS" : {
           "item1" : "Rellena bien los Bordes",
           "item10" : "Asegurate de estar Asegurado",
@@ -351,84 +368,26 @@
           "item8" : "No te estreses, todo va a salir Bien!",
           "item9" : "Maximo ropa para una Semana"
         },
-        "MISCELANEA" : {
-          "item1" : "BodyBoard",
-          "item10" : "Underwater Camera",
-          "item2" : "Dinero suelto",
-          "item3" : "Moneda Local",
-          "item4" : "Gafas de nadar",
-          "item5" : "Gomas para el Pelo",
-          "item6" : "Libreta",
-          "item7" : "Boligrafos",
-          "item8" : "Snorkel",
-          "item9" : "SurfBoard"
+        "1 - DOCUMENTOS IMPORTANTES" : {
+          "item1" : "Tarjeta de embarque",
+          "item10" : "Direcciones importantes",
+          "item11" : "Itinerario",
+          "item12" : "PAsaporte",
+          "item13" : "ID Personal/ID de Estudiante",
+          "item14" : "Reservas",
+          "item15" : "Tickets de Transporte",
+          "item16" : "Seguro de viaje",
+          "item17" : "Visa",
+          "item18" : "Cartera",
+          "item2" : "Copias de papeles importantes",
+          "item3" : "Reloj",
+          "item4" : "Contactos de emergencia",
+          "item6" : "Mapas y guias de Viaje",
+          "item7" : "Seguro medico",
+          "item8" : "Informacion de Hotel",
+          "item9" : "Llaves de Casa"
         },
-        "APPS PARA EL VIAJERO" : {
-          "item1" : "Airbnb",
-          "item10" : "Nord Vpn",
-          "item11" : "SkyScanner",
-          "item12" : "Tripadvisor",
-          "item13" : "Uber",
-          "item14" : "World Traveller",
-          "item15" : "XE Currency",
-          "item2" : "Circa",
-          "item3" : "City Mapper",
-          "item4" : "Google Maps",
-          "item5" : "Google Translate",
-          "item6" : "Hostel World",
-          "item7" : "Lonely Planet",
-          "item8" : "Mobile Passport",
-          "item9" : "Netflix"
-        },
-        "OBJETOS PARA EL VIAJERO" : {
-          "item1" : "Backpack Waterproof Cover",
-          "item10" : "Bolsa para la Ropa Sucia",
-          "item11" : "Toalla de Microfibras",
-          "item12" : "Cinturon",
-          "item13" : "Saco de dormir",
-          "item14" : "Pastillas para dormir",
-          "item15" : "Mochila para el dia a dia",
-          "item16" : "Navaja Suiza",
-          "item17" : "Cantimplora",
-          "item2" : "Libros",
-          "item3" : "Tapones para los Oidos",
-          "item4" : "Cinta Americana",
-          "item5" : "Ropa para Salir de Fiesta",
-          "item6" : "Hamaca",
-          "item7" : "Linterna",
-          "item8" : "Barra de labios",
-          "item9" : "Candado"
-        },
-        "PARA LOS PIES" : {
-          "item1" : "Chanclas",
-          "item2" : "Zapatos",
-          "item3" : "Zapatos Deportivos",
-          "item4" : "Sandalias"
-        },
-        "TECNOLOGIA BASICOS" : {
-          "item1" : "Camara",
-          "item2" : "Cargador de Camara",
-          "item3" : "Auriculares",
-          "item4" : "Kindle",
-          "item5" : "Telefono Movil",
-          "item6" : "Cargador de Telefono",
-          "item7" : "Pen Drive",
-          "item8" : "Power bank",
-          "item9" : "Adaptador de Corriente"
-        },
-        "PRIMEROS AUXILIOS" : {
-          "item1" : "Antibioticos",
-          "item10" : "Vacunas (short reminder depends where)",
-          "item2" : "Vendas",
-          "item3" : "Pastillas para la Diarrea",
-          "item4" : "Sanitizador de Manos",
-          "item5" : "Repelente de Mosquitos",
-          "item6" : "Mosquitera",
-          "item7" : "Pastillas Potabilizadoras",
-          "item8" : "Probioticos",
-          "item9" : "Termometro"
-        },
-        "KIT DE BAÑO" : {
+        "3 - KIT DE BAÑO" : {
           "item1" : "Peine",
           "item10" : "Espejo",
           "item11" : "Pastillas contra el mareo",
@@ -453,7 +412,56 @@
           "item8" : "Cuchillas (Check in)",
           "item9" : "Gafas"
         },
-        "ROPA BASICOS" : {
+        "8 - MISCELANEA" : {
+          "item1" : "BodyBoard",
+          "item10" : "Underwater Camera",
+          "item2" : "Dinero suelto",
+          "item3" : "Moneda Local",
+          "item4" : "Gafas de nadar",
+          "item5" : "Gomas para el Pelo",
+          "item6" : "Libreta",
+          "item7" : "Boligrafos",
+          "item8" : "Snorkel",
+          "item9" : "SurfBoard"
+        },
+        "5 - OBJETOS PARA EL VIAJERO" : {
+          "item1" : "Backpack Waterproof Cover",
+          "item10" : "Bolsa para la Ropa Sucia",
+          "item11" : "Toalla de Microfibras",
+          "item12" : "Cinturon",
+          "item13" : "Saco de dormir",
+          "item14" : "Pastillas para dormir",
+          "item15" : "Mochila para el dia a dia",
+          "item16" : "Navaja Suiza",
+          "item17" : "Cantimplora",
+          "item2" : "Libros",
+          "item3" : "Tapones para los Oidos",
+          "item4" : "Cinta Americana",
+          "item5" : "Ropa para Salir de Fiesta",
+          "item6" : "Hamaca",
+          "item7" : "Linterna",
+          "item8" : "Barra de labios",
+          "item9" : "Candado"
+        },
+        "7 - PARA LOS PIES" : {
+          "item1" : "Chanclas",
+          "item2" : "Zapatos",
+          "item3" : "Zapatos Deportivos",
+          "item4" : "Sandalias"
+        },
+        "4 - PRIMEROS AUXILIOS" : {
+          "item1" : "Antibioticos",
+          "item10" : "Vacunas (short reminder depends where)",
+          "item2" : "Vendas",
+          "item3" : "Pastillas para la Diarrea",
+          "item4" : "Sanitizador de Manos",
+          "item5" : "Repelente de Mosquitos",
+          "item6" : "Mosquitera",
+          "item7" : "Pastillas Potabilizadoras",
+          "item8" : "Probioticos",
+          "item9" : "Termometro"
+        },
+        "2 - ROPA BASICOS" : {
           "item1" : "Antifaz",
           "item10" : "Gafas de sol",
           "item11" : "Bañador",
@@ -470,24 +478,16 @@
           "item8" : "Calcetines",
           "item9" : "Gorra para el sol"
         },
-        "DOCUMENTOS IMPORTANTES" : {
-          "item1" : "Tarjeta de embarque",
-          "item10" : "Direcciones importantes",
-          "item11" : "Itinerario",
-          "item12" : "PAsaporte",
-          "item13" : "ID Personal/ID de Estudiante",
-          "item14" : "Reservas",
-          "item15" : "Tickets de Transporte",
-          "item16" : "Seguro de viaje",
-          "item17" : "Visa",
-          "item18" : "Cartera",
-          "item2" : "Copias de papeles importantes",
-          "item3" : "Reloj",
-          "item4" : "Contactos de emergencia",
-          "item6" : "Mapas y guias de Viaje",
-          "item7" : "Seguro medico",
-          "item8" : "Informacion de Hotel",
-          "item9" : "Llaves de Casa"
+        "6 - TECNOLOGIA BASICOS" : {
+          "item1" : "Camara",
+          "item2" : "Cargador de Camara",
+          "item3" : "Auriculares",
+          "item4" : "Kindle",
+          "item5" : "Telefono Movil",
+          "item6" : "Cargador de Telefono",
+          "item7" : "Pen Drive",
+          "item8" : "Power bank",
+          "item9" : "Adaptador de Corriente"
         }
       }
     }
@@ -1188,6 +1188,13 @@
         }
       }
     },
+    "7IzlwYHN6Xh6pIt62ugmv19ryTn1" : {
+      "region" : {
+        "Asia Central" : {
+          "date" : "2019-02-16"
+        }
+      }
+    },
     "80ql7fovvwVilieQVlTvEDC5u5G2" : {
       "region" : {
         "Caribbean" : {
@@ -1485,6 +1492,23 @@
       "region" : {
         "España" : {
           "date" : "2019-02-24"
+        }
+      }
+    },
+    "qFiSBY0PB3XBClLihq2aS2Xa7Mf2" : {
+      "region" : {
+        "Asia Central" : {
+          "date" : "2019-02-17",
+          "inTheBackpack" : {
+            "-LYl_J8k2TgXCJE5Hgu6" : "Bufanda o Braga"
+          },
+          "recommendationSelected" : {
+            "-LYl_Xnhwe-FaHq_qCx4" : "Cargador de Camara",
+            "-LYl_YEBviujcEUiYI_2" : "Camara",
+            "-LYlhkIe5Oq9OlQkdEuN" : "Informacion de Hotel",
+            "-LYlhrXU163eCrXm0Y5S" : "Informacion de Hotel",
+            "Bufanda o Braga" : "Bufanda o Braga"
+          }
         }
       }
     },

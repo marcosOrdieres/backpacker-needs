@@ -21,12 +21,12 @@ export default (controller) => (
       renderItem={({item, index, section}) => {
         return (
           <ListItem
-            noFirstIcon={section.key === 'TIPS' || section.key === 'CONSEJOS' ? true : false}
+            noFirstIcon={section.key === 'Tips' || section.key === 'Consejos' ? true : false}
             isTip
-            noIcon={section.key === 'TIPS' || section.key === 'CONSEJOS' || section.key === 'IMPORTANT DOCUMENTS' || section.key === 'DOCUMENTOS IMPORTANTES' ? false : true}
+            noIcon={section.key === 'Tips' || section.key === 'Consejos' || section.key === '1 - Important Documents and Items' || section.key === '1 - Documentos y Objetos Importantes' || section.key === '1 - Wichtige Dokumente und Items' ? false : true}
             dataItem={!controller.state.collapsed[section.key] ? item : []}
             onClickAmazon={(item) => controller.onClickAmazonItems(item)}
-            onClickListItem={section.key === 'TIPS' || section.key === 'CONSEJOS' ? null : (item) => controller.onClickListItemRecommendations(item)} />);
+            onClickListItem={section.key === 'Tips' || section.key === 'Consejos' ? null : (item) => controller.onClickListItemRecommendations(item)} />);
       }}
       renderSectionHeader={(prop) => {
         return (

@@ -134,74 +134,93 @@ class DestinationController extends BaseScene {
       switch (this.user.getChosenRegion()) {
         case 'Australia and New Zealand':
         case 'Australia y Nueva Zelanda':
+        case 'Australien und Neuseeland':
           return Australia;
           break;
         case 'Caribbean':
         case 'Caribe':
+        case 'Karibik':
           return Caribbean;
           break;
         case 'Central America':
         case 'America Central':
+        case 'Mittelamerika':
           return CentralAmerica;
           break;
         case 'Central Asia':
         case 'Asia Central':
+        case 'Mittelasien':
           return CentralAsia;
           break;
         case 'East Africa':
         case 'Este de Africa':
+        case 'Ostafrika':
           return EasternAfrica;
           break;
         case 'East Asia':
         case 'Este de Asia':
+        case 'Ostasien':
           return EasternAsia;
           break;
         case 'East Europe':
         case 'Europa del Este':
+        case 'Osteuropa':
           return EasternEurope;
           break;
         case 'Melanesia':
         case 'Melanesia':
+        case 'Melanesien':
           return Melanesia;
           break;
         case 'North Africa':
         case 'Norte de Africa':
+        case 'Nordafrika':
           return NorthernAfrica;
           break;
         case 'North America':
         case 'Norte de America':
+        case 'Nordamerika':
           return NorthernAmerica;
           break;
         case 'North Europe':
         case 'Norte de Europa':
+        case 'Nordeuropa':
+
           return NorthernEurope;
           break;
         case 'Polynesia':
         case 'Polinesia':
+        case 'Polynesien':
           return Polynesia;
           break;
         case 'South America':
         case 'America del Sur':
+        case 'Südamerika':
           return SouthAmerica;
           break;
         case 'South East Asia':
         case 'Sudeste Asiatico':
+        case 'Südostasien':
           return SouthEasternAsia;
           break;
         case 'South Africa':
         case 'Sur de Africa':
+        case 'Südafrika':
           return SouthernAfrica;
           break;
         case 'South Asia':
         case 'Sur de Asia':
+        case 'Südasien':
           return SouthernAsia;
           break;
         case 'South Europe':
         case 'Sur de Europa':
+        case 'Südeuropa':
           return SouthernEurope;
           break;
         case 'West Asia':
         case 'Oeste de Asia':
+        case 'Westasien':
           return WesternAsia;
           break;
         default: WesternEurope;
@@ -221,7 +240,6 @@ class DestinationController extends BaseScene {
     await this.storage.clear();
     this.user.reset();
     this.rootStore.dispatch({type: 'RESET_USER'});
-    // this.pushNavigatorStack(this.route.home);
     this.navigateTo('Splash');
   }
 

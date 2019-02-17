@@ -1,10 +1,10 @@
 {
   "splash" : {
-    "noConnection": "No internet connection",
-    "broken":"It broke"
+    "noConnection": "It seems like you got no internet connection",
+    "broken":"Oh no, Something broke!"
   },
   "home":{
-    "mainTitleText": "Welcome Backpacker !",
+    "mainTitleText": "Welcome Backpacker!",
     "checkBoxData": "Click Here",
     "textDataPrivacyTC": "I accept the ",
     "TC": "Terms and Conditions",
@@ -19,48 +19,49 @@
     "toast": "Please, accept our Terms and Conditions and Data Privacy"
   },
   "whatThisAppDoes":{
-    "click": "Click in Region or Country",
+    "click": "Click on Region or Country",
     "or": "or",
-    "selectDay": "Select the Day you Go",
+    "selectDay": "Select the the start date of your adventure",
     "check": "Check your Destination and Add to your Backpack",
     "recos": "Select from Recommendations and Buy if you like",
-    "pack": "Pack items to your Backpack",
+    "pack": "Pack items into your Backpack",
     "button":"Go to my Travel Destination"
   },
   "travelDecision":{
     "BN": "Backpacker Needs",
     "destination": "Destination",
     "region":"Region (eg. South East Asia)",
-    "chooseRegion":"Please Choose a Region!",
+    "chooseRegion":"Please choose a region!",
     "choose":"Choose a Region!",
-    "placeholderCountry":"Type the Country! (min 3 letters)",
-    "letsgo": "Let´s Go!",
+    "placeholderCountry":"Type in the country (min 3 letters)",
+    "letsgo": "Let´s go!",
     "aboutTrip": "About the trip",
     "country":"Country (eg. Thailand)",
-    "travelDay":"Your day of Travel is ",
-    "chooseDate":"Click the Backpack to choose the Date!"
+    "travelDay":"Your departure date is ",
+    "chooseDate":"Click on the backpack to choose the date!"
   },
   "destination":{
     "destination":"Destination",
-    "toast":"To Help you with the Backpack, Press Recommendations!",
-    "myBackpacks":"My Backpacks",
-    "addBackpack":"Add Backpack"
+    "toast":"Need help with your backpack? Press Recommendations!",
+    "myBackpacks":"My backpacks",
+    "addBackpack":"Add backpack"
   },
   "recommendations":{
-    "recommendations":"Recommends",
+    "recommendations":"Recommendations",
     "recommendationsFor": "Recommendations for ",
     "still":"Still ",
-    "daysToGo":" days to Go!",
-    "myTravelerItems":"11 - MY OBJECTS"
+    "daysToGo":" days to go!",
+    "myTravelerItems":"MY TRAVEL ITEMS"
   },
   "backpack":{
     "backpack":"Backpack",
-    "noItems":"There are not items in the Backpack! Please choose some in Recommendations",
+    "noItems":"There are no items in the backpack! Please choose some from our recommendations",
     "backpackFor": "Backpack for",
     "still":"Still ",
-    "daysToGo":" days to Go!",
-    "textInputPlaceholderBackpack":"Add item in Backpack...",
-    "toastNoItem":"Sorry, you add No item"
+    "daysToGo":" days to go!",
+    "textInputPlaceholderBackpack":"Add item to the backpack...",
+    "toastNoItem":"Sorry, you didn´t add any item"
+
   },
   "email":"email",
   "password":"password",

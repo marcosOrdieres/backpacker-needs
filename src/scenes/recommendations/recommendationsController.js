@@ -6,6 +6,7 @@ import firebase from 'react-native-firebase';
 import { View } from 'react-native';
 import services from '../../services';
 import { Linking } from 'react-native';
+import { AsyncStorage } from 'react-native';
 
 class RecommendationsController extends BaseScene {
   // The calls to Firebase that are read, instead of read in Firebase,
@@ -48,16 +49,6 @@ class RecommendationsController extends BaseScene {
 
     if (this.user.getChosenRegion()) {
       const chosenRegionString = this.user.getChosenRegion();
-
-      // aqui tengo que controlar si viene del login, que hay que leerlo de la BD xq n hay na en localStorage
-      // y despues guardarlo ya en el storage
-
-      // if (this.rootStore.getState().isComingFromLogin) {
-      //   const eventref = firebase.database().ref(this.user.getUserId());
-      //   const snapshot = await eventref.once('value');
-      //   valueListUserData = snapshot.val();
-      //   await this.storage.setAsyncStorage(this.user.getUserId(), valueListUserData);
-      // }
       const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
       if (!Object.values(userDataStorage.users)[0].region[chosenRegionString]) {
         return null;
@@ -86,9 +77,7 @@ class RecommendationsController extends BaseScene {
       } else {
         chosenRegionOrCountry = this.user.getChosenCountry();
       }
-      this.setState({spinnerVisible: true});
       const listRecos = await this.readValueListRecommendations();
-
       let isItemSelected = false;
 
       if (listRecos) {
@@ -105,7 +94,7 @@ class RecommendationsController extends BaseScene {
       if (!listRecos) {
         // Here the list of Recommendations is empty cause there is none, so we update
         // Write in Firebase in Background, do it for AsyncStorage
-        firebase.database().ref('users/' + this.user.getUserId()).child('region').child(chosenRegionOrCountry).update({recommendationSelected: {[item]: item}});
+        // firebase.database().ref('users/' + this.user.getUserId()).child('region').child(chosenRegionOrCountry).update({recommendationSelected: {[item]: item}});
         const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
         const newRecommendation = {'recommendationSelected': {[item]: item}};
         const newObject = Object.assign(Object.values(userDataStorage.users)[0].region[chosenRegionOrCountry], newRecommendation);
@@ -130,6 +119,7 @@ class RecommendationsController extends BaseScene {
           // first time here does not work.
           let userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
           delete Object.values(userDataStorage.users)[0].region[chosenRegionOrCountry].recommendationSelected[item.value.toString()];
+          this.removeItemFromFirebase(chosenRegionOrCountry, item);
           const otherTimesStoreDataAndRegion = await this.storage.setAsyncStorage(this.user.getUserId(), userDataStorage);
           let userDataStorageSecond = await this.storage.getAsyncStorage(this.user.getUserId());
           const listRecos = await this.readValueListRecommendations();
@@ -140,6 +130,19 @@ class RecommendationsController extends BaseScene {
     } catch (error) {
       console.warn(error.message);
     }
+  }
+
+  async removeItemFromFirebase (chosenRegionOrCountry, item) {
+    let itemId;
+    const eventref = firebase.database().ref('users/' + this.user.getUserId()).child('region').child(chosenRegionOrCountry).child('recommendationSelected');
+    const snapshot = await eventref.once('value');
+    valueObj = snapshot.val();
+    Object.entries(valueObj).forEach((value) => {
+      if (value[1] === item.value) {
+        itemId = value[0];
+      }
+    });
+    firebase.database().ref('users/' + this.user.getUserId()).child('region').child(chosenRegionOrCountry).child('recommendationSelected').child(itemId).remove();
   }
 
   onClickAmazonItems (item) {

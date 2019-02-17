@@ -23,6 +23,47 @@ export default class BaseScene extends Component {
     this.firebaseAnalytics = firebase.analytics();
   }
 
+  async getUserDataForLogin () {
+    try {
+      const eventref = firebase.database().ref('users/' + this.user.getUserId());
+      // Esto tiene que tener la misma forma que cuando hago el sign up
+      const snapshot = await eventref.once('value');
+      valueList = snapshot.val();
+      return valueList;
+    } catch (error) {
+      console.warn(error.message);
+    }
+  }
+
+  async loginDataWithFirebase () {
+    try {
+      const userDataFirebase = await this.getUserDataForLogin();
+      const countryOrRegion = Object.keys(userDataFirebase.region)[0];
+      const regions = this.user.getRegions();
+      const chooseRegionOrCountry = Object.keys(regions).forEach((region) => {
+        if (region === countryOrRegion) {
+          this.rootStore.dispatch({ type: 'SAME_REGION', isSameRegion: true});
+        }
+      });
+
+      if (this.rootStore.getState().isSameRegion) {
+        this.rootStore.dispatch({ type: 'SAME_REGION', isSameRegion: false});
+        this.user.setChosenRegion(countryOrRegion);
+      } else {
+        this.user.setChosenCountry(countryOrRegion);
+        this.chargeGeojsonCountry(countryOrRegion);
+      }
+      const userDataForLocalStorage = {'users': {[this.user.getUserId()]: userDataFirebase}};
+      // In The login, I create the object with all the things in the USer from Firebase
+      await this.storage.setAsyncStorage(this.user.getUserId(), userDataForLocalStorage);
+      await this.setState({externalData: 'yes'});
+      return await this.navigateTo('Menu');
+    } catch (error) {
+      await this.setState({externalData: 'yes'});
+      return await this.navigateTo('Home');
+    }
+  }
+
   async listRecommendationsWhichSelected (checkListRecos) {
     let myArr = [];
     let myArrFinal = [];

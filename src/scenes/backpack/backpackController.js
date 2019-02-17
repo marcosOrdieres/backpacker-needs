@@ -148,7 +148,7 @@ class BackpackController extends BaseScene {
     let itemTitle;
     let indexOfArray;
     if (!this.user.getRecommendationsSelected()) {
-      this.listRecommendationsWhichSelected();
+      this.listRecommendationsWhichSelected(this.user.getRecommendationsOnlyIntemSelected());
     }
     this.user.getRecommendationsSelected().forEach((item) => {
       indexOfArray = this.user.getRecommendationsSelected().indexOf(item);
@@ -222,7 +222,11 @@ class BackpackController extends BaseScene {
           // If there are isItemInTheBackpack, but are already selected and I want to deselect them.
           // first time here does not work.
           let userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
+
           delete Object.values(userDataStorage.users)[0].region[countryOrRegion].inTheBackpack[item.value.toString()];
+
+          this.removeItemFromFirebaseBackpack(countryOrRegion, item.value);
+
           const otherTimesStoreDataAndRegion = await this.storage.setAsyncStorage(this.user.getUserId(), userDataStorage);
           const listInTheBackpack = await this.readValueListInTheBackpack();
           this.listInTheBackpackSelected(listInTheBackpack);
@@ -234,15 +238,17 @@ class BackpackController extends BaseScene {
     }
   }
 
-  async onBlurAddItem (section, index) {
-    try {
-      const addedItems = await this.storeAddItem(this.state.titleAddItem);
-      await this.listRecosSelected(addedItems, section);
-      await this.checkSelectedToDos();
-      this.setState({titleAddItem: ''});
-    } catch (error) {
-      console.warn(error.message);
-    }
+  async removeItemFromFirebaseBackpack (countryOrRegion, item) {
+    let itemId;
+    const eventref = firebase.database().ref('users/' + this.user.getUserId()).child('region').child(countryOrRegion).child('inTheBackpack');
+    const snapshot = await eventref.once('value');
+    valueObj = snapshot.val();
+    Object.entries(valueObj).forEach((value) => {
+      if (value[1] === item) {
+        itemId = value[0];
+      }
+    });
+    firebase.database().ref('users/' + this.user.getUserId()).child('region').child(countryOrRegion).child('inTheBackpack').child(itemId).remove();
   }
 
   async listRecosSelected (addedItems, section) {
@@ -257,6 +263,17 @@ class BackpackController extends BaseScene {
 
   showToastNoItem () {
     return this.refs.toastBackpack.show(this.i18n.t('backpack.toastNoItem'), 1500);
+  }
+
+  async onBlurAddItem (section, index) {
+    try {
+      const addedItems = await this.storeAddItem(this.state.titleAddItem);
+      await this.listRecosSelected(addedItems, section);
+      await this.checkSelectedToDos();
+      this.setState({titleAddItem: ''});
+    } catch (error) {
+      console.warn(error.message);
+    }
   }
 
   async storeAddItem (addItem) {

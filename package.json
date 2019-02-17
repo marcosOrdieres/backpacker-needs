@@ -26,7 +26,7 @@
     "react-native-google-signin": "^1.0.0",
     "react-native-i18n": "^2.0.12",
     "react-native-linear-gradient": "^2.4.0",
-    "react-native-maps": "https://github.com/airbnb/react-native-maps/tarball/master",
+    "react-native-maps": "^0.23.0",
     "react-native-modal": "^5.4.0",
     "react-native-navigation-drawer-layout": "0.0.5",
     "react-native-svg": "^6.3.1",

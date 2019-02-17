@@ -53,8 +53,15 @@ class HomeController extends BaseScene {
         const dataUser = await AccessToken.getCurrentAccessToken();
         const credential = firebase.auth.FacebookAuthProvider.credential(dataUser.accessToken);
         const firebaseSignUpFacebookUser = await firebase.auth().signInAndRetrieveDataWithCredential(credential);
+        console.warn('firebaseSignUpFacebookUser:', firebaseSignUpFacebookUser.additionalUserInfo.isNewUser);
         this.user.setUserId(firebaseSignUpFacebookUser.user.uid);
-        return this.navigateTo('TravelDecision');
+
+        if (firebaseSignUpFacebookUser.additionalUserInfo.isNewUser) {
+          return this.navigateTo('WhatDoesThisApp');
+        } else {
+          return this.loginDataWithFirebase();
+          // return this.navigateTo('Menu');
+        }
       }
     } catch (error) {
       console.warn(error.message);

@@ -19,7 +19,6 @@ class RecommendationsController extends BaseScene {
       selected: false,
       externalData: null,
       index: 0,
-      spinnerVisible: false,
       collapsed: {},
       noLinkNoIcon: false,
       howManyDays: ''
@@ -124,7 +123,7 @@ class RecommendationsController extends BaseScene {
           let userDataStorageSecond = await this.storage.getAsyncStorage(this.user.getUserId());
           const listRecos = await this.readValueListRecommendations();
           this.listRecommendationsWhichSelected(listRecos);
-          this.setState({spinnerVisible: false});
+          this.setState({externalData: true});
         }
       }
     } catch (error) {

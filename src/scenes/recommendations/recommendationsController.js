@@ -44,28 +44,12 @@ class RecommendationsController extends BaseScene {
     return listRecommendationsArray;
   }
 
-  async getDataJoder () {
-    console.time('we');
-
-    const we = await this.storage.getAsyncStorage(this.user.getUserId());
-    console.timeEnd('we');
-
-    return we;
-  }
-
   async readValueListRecommendations () {
     let recommendationSelected;
 
     if (this.user.getChosenRegion()) {
       const chosenRegionString = this.user.getChosenRegion();
-      console.time('userDataStorage 1');
-      // await AsyncStorage.flushGetRequests();
-      const userDataStorage = this.getDataJoder();
-      // const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
-      console.timeEnd('userDataStorage 1');
-
-      // userDataStorage = JSON.parse(userDataStorage);
-
+      const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
       if (!Object.values(userDataStorage.users)[0].region[chosenRegionString]) {
         return null;
       } else {
@@ -93,7 +77,6 @@ class RecommendationsController extends BaseScene {
       } else {
         chosenRegionOrCountry = this.user.getChosenCountry();
       }
-      this.setState({spinnerVisible: true});
       const listRecos = await this.readValueListRecommendations();
       let isItemSelected = false;
 

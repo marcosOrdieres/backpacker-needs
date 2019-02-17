@@ -1,8 +1,76 @@
 {
   "splash" : {
-    "noConnection": "No internet connection"
+    "noConnection": "Du bist nicht mit dem Internet verbunden",
+    "broken":"Ups. Da ist ein Fehler aufgetreten."
+  },
+  "home": {
+    "mainTitleText": "Willkommen Backpacker ",
+    "checkBoxData": "Hier klicken",
+    "textDataPrivacyTC": "Ich akzeptiere die",
+    "TC": "Nutzungsbestimmungen.",
+    "andDataPrivacyTC": " und die ",
+    "dataPrivacy": "Datenschutzbestimmungen",
+    "popupDialog": "Dialog Title",
+    "registerEmailTitle": "Register for free",
+    "registerFacebookTitle": "Weiter mit Facebook",
+    "loginTitle": "Registriere dich mit deiner Email-Adresse",
+    "areYouUser": "Hast du schon einen Account?",
+    "noInternet":"'Sorry! Du brauchst eine Internetverbindung um dich anzumelden.'",
+    "toast": "Bitte akzeptiere unsere Nutzungs- und Datenschutzbestimmungen."
+  },
+  "whatThisAppDoes":{
+    "click": "Klicke auf Region oder Land",
+    "or": "or",
+    "selectDay": "Wählen dein Reisedatum",
+    "check": "Prüfe dein Reiseziel und packe deinen Backpack",
+    "recos": "Wähle die Items aus die du benötigst und kaufe was du noch benötigst direkt hier",
+    "pack": "Packe Items in deinen Backpack",
+    "button":"Zu meinem Reiseziel "
   },
   "travelDecision":{
-    "BN": "Backpacker Needs"
+    "BN": "Backpacker Needs",
+    "destination": "Reiseziel",
+    "region":"Region (z.B. Südostasien)",
+    "chooseRegion":"Bitte wähle eine Region!",
+    "choose":"Wähle eine Region",
+    "placeholderCountry":"Gib das Land an, in das du reisen möchtest (mind. 3 Buchstaben)",
+    "letsgo": "Los geht's!",
+    "aboutTrip": "Dein Abenteuer",
+    "country":"Land (z.B. Thailand)",
+    "travelDay":"Deine Reise startet am",
+    "chooseDate":"Klicke auf den Backpack um dein Reisedatum zu wählen!"
+  },
+  "destination":{
+    "destination":"Reiseziel",
+    "toast":"Brauchst du Hilfe beim packen deines Backpacks? Klicke auf Empfehlungen!",
+    "myBackpacks":"Meine Backpacks",
+    "addBackpack":"Backpack Hinzufügen"
+  },
+  "recommendations":{
+    "recommendations":"Empfehlungen",
+    "recommendationsFor": "Empfehlungen für",
+    "still":"Noch",
+    "daysToGo":"Tage bis zu deinem Abenteuer!",
+    "myTravelerItems":"Meine Reiseitems"
+  },
+  "backpack":{
+    "backpack":"Backpack",
+    "noItems":"Es sind keine Items in deinem Backpack. Bitte wähle welches aus den Empfehlungen",
+    "backpackFor": "Backpack für",
+    "still":"Noch",
+    "daysToGo":"age bis zu deinem Abenteuer!",
+    "textInputPlaceholderBackpack":"Füge ein Item zu deinem Backpack hinzu...",
+    "toastNoItem":"Du hast kein Item hinzugefügt"
+  },
+  "email":"Email",
+  "password":"Passwort",
+  "sendCredentials": {
+    "login": "Login mit deiner Emailadresse",
+    "register": "Registriere dich mit deiner Emailadresse"
+  },
+  "components":{
+    "dateWhen": "Wann willst du verreisen?",
+    "listItemSelect": "(bereits ausgwählt",
+    "listItemBack": "(Backpacked)"
   }
 }

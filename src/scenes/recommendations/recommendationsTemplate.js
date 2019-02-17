@@ -6,6 +6,7 @@ import Palette from '../../common/palette';
 import AirportSvg from '../../assets/svg/Airport';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { AdMobBanner } from 'react-native-admob';
+
 const {width, height} = Dimensions.get('window');
 // my ad id is: ca-app-pub-9901220615892956/7187593211
 

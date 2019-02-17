@@ -99,6 +99,9 @@ class TravelDecisionController extends BaseScene {
       if (locale === 'es') {
         const countryName = objEachCountry.properties.nameEs;
         countriesArr.push(countryName);
+      } else if (locale === 'de') {
+        const countryName = objEachCountry.properties.nameDe;
+        countriesArr.push(countryName);
       } else {
         const countryName = objEachCountry.properties.name;
         countriesArr.push(countryName);

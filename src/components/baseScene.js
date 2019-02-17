@@ -113,6 +113,14 @@ export default class BaseScene extends Component {
           const completeGeojsonCountry = {'type': 'FeatureCollection', 'features': [objEachCountry]};
           return this.user.setCountryGeojson(completeGeojsonCountry);
         }
+      } else if (locale === 'de') {
+        if (objEachCountry.properties.nameDe === country) {
+          const coordinatesLatAndLong = await this.calculateLongAndLat(objEachCountry.geometry.coordinates);
+          this.user.setLat(coordinatesLatAndLong.latitude);
+          this.user.setLong(coordinatesLatAndLong.longitude);
+          const completeGeojsonCountry = {'type': 'FeatureCollection', 'features': [objEachCountry]};
+          return this.user.setCountryGeojson(completeGeojsonCountry);
+        }
       } else {
         if (objEachCountry.properties.name === country) {
           const coordinatesLatAndLong = await this.calculateLongAndLat(objEachCountry.geometry.coordinates);

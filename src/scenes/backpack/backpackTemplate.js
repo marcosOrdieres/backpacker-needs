@@ -33,7 +33,7 @@ export default (controller) => (
                 controller.onBlurAddItem(section);
               }
             }}
-            titleAddItem={controller.titleAddItem(section)}
+            titleAddItem={controller.state.blurAddItem ? controller.noAddItem() : controller.titleAddItem(section)}
             titleAddItemChangeText={(title) => { controller.titleAddItemChangeText(title, section); }}
             backpackListItem
             dataItem={item}

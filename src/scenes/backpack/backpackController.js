@@ -13,6 +13,7 @@ class BackpackController extends BaseScene {
     this.storage = this.services.Storage;
     this.state = {
       titleAddItem: '',
+      blurAddItem: false,
       externalData: null,
       collapsed: {}
     };
@@ -270,7 +271,8 @@ class BackpackController extends BaseScene {
       const addedItems = await this.storeAddItem(this.state.titleAddItem);
       await this.listRecosSelected(addedItems, section);
       await this.checkSelectedToDos();
-      this.setState({titleAddItem: ''});
+      this.setState({titleAddItem: '', blurAddItem: true});
+      return true;
     } catch (error) {
       console.warn(error.message);
     }
@@ -299,6 +301,11 @@ class BackpackController extends BaseScene {
     } catch (error) {
       console.warn(error.message);
     }
+  }
+
+  noAddItem () {
+    this.setState({blurAddItem: false});
+    return '';
   }
 
   titleAddItem (section) {

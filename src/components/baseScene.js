@@ -177,7 +177,10 @@ export default class BaseScene extends Component {
   checkHowManyDays () {
     const oneDay = 24 * 60 * 60 * 1000;
     const dateOfTravel = new Date(this.user.getDateOfTravel());
+    dateOfTravel.setHours(0, 0, 0);
     const now = new Date();
+    now.setHours(0, 0, 0);
+    console.warn(dateOfTravel, now);
     const diffDays = Math.round(Math.abs((now.getTime() - dateOfTravel.getTime()) / (oneDay)));
     return diffDays;
   }

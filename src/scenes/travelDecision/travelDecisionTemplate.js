@@ -75,7 +75,12 @@ export default (controller) => (
                     noPaddingLeft
                     noIcon={false}
                     dataItem={Object.keys(controller.user.getRegions()).sort()}
-                    onClickListItem={(itemTitle) => controller.onClickListItem(itemTitle)} />
+                    onClickListItem={(itemTitle) => {
+                      controller.onClickListItem(itemTitle);
+                      if (controller.user.getDateOfTravel()) {
+                        controller.checkLetsGo();
+                      }
+                    }} />
                 </View>
               </TouchableOpacity>
               {/*
@@ -116,7 +121,12 @@ export default (controller) => (
               underlineColorAndroid={Palette.transparent}
               autoCapitalize={'characters'}
               onFocus={() => { controller.setState({focusOnCountry: true}); }}
-              onBlur={() => { controller.setState({show: false, focusOnCountry: false}); }}
+              onBlur={() => {
+                controller.setState({show: false, focusOnCountry: false});
+                if ((controller.state.countryInput !== '') && controller.user.getDateOfTravel()) {
+                  controller.checkLetsGo();
+                }
+              }}
               onChangeText={(text) => {
                 controller.setState({text, countryInput: text, show: true});
                 if (text.length > 0) {

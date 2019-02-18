@@ -96,7 +96,10 @@ export default (controller) => (
                   color={controller.palette.primaryColor}
                   buttonBorderColor={controller.palette.black}
                   textColor={controller.palette.white}
-                  onPress={() => { controller.logoutAndRedirect(); }} />
+                  onPress={() => {
+                    controller.toggleModal();
+                    controller.logoutAndRedirect();
+                  }} />
               </View>
             </View>
           </View>

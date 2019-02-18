@@ -1,71 +1,73 @@
 {
   "splash" : {
-    "noConnection": "No tienes Conexion a Internet",
+    "noConnection": "No tienes conexión a internet",
     "broken":"Roto"
   },
   "home":{
-    "mainTitleText": "Bienvenido Backpacker !",
-    "checkBoxData": "Haz click aqui",
+    "mainTitleText": "Bienvenido Backpacker!",
+    "checkBoxData": "Haz click aquí",
     "textDataPrivacyTC": "Acepto los ",
     "TC": "Términos y Condiciones",
     "andDataPrivacyTC": " y la ",
     "dataPrivacy": "Privacidad de Datos",
-    "popupDialog": "Titulo Dialogo",
-    "registerEmailTitle": "Registrate Gratis",
+    "popupDialog": "Título Diálogo",
+    "registerEmailTitle": "Registrate gratis",
     "registerFacebookTitle": "Continua con Facebook",
     "loginTitle": "Log in con tu email",
     "areYouUser": "¿Eres ya un usuario?",
-    "noInternet":"Lo sentimos, no tienes Conexion a Internet"
+    "noInternet":"Lo sentimos, no tienes Conexión a internet",
+    "toast": "Por favor, acepta nuestro Términos y Condiciones y Privacidad de Datos"
   },
   "whatThisAppDoes":{
-    "click": "Haz Click en Región o en Pais",
+    "click": "Haz click en región o en país",
     "or": "o",
-    "selectDay": "Selecciona el Día en que Viajas",
-    "check": "Comprueba tu Destino y añade a tu Mochila",
-    "recos": " Selecciona de Recomendaciones y Compra si quieres",
-    "pack": "Añade a tu Mochila",
-    "button":"Ir a la pantalla de 'Destino de mi Viaje'"
+    "selectDay": "Selecciona el día en que viajas",
+    "check": "Comprueba tu destino y añade a tu Mochila",
+    "recos": "Selecciona de nuestras recomendaciones y compra si quieres",
+    "pack": "Añade a tu mochila",
+    "button":"Ir a la pantalla de 'Destino de mi viaje'"
   },
   "travelDecision":{
     "BN": "Backpacker Needs",
     "destination": "Destino",
-    "region":"Region (eg. Sudeste Asiatico)",
-    "chooseRegion":"¡Escoge una Region!",
-    "choose":"¡Escoge una Region!",
-    "placeholderCountry":"¡Escribe el Pais! (min 3 letras)",
+    "region":"Región (eg. Sudeste asiatico)",
+    "chooseRegion":"¡Escoge una región!",
+    "choose":"¡Escoge una región!",
+    "placeholderCountry":"¡Escribe el país! (min 3 letras)",
     "letsgo": "¡Vamos!",
     "aboutTrip": "Sobre el viaje",
-    "country":"Pais (eg. Tailandia)",
-    "travelDay":"El día en el que Viajas es ",
-    "chooseDate":"Haz Click en la Mochila para Seleccionar el día"
+    "country":"País (eg. Tailandia)",
+    "travelDay":"El día en el que viajas es ",
+    "chooseDate":"Haz click en la Mochila para seleccionar el día"
   },
   "destination":{
     "destination":"Destino",
-    "toast":"¡Para ayudarte con la Mochila, Presiona Recomendaciones!",
+    "toast":"¡Para ayudarte con la mochila, Presiona Recomendaciones!",
     "myBackpacks":"Mis Mochilas",
-    "addBackpack":"Añade una Mochila Más"
+    "addBackpack":"Añade una Mochila más",
+    "logout":"Log out"
   },
   "recommendations":{
     "recommendations":"Recomendaciones",
     "recommendationsFor": "Recomendaciones para ",
-    "still":"¡Solo ",
-    "daysToGo":" dias para irte!",
-    "myTravelerItems":"11 - MIS OBJETOS"
+    "still":"¡Solo",
+    "daysToGo":"dias para irte!",
+    "myTravelerItems":"11 - Mis objetos"
   },
   "backpack":{
     "backpack":"Mochila",
     "noItems":"¡No hay objetos en la Mochila! Por favor, escoge algunos en Recommendaciones.",
     "backpackFor": "Mochila para",
     "still":"¡Solo ",
-    "daysToGo":" Días para irte!",
-    "textInputPlaceholderBackpack":"Añade un Objeto a la Mochila...",
-    "toastNoItem":"Lo siento, no has añadido ningún objecto"
+    "daysToGo":" días para irte!",
+    "textInputPlaceholderBackpack":"Añade un objeto a la Mochila...",
+    "toastNoItem":"Lo siento, no has añadido ningún objeto"
   },
   "email":"email",
   "password":"contraseña",
   "sendCredentials": {
     "login": "Log in con tu email",
-    "register": "Registrate con tu email"
+    "register": "Regístrate con tu email"
   },
   "components":{
     "dateWhen": "¿Cuando?",

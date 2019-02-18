@@ -78,12 +78,8 @@ class HomeController extends BaseScene {
   }
 
   loginToCredentials () {
-    if (!this.state.optinsChecked) {
-      setTimeout(() => { this.refs.toastHome.show(this.i18n.t('home.toast'), 500); }, 50);
-    } else {
-      this.user.setSendCredentialsLogin(true);
-      return this.navigateTo('SendCredentials');
-    }
+    this.user.setSendCredentialsLogin(true);
+    return this.navigateTo('SendCredentials');
   }
 
   render () {

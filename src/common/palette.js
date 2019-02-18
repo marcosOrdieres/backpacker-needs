@@ -39,5 +39,6 @@ export default {
   'black92': '#EC000000',  // 92% black
   'transparent': '#00000000',
   'whiteTransparent': '#008000',
-  'black': '#777777'
+  'black': '#777777',
+  'greenLogin': '#b3ffcc'
 };

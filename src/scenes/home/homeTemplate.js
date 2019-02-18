@@ -11,7 +11,7 @@ import Palette from '../../common/palette';
 export default(controller) => (!controller.state.noConnectionSplash ? (
   <View style={homeStyles.homeContainer}>
     <ImageBackground
-      style={{width: '100%', flex:1}}
+      style={{width: '100%', flex: 1}}
       source={loginBackgroundImage}>
       <View style={homeStyles.mainTitleView}>
         <Text style={homeStyles.mainTitleText}>{controller.i18n.t('home.mainTitleText')}</Text>
@@ -54,13 +54,15 @@ export default(controller) => (!controller.state.noConnectionSplash ? (
         <Button
           title={controller.i18n.t('home.registerEmailTitle')}
           color={controller.palette.whiteTransparent}
-          textColor={controller.palette.white}
+          textColor={controller.palette.greenLogin}
           onPress={() => { controller.registerToCredentials(); }} />
+
         <Button
           title={controller.i18n.t('home.registerFacebookTitle')}
           color={controller.palette.blueFacebook}
           textColor={controller.palette.white}
           onPress={() => controller.handleSignupFacebook()} />
+
         <Text style={homeStyles.areYouUserText}>{controller.i18n.t('home.areYouUser')}</Text>
         <Button
           title={controller.i18n.t('home.loginTitle')}

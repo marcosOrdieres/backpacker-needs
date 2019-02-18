@@ -4,7 +4,7 @@ import destinationStyles from './destinationStyles';
 import Caribbean from '../../assets/mapJson/subregion/Caribbean.json';
 import MapView from 'react-native-maps';
 import Geojson from 'react-native-geojson';
-import { Button, Main, ControlPanel } from 'components';
+import { Button, Main, ControlPanel, ListItem } from 'components';
 import Palette from '../../common/palette';
 import markerBackpacker from '../../assets/images/markerBackpack.png';
 import Toast, {DURATION} from 'react-native-easy-toast';
@@ -12,8 +12,6 @@ import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import BackpackSvg from '../../assets/svg/Ruck';
 import drawerBackgroundImage from '../../assets/images/drawerBackpack.png';
-import { ListItem } from 'components';
-
 import NavigationDrawerLayout from 'react-native-navigation-drawer-layout';
 import Drawer from 'react-native-drawer';
 
@@ -41,8 +39,6 @@ export default (controller) => (
       loadingEnabled
       showsScale
       showsCompass
-      showsPointsOfInterest
-      zoomControlEnabled
       toolbarEnabled>
       <Geojson
         geojson={controller.regionChosen()}
@@ -94,6 +90,14 @@ export default (controller) => (
                 fontTitle={14}
                 dataItem={controller.user.getRegionsAsyncStorage()}
                 onClickListItem={(item) => controller.onClickListItemRegion(item)} />
+              <View style={{flex: 0.8, width: '60%', justifyContent: 'flex-end'}}>
+                <Button
+                  title={controller.i18n.t('destination.logout')}
+                  color={controller.palette.primaryColor}
+                  buttonBorderColor={controller.palette.black}
+                  textColor={controller.palette.white}
+                  onPress={() => { controller.logoutAndRedirect(); }} />
+              </View>
             </View>
           </View>
         </View>
@@ -109,13 +113,13 @@ export default (controller) => (
       <Icon size={20} name='bars' color={Palette.white} />
     </TouchableOpacity>
 
-    <TouchableOpacity
+    {/* <TouchableOpacity
       style={destinationStyles.logoutView}
       onPress={() => {
         controller.logoutAndRedirect();
       }}>
       <Icon size={20} name='sign-out' color={Palette.white} />
-    </TouchableOpacity>
+    </TouchableOpacity> */}
 
     <TouchableOpacity
       style={destinationStyles.questionView}

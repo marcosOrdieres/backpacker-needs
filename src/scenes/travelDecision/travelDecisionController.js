@@ -61,7 +61,6 @@ class TravelDecisionController extends BaseScene {
   }
 
   async checkLetsGo () {
-    // const now = moment().format();
     if (this.state.country.length > 3 || (this.user.getChosenRegion() || this.user.getChosenCountry())) {
       return this.setState({ letsgo: true });
     } else {

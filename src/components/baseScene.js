@@ -180,7 +180,6 @@ export default class BaseScene extends Component {
     dateOfTravel.setHours(0, 0, 0);
     const now = new Date();
     now.setHours(0, 0, 0);
-    console.warn(dateOfTravel, now);
     const diffDays = Math.round(Math.abs((now.getTime() - dateOfTravel.getTime()) / (oneDay)));
     return diffDays;
   }

@@ -50,7 +50,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     position: 'absolute',
     marginLeft: width - 35,
-    marginTop: 50
+    marginTop: 5
   },
   logoutView: {
     width: 30,

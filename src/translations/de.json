@@ -44,7 +44,8 @@
     "destination":"Reiseziel",
     "toast":"Brauchst du Hilfe beim packen deines Backpacks? Klicke auf Empfehlungen!",
     "myBackpacks":"Meine Backpacks",
-    "addBackpack":"Backpack Hinzufügen"
+    "addBackpack":"Backpack Hinzufügen",
+    "logout":"Log out"
   },
   "recommendations":{
     "recommendations":"Empfehlungen",

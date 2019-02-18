@@ -32,8 +32,8 @@ export default StyleSheet.create({
     fontSize: 35,
     fontFamily: 'Calibri',
     fontWeight: 'bold',
-    paddingRight:'2%',
-    paddingLeft:'2%'
+    paddingRight: '2%',
+    paddingLeft: '2%'
   },
   areYouUserText: {
     color: Palette.white,

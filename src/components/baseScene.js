@@ -25,12 +25,10 @@ export default class BaseScene extends Component {
 
   async getUserDataForLogin () {
     try {
-      console.warn('444: ', this.user.getUserId());
       const eventref = firebase.database().ref('users/' + this.user.getUserId());
       // Esto tiene que tener la misma forma que cuando hago el sign up
       const snapshot = await eventref.once('value');
       valueList = snapshot.val();
-      console.warn('22222:', valueList);
       return valueList;
     } catch (error) {
       console.warn(error.message);
@@ -40,7 +38,6 @@ export default class BaseScene extends Component {
   async loginDataWithFirebase () {
     try {
       const userDataFirebase = await this.getUserDataForLogin();
-      console.warn('111: ', userDataFirebase);
       const countryOrRegion = Object.keys(userDataFirebase.region)[0];
       const regions = this.user.getRegions();
       const chooseRegionOrCountry = Object.keys(regions).forEach((region) => {
@@ -62,7 +59,7 @@ export default class BaseScene extends Component {
       await this.setState({externalData: 'yes'});
       return await this.navigateTo('Menu');
     } catch (error) {
-      console.warn('eerrrr:', error.message);
+      console.warn('error:', error.message);
       await this.setState({externalData: 'yes'});
       return await this.navigateTo('Home');
     }

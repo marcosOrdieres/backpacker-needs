@@ -59,7 +59,7 @@ export default class BaseScene extends Component {
       await this.setState({externalData: 'yes'});
       return await this.navigateTo('Menu');
     } catch (error) {
-      console.warn('eerrrr:', error.message);
+      console.warn('error:', error.message);
       await this.setState({externalData: 'yes'});
       return await this.navigateTo('Home');
     }

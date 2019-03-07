@@ -19,83 +19,68 @@ export default (controller) => (
       <Text style={travelDecisionStyles.textTopBar}>{controller.i18n.translate('travelDecision.BN')}</Text>
     </View>
 
-    <View
-      style={{flex: 0.75}}>
-      {/*
-      {controller.state.show && controller.state.country ?
-        <TouchableOpacity
-          style={travelDecisionStyles.countryTextOverlay}
-          onPress={() => { controller.onPressCountryOverlay(); }}>
-          <Text style={{fontSize: 18, margin: 5}}>
-            {controller.state.country}
-          </Text>
-        </TouchableOpacity> : null}
-
-        */}
+    <View style={{flex: 0.75}}>
       <View style={[{flex: 0.2, justifyContent: 'center', alignItems: 'center'}]}>
         <Text style={travelDecisionStyles.destinyText}>{controller.i18n.translate('travelDecision.destination')}</Text>
       </View>
-      {/**/}
-      <View style={{flex: 0.3, opacity: controller.state.text ? 0.5 : null}}>
 
-        <View style={{flex: 0.5, justifyContent: 'center', paddingLeft: '5%',
-          backgroundColor: '#fff2cc', borderTopWidth: 0.5, borderBottomWidth: 1, borderColor: 'black'}}>
-          <Text style={travelDecisionStyles.textDividerStatic}>{controller.i18n.translate('travelDecision.region')}</Text>
-        </View>
+      {!controller.state.focusOnCountry ?
+        <View style={{flex: 0.3, opacity: controller.state.text ? 0.5 : null}}>
 
-        <TouchableOpacity
-          onPress={() => { controller.toggleModal(); }}
-          style={{flex: 0.5, flexDirection: 'row'}}>
-          <View
-            style={{flex: 0.2, backgroundColor: Palette.primaryColor75, alignItems: 'center', justifyContent: 'center', borderColor: 'black', borderLeftWidth: 1}}>
-            <Icon size={20} name='search' color={'white'} />
+          <View style={{flex: 0.5, justifyContent: 'center', paddingLeft: '5%',
+            backgroundColor: '#fff2cc', borderTopWidth: 0.5, borderBottomWidth: 1, borderColor: 'black'}}>
+            <Text style={travelDecisionStyles.textDividerStatic}>{controller.i18n.translate('travelDecision.region')}</Text>
           </View>
 
-          <View
-            style={{flex: 0.8, justifyContent: 'center'}}>
-            <Text style={{paddingLeft: 5, fontFamily: 'Calibri', fontSize: 15, textAlign: 'left'}}>
-              {controller.user.getChosenRegion() ? controller.user.getChosenRegion() : controller.i18n.translate('travelDecision.chooseRegion') }
-            </Text>
-          </View>
-
-          <Modal
-            style={travelDecisionStyles.modal}
-            onBackdropPress={() => { controller.toggleModal(); }}
-            isVisible={controller.state.isModalVisible}>
-            <View style={travelDecisionStyles.modalContent}>
-              <View>
-                <View
-                  style={{borderBottomColor: Palette.primaryColor, borderBottomWidth: 1, width: '80%', alignItems: 'center', paddingTop: 10}} />
-              </View>
-              <TouchableOpacity onPress={() => { controller.toggleModal(); }}>
-                <View style={{width: width}}>
-                  <ListItem
-                    isTip
-                    noFirstIcon
-                    noPaddingLeft
-                    noIcon={false}
-                    dataItem={Object.keys(controller.user.getRegions()).sort()}
-                    onClickListItem={(itemTitle) => {
-                      controller.onClickListItem(itemTitle);
-                      if (controller.user.getDateOfTravel()) {
-                        controller.checkLetsGo();
-                      }
-                    }} />
-                </View>
-              </TouchableOpacity>
-              {/*
-              <TouchableOpacity
-                style={{borderColor: 'red', borderWidth: 1}}
-                onPress={() => { controller.toggleModal(); }}>
-                <Text>Hide me</Text>
-              </TouchableOpacity>
-              */}
+          <TouchableOpacity
+            onPress={() => { controller.toggleModal(); }}
+            style={{flex: 0.5, flexDirection: 'row'}}>
+            <View
+              style={{flex: 0.2, backgroundColor: Palette.primaryColor75, alignItems: 'center', justifyContent: 'center', borderColor: 'black', borderLeftWidth: 1}}>
+              <Icon size={20} name='search' color={'white'} />
             </View>
-          </Modal>
 
-        </TouchableOpacity>
+            <View
+              style={{flex: 0.8, justifyContent: 'center'}}>
+              <Text style={{paddingLeft: 5, fontFamily: 'Calibri', fontSize: 15, textAlign: 'left'}}>
+                {controller.user.getChosenRegion() ? controller.user.getChosenRegion() : controller.i18n.translate('travelDecision.chooseRegion') }
+              </Text>
+            </View>
 
-      </View>
+            <Modal
+              style={travelDecisionStyles.modal}
+              onBackdropPress={() => { controller.toggleModal(); }}
+              isVisible={controller.state.isModalVisible}>
+              <View style={travelDecisionStyles.modalContent}>
+                <View>
+                  <View
+                    style={{borderBottomColor: Palette.primaryColor, borderBottomWidth: 1, width: '80%', alignItems: 'center', paddingTop: 10}} />
+                </View>
+                <TouchableOpacity onPress={() => { controller.toggleModal(); }}>
+                  <View style={{width: width}}>
+                    <ListItem
+                      isTip
+                      noFirstIcon
+                      noPaddingLeft
+                      noIcon={false}
+                      dataItem={Object.keys(controller.user.getRegions()).sort()}
+                      onClickListItem={(itemTitle) => {
+                        controller.onClickListItem(itemTitle);
+                        if (controller.user.getDateOfTravel()) {
+                          controller.checkLetsGo();
+                        }
+                      }} />
+                  </View>
+                </TouchableOpacity>
+              </View>
+            </Modal>
+
+          </TouchableOpacity>
+
+        </View>
+      :
+      null
+    }
 
       <View style={{borderColor: 'black', borderBottomWidth: 1, flex: 0.3, opacity: controller.user.getChosenRegion() ? 0.5 : null}}>
 
@@ -154,13 +139,16 @@ export default (controller) => (
         </ScrollView>
         :
         controller.state.focusOnCountry && controller.state.show && controller.state.country ?
+
+        controller.state.countriesArray.map((value) => (
           <TouchableOpacity
             style={{backgroundColor: Palette.white, width: width, borderColor: Palette.black, borderRadius: 5, borderWidth: 1}}
-            onPress={() => { controller.onPressCountryOverlay(); }}>
+            onPress={() => { controller.onPressCountryOverlay(value); }}>
             <Text style={{fontSize: 18, margin: 5}}>
-              {controller.state.country}
+              {value}
             </Text>
           </TouchableOpacity>
+        ))
         :
         null
       }

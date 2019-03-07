@@ -3,7 +3,7 @@ import { BaseScene } from 'components';
 import template from './destinationTemplate';
 import { connect } from 'react-redux';
 import Toast, {DURATION} from 'react-native-easy-toast';
-import { View, BackHandler } from 'react-native';
+import { View, BackHandler, Alert } from 'react-native';
 
 import Australia from '../../assets/mapJson/subregion/Australia_and_NewZealand.json';
 import Caribbean from '../../assets/mapJson/subregion/Caribbean.json';
@@ -46,7 +46,7 @@ class DestinationController extends BaseScene {
   async componentDidMount () {
     this.setState({externalData: true});
     this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-      this.navigateTo('Recommendations');
+      BackHandler.exitApp();
     });
     setTimeout(() => { this.refs.toast.show(this.i18n.t('destination.toast'), 6000); }, 1500);
   }

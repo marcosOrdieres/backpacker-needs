@@ -38,6 +38,9 @@ export default class BaseScene extends Component {
   async loginDataWithFirebase () {
     try {
       const userDataFirebase = await this.getUserDataForLogin();
+      if (!userDataFirebase) {
+        return this.navigateTo('WhatDoesThisApp');
+      }
       const countryOrRegion = Object.keys(userDataFirebase.region)[0];
       const regions = this.user.getRegions();
       const chooseRegionOrCountry = Object.keys(regions).forEach((region) => {

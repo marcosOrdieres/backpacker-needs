@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, BackHandler, Alert } from 'react-native';
 import { BaseScene } from 'components';
 import template from './backpackTemplate';
 import { connect } from 'react-redux';
@@ -20,6 +20,17 @@ class BackpackController extends BaseScene {
   }
 
   async componentDidMount () {
+    // this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+    //   Alert.alert(
+    //     'Confirm exit from Backpacker Needs',
+    //     'Do you want to quit the app?',
+    //     [
+    //       {text: 'No', onPress: () => this.navigateTo('Recommendations')},
+    //       {text: 'Yes', onPress: () => BackHandler.exitApp(), style: 'cancel'}
+    //     ],
+    //     { cancelable: false }
+    //   );
+    // });
     this.props.navigation.addListener('didFocus', async () => {
       await this.checkSelectedToDos();
       await this.checkDaysFocus();

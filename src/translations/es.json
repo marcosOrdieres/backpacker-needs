@@ -16,7 +16,9 @@
     "loginTitle": "Log in con tu email",
     "areYouUser": "¿Eres ya un usuario?",
     "noInternet":"Lo sentimos, no tienes Conexión a internet",
-    "toast": "Por favor, acepta nuestro Términos y Condiciones y Privacidad de Datos"
+    "toast": "Por favor, acepta nuestro Términos y Condiciones y Privacidad de Datos",
+    "exitTitle": "Confirma que quieres salir de Backpacker Needs",
+    "exitSubtitle": "¿Quieres salir de la App?"
   },
   "whatThisAppDoes":{
     "click": "Haz click en región o en país",

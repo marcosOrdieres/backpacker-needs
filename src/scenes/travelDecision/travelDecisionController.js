@@ -4,10 +4,13 @@ import template from './travelDecisionTemplate';
 import services from '../../services';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
-import { View, Text } from 'react-native';
+import { View, Text, BackHandler } from 'react-native';
 import GeojsonCountries from '../../assets/mapJson/countriesJson.json';
 import moment from 'moment';
 
+// goback
+// si demo y , no go back, solo segundo pa fuera
+// si
 class TravelDecisionController extends BaseScene {
   constructor (args) {
     super(args);
@@ -17,6 +20,7 @@ class TravelDecisionController extends BaseScene {
     this.state = {
       text: '',
       country: '',
+      countriesArray: [],
       region: '',
       date: now,
       letsgo: false,
@@ -73,17 +77,26 @@ class TravelDecisionController extends BaseScene {
   }
 
   async componentDidMount () {
+    this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+      this.navigateTo('whatDoesThisApp');
+    });
     const countriesInTheWorld = await this.getCountriesList();
     this.user.setCountriesInTheWorld(countriesInTheWorld);
   }
 
   checkCountry () {
+    let countryArr = [];
     if (this.state.text.length >= 2) {
       this.user.getCountriesInTheWorld().find((country) => {
-        if (country.toLowerCase().startsWith(this.state.text.toLowerCase())) {
+        if (country.toLowerCase().contains(this.state.text.toLowerCase())) {
+          countryArr.push(country);
           this.user.setChosenCountry(country);
           this.user.setChosenRegion(undefined);
-          this.setState({ country: country });
+          // tengo que convertir esto en un array
+          this.setState({
+            countriesArray: countryArr,
+            country: country
+          });
         } else {
           return false;
         }
@@ -120,12 +133,12 @@ class TravelDecisionController extends BaseScene {
     }
   }
 
-  async onPressCountryOverlay () {
+  async onPressCountryOverlay (value) {
     const country = this.state.country;
-    this.setState({countryInput: this.state.country, text: this.state.countryInput});
+    this.setState({countryInput: value, text: this.state.countryInput});
     await this.refs.countryInput.blur();
     await this.checkCountry();
-    await this.chargeGeojsonCountry(country);
+    await this.chargeGeojsonCountry(value);
   }
 
   render () {

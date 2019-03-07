@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 import { AccessToken, LoginManager, LoginButton } from 'react-native-fbsdk';
 import {GoogleSignin } from 'react-native-google-signin';
-import { NetInfo, BackHandler, Linking } from 'react-native';
+import { NetInfo, BackHandler, Linking, Alert } from 'react-native';
 import Toast, {DURATION} from 'react-native-easy-toast';
 import RNFetchBlob from 'react-native-fetch-blob';
 
@@ -24,7 +24,15 @@ class HomeController extends BaseScene {
 
   componentDidMount () {
     this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-      this.navigateTo('Home');
+      Alert.alert(
+        this.i18n.t('home.exitTitle'),
+        this.i18n.t('home.exitSubtitle'),
+        [
+          {text: 'No', onPress: () => this.navigateTo('Home')},
+          {text: 'Yes', onPress: () => BackHandler.exitApp(), style: 'cancel'}
+        ],
+        { cancelable: false }
+      );
     });
   }
 
@@ -60,7 +68,6 @@ class HomeController extends BaseScene {
           return this.navigateTo('WhatDoesThisApp');
         } else {
           return this.loginDataWithFirebase();
-          // return this.navigateTo('Menu');
         }
       }
     } catch (error) {

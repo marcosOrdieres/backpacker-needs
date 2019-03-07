@@ -3,7 +3,7 @@ import { BaseScene } from 'components';
 import template from './recommendationsTemplate';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
-import { View } from 'react-native';
+import { View, BackHandler } from 'react-native';
 import services from '../../services';
 import { Linking } from 'react-native';
 import { AsyncStorage } from 'react-native';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, BackHandler } from 'react-native';
 import { BaseScene } from 'components';
 import template from './backpackTemplate';
 import { connect } from 'react-redux';

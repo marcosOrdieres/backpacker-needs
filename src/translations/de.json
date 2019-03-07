@@ -16,7 +16,9 @@
     "loginTitle": "Registriere dich mit deiner Email-Adresse",
     "areYouUser": "Hast du schon einen Account?",
     "noInternet":"'Sorry! Du brauchst eine Internetverbindung um dich anzumelden.'",
-    "toast": "Bitte akzeptiere unsere Nutzungs- und Datenschutzbestimmungen."
+    "toast": "Bitte akzeptiere unsere Nutzungs- und Datenschutzbestimmungen.",
+    "exitTitle": "Confirm exit from Backpacker Needs",
+    "exitSubtitle": "Do you want to quit the app?"
   },
   "whatThisAppDoes":{
     "click": "Klicke auf Region oder Land",

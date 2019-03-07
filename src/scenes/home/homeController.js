@@ -25,8 +25,8 @@ class HomeController extends BaseScene {
   componentDidMount () {
     this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
       Alert.alert(
-        'Confirm exit from Backpacker Needs',
-        'Do you want to quit the app?',
+        this.i18n.t('home.exitTitle'),
+        this.i18n.t('home.exitSubtitle'),
         [
           {text: 'No', onPress: () => this.navigateTo('Home')},
           {text: 'Yes', onPress: () => BackHandler.exitApp(), style: 'cancel'}

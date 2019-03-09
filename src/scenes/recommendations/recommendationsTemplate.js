@@ -24,7 +24,7 @@ export default (controller) => (
           <ListItem
             noFirstIcon={section.key === 'Tips' || section.key === 'Consejos' ? true : false}
             isTip
-            noIcon={section.key === 'Tips' || section.key === 'Consejos' || section.key === '1 - Important Documents and Items' || section.key === '1 - Documentos y Objetos Importantes' || section.key === '1 - Wichtige Dokumente und Items' ? false : true}
+            noIcon={section.key === 'Tips' || section.key === 'Consejos' || section.key === '1 - Important documents and items' || section.key === '1 - Documentos y objetos importantes' || section.key === '1 - Wichtige Dokumente und Items' ? false : true}
             dataItem={!controller.state.collapsed[section.key] ? item : []}
             onClickAmazon={(item) => controller.onClickAmazonItems(item)}
             onClickListItem={section.key === 'Tips' || section.key === 'Consejos' ? null : (item) => controller.onClickListItemRecommendations(item)} />);
@@ -41,7 +41,9 @@ export default (controller) => (
             <View style={[recommendationsStyles.iconChevronView, {transform: [{ rotate: controller.state.collapsed[prop.section.key] ? '0deg' : '90deg'}]}]}>
               <Icon name='chevron-right' size={20} color={Palette.white} />
             </View>
-            <Text style={recommendationsStyles.sectionTitle}>{prop.section.key}</Text>
+            <View style={recommendationsStyles.sectionTitleView}>
+              <Text style={recommendationsStyles.sectionTitle}>{prop.section.key}</Text>
+            </View>
           </TouchableOpacity>
         );
       }}

@@ -18,7 +18,9 @@
     "noInternet":"'We are sorry, you need internet conection'",
     "toast": "Please, accept our Terms and Conditions and Data Privacy",
     "exitTitle": "Confirm exit from Backpacker Needs",
-    "exitSubtitle": "Do you want to quit the app?"
+    "exitSubtitle": "Do you want to quit the app?",
+    "exitYes": "Yes",
+    "exitNo": "No"
   },
   "whatThisAppDoes":{
     "click": "Click on region or country",

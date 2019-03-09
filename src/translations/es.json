@@ -9,16 +9,24 @@
     "textDataPrivacyTC": "Acepto los ",
     "TC": "Términos y Condiciones",
     "andDataPrivacyTC": " y la ",
-    "dataPrivacy": "Privacidad de Datos",
+    "dataPrivacy": "Política de Privacidad",
     "popupDialog": "Título Diálogo",
-    "registerEmailTitle": "Registrate gratis",
+    "registerEmailTitle": "Regístrate gratis",
     "registerFacebookTitle": "Continua con Facebook",
     "loginTitle": "Log in con tu email",
     "areYouUser": "¿Eres ya un usuario?",
     "noInternet":"Lo sentimos, no tienes Conexión a internet",
     "toast": "Por favor, acepta nuestro Términos y Condiciones y Privacidad de Datos",
     "exitTitle": "Confirma que quieres salir de Backpacker Needs",
-    "exitSubtitle": "¿Quieres salir de la App?"
+    "exitSubtitle": "¿Quieres salir de la App?",
+    "exitYes": "Si",
+    "exitNo": "No"
+  },
+  "credentials":{
+    "errorInUse": "Este email está en uso, por favor, prueba con otro.",
+    "error6":"La contraseña es inválida, se necesitan 6 caracteres como mínimo",
+    "userDoesNotExist":"Prueba con otro usuario, este usuario no existe o ha sido borrado.",
+    "passInvalid":"Esta contraseña es inválida o el usuario no tiene contraseña."
   },
   "whatThisAppDoes":{
     "click": "Haz click en región o en país",

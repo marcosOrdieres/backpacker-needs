@@ -21,15 +21,12 @@ export default StyleSheet.create({
     borderBottomWidth: 2,
     borderTopWidth: 2,
     borderBottomColor: Palette.primaryColor15,
-    backgroundColor: Palette.primaryColor75
-  },
-  sectionTitle: {
-    textAlign: 'center',
-    color: Palette.totalBlack,
-    fontFamily: 'Calibri',
-    fontSize: 18,
-    marginBottom: 16,
-    marginTop: 16
+    backgroundColor: Palette.primaryColor75,
+
+    flex: 1,
+    flexDirection: 'row',
+    height: 50,
+    alignItems: 'center'
   },
   containerSpinner: {
     flex: 1,
@@ -43,10 +40,18 @@ export default StyleSheet.create({
     padding: 10
   },
   iconChevronView: {
-    position: 'absolute',
-    paddingTop: '25%',
-    paddingLeft: '40%',
-    width: 65,
-    height: 65
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 0.15
+  },
+  sectionTitle: {
+    justifyContent: 'center',
+    textAlign: 'left',
+    color: Palette.totalBlack,
+    fontFamily: 'Calibri',
+    fontSize: 18
+  },
+  sectionTitleView: {
+    flex: 0.85
   }
 });

@@ -104,7 +104,7 @@ export default (controller) => (
               placeholder={controller.i18n.t('travelDecision.placeholderCountry')}
               value={controller.state.countryInput}
               underlineColorAndroid={Palette.transparent}
-              autoCapitalize={'characters'}
+              // autoCapitalize={'characters'}
               onFocus={() => { controller.setState({focusOnCountry: true}); }}
               onBlur={() => {
                 controller.setState({show: false, focusOnCountry: false});

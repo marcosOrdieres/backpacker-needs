@@ -89,9 +89,10 @@ class BackpackController extends BaseScene {
   async addBackpackFirstTime (userDataStorage, countryOrRegion) {
     // When I dont have stored in the userDataStorage inTheBackpack, first time, add inTheBackpack as item.
     // We need it to have always the Backpack inside the inTheBackpack.
+    const locale = this.i18n.currentLocale().substring(0, 2);
     if (!Object.values(userDataStorage.users)[0].region[countryOrRegion].inTheBackpack) {
       const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
-      const newRecommendation = {'inTheBackpack': {'item': 'Backpack'}};
+      const newRecommendation = {'inTheBackpack': {'item': locale === 'es' ? 'Mochila' : 'Backpack'}};
       const newObject = Object.assign(Object.values(userDataStorage.users)[0].region[countryOrRegion], newRecommendation);
       Object.values(userDataStorage.users)[0].region[countryOrRegion] = newObject;
       await this.storage.setAsyncStorage(this.user.getUserId(), userDataStorage);

@@ -36,7 +36,7 @@ export default (controller) => (
             titleAddItem={controller.state.blurAddItem ? controller.noAddItem() : controller.titleAddItem(section)}
             titleAddItemChangeText={(title) => { controller.titleAddItemChangeText(title, section); }}
             backpackListItem
-            dataItem={item}
+            dataItem={!controller.state.collapsed[section.key] ? item : []}
             textInputPlaceholderBackpack={controller.i18n.t('backpack.textInputPlaceholderBackpack')}
             onClickListItem={(item) => controller.onClickListItemBackpack(item)} />);
       }}
@@ -54,7 +54,10 @@ export default (controller) => (
               <Icon name='chevron-right' size={20} color={Palette.white} />
             </View>
 
-            <Text style={backpackStyles.sectionTitle}>{prop.section.key}</Text>
+            <View style={backpackStyles.sectionTitleView}>
+              <Text style={backpackStyles.sectionTitle}>{prop.section.key}</Text>
+            </View>
+
           </TouchableOpacity>
         );
       }}

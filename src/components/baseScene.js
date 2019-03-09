@@ -101,7 +101,9 @@ export default class BaseScene extends Component {
     });
 
     if (!flag) {
-      this.user.getRecommendationsSelected().push({key: this.i18n.t('recommendations.myTravelerItems'), data: [[{value: 'Backpack', selectedRecommendations: true}]]});
+      const locale = this.i18n.currentLocale().substring(0, 2);
+      this.user.getRecommendationsSelected()
+        .push({key: this.i18n.t('recommendations.myTravelerItems'), data: [[{value: locale === 'es' ? 'Mochila' : 'Backpack', selectedRecommendations: true}]]});
     }
   }
 

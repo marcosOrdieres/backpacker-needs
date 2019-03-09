@@ -49,13 +49,25 @@ export default class ListItemComponent extends Component {
       ) {
       return 'TIP';
     } else if (
-      item === 'Ropa para Salir de Fiesta' || item.value === 'Ropa para Salir de Fiesta' ||
-      item === 'Bolsa para la Ropa Sucia' || item.value === 'Bolsa para la Ropa Sucia' ||
-      item === 'Moneda Local' || item.value === 'Moneda Local' || item === 'Cash in Local Currency' || item.value === 'Cash in Local Currency' ||
+      item === 'Ropa para salir de fiesta' || item.value === 'Ropa para salir de fiesta' ||
+      item === 'Bolsa para la ropa sucia' || item.value === 'Bolsa para la ropa sucia' ||
+      item === 'Vestidos' || item.value === 'Vestidos' || item === 'Dresses' || item.value === 'Dresses' ||
+      item === 'Antibióticos' || item.value === 'Antibióticos' || item === 'Anti-biotics' || item.value === 'Anti-biotics' ||
+      item === 'Pastilas para la diarrea' || item.value === 'Pastilas para la diarrea' || item === 'Diarrhea/laxative medicines' || item.value === 'Diarrhea/laxative medicines' ||
+      item === 'Probióticos' || item.value === 'Probióticos' || item === 'Probiotics' || item.value === 'Probiotics' ||
+      item === 'Vacunas' || item.value === 'Vacunas' || item === 'Vaccinations' || item.value === 'Vaccinations' ||
+      item === 'Libros' || item.value === 'Libros' || item === 'Books' || item.value === 'Books' ||
+      item === 'Bolsa para la ropa sucia' || item.value === 'Bolsa para la ropa sucia' || item === 'Mesh stiff sack storage bag' || item.value === 'Mesh stiff sack storage bag' ||
+      item === 'Bodyboard' || item.value === 'Bodyboard' || item === 'Bodyboard' || item.value === 'Bodyboard' ||
+      item === 'Surfboard' || item.value === 'Surfboard' || item === 'Surfboard' || item.value === 'Surfboard' ||
+      item === 'Swimsuit' || item.value === 'Swimsuit' || item === 'Bañador' || item.value === 'Bañador' ||
+      item === 'Underwear' || item.value === 'Underwear' || item === 'Ropa interior' || item.value === 'Ropa interior' ||
+      item === 'Perfume' || item.value === 'Perfume' ||
+      item === 'Moneda local' || item.value === 'Moneda local' || item === 'Cash in local currency' || item.value === 'Cash in local currency' ||
       item === 'Dinero suelto' || item.value === 'Dinero suelto' || item === 'Cash' || item.value === 'Cash' ||
-      item === 'Lentillas' || item.value === 'Lentillas' || item === 'Contact Lenses' || item.value === 'Contact Lenses' ||
+      item === 'Lentillas' || item.value === 'Lentillas' || item === 'Contact lenses' || item.value === 'Contact lenses' ||
       item === 'Maquillaje' || item.value === 'Maquillaje' || item === 'Make up' || item.value === 'Make up' ||
-      item === 'Pildora Anticonceptiva' || item.value === 'Pildora Anticonceptiva' || item === 'Contraceptive Pill' || item.value === 'Contraceptive Pill'
+      item === 'Pildora anticonceptiva' || item.value === 'Pildora anticonceptiva' || item === 'Contraceptive pill' || item.value === 'Contraceptive pill'
     ) {
       return false;
     } else {
@@ -75,7 +87,7 @@ export default class ListItemComponent extends Component {
                   key={key}
                   keyExtractor={key}
                   title={(item.selectedRecommendations) ? item.value : (item.selectedInTheBackpack ? item.value : item)}
-                  subtitle={(item.selectedRecommendations) ? i18n.t('components.listItemSelect') : (item.selectedInTheBackpack ? i18n.t('components.listItemBack') : null)}
+                  // subtitle={(item.selectedRecommendations) ? null : (item.selectedInTheBackpack ? i18n.t('components.listItemBack') : null)}
                   titleStyle={{fontSize: this.props.fontTitle ? this.props.fontTitle : ((item.length || item.value.length) > 35) ? 15 : 20, paddingLeft: this.props.noPaddingLeft ? 0 : 30, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? Palette.disabled : Palette.totalBlack)}}
                   subtitleStyle={{paddingLeft: 30, color: (item.selectedRecommendations) ? Palette.disabled : (item.selectedInTheBackpack ? Palette.disabled : Palette.totalBlack)}}
 
@@ -93,10 +105,10 @@ export default class ListItemComponent extends Component {
                     }
 
                   leftIcon={!item.selectedInTheBackpack && !this.rootStore.getState().isBackpackScreen && !this.props.noFirstIcon ?
-                    (<CheckMark
-                      color={item.selectedRecommendations ? Palette.disabled : Palette.primaryColor}
-                      width={25}
-                      height={25} />)
+                    item.selectedRecommendations ?
+                    (<Icon size={30} name='check-square' color={Palette.primaryColor85} backgroundColor={'red'} />)
+                    :
+                    (<Icon size={30} name='square' color={Palette.primaryColor65} />)
                     :
                     ((item.selectedInTheBackpack && this.rootStore.getState().isBackpackScreen) || this.props.noIcon || this.props.isTip ?
                       (<Icon size={1} name='check' color={Palette.transparent} />)

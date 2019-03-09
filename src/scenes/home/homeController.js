@@ -28,8 +28,8 @@ class HomeController extends BaseScene {
         this.i18n.t('home.exitTitle'),
         this.i18n.t('home.exitSubtitle'),
         [
-          {text: 'No', onPress: () => this.navigateTo('Home')},
-          {text: 'Yes', onPress: () => BackHandler.exitApp(), style: 'cancel'}
+          {text: this.i18n.t('home.exitYes'), onPress: () => this.navigateTo('Home')},
+          {text: this.i18n.t('home.exitNo'), onPress: () => BackHandler.exitApp(), style: 'cancel'}
         ],
         { cancelable: false }
       );

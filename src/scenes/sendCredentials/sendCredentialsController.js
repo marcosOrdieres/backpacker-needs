@@ -35,10 +35,25 @@ class SendCredentialsController extends BaseScene {
       this.user.setUserId(signUp.user.uid);
       return this.navigateTo('WhatDoesThisApp');
     } catch (error) {
-      if (typeof error.message === 'string') {
-        this.setState({theUserIsUsed: error.message});
+      const locale = this.i18n.currentLocale().substring(0, 2);
+      if (locale === 'es') {
+        if (typeof error.message === 'string') {
+          if (error.message.includes('in use')) {
+            this.setState({theUserIsUsed: this.i18n.t('credentials.errorInUse')});
+          } else if (error.message.includes('6 characters')) {
+            this.setState({theUserIsUsed: this.i18n.t('credentials.error6')});
+          } else {
+            this.setState({theUserIsUsed: error.message});
+          }
+        } else {
+          console.warn(error.message);
+        }
       } else {
-        console.warn(error.message);
+        if (typeof error.message === 'string') {
+          this.setState({theUserIsUsed: error.message});
+        } else {
+          console.warn(error.message);
+        }
       }
     }
   }
@@ -52,10 +67,25 @@ class SendCredentialsController extends BaseScene {
       this.rootStore.dispatch({ type: 'FROM_LOGIN', isComingFromLogin: true});
       return this.loginDataWithFirebase();
     } catch (error) {
-      if (typeof error.message === 'string') {
-        this.setState({theUserIsUsed: error.message});
+      const locale = this.i18n.currentLocale().substring(0, 2);
+      if (locale === 'es') {
+        if (typeof error.message === 'string') {
+          if (error.message.includes('been deleted')) {
+            this.setState({theUserIsUsed: this.i18n.t('credentials.userDoesNotExist')});
+          } else if (error.message.includes('password is invalid')) {
+            this.setState({theUserIsUsed: this.i18n.t('credentials.passInvalid')});
+          } else {
+            this.setState({theUserIsUsed: error.message});
+          }
+        } else {
+          console.warn(error.message);
+        }
       } else {
-        console.warn(error.message);
+        if (typeof error.message === 'string') {
+          this.setState({theUserIsUsed: error.message});
+        } else {
+          console.warn(error.message);
+        }
       }
     }
   }

@@ -68,15 +68,57 @@ export default class BaseScene extends Component {
     }
   }
 
+  insertInRecosModelAddedItems (checkListRecos) {
+    let we = '';
+    let val = '';
+    let valFinal = '';
+    let valueFirst = '';
+
+    let isTheSameValueBool = false;
+    Object.keys(this.user.getRecommendations()).forEach((sectionName) => {
+      we = sectionName;
+      Object.keys(checkListRecos).forEach((value) => {
+        valueFirst = value;
+        if (/(,)/.test(value)) {
+          value = value.substring(0, value.indexOf(','));
+        }
+
+        if (value === sectionName) {
+          Object.keys(this.user.getRecommendations()).forEach((sectionInRecosModel) => {
+            if (sectionInRecosModel === value) {
+              Object.values(this.user.getRecommendations()[sectionInRecosModel]).forEach((valueInSection) => {
+                if (valueInSection === checkListRecos[valueFirst]) {
+                  isTheSameValueBool = true;
+                  return isTheSameValueBool;
+                }
+              });
+              if (!isTheSameValueBool) {
+                let prueba = this.user.getRecommendations()[sectionInRecosModel];
+                this.user.getRecommendations()[sectionInRecosModel][Object.values(this.user.getRecommendations()[sectionInRecosModel]).length] = checkListRecos[valueFirst];
+              }
+            }
+          });
+        } else {
+          return true;
+        }
+      });
+    });
+  }
+
   async listRecommendationsWhichSelected (checkListRecos) {
     let myArr = [];
     let myArrFinal = [];
     let myArrItem = [];
     let flag = false;
+
+    if (checkListRecos) {
+      this.insertInRecosModelAddedItems(checkListRecos);
+    }
     const group = Object.keys(this.user.getRecommendations()).map((group, index) => {
       myArrFinal[index] = {key: group};
       return this.user.getRecommendations()[group];
     });
+
     group.forEach((groupItem, index, array) => {
       const indexOfArray = group.indexOf(groupItem);
       Object.values(groupItem).forEach((item, index, array) => {

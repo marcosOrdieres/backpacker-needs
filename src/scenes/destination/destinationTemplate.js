@@ -43,6 +43,7 @@ export default (controller) => (
       <Geojson
         geojson={controller.regionChosen()}
         fillColor={Palette.primaryColorTransparent} />
+
     </MapView>
 
     <Toast

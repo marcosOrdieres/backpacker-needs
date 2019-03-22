@@ -190,14 +190,8 @@ class BackpackController extends BaseScene {
         countryOrRegion = this.user.getChosenRegion();
       }
       const listInTheBackpack = await this.readValueListInTheBackpack();
-      if (listInTheBackpack) {
-        Object.values(listInTheBackpack).forEach((recommendation) => {
-          if (recommendation === item.value) {
-            isItemInTheBackpack = true;
-            return isItemInTheBackpack;
-          }
-        });
-      }
+
+      if (listInTheBackpack) { Object.values(listInTheBackpack).forEach((recommendation) => { if (recommendation === item.value) { isItemInTheBackpack = true; return isItemInTheBackpack; } }); }
 
       if (!listInTheBackpack) {
         // Here it comes if there are not items in the selectedInTheBackpack, so it update (first time), the inTheBackpack
@@ -257,7 +251,7 @@ class BackpackController extends BaseScene {
     let sectionData = section;
     this.user.getRecommendationsSelected().forEach((completeSection) => {
       if (Object.values(completeSection)[0] === Object.values(sectionData)[0]) {
-        // Push into getRecommendationsSelected the added items in their own section
+        console.warn('VAMOSSSS:', addedItems);
         Object.values(completeSection)[1][0].push({value: addedItems, selectedRecommendations: true});
       }
     });
@@ -269,7 +263,7 @@ class BackpackController extends BaseScene {
 
   async onBlurAddItem (section, index) {
     try {
-      const addedItems = await this.storeAddItem(this.state.titleAddItem);
+      const addedItems = await this.storeAddItem(this.state.titleAddItem, section);
       await this.listRecosSelected(addedItems, section);
       await this.checkSelectedToDos();
       this.setState({titleAddItem: '', blurAddItem: true});
@@ -279,8 +273,9 @@ class BackpackController extends BaseScene {
     }
   }
 
-  async storeAddItem (addItem) {
+  async storeAddItem (addItem, section) {
     try {
+      console.warn('joder:', section);
       if (this.user.getChosenRegion()) {
         // store the items that are Added manually by the user.
         firebase.database().ref('users/' + this.user.getUserId()).child('region').child(this.user.getChosenRegion()).child('recommendationSelected').push(addItem);
@@ -288,14 +283,16 @@ class BackpackController extends BaseScene {
         const chosenRegionString = this.user.getChosenRegion();
         const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
 
-        Object.values(userDataStorage.users)[0].region[this.user.getChosenRegion()].recommendationSelected[addItem.toString()] = addItem.toString();
+        Object.values(userDataStorage.users)[0].region[this.user.getChosenRegion()].recommendationSelected[section.key + ',' + addItem.toString()] = addItem.toString();
+
         await this.storage.setAsyncStorage(this.user.getUserId(), userDataStorage);
         return addItem;
       } else {
         firebase.database().ref('users/' + this.user.getUserId()).child('region').child(this.user.getChosenCountry()).child('recommendationSelected').push(addItem);
         const chosenCountryString = this.user.getChosenCountry();
         const userDataStorage = await this.storage.getAsyncStorage(this.user.getUserId());
-        Object.values(userDataStorage.users)[0].region[this.user.getChosenCountry()].recommendationSelected[addItem.toString()] = addItem.toString();
+        Object.values(userDataStorage.users)[0].region[this.user.getChosenCountry()].recommendationSelected[section.key + ',' + addItem.toString()] = addItem.toString();
+
         await this.storage.setAsyncStorage(this.user.getUserId(), userDataStorage);
         return addItem;
       }

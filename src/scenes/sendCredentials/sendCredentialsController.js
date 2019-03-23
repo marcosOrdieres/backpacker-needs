@@ -33,7 +33,7 @@ class SendCredentialsController extends BaseScene {
       const signUp = await firebase.auth().createUserAndRetrieveDataWithEmailAndPassword(this.state.userName, this.state.password);
       this.firebaseAnalytics.setUserProperty('handleSignupEmail', 'SendCredentialsController');
       this.user.setUserId(signUp.user.uid);
-      return this.navigateTo('WhatDoesThisApp');
+      return this.navigateTo('TravelDecision');
     } catch (error) {
       const locale = this.i18n.currentLocale().substring(0, 2);
       if (locale === 'es') {

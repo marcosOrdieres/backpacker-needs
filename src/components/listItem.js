@@ -123,7 +123,7 @@ export default class ListItemComponent extends Component {
 
               </TouchableOpacity>
           ))}
-            {this.props.backpackListItem ?
+            {/* {this.props.backpackListItem ?
               <ListItem
                 ref='addItemsBackpack'
                 hideTitle
@@ -138,7 +138,7 @@ export default class ListItemComponent extends Component {
                 textInputContainerStyle={{flex: 8}}
                 textInput />
               :
-              null }
+              null } */}
           </List>
         </ScrollView>
       </View>

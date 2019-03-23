@@ -43,6 +43,7 @@ export default (controller) => (
       <Geojson
         geojson={controller.regionChosen()}
         fillColor={Palette.primaryColorTransparent} />
+
     </MapView>
 
     <Toast
@@ -124,14 +125,14 @@ export default (controller) => (
       <Icon size={20} name='sign-out' color={Palette.white} />
     </TouchableOpacity> */}
 
-    <TouchableOpacity
+    {/* <TouchableOpacity
       style={destinationStyles.questionView}
       onPress={() => {
         controller.rootStore.dispatch({ type: 'FROM_DESTINATION_TO_WHAT', isDestinationToWhatScreen: true});
         controller.navigateTo('WhatDoesThisApp');
       }}>
       <Icon size={20} name='question' color={Palette.white} />
-    </TouchableOpacity>
+    </TouchableOpacity> */}
 
     <ActionButton buttonColor={Palette.primaryColor}>
       <ActionButton.Item buttonColor={Palette.green}

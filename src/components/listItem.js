@@ -97,12 +97,11 @@ export default class ListItemComponent extends Component {
                       :
                       !this.rootStore.getState().isBackpackScreen && this.props.noIcon && this.applicationComparison(item) ?
                       this.applicationComparison(item) === 'TIP' ?
-                        ((<TouchableOpacity onPress={this.props.onClickAmazon ? this.props.onClickAmazon.bind(this, item) : null}><Icon size={30} name='mobile' color={Palette.primaryColor} /></TouchableOpacity>))
+                        ((<TouchableOpacity style={{marginTop: -10, marginBottom: -10, paddingRight: 10}} onPress={this.props.onClickAmazon ? this.props.onClickAmazon.bind(this, item) : null}><Icon size={40} name='mobile' color={Palette.primaryColor} /></TouchableOpacity>))
                         :
-                        ((<TouchableOpacity onPress={this.props.onClickAmazon ? this.props.onClickAmazon.bind(this, item) : null}><Icon size={25} name='shopping-cart' color={Palette.primaryColor} /></TouchableOpacity>))
+                        ((<TouchableOpacity style={{marginTop: -10, marginBottom: -10}} onPress={this.props.onClickAmazon ? this.props.onClickAmazon.bind(this, item) : null}><Icon size={40} name='shopping-cart' color={Palette.primaryColor} /></TouchableOpacity>))
                       :
-                      (<Icon size={5} name='check' color={Palette.transparent} />)
-                    }
+                      (<Icon size={5} name='check' color={Palette.transparent} />)}
 
                   leftIcon={!item.selectedInTheBackpack && !this.rootStore.getState().isBackpackScreen && !this.props.noFirstIcon ?
                     item.selectedRecommendations ?
@@ -124,7 +123,7 @@ export default class ListItemComponent extends Component {
 
               </TouchableOpacity>
           ))}
-            {this.props.backpackListItem ?
+            {/* {this.props.backpackListItem ?
               <ListItem
                 ref='addItemsBackpack'
                 hideTitle
@@ -139,7 +138,7 @@ export default class ListItemComponent extends Component {
                 textInputContainerStyle={{flex: 8}}
                 textInput />
               :
-              null }
+              null } */}
           </List>
         </ScrollView>
       </View>

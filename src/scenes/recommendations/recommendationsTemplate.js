@@ -39,7 +39,7 @@ export default (controller) => (
             }}
             style={recommendationsStyles.sectionContainer}>
             <View style={[recommendationsStyles.iconChevronView, {transform: [{ rotate: controller.state.collapsed[prop.section.key] ? '0deg' : '90deg'}]}]}>
-              <Icon name='chevron-right' size={20} color={Palette.white} />
+              <Icon name='chevron-right' size={20} color={Palette.primaryColor} />
             </View>
             <View style={recommendationsStyles.sectionTitleView}>
               <Text style={recommendationsStyles.sectionTitle}>{prop.section.key}</Text>

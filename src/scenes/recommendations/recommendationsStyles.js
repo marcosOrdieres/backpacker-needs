@@ -20,8 +20,8 @@ export default StyleSheet.create({
   sectionContainer: {
     borderBottomWidth: 2,
     borderTopWidth: 2,
-    borderBottomColor: Palette.primaryColor15,
-    backgroundColor: Palette.primaryColor75,
+    borderBottomColor: 'black',
+    backgroundColor: '#e6e6e6',
 
     flex: 1,
     flexDirection: 'row',

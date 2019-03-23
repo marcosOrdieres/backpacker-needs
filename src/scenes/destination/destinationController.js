@@ -35,7 +35,8 @@ class DestinationController extends BaseScene {
       lastLong: -74.91,
       buttonFly: true,
       isModalVisible: false,
-      externalData: null
+      externalData: null,
+      showToastGeojsonError: false
     };
   }
 
@@ -58,6 +59,7 @@ class DestinationController extends BaseScene {
   async mapBuilderWithJson () {
     await this.listItemBackpacks();
     const regions = this.user.getRegions();
+
     let result = Object.keys(regions).map(function (key) { return [key, regions[key]]; });
     const resultCoordinates = result.forEach((element) => {
       element.find((place) => {
@@ -68,6 +70,8 @@ class DestinationController extends BaseScene {
         } else {
           if (place === this.user.getChosenRegion()) {
             return this.user.setChosenRegionCoordinates(element[1]);
+          } else {
+            return console.error('vamos');
           }
         }
       });
@@ -78,6 +82,7 @@ class DestinationController extends BaseScene {
       latitudeDelta: 60,
       longitudeDelta: 60
     };
+
     this.onRegionChange(mapRegion, mapRegion.latitude, mapRegion.longitude);
   }
 
